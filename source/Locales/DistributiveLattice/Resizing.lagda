@@ -2,6 +2,7 @@
 title:          Transporting a distributive lattice along an equivalence
 author:         Ayberk Tosun
 date-started:   2024-04-22
+date-completed: 2024-04-25
 --------------------------------------------------------------------------------
 
 Given a distributive lattice `L : 𝓤` and an equivalence of the carrier set
@@ -80,6 +81,12 @@ module _ (L  : DistributiveLattice 𝓤)
  r-cancels-s : r ∘ s ∼ id
  r-cancels-s = inverses-are-retractions s (⌜⌝-is-equiv e)
 
+\end{code}
+
+TODO: Is there a name for the projection below?
+
+\begin{code}
+
  s-cancels-r : s ∘ r ∼ id
  s-cancels-r x = pr₂ (pr₁ (pr₂ e)) x
 
@@ -134,12 +141,24 @@ Now, we do exactly the same thing for the join operation.
 
 \end{code}
 
-The bottom element of the new lattice is just `s 𝟎`
+The bottom element of the new lattice is just `s 𝟎`.
 
 \begin{code}
 
  𝟎ᶜ : Aᶜ
  𝟎ᶜ = s 𝟎L
+
+\end{code}
+
+The maps `s` and `r` both preserve the bottom element.
+
+\begin{code}
+
+ s-preserves-𝟎 : s 𝟎L ＝ 𝟎ᶜ
+ s-preserves-𝟎 = refl
+
+ r-preserves-𝟎 : r 𝟎ᶜ ＝ 𝟎L
+ r-preserves-𝟎 = r-cancels-s 𝟎L
 
 \end{code}
 
@@ -152,8 +171,20 @@ The top element is `s 𝟏`.
 
 \end{code}
 
-We now proceed to prove that `(Aᶜ , 𝟎ᶜ , 𝟏ᶜ , _∧ᶜ_ , _∨ᶜ_)` forms a
-distributive lattice. We refer to this as the _𝓥-small copy_ of `L`.
+The maps `s` and `r` both preserve the top element.
+
+\begin{code}
+
+ s-preserves-𝟏 : s 𝟏L ＝ 𝟏ᶜ
+ s-preserves-𝟏 = refl
+
+ r-preserves-𝟏 : r 𝟏ᶜ ＝ 𝟏L
+ r-preserves-𝟏 = r-cancels-s 𝟏L
+
+\end{code}
+
+We now proceed to prove that `(Aᶜ , 𝟎ᶜ , 𝟏ᶜ , _∧ᶜ_ , _∨ᶜ_)` forms a distributive
+lattice. We refer to this as the _𝓥-small copy_ of `L`.
 
 We start with the unit laws.
 
@@ -305,7 +336,7 @@ Finally, the distributivity law.
 
 \end{code}
 
-We package everything up into `copyᵈ` below.
+We package everything up into `Lᶜ` below.
 
 \begin{code}
 
@@ -337,24 +368,14 @@ We package everything up into `copyᵈ` below.
 
 For the reader who is wondering why we marked the above as `private`, the reason
 is that we would like to avoid referring to this lattice as `Lᶜ` outside the
-module as `L` is just a variable name that we use inside the module. We define
-the notation `⦅_⦆ᶜ` to be used from the outside as `⦅ K ⦆ᶜ`, for any
-distributive lattice `K`.
+module as `L` is just a variable name used inside the module. We define the
+notation `⦅_⦆ᶜ` to be used from outside the module. This is to say, the small
+copy of a distributive lattice `K` is denoted `⦅ K ⦆ᶜ`.
 
 \begin{code}
 
  ⦅_⦆ᶜ : DistributiveLattice 𝓥
  ⦅_⦆ᶜ = Lᶜ
-
-\end{code}
-
-\begin{code}
-
- s-preserves-𝟏 : preserves-𝟏 L Lᶜ s holds
- s-preserves-𝟏 = refl
-
- s-preserves-𝟎 : preserves-𝟎 L Lᶜ s holds
- s-preserves-𝟎 = refl
 
 \end{code}
 
