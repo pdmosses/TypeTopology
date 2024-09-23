@@ -219,6 +219,8 @@ basis-is-unique X (ℬ , b) κ =
 
 Having a directed basis is a proposition under certain favourable conditions.
 
+The following was refactored and simplified on 2024-09-23.
+
 \begin{code}
 
 basic-iso-to-𝒦 : (X : Locale 𝓤 𝓥 𝓦)
