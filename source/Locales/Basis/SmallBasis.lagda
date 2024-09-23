@@ -234,23 +234,12 @@ basic-iso-to-𝒦 X (ℬ , β) κ =
    Ⅰ = ≃-sym (basis-is-unique X (ℬ , β) κ)
 
    Ⅱ : image (ℬ-compact X [_]) ≃ 𝒦 X
-   Ⅱ = s , (r , ψ) , (r , ϑ)
+   Ⅱ = ≃-sym (corestriction (ℬ-compact X [_]) , †)
     where
-     s : image (ℬ-compact X [_]) → 𝒦 X
-     s (K , c) = K , ∥∥-rec (holds-is-prop (is-compact-open X K)) † c
-      where
-       † : Σ i ꞉ index (ℬ-compact X) , ℬ-compact X [ i ] ＝ K
-         → is-compact-open X K holds
-       † ((K′ , φ) , p) = transport (λ - → is-compact-open X - holds) p φ
-
-     r : 𝒦 X → image (ℬ-compact X [_])
-     r (K , p) = K , ∣ (K , p) , refl ∣
-
-     ψ : s ∘ r ∼ id
-     ψ (K , p) = to-subtype-＝ (holds-is-prop ∘ is-compact-open X) refl
-
-     ϑ : (r ∘ s) ∼ id
-     ϑ (K , p) = to-subtype-＝ (λ _ → ∃-is-prop) refl
+     † : is-equiv (corestriction pr₁)
+     † = corestriction-of-embedding-is-equivalence
+          (ℬ-compact X [_])
+          (ℬ-compact-is-an-embedding X)
 
 \end{code}
 
