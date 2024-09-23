@@ -16,9 +16,11 @@ open import UF.Size
 open import UF.Base
 open import UF.EquivalenceExamples using (Σ-assoc)
 
-module Locales.SmallBasis (pt : propositional-truncations-exist)
-                          (fe : Fun-Ext)
-                          (sr : Set-Replacement pt) where
+module Locales.Basis.SmallBasis
+        (pt : propositional-truncations-exist)
+        (fe : Fun-Ext)
+        (sr : Set-Replacement pt)
+       where
 
 open import Locales.Frame       pt fe hiding (has-directed-basis₀)
 open import Locales.Compactness.Definition pt fe
