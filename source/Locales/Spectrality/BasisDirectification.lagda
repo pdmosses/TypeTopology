@@ -18,7 +18,7 @@ module Locales.Spectrality.BasisDirectification
         (sr : Set-Replacement pt) where
 
 open import Locales.Frame pt fe
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 
 open import UF.Logic
 open AllCombinators pt fe

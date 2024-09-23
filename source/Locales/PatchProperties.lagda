@@ -34,7 +34,7 @@ open import Locales.Nucleus pt fe
 open import Locales.PatchLocale pt fe sr
 open import Locales.PerfectMaps pt fe
 open import Locales.Regular pt fe sr
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Locales.Spectrality.SpectralMap    pt fe
 open import Locales.Stone pt fe sr

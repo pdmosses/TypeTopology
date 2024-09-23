@@ -48,7 +48,7 @@ open import Locales.Frame                                    pt fe
  hiding (∅)
 open import Locales.ScottLocale.Definition                   pt fe 𝓤
 open import Locales.ScottLocale.Properties pt fe 𝓤
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralLocale               pt fe
 
 open AllCombinators pt fe

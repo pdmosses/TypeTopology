@@ -36,7 +36,7 @@ open import Locales.ContinuousMap.FrameHomomorphism-Definition pt fe
 open import Locales.ContinuousMap.FrameHomomorphism-Properties pt fe
 open import Locales.DistributiveLattice.Homomorphism fe pt
 open import Locales.Frame pt fe
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.LatticeOfCompactOpens ua pt sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Locales.Spectrality.SpectralMap pt fe

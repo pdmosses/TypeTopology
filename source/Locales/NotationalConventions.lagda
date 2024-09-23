@@ -11,7 +11,7 @@ open import UF.FunExt
 module Locales.NotationalConventions (pt : propositional-truncations-exist)
                                      (fe : Fun-Ext) where
 
-open import Locales.SmallBasis                 pt fe
+open import Locales.Basis.SmallBasis           pt fe
 open import Locales.Spectrality.SpectralLocale pt fe
 
 \end{code}

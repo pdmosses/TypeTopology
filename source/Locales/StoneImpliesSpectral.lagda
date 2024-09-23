@@ -41,7 +41,7 @@ open import Locales.Frame pt fe
 open import Locales.GaloisConnection pt fe
 open import Locales.InitialFrame pt fe
 open import Locales.ScottContinuity pt fe sr
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Locales.Spectrality.SpectralMap pt fe
 open import Locales.Stone pt fe sr

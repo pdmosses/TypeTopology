@@ -47,7 +47,7 @@ open import Locales.DistributiveLattice.Spectrum-Properties fe pe pt sr
 open import Locales.Frame pt fe
 open import Locales.SIP.DistributiveLatticeSIP ua pt sr
 open import Locales.SIP.FrameSIP
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.LatticeOfCompactOpens ua pt sr
 open import Locales.Spectrality.LatticeOfCompactOpens-Duality ua pt sr
 open import UF.Equiv

@@ -23,7 +23,7 @@ module Locales.DiscreteLocale.Basis
 
 open import Locales.DiscreteLocale.Definition fe pe pt
 open import Locales.Frame pt fe hiding (∅)
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import MLTT.List hiding ([_])
 open import MLTT.Spartan
 open import Slice.Family

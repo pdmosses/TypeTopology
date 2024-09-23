@@ -31,7 +31,7 @@ open import Locales.Compactness.Definition pt fe
 open import Slice.Family
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Locales.Spectrality.BasisDirectification pt fe sr
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 
 open import UF.Logic
 open AllCombinators pt fe

@@ -32,7 +32,7 @@ private
 open import Locales.Compactness.Definition pt fe
 open import Locales.DistributiveLattice.Definition fe pt
 open import Locales.Frame pt fe
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import UF.Equiv
 

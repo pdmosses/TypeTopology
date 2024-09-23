@@ -43,7 +43,7 @@ open import Locales.PatchLocale                pt fe sr
 open import Locales.PatchProperties            pt fe sr
 open import Locales.PerfectMaps                pt fe
 open import Locales.ScottContinuity            pt fe sr
-open import Locales.SmallBasis                 pt fe sr
+open import Locales.Basis.SmallBasis           pt fe sr
 open import Locales.Spectrality.Properties     pt fe
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Locales.Spectrality.SpectralMap    pt fe

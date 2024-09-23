@@ -34,7 +34,7 @@ open import Locales.ContinuousMap.FrameHomomorphism-Definition pt fe
 open import Locales.ContinuousMap.FrameHomomorphism-Properties pt fe
 open import Locales.Frame pt fe
 open import Locales.Nucleus pt fe
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import UF.Equiv using (_≃_; logically-equivalent-props-give-is-equiv)
 open import UF.Logic

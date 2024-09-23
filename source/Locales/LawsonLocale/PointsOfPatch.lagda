@@ -49,7 +49,7 @@ open import Locales.PatchProperties pt fe sr
 open import Locales.PerfectMaps pt fe
 open import Locales.Point.SpectralPoint-Definition pt fe pe
 open import Locales.ScottLocale.ScottLocalesOfScottDomains pt fe sr 𝓤
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralMap pt fe
 open import Locales.Spectrality.SpectralityOfOmega pt fe sr 𝓤 pe
 open import Locales.Stone pt fe sr

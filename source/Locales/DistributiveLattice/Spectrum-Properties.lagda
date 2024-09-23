@@ -31,7 +31,7 @@ open import Locales.DistributiveLattice.Ideal-Properties pt fe pe
 open import Locales.DistributiveLattice.Properties fe pt
 open import Locales.DistributiveLattice.Spectrum fe pe pt
 open import Locales.Frame pt fe
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import MLTT.List hiding ([_])
 open import MLTT.Spartan

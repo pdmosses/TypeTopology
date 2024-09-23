@@ -43,7 +43,7 @@ open import Locales.ScottLocale.Properties pt fe 𝓤
 open import Locales.ScottLocale.ScottLocalesOfAlgebraicDcpos pt fe 𝓤
 open import Locales.Sierpinski.Definition 𝓤 pe pt fe sr
 open import Locales.Sierpinski.Properties 𝓤 pe pt fe sr
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Slice.Family
 open import UF.Logic
 open import UF.SubtypeClassifier

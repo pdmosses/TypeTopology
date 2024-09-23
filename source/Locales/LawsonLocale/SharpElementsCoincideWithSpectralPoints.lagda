@@ -55,7 +55,7 @@ open import Locales.LawsonLocale.CompactElementsOfPoint 𝓤 fe pe pt sr
 open import Locales.Point.SpectralPoint-Definition pt fe
 open import Locales.ScottLocale.Properties pt fe 𝓤
 open import Locales.ScottLocale.ScottLocalesOfScottDomains pt fe sr 𝓤
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralMap pt fe
 open import Locales.TerminalLocale.Properties pt fe sr
 open import NotionsOfDecidability.Decidable

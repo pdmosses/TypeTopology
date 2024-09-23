@@ -33,7 +33,7 @@ open import Locales.ScottLocale.Definition pt fe 𝓤
 open import Locales.ScottLocale.Properties pt fe 𝓤
 open import Locales.ScottLocale.ScottLocalesOfAlgebraicDcpos pt fe 𝓤
 open import Locales.Sierpinski.Definition 𝓤 pe pt fe sr
-open import Locales.SmallBasis pt fe sr
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import MLTT.List hiding ([_])
 open import Slice.Family
