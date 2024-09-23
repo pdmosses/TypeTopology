@@ -35,6 +35,7 @@ open import Locales.WayBelowRelation.Definition  pt fe
 open import MLTT.List using (member; []; _∷_; List; in-head; in-tail; length)
 open import Slice.Family
 open import Taboos.FiniteSubsetTaboo pt fe
+open import UF.Embeddings
 open import UF.Equiv hiding (_■)
 open import UF.EquivalenceExamples
 open import UF.ImageAndSurjection pt
@@ -108,6 +109,22 @@ starts with a large and locally small locale, the resulting family would live in
 
 ℬ-compact₀ : (X : Locale (𝓤 ⁺) 𝓤 𝓤) → Fam (𝓤 ⁺) ⟨ 𝒪 X ⟩
 ℬ-compact₀ = ℬ-compact
+
+\end{code}
+
+Added on 2024-09-23.
+
+\begin{code}
+
+ℬ-compact-is-an-embedding : (X : Locale 𝓤 𝓥 𝓦) → is-embedding (ℬ-compact X [_])
+ℬ-compact-is-an-embedding X =
+ lc-maps-into-sets-are-embeddings (ℬ-compact X [_]) † σ
+  where
+   σ : is-set ⟨ 𝒪 X ⟩
+   σ = carrier-of-[ poset-of (𝒪 X) ]-is-set
+
+   † : left-cancellable (ℬ-compact X [_])
+   † {(K₁ , κ₁)} {(K₂ , κ₂)} = to-𝒦-＝ X κ₁ κ₂
 
 \end{code}
 
