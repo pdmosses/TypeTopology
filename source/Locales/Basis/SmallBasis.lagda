@@ -32,61 +32,12 @@ open import UF.Equiv renaming (_■ to _𝒬ℰ𝒟)
 open import MLTT.List using (List; map; _<$>_; []; _∷_)
 open import UF.Univalence using (Univalence)
 open import Locales.Spectrality.Properties pt fe
-
-open PropositionalTruncation pt
+open import Locales.Basis.Definition pt fe
+open import Locales.Basis.BasesAndCompactness pt fe
 
 open AllCombinators pt fe
-
 open Locale
-
-\end{code}
-
-We start by defining the structure of having a basis. The superscript _ᴰ is our
-notational convention for marking that we are working with the structural
-version of a notion.
-
-\begin{code}
-
-basis-forᴰ : (F : Frame 𝓤 𝓥 𝓦) → Fam 𝓦 ⟨ F ⟩ → 𝓤 ⊔ 𝓥 ⊔ 𝓦 ⁺  ̇
-basis-forᴰ {𝓦 = 𝓦} F (I , β) =
- (U : ⟨ F ⟩) → Σ J ꞉ Fam 𝓦 I , (U is-lub-of ⁅ β j ∣ j ε J ⁆) holds
-  where
-   open Joins (λ x y → x ≤[ poset-of F ] y)
-
-basisᴰ : (F : Frame 𝓤 𝓥 𝓦) → 𝓤 ⊔ 𝓥 ⊔ 𝓦 ⁺  ̇
-basisᴰ {𝓤} {𝓥} {𝓦} F = Σ ℬ ꞉ Fam 𝓦 ⟨ F ⟩ , basis-forᴰ F ℬ
-
-\end{code}
-
-We will often have to talk about "directed bases": bases in which the covering
-families are directed.
-
-\begin{code}
-
-directed-basis-forᴰ : (F : Frame 𝓤 𝓥 𝓦) → Fam 𝓦 ⟨ F ⟩ → 𝓤 ⊔ 𝓥 ⊔ 𝓦 ⁺  ̇
-directed-basis-forᴰ {𝓤} {𝓥} {𝓦} F ℬ@(I , β) =
- (U : ⟨ F ⟩) →
-  Σ J ꞉ Fam 𝓦 I ,
-   (U is-lub-of ⁅ β j ∣ j ε J ⁆ ∧ is-directed F ⁅ β j ∣ j ε J ⁆) holds
-    where
-     open Joins (λ x y → x ≤[ poset-of F ] y)
-
-directed-basisᴰ : (F : Frame 𝓤 𝓥 𝓦) → 𝓤 ⊔ 𝓥 ⊔ 𝓦 ⁺  ̇
-directed-basisᴰ {𝓤} {𝓥} {𝓦} F =
- Σ ℬ ꞉ Fam 𝓦 ⟨ F ⟩ , directed-basis-forᴰ F ℬ
-
-directed-basis-is-basis : (F : Frame 𝓤 𝓥 𝓦) (ℬ : Fam 𝓦 ⟨ F ⟩)
-                        → directed-basis-forᴰ F ℬ
-                        → basis-forᴰ F ℬ
-directed-basis-is-basis {_} {_} {𝓦} F ℬ β U = † (β U)
- where
-  open Joins (λ x y → x ≤[ poset-of F ] y)
-
-  † : Σ J ꞉ Fam 𝓦 (index ℬ) ,
-       (U is-lub-of ⁅ ℬ [ j ] ∣ j ε J ⁆ ∧ is-directed F ⁅ ℬ [ j ] ∣ j ε J ⁆)
-        holds
-    → Σ J ꞉ Fam 𝓦 (index ℬ) , (U is-lub-of ⁅ ℬ [ j ] ∣ j ε J ⁆) holds
-  † (J , c , _)= J , c
+open PropositionalTruncation pt
 
 \end{code}
 
@@ -127,44 +78,6 @@ is-spectralₛ X = ∥ spectralₛᴰ X ∥Ω
 
 \end{code}
 
-Compact opens are basic:
-
-\begin{code}
-
-is-basic : (X : Locale 𝓤 𝓥 𝓦) → ⟨ 𝒪 X ⟩ → directed-basisᴰ (𝒪 X) → Ω (𝓤 ⊔ 𝓦)
-is-basic X U (ℬ , β) = U ∈image (ℬ [_]) , ∃-is-prop
-
-compact-opens-are-basic : (X : Locale 𝓤 𝓥 𝓦)
-                        → (b : directed-basisᴰ (𝒪 X))
-                        → (K : ⟨ 𝒪 X ⟩)
-                        → is-compact-open X K holds
-                        → is-basic X K b holds
-compact-opens-are-basic {_} {_} {𝓦} X (ℬ , β) K κ = ‡ (β K)
- where
-  open Joins (λ x y → x ≤[ poset-of (𝒪 X) ] y)
-
-  ‡ : (Σ 𝒥 ꞉ Fam 𝓦 (index ℬ) , (K is-lub-of ⁅ ℬ [ j ] ∣ j ε 𝒥 ⁆ ∧ is-directed (𝒪 X) ⁅ ℬ [ j ] ∣ j ε 𝒥 ⁆) holds)
-    → is-basic X K (ℬ , β) holds
-  ‡ (𝒥 , c , d) =
-   ∥∥-rec (holds-is-prop (is-basic X K (ℬ , β))) † (κ ⁅ ℬ [ j ] ∣ j ε 𝒥 ⁆ d q)
-    where
-     q : (K ≤[ poset-of (𝒪 X) ] (⋁[ 𝒪 X ] ⁅ ℬ [ j ] ∣ j ε 𝒥 ⁆)) holds
-     q = reflexivity+ (poset-of (𝒪 X)) (⋁[ 𝒪 X ]-unique ⁅ ℬ [ j ] ∣ j ε 𝒥 ⁆ K c)
-
-     † : Σ j ꞉ index 𝒥 , (K ≤[ poset-of (𝒪 X) ] ℬ [ 𝒥 [ j ] ]) holds
-       → is-basic X K (ℬ , β) holds
-     † (j , φ) = ∣ 𝒥 [ j ] , ≤-is-antisymmetric (poset-of (𝒪 X)) ψ φ ∣
-      where
-       open PosetReasoning (poset-of (𝒪 X))
-
-       Ⅰ = ⋁[ 𝒪 X ]-upper ⁅ ℬ [ j ] ∣ j ε 𝒥 ⁆ j
-       Ⅱ = reflexivity+ (poset-of (𝒪 X)) ((⋁[ 𝒪 X ]-unique ⁅ ℬ [ j ] ∣ j ε 𝒥 ⁆ K c) ⁻¹)
-
-       ψ : (ℬ [ 𝒥 [ j ] ] ≤[ poset-of (𝒪 X) ] K) holds
-       ψ = ℬ [ 𝒥 [ j ] ] ≤⟨ Ⅰ ⟩ ⋁[ 𝒪 X ] ⁅ ℬ [ j ] ∣ j ε 𝒥 ⁆ ≤⟨ Ⅱ ⟩ K ■
-
-\end{code}
-
 One of the things that we show in this module is that this truncation was
 unnecessary as the basis is unique in the presence of a small basis.
 
@@ -181,7 +94,7 @@ has-small-𝒦 {_} {_} {𝓦} X = 𝒦 X is 𝓦 small
 \begin{code}
 
 basis-is-unique : (X : Locale 𝓤 𝓥 𝓦)
-                → ((ℬ , _) : directed-basisᴰ (𝒪 X))
+                → ((ℬ , _) : Directed-Basisᴰ (𝒪 X))
                 → consists-of-compact-opens X ℬ holds
                 → image (ℬ-compact X [_]) ≃ image (ℬ [_])
 basis-is-unique X (ℬ , b) κ =
@@ -224,7 +137,7 @@ The following was refactored and simplified on 2024-09-23.
 \begin{code}
 
 basic-iso-to-𝒦 : (X : Locale 𝓤 𝓥 𝓦)
-               → ((ℬ , b) : directed-basisᴰ (𝒪 X))
+               → ((ℬ , b) : Directed-Basisᴰ (𝒪 X))
                → consists-of-compact-opens X ℬ holds
                → image (ℬ [_]) ≃ 𝒦 X
 basic-iso-to-𝒦 X (ℬ , β) κ = s , qinvs-are-equivs s (r , † , ‡)
@@ -280,7 +193,7 @@ local-smallness {𝓤} {𝓦} X = †
 \begin{code}
 
 basic-is-small : (X : Locale 𝓤 𝓥 𝓦)
-               → ((ℬ , b) : directed-basisᴰ (𝒪 X))
+               → ((ℬ , b) : Directed-Basisᴰ (𝒪 X))
                → ⟨ 𝒪 X ⟩ is-locally 𝓦 small
                → (image (ℬ [_])) is 𝓦 small
 basic-is-small X (ℬ , b) ψ =
@@ -291,7 +204,7 @@ basic-is-small X (ℬ , b) ψ =
 \begin{code}
 
 𝒦-is-small : (X : Locale 𝓤 𝓥 𝓦)
-           → ((ℬ , b) : directed-basisᴰ (𝒪 X))
+           → ((ℬ , b) : Directed-Basisᴰ (𝒪 X))
            → consists-of-compact-opens X ℬ holds
            → ⟨ 𝒪 X ⟩ is-locally 𝓦 small
            → (𝒦 X) is 𝓦 small
@@ -316,7 +229,7 @@ basic-is-small X (ℬ , b) ψ =
 spectral-and-small-𝒦-gives-basis : (X : Locale 𝓤 𝓦 𝓦)
                                  → is-spectral X holds
                                  → 𝒦 X is 𝓦 small
-                                 → basisᴰ (𝒪 X)
+                                 → Basisᴰ (𝒪 X)
 spectral-and-small-𝒦-gives-basis {𝓤} {𝓦} X 𝕤 (𝒦₀ , e) = (𝒦₀ , α) , β
  where
   open Joins (λ x y → x ≤[ poset-of (𝒪 X) ] y)
@@ -373,11 +286,11 @@ spectral-and-small-𝒦-gives-basis {𝓤} {𝓦} X 𝕤 (𝒦₀ , e) = (𝒦�
 spectral-and-small-𝒦-gives-directed-basis : (X : Locale 𝓤 𝓦 𝓦)
                                           → is-spectral X holds
                                           → 𝒦 X is 𝓦 small
-                                          → directed-basisᴰ (𝒪 X)
+                                          → Directed-Basisᴰ (𝒪 X)
 spectral-and-small-𝒦-gives-directed-basis {_} {𝓦} X σ 𝕤 =
  ℬ↑ , ℬ↑-is-directed-basis-for-X
   where
-   basis-X : basisᴰ (𝒪 X)
+   basis-X : Basisᴰ (𝒪 X)
    basis-X = spectral-and-small-𝒦-gives-basis X σ 𝕤
 
    ℬ : Fam 𝓦 ⟨ 𝒪 X ⟩
@@ -488,11 +401,11 @@ basisₛ-closed-under-∧ : (X : Locale 𝓤 𝓥 𝓦) (σᴰ : spectralᴰ X)
                       → closed-under-binary-meets (𝒪 X) (basisₛ X σᴰ) holds
 basisₛ-closed-under-∧ X σᴰ = pr₂ (pr₂ (pr₂ (pr₂ σᴰ)))
 
-spectralᴰ-implies-basisᴰ : (X : Locale 𝓤 𝓥 𝓦) → spectralᴰ X → basisᴰ (𝒪 X)
+spectralᴰ-implies-basisᴰ : (X : Locale 𝓤 𝓥 𝓦) → spectralᴰ X → Basisᴰ (𝒪 X)
 spectralᴰ-implies-basisᴰ X σᴰ = basisₛ X σᴰ , basisₛ-is-basis X σᴰ
 
 spectralᴰ-implies-directed-basisᴰ : (X : Locale 𝓤 𝓥 𝓦)
-                                  → spectralᴰ X → directed-basisᴰ (𝒪 X)
+                                  → spectralᴰ X → Directed-Basisᴰ (𝒪 X)
 spectralᴰ-implies-directed-basisᴰ X σᴰ =
  basisₛ X σᴰ , basisₛ-is-directed-basis X σᴰ
 
