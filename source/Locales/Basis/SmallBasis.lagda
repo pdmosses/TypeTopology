@@ -141,31 +141,31 @@ basic-iso-to-𝒦 : (X : Locale 𝓤 𝓥 𝓦)
                → consists-of-compact-opens X ℬ holds
                → image (ℬ [_]) ≃ 𝒦 X
 basic-iso-to-𝒦 X (ℬ , β) κ = s , qinvs-are-equivs s (r , † , ‡)
-  where
-   s : image (ℬ [_]) → 𝒦 X
-   s (K , φ) = K , ∥∥-rec (holds-is-prop (is-compact-open X K)) † φ
-    where
-     † : (Σ i ꞉ index ℬ , ℬ [ i ] ＝ K) → is-compact-open X K holds
-     † (i , q) = transport (λ - → is-compact-open X - holds) q (κ i)
+ where
+  s : image (ℬ [_]) → 𝒦 X
+  s (K , φ) = K , ∥∥-rec (holds-is-prop (is-compact-open X K)) † φ
+   where
+    † : (Σ i ꞉ index ℬ , ℬ [ i ] ＝ K) → is-compact-open X K holds
+    † (i , q) = transport (λ - → is-compact-open X - holds) q (κ i)
 
-   r : 𝒦 X → image (ℬ [_])
-   r (K , φ) = K , compact-opens-are-basic X (ℬ , β) K φ
+  r : 𝒦 X → image (ℬ [_])
+  r (K , φ) = K , compact-opens-are-basic X (ℬ , β) K φ
 
-   † : r ∘ s ∼ id
-   † (U , φ) = to-subtype-＝ (λ - → being-in-the-image-is-prop - (ℬ [_])) refl
+  † : r ∘ s ∼ id
+  † (U , φ) = to-subtype-＝ (λ - → being-in-the-image-is-prop - (ℬ [_])) refl
 
-   ‡ : s ∘ r ∼ id
-   ‡ 𝔘@(U , φ) = to-𝒦-＝ X ψ φ refl
-    where
-     ψ : is-compact-open X (pr₁ (r 𝔘)) holds
-     ψ = ∥∥-rec (holds-is-prop (is-compact-open X (pr₁ (r 𝔘)))) ♢ μ
-      where
-       ♢ : Σ i ꞉ index ℬ , ℬ [ i ] ＝ pr₁ (r (U , φ))
-         → is-compact-open X (pr₁ (r (U , φ))) holds
-       ♢ (i , p) = transport (λ - → is-compact-open X - holds) p (κ i)
+  ‡ : s ∘ r ∼ id
+  ‡ 𝔘@(U , φ) = to-𝒦-＝ X ψ φ refl
+   where
+    ψ : is-compact-open X (pr₁ (r 𝔘)) holds
+    ψ = ∥∥-rec (holds-is-prop (is-compact-open X (pr₁ (r 𝔘)))) ♢ μ
+     where
+      ♢ : Σ i ꞉ index ℬ , ℬ [ i ] ＝ pr₁ (r (U , φ))
+        → is-compact-open X (pr₁ (r (U , φ))) holds
+      ♢ (i , p) = transport (λ - → is-compact-open X - holds) p (κ i)
 
-       μ : pr₁ (r 𝔘) ∈image (ℬ [_])
-       μ = pr₂ (r (U , φ))
+      μ : pr₁ (r 𝔘) ∈image (ℬ [_])
+      μ = pr₂ (r (U , φ))
 
 \end{code}
 
