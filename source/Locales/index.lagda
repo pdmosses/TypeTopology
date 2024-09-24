@@ -74,6 +74,22 @@ import Locales.DiscreteLocale.Two-Properties
 
 \end{code}
 
+\section{Bases}
+
+The `Basis` subdirectory contains:
+
+  1. Various definitions of the notion of basis.
+  2. Properties of bases.
+  3. Relationship between compactness and bases.
+
+\begin{code}
+
+import Locales.Basis.Definition          -- (1)
+import Locales.Basis.Properties          -- (2)
+import Locales.Basis.BasesAndCompactness -- (3)
+
+\end{code}
+
 \begin{code}
 
 import Locales.AdjointFunctorTheoremForFrames    -- (1)
