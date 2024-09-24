@@ -55,6 +55,8 @@ open import Locales.LawsonLocale.CompactElementsOfPoint 𝓤 fe pe pt sr
 open import Locales.Point.SpectralPoint-Definition pt fe
 open import Locales.ScottLocale.Properties pt fe 𝓤
 open import Locales.ScottLocale.ScottLocalesOfScottDomains pt fe sr 𝓤
+open import Locales.Basis.BasesAndCompactness pt fe
+open import Locales.Basis.Definition pt fe
 open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralMap pt fe
 open import Locales.TerminalLocale.Properties pt fe sr
@@ -511,7 +513,7 @@ principal filters on compact opens.
  in-point-implies-contains-sharp ℱ@(F , ψ) K 𝕜 χ =
   ∥∥-rec (holds-is-prop (sharp₀ ℱ ∈ₛ K)) † γ
    where
-    ℬ↑ : directed-basisᴰ (𝒪 Scott⦅𝓓⦆)
+    ℬ↑ : Directed-Basisᴰ (𝒪 Scott⦅𝓓⦆)
     ℬ↑ = spectralᴰ-implies-directed-basisᴰ Scott⦅𝓓⦆ σᴰ
 
     γ : is-basic Scott⦅𝓓⦆ K (spectralᴰ-implies-directed-basisᴰ Scott⦅𝓓⦆ σᴰ) holds

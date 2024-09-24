@@ -45,6 +45,9 @@ private
  pe {𝓤} = univalence-gives-propext (ua 𝓤)
 
 open import Locales.AdjointFunctorTheoremForFrames pt fe
+open import Locales.Basis.BasesAndCompactness pt fe
+open import Locales.Basis.Definition pt fe
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Compactness.Definition pt fe
 open import Locales.ContinuousMap.Definition pt fe
 open import Locales.ContinuousMap.FrameHomomorphism-Definition pt fe
@@ -62,7 +65,6 @@ open import Locales.DistributiveLattice.Spectrum fe pe pt
 open import Locales.DistributiveLattice.Spectrum-Properties fe pe pt sr
 open import Locales.Frame pt fe
 open import Locales.GaloisConnection pt fe
-open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.LatticeOfCompactOpens ua pt sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Slice.Family
@@ -480,10 +482,10 @@ is called `join-cancels-ϕ`.
  σᴰ : spectralᴰ X
  σᴰ = spectral-and-small-𝒦-implies-spectralᴰ X (pr₁ σ₀) (pr₂ σ₀)
 
- basis-X : basisᴰ (𝒪 X)
+ basis-X : Basisᴰ (𝒪 X)
  basis-X = spectral-and-small-𝒦-gives-basis X (pr₁ σ₀) (pr₂ σ₀)
 
- basis↑-X : directed-basisᴰ (𝒪 X)
+ basis↑-X : Directed-Basisᴰ (𝒪 X)
  basis↑-X = spectral-and-small-𝒦-gives-directed-basis X (pr₁ σ₀) (pr₂ σ₀)
 
  ℬ↑-X : Fam 𝓤 ⟨ 𝒪 X ⟩

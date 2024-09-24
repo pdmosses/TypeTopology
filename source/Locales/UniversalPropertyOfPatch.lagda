@@ -43,6 +43,8 @@ open import Locales.PatchLocale                pt fe sr
 open import Locales.PatchProperties            pt fe sr
 open import Locales.PerfectMaps                pt fe
 open import Locales.ScottContinuity            pt fe sr
+open import Locales.Basis.Definition           pt fe
+open import Locales.Basis.BasesAndCompactness  pt fe
 open import Locales.Basis.SmallBasis           pt fe sr
 open import Locales.Spectrality.Properties     pt fe
 open import Locales.Spectrality.SpectralLocale pt fe
@@ -163,7 +165,7 @@ the enumeration function.
  β-is-directed-basis : is-directed-basis (𝒪 A) (Bₐ , βₐ)
  β-is-directed-basis = basisₛ-is-basis A σᴰ , basisₛ-covers-are-directed A σᴰ
 
- A-directed-basisᴰ : directed-basisᴰ (𝒪 A)
+ A-directed-basisᴰ : Directed-Basisᴰ (𝒪 A)
  A-directed-basisᴰ = basisₛ A σᴰ , †
   where
    † : directed-basis-forᴰ (𝒪 A) (Bₐ , βₐ)
@@ -425,7 +427,7 @@ separate proof
 
  open PatchStoneᴰ A σᴰ
 
- Patchₛ-A-basisᴰ : basisᴰ (𝒪 Patchₛ-A)
+ Patchₛ-A-basisᴰ : Basisᴰ (𝒪 Patchₛ-A)
  Patchₛ-A-basisᴰ =
   spectralᴰ-implies-basisᴰ Patchₛ-A patchₛ-spectralᴰ
 

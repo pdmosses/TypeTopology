@@ -40,7 +40,7 @@ open import Locales.Complements      pt fe
 open import Locales.GaloisConnection pt fe
 open import Locales.InitialFrame     pt fe
 open import Locales.Clopen           pt fe sr
-open import Locales.Basis.SmallBasis pt fe sr
+open import Locales.Basis.Definition pt fe
 open import Locales.Regular          pt fe sr
 open import Locales.WellInside       pt fe sr
 
@@ -117,7 +117,7 @@ is-zero-dimensional F = ∥ zero-dimensionalᴰ F ∥Ω
 \begin{code}
 
 zero-dimensionalᴰ-implies-has-basis : (L : Frame 𝓤 𝓥 𝓦)
-                                    → zero-dimensionalᴰ L → basisᴰ L
+                                    → zero-dimensionalᴰ L → Basisᴰ L
 zero-dimensionalᴰ-implies-has-basis {𝓤} {𝓥} {𝓦} L zd = ℬ , †
  where
   open Joins (λ x y → x ≤[ poset-of L ] y)
@@ -134,7 +134,7 @@ zero-dimensionalᴰ-implies-has-basis {𝓤} {𝓥} {𝓦} L zd = ℬ , †
     φ = basis-zd-covers-do-cover L zd U
 
 zero-dimensionalᴰ-implies-has-directed-basis : (L : Frame 𝓤 𝓥 𝓦)
-                                    → zero-dimensionalᴰ L → directed-basisᴰ L
+                                    → zero-dimensionalᴰ L → Directed-Basisᴰ L
 zero-dimensionalᴰ-implies-has-directed-basis {𝓤} {𝓥} {𝓦} L zd = ℬ , †
  where
   open Joins (λ x y → x ≤[ poset-of L ] y)

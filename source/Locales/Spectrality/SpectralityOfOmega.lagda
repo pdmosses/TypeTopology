@@ -32,6 +32,7 @@ open import Slice.Family
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Locales.Spectrality.BasisDirectification pt fe sr
 open import Locales.Basis.SmallBasis pt fe sr
+open import Locales.Basis.Definition pt fe
 
 open import UF.Logic
 open AllCombinators pt fe
@@ -101,7 +102,7 @@ and₂-lemma₃ (inr ⋆) y (z , p₁ , p₂) = p₂
   †₂ = and₂-lemma₂ i j
 
 
-ℬ𝟎↑-directed-basisᴰ : directed-basisᴰ (𝟎-𝔽𝕣𝕞 pe)
+ℬ𝟎↑-directed-basisᴰ : Directed-Basisᴰ (𝟎-𝔽𝕣𝕞 pe)
 ℬ𝟎↑-directed-basisᴰ = ℬ𝟎↑ , β↑
  where
   -- TODO: get rid of these projections.

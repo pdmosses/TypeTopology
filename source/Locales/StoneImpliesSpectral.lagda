@@ -33,6 +33,9 @@ Importations of other locale theory modules.
 \begin{code}
 
 open import Locales.AdjointFunctorTheoremForFrames
+open import Locales.Basis.BasesAndCompactness pt fe
+open import Locales.Basis.Definition pt fe
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Clopen pt fe sr
 open import Locales.Compactness.Definition pt fe
 open import Locales.Complements pt fe
@@ -41,7 +44,6 @@ open import Locales.Frame pt fe
 open import Locales.GaloisConnection pt fe
 open import Locales.InitialFrame pt fe
 open import Locales.ScottContinuity pt fe sr
-open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Locales.Spectrality.SpectralMap pt fe
 open import Locales.Stone pt fe sr
@@ -139,7 +141,7 @@ Clopens are basic in compact locales.
 \begin{code}
 
 clopens-are-basic : (X : Locale 𝓤 𝓥 𝓦) (st : stoneᴰ X)
-                  → (𝒷 : directed-basisᴰ (𝒪 X))
+                  → (𝒷 : Directed-Basisᴰ (𝒪 X))
                   → (K : ⟨ 𝒪 X ⟩)
                   → (is-clopen (𝒪 X) K ⇒ is-basic X K 𝒷) holds
 clopens-are-basic X (κ , _) 𝒷 K 𝕔 =

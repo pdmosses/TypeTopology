@@ -20,6 +20,8 @@ module Locales.PatchProperties
         (sr : Set-Replacement pt) where
 
 open import Locales.AdjointFunctorTheoremForFrames pt fe
+open import Locales.Basis.Definition pt fe
+open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.CharacterisationOfContinuity pt fe
 open import Locales.Clopen      pt fe sr
 open import Locales.CompactRegular pt fe using (∨-is-scott-continuous)
@@ -34,7 +36,6 @@ open import Locales.Nucleus pt fe
 open import Locales.PatchLocale pt fe sr
 open import Locales.PerfectMaps pt fe
 open import Locales.Regular pt fe sr
-open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Locales.Spectrality.SpectralMap    pt fe
 open import Locales.Stone pt fe sr
@@ -183,7 +184,7 @@ module OpenNucleus (X  : Locale 𝓤 𝓥 𝓥)
  open PatchConstruction X σ renaming (Perfect-Nucleus to Perfect-Nucleus-on-X)
 
  private
-  X-has-small-basis : ∥ basisᴰ (𝒪 X) ∥
+  X-has-small-basis : ∥ Basisᴰ (𝒪 X) ∥
   X-has-small-basis = ∣ spectralᴰ-implies-basisᴰ X σᴰ ∣
 
  open HeytingImplicationConstruction X X-has-small-basis
@@ -421,7 +422,7 @@ module Epsilon (X : Locale (𝓤 ⁺) 𝓤 𝓤) (σᴰ : spectralᴰ X) where
   ℬ↑ : Fam 𝓤 ⟨ 𝒪 X ⟩
   ℬ↑ = basisₛ X σᴰ
 
-  d : directed-basisᴰ (𝒪 X)
+  d : Directed-Basisᴰ (𝒪 X)
   d = ℬ↑ , basisₛ-is-directed-basis X σᴰ
 
   β : has-basis (𝒪 X) holds
@@ -640,7 +641,7 @@ module PatchComplementation (X : Locale (𝓤 ⁺) 𝓤 𝓤) (σᴰ : spectral�
  ℬ↑ : Fam 𝓤 ⟨ 𝒪 X ⟩
  ℬ↑ = basisₛ X σᴰ
 
- d : directed-basisᴰ (𝒪 X)
+ d : Directed-Basisᴰ (𝒪 X)
  d = ℬ↑ , basisₛ-is-directed-basis X σᴰ
 
  β : has-basis (𝒪 X) holds
@@ -652,7 +653,7 @@ module PatchComplementation (X : Locale (𝓤 ⁺) 𝓤 𝓤) (σᴰ : spectral�
  sk : 𝒦 X is 𝓤 small
  sk = 𝒦-is-small X d κ (local-smallness X)
 
- X-has-small-basis : ∥ basisᴰ (𝒪 X) ∥
+ X-has-small-basis : ∥ Basisᴰ (𝒪 X) ∥
  X-has-small-basis = ∣ spectralᴰ-implies-basisᴰ X σᴰ ∣
 
  open SmallPatchConstruction X σᴰ renaming (SmallPatch to Patchₛ-X)
@@ -807,7 +808,7 @@ module BasisOfPatch (X : Locale (𝓤 ⁺) 𝓤 𝓤) (σᴰ : spectralᴰ X) wh
  ℬ↑ : Fam 𝓤 ⟨ 𝒪 X ⟩
  ℬ↑ = basisₛ X σᴰ
 
- d : directed-basisᴰ (𝒪 X)
+ d : Directed-Basisᴰ (𝒪 X)
  d = ℬ↑ , basisₛ-is-directed-basis X σᴰ
 
  β : has-basis (𝒪 X) holds
@@ -1148,7 +1149,7 @@ module PatchStoneᴰ (X : Locale (𝓤 ⁺) 𝓤 𝓤) (σᴰ : spectralᴰ X) w
  ℬ↑ : Fam 𝓤 ⟨ 𝒪 X ⟩
  ℬ↑ = basisₛ X σᴰ
 
- d : directed-basisᴰ (𝒪 X)
+ d : Directed-Basisᴰ (𝒪 X)
  d = ℬ↑ , basisₛ-is-directed-basis X σᴰ
 
  β : has-basis (𝒪 X) holds

@@ -48,7 +48,9 @@ open import Locales.Frame                                    pt fe
  hiding (∅)
 open import Locales.ScottLocale.Definition                   pt fe 𝓤
 open import Locales.ScottLocale.Properties pt fe 𝓤
+open import Locales.Basis.Definition pt fe
 open import Locales.Basis.SmallBasis pt fe sr
+open import Locales.Basis.BasesAndCompactness pt fe
 open import Locales.Spectrality.SpectralLocale               pt fe
 
 open AllCombinators pt fe
@@ -685,7 +687,7 @@ combined as follows.
  σᴰ : spectralᴰ Σ[𝓓]
  σᴰ = pr₁ Σ-assoc (𝒷 , 𝜸-gives-compact-opens , τ , μ)
   where
-   𝒷 : directed-basisᴰ (𝒪 Σ[𝓓])
+   𝒷 : Directed-Basisᴰ (𝒪 Σ[𝓓])
    𝒷 = basis-for-Σ[𝓓] , Σ[𝓓]-dir-basis-forᴰ
 
    τ : contains-top (𝒪 Σ[𝓓]) basis-for-Σ[𝓓] holds
