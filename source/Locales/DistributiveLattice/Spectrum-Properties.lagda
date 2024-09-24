@@ -12,10 +12,10 @@ frame of which is the frame of ideals over `L`.
 
 {-# OPTIONS --safe --without-K #-}
 
-open import UF.PropTrunc
 open import UF.FunExt
-open import UF.Subsingletons
+open import UF.PropTrunc
 open import UF.Size
+open import UF.Subsingletons
 
 module Locales.DistributiveLattice.Spectrum-Properties
         (fe : Fun-Ext)
@@ -24,7 +24,9 @@ module Locales.DistributiveLattice.Spectrum-Properties
         (sr : Set-Replacement pt)
        where
 
+open import Locales.Basis.BasesAndCompactness pt fe
 open import Locales.Basis.Definition pt fe
+open import Locales.Basis.Properties pt fe sr
 open import Locales.Basis.SmallBasis pt fe sr
 open import Locales.Compactness.Definition pt fe
 open import Locales.DistributiveLattice.Definition fe pt
