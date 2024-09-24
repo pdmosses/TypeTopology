@@ -22,7 +22,7 @@ module Locales.Basis.SmallBasis
         (sr : Set-Replacement pt)
        where
 
-open import Locales.Frame       pt fe hiding (has-directed-basis₀)
+open import Locales.Frame pt fe hiding (has-directed-basis₀)
 open import Locales.Compactness.Definition pt fe
 open import Locales.Spectrality.SpectralLocale pt fe
 open import Slice.Family
