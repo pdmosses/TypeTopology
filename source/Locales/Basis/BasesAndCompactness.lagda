@@ -128,8 +128,6 @@ basis-is-unique X (ℬ , b) κ =
 
 \end{code}
 
-Having a directed basis is a proposition under certain favourable conditions.
-
 The following was refactored and simplified on 2024-09-23.
 
 \begin{code}
