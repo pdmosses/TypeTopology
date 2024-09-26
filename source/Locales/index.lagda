@@ -79,14 +79,16 @@ import Locales.DiscreteLocale.Two-Properties
 The `Basis` subdirectory contains:
 
   1. Various definitions of the notion of basis.
-  2. Properties of bases.
-  3. Relationship between compactness and bases.
+  2. Definition of the notion of weak basis.
+  3. Properties of bases.
+  4. Relationship between compactness and bases.
 
 \begin{code}
 
 import Locales.Basis.Definition          -- (1)
-import Locales.Basis.Properties          -- (2)
-import Locales.Basis.BasesAndCompactness -- (3)
+import Locales.Basis.Definition-Weak     -- (2)
+import Locales.Basis.Properties          -- (3)
+import Locales.Basis.BasesAndCompactness -- (4)
 
 \end{code}
 
