@@ -1,5 +1,5 @@
-Peter Mosses, 16 May 2025
-Incomplete initial draft
+Peter Mosses, May 2025
+Incomplete
 
 Formalization of the untyped λ-calculus and its interpretation in Scott's D∞.
 See DomainTheory.Bilimits.Dinfinity for the construction of D∞.
@@ -39,10 +39,27 @@ open import DomainTheory.Bilimits.Dinfinity pt fe pe hiding (ρ)
 
 \end{code}
 
-We have the non-trivial domain 𝓓∞ ≃ᵈᶜᵖᵒ (𝓓∞ ⟹ᵈᶜᵖᵒ 𝓓∞)
+We have the non-trivial domain 𝓓∞ and isomorphism 𝓓∞ ≃ᵈᶜᵖᵒ (𝓓∞ ⟹ᵈᶜᵖᵒ 𝓓∞).
 
-We start by defining an abstract syntax for terms of the λ-calculus,
-parametrized by the abstract syntax of variables with boolean equality.
+Below, we define the function abs from continuous endofunctions on 𝓓∞ to 𝓓∞.
+The function app composes the inverse of abs with extracting the underlying
+function fron a continuous function.
+
+\begin{code}
+
+abs : ⟨ 𝓓∞ ⟹ᵈᶜᵖᵒ 𝓓∞ ⟩ → ⟨ 𝓓∞ ⟩
+abs = [ 𝓓∞ ⟹ᵈᶜᵖᵒ 𝓓∞ , 𝓓∞  ]⟨ π-exp∞' ⟩
+
+app : ⟨ 𝓓∞ ⟩ → ⟨ 𝓓∞ ⟩ → ⟨ 𝓓∞ ⟩
+app = underlying-function 𝓓∞ 𝓓∞ ∘ [ 𝓓∞  , 𝓓∞ ⟹ᵈᶜᵖᵒ 𝓓∞ ]⟨ ε-exp∞' ⟩
+ 
+\end{code}
+
+We define an abstract syntax for terms of the λ-calculus, parametrized by the
+abstract syntax of variables with a Bool-valued equality test.
+
+The terms of the λ-calculus include free variables, so their abstract syntax
+is not well-scoped.
 
 \begin{code}
 
@@ -61,9 +78,11 @@ module Terms
 
 \end{code}
 
-Environments ρ : Env map variables v : Var to elements of ⟨ 𝓓∞ ⟩.
+As usual in conventional Scott–Strachey style denotational semantics,
+bindings are modeled by environments ρ : Env that map variables v : Var
+to elements of semantic domains, and ρ [ x / v ] extends ρ to map v to x.
 
-The environment ρ [ x / v ] maps v to x, and otherwise maps variables as ρ.
+We define Env simply as a function type, as we do not need it to be a domain.
 
 \begin{code}
 
@@ -71,26 +90,24 @@ The environment ρ [ x / v ] maps v to x, and otherwise maps variables as ρ.
  variable ρ : Env
 
  _[_/_] : Env → ⟨ 𝓓∞ ⟩ → Var → Env
- ρ [ d / v ] = λ v′ → if v == v′ then d else ρ v′
+ ρ [ x / v ] = λ v′ → if v == v′ then x else ρ v′
 
 \end{code}
 
-The denotation ⟦ e ⟧ of a term e is a function of an environment ρ : Env.
-
-In the absence of explicit fixed points, continuity of denotations is
-irrelevant.  For simplicity, we take Env → ⟨ 𝓓∞ ⟩ as the type of denotations.
+The denotation ⟦ e ⟧ of a term e is an element of the type Env → ⟨ 𝓓∞ ⟩.
 
 \begin{code}
 
  ⟦_⟧ : Exp → Env → ⟨ 𝓓∞ ⟩
- ⟦ var v   ⟧ ρ =
-  ρ v
- ⟦ ƛ v · e ⟧ ρ =
-  [ 𝓓∞ ⟹ᵈᶜᵖᵒ 𝓓∞ , 𝓓∞  ]⟨ π-exp∞' ⟩
-   ( (λ x → ⟦ e ⟧ (ρ [ x / v ])) , {!   !} )
- ⟦ e₁ · e₂ ⟧ ρ =
-  [ 𝓓∞ , 𝓓∞ ]⟨
-   [ 𝓓∞  , 𝓓∞ ⟹ᵈᶜᵖᵒ 𝓓∞ ]⟨ ε-exp∞' ⟩ ( ⟦ e₁ ⟧ ρ )
-  ⟩ ( ⟦ e₂ ⟧ ρ )
+ ƛ-is-continuous : ∀ e ρ v → is-continuous 𝓓∞ 𝓓∞ (λ x → ⟦ e ⟧ (ρ [ x / v ]))
+
+ ⟦ var v   ⟧ ρ = ρ v
+ ⟦ ƛ v · e ⟧ ρ = abs ( (λ x → ⟦ e ⟧ (ρ [ x / v ])) , ƛ-is-continuous e ρ v )
+ ⟦ e₁ · e₂ ⟧ ρ = app ( ⟦ e₁ ⟧ ρ ) ( ⟦ e₂ ⟧ ρ )
+
+ ƛ-is-continuous e ρ v = {!   !}
 
 \end{code}
+
+The definition of ƛ-is-continuous e ρ v appears to require lifting lubs of
+directed families through the denotation of term e, and could be lengthy...
