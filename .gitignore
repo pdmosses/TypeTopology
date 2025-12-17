@@ -26,3 +26,6 @@ html/*
 source/html/*
 *.DS_Store
 #*
+docs/html/*
+docs/md/*
+site/*

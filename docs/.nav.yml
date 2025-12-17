@@ -1,0 +1,16 @@
+nav:
+  - index.md
+  - About: 
+    - about.md
+    - user-guide.md
+  - AllModulesIndex:
+    - md/AllModulesIndex/index.md
+  - Library:
+    - md/index/index.md
+    - md/*
+  - HTML: html/AllModulesIndex.html
+
+preserve_directory_names: true
+
+sort:
+  sections: mixed

@@ -1,0 +1,504 @@
+# Agda-Material
+
+https://pdmosses.github.io/agda-material/
+
+# Generate websites with highlighted, hyperlinked web pages from Agda code
+
+# Peter Mosses (@pdmosses)
+# December 2025
+
+##############################################################################
+# MAIN TARGETS
+
+# SHOW EXPLANATIONS:
+# make help
+
+# CHECK THE AGDA CODE:
+# make check
+
+# GENERATE AND BROWSE A WEBSITE:
+# make web
+# make serve
+
+# REMOVE ALL GENERATED FILES:
+# make clean-all
+
+# DEPLOY A GENERATED WEBSITE:
+# make deploy
+# make initial VERSION=...
+# make default VERSION=...
+# make extra   VERSION=...
+# make delete  VERSION=...
+# make delete-all-versions
+# make serve-deployed-versions
+# make list-all-versions
+
+# SHOW VARIABLE VALUES:
+# make debug
+# The expected output is listed at the end of this file
+
+##############################################################################
+# COMMAND LINE ARGUMENTS
+#
+# Name    Purpose
+# -----------------------------
+# DIR     Agda import include-paths
+# ROOT    Agda root modules
+#
+# VERSION for versioned website deployment
+#
+# HTML    generated directory for HTML files
+# MD      generated directory for Markdown files
+
+# ARGUMENT DEFAULT VALUES
+
+DIR     := source
+ROOT    := AllModulesIndex
+
+# Both DIR and ROOT may be comma-separated lists.
+# The top level of the ROOT module(s) should be in DIR.
+
+HTML    := docs/html
+MD      := docs/md
+
+# All files in the docs directory are rendered in the generated website
+# (except for docs/.* files and files explicitly excluded in mkdocs.yml).
+
+# Top-level navigation links are specified in docs/.nav.yml; the lower
+# navigation levels reflect the directory hierarchy of the source files.
+
+##############################################################################
+# CONTENTS
+#
+# VARIABLES
+# HELPFUL TARGETS
+# CHECK THE AGDA CODE
+# GENERATE AND BROWSE A WEBSITE
+# REMOVE GENERATED FILES
+# DEPLOY A WEBSITE AND MANAGE VERSIONS
+# HELPFUL TEXTS
+
+##############################################################################
+# VARIABLES
+
+# Characters:
+
+EMPTY :=
+
+SPACE := $(EMPTY) $(EMPTY)
+
+COMMA := ,
+
+# Shell commands:
+
+SHELL=/bin/sh
+
+PROJECT := $(shell pwd)
+
+# Provide the path(s) DIR for agda to search for imports:
+
+INCLUDE-PATHS := $(subst $(COMMA),$(SPACE), $(DIR))
+
+# Determine the root module files specied by ROOT and DIR:
+
+ROOT-PATHS := $(subst .,/, $(subst $(COMMA),$(SPACE), $(ROOT)))
+
+ROOT-FILES := \
+	$(filter %.agda %.lagda %.lagda.tex %.lagda.md, \
+	  $(foreach d, $(INCLUDE-PATHS), \
+	    $(wildcard \
+	      $(addsuffix .*, $(addprefix $d/, $(ROOT-PATHS))))))
+
+# When generating a website for a library, add --no-default-libraries to AGDA:
+
+AGDA := agda $(addprefix --include-path=, $(INCLUDE-PATHS))
+
+# AGDA-QUIET does not print any messages about checking modules:
+
+AGDA-QUIET   := $(AGDA) --trace-imports=0
+
+# AGDA-VERBOSE reports loading all modules, and the location of any error:
+
+AGDA-VERBOSE := $(AGDA) --trace-imports=3
+
+##############################################################################
+# HELPFUL TARGETS
+
+# `make` without a target is equivalent to `make help`. It lists the main
+# targets and their purposes:
+
+.PHONY: help
+export HELP
+help:
+	@echo "$$HELP"
+
+# Force sequential execution of phony prerequisites:
+
+.NOTPARALLEL:
+
+##############################################################################
+# CHECK THE AGDA CODE
+
+# `make check` first tries to load the ROOT-FILES quietly. If they all load
+# without errors, it reports that checking has finished; otherwise it reloads
+# them verbosely, to display the error and its location:
+
+.PHONY: check
+check: 
+	@for f in $(ROOT-FILES); do \
+	  { $(AGDA-QUIET) $$f 2>&1 > /dev/null && \
+	    echo "Checking $$f finished"; } || \
+	  { $(AGDA-VERBOSE) $$f 2>&1 | sed -e 's#$(PROJECT)/##'; \
+	    echo "Checking $$f abandoned"; \
+	    exit; } \
+	  done
+	
+##############################################################################
+# GENERATE WEB PAGES
+
+# Generate highlighted hyperlinked HTML pages in the HTML directory from the
+# ROOT-FILES, then list their filenames (in alphabetic order):
+
+HTML-FILES := \
+	  $(sort \
+	    $(shell \
+	      rm -rf $(HTML); \
+	      for f in $(ROOT-FILES); do \
+	        $(AGDA-QUIET) --html --highlight-occurrences \
+	          --html-dir=$(HTML) $$f; \
+	      done; \
+				cp assets/Agda.css $(HTML);\
+	      ls $(HTML)/*.html))
+
+# The official TypeTopology website uses the non-standard assets/Agda.css,
+# which has to be copied to the HTML directory.
+
+# Target files for Markdown generation:
+
+MD-FILES := \
+	$(sort \
+	  $(subst $(HTML)/,$(MD)/, \
+	    $(addsuffix /index.md, \
+	      $(subst .,/, \
+	        $(basename $(HTML-FILES))))))
+
+# Generate highlighted hyperlinked web pages in the MD directory from the
+# ROOT-FILES:
+
+.PHONY: web
+web: $(MD-FILES)
+	@echo "Web pages finished"
+
+# Note: Generating the web pages for the standard library takes a few minutes.
+
+# Create HTML files in MD:
+
+$(MD):
+	@rm -rf $(MD)
+	@for f in $(ROOT-FILES); do \
+	  $(AGDA-QUIET) --html --html-highlight=code --highlight-occurrences \
+	        --html-dir=$(MD) $$f; \
+	  done	      
+	@rm -f $(MD)/*.css $(MD)/*.js
+
+# `agda --html --html-highlight=code ROOT` generates highlighted HTML files
+# from plain and literate Agda source files. The generated file extension
+# depends on the source file extension. It is:
+#  - html for *.agda files,
+#  - tex for *.lagda and *.lagda.tex files, and
+#  - md for *.lagda.md files.
+# The html files need to be wrapped in <pre class="Agda">...</pre> tags.
+# In the tex files, the code blocks are wrapped in those tags, but in fact
+# the entire file needs to be wrapped in them instead.
+# In the md files, the tags wrapping the code blocks are correctly located.
+# For semantic HTML, code should also be in <code class="Agda">...</code>.
+# (This version of Agda-Material does not generate web pages from files that
+# Agda generates from other kinds of literate Agda files.)
+
+# All the generated files need to be renamed to */index.md files.
+
+# The links in the HTML files assume they are all in the same directory, and
+# that all files have extension html. Adjusting them to hierarchical links with
+# directory URLs involves:
+#  - replacing the dots in the basenames of the files by slashes,
+#  - prefixing the href by the path to the top of the hierarchy, and
+#  - appending a slash to the file path.
+# All URLs that start with A-Z or a-z are assumed to be links to modules, and
+# adjusted in the same way (also in the prose parts of the literate Agda code).
+
+# The order-only prerequisite ensures that the HTML files have been generated:
+
+$(MD-FILES): $(MD)/%/index.md: | $(MD)
+#	Ensure the hierarchical directory exists:
+	@mkdir -p $(@D)
+#	Ensure pre and code tags are correctly positioned:
+	@if [ -f $(MD)/$(subst /,.,$*).html ]; then \
+	    mv -f $(MD)/$(subst /,.,$*).html $@; \
+	    sd '\A' '<pre class="Agda"><code class="Agda">' $@; \
+	    sd '\z' '</code></pre>' $@; \
+	elif [ -f $(MD)/$(subst /,.,$*).tex ]; then \
+	    mv -f $(MD)/$(subst /,.,$*).tex $@; \
+	    sd '<pre class="Agda">\n' '<code class="Agda">' $@; \
+	    sd '\n</pre>' '</code>' $@; \
+	    sd '\A' '<pre class="Agda">' $@; \
+	    sd '\z' '</pre>' $@; \
+	elif [ -f $(MD)/$(subst /,.,$*).md ]; then \
+	    mv -f $(MD)/$(subst /,.,$*).md $@; \
+	    sd '(<pre class="Agda">)' '$$1<code class="Agda">' $@; \
+	    sd '(</pre>)' '</code>$$1' $@; \
+	else \
+	    echo "Module $* has an unsupported type of literate Agda."; \
+	    echo "Agda-Material did not generate a web page for it,"; \
+	    echo "and all references to the module are broken links."; \
+	fi
+#	Remove superfluous white space:
+	@sd '<pre class="Agda"><code class="Agda">[ \n]*</code></pre>' '' $@
+	@sd '[ \n]+</code></pre>' '</code></pre>' $@
+	@sd '</code></pre>([ \n]*)<pre class="Agda"><code class="Agda">' '$$1' $@
+#	Prepend front matter, and ensure a top-level heading:
+	@if grep -q '^# ' $@; then \
+	    sd -- '\A' '---\ntitle: $(*F)\nhide: toc\n---\n\n' $@; \
+	else \
+	    sd -- '\A' '---\ntitle: $(*F)\nhide: toc\n---\n\n# $(subst /,.,$*)\n\n' $@; \
+	fi
+#	Use directory URLs:
+	@sd '(href="[A-Za-z][^"]*)\.html' '$$1/' $@
+#	Replace `.`-separated filenames in URLs by `/`-separated paths:
+	@while grep -q 'href="[A-Z][^".]*\.' $@; do \
+	    sd '(href="[A-Za-z][^".]*)\.' '$$1/' $@; \
+	done
+#	Prefix paths by the relative path to the top level:
+	@sd 'href="([A-Za-z])' \
+	'href="$(subst $(SPACE),$(EMPTY),$(foreach d,$(subst /, ,$*),../))$$1' \
+	$@
+
+# The links generated by Agda always start with the file name. This could be
+# omitted for local links where the target is in the same file. Similarly, the
+# links to modules in the same directory could be optimized.
+
+# BROWSE THE GENERATED WEBSITE
+
+# `make serve` provides a local preview of an unversioned website:
+
+.PHONY: serve
+serve:
+	@mkdocs serve --livereload
+
+##############################################################################
+# REMOVE GENERATED FILES
+
+# `make clean-all` removes all generated files.
+
+.PHONY: clean-all
+clean-all:
+	@rm -rf $(HTML)
+	@rm -rf $(MD)
+
+##############################################################################
+# DEPLOY A WEBSITE AND MANAGE VERSIONS
+
+# TODO: Check that the various conditions prevent inadvertent version deletion.
+
+VERSION =
+
+# `make deploy` publishes an unversioned website on GitHub Pages:
+
+.PHONY: deploy
+deploy:
+ifndef VERSION
+	@if [[ -z "$$(mike list)" ]]; then \
+	    mkdocs gh-deploy --force --ignore-version; \
+	else \
+	    echo "First run make delete-all-deployed-versions"; \
+	fi
+else
+	@echo "Error: VERSION value set"
+	@echo "Use one of the following commands to deploy version v:"
+	@echo "  make initial VERSION=v"
+	@echo "  make default VERSION=v"
+	@echo "  make extra   VERSION=v"
+endif
+
+# (The `ignore-version` option is added due to an potential conflict
+# between mkdocs and mike version numbers.)
+
+# The make commands for deploying or deleting a version require VERSION to be
+# defined by either passing it as an argument or assigning it as a default.
+
+# It is recommended to omit patch numbers in semantic versioning.
+# Version identifiers that "look like" versions (e.g. 1.2.3, 1.0b1, v1.0)
+# are treated as ordinary versions, whereas other identifiers, like devel,
+# are treated as development versions, and placed above ordinary versions.
+
+# N.B. To deploy website versions, uncomment the following lines in mkdocs.yml:
+# extra:
+#   version:
+#     provider: mike
+
+# Agda-Material supports a simplified form of version deployment:
+# - make initial VERSION=...
+# - make default VERSION=...
+# - make extra VERSION=...
+# - make delete VERSION=...
+# - make list-versions
+# - make delete-all-deployed-versions
+
+# For additional generality, use the `mike` commands documented at
+# https://github.com/jimporter/mike.
+
+# `make initial VERSION=...`:
+#  - checks that no versions have already been deployed,
+#  - deletes any previously deployed unversioned website,
+#  - deploys the current generated website as the specified VERSION, and
+#  - sets VERSION as the default version.
+
+.PHONY: initial
+initial:
+ifdef VERSION
+	@if [[ -z "$$(mike list)" ]]; then \
+	    mike deploy $(VERSION) default; \
+	    mike set-default default --push; \
+	    echo "Deployed $(VERSION) as the only version"; \
+	else \
+	    echo "First run make delete-all-deployed-versions" \
+	fi
+else 
+	@echo "Error: missing VERSION=..."
+endif
+
+# `make default VERSION=...`
+#  - deploys the current generated website as the specified VERSION, and
+#  - sets VERSION as the default version.
+
+.PHONY: default
+default:
+ifdef VERSION
+	@mike deploy $(VERSION) default --update-aliases --push
+	@echo "Deployed $(VERSION) as the default version"
+else
+	@echo "Error: missing VERSION=..."
+endif
+
+# `make extra VERSION=...`:
+#  - deploys the current generated website as the specified VERSION, but
+#  - does not set it as the default version.
+
+.PHONY: extra
+extra:
+ifdef VERSION
+	@mike deploy $(VERSION) --push
+	@echo "Deployed $(VERSION) as an extra version"
+else
+	@echo "Error: missing VERSION=..."
+endif
+
+# `make delete VERSION=...`:
+#  - removes a deployed version of a website.
+
+# If VERSION is set as the default version, this can break existing links to
+# the website! To avoid that, first use `make default` to set the default to
+# a different version.
+
+.PHONY: delete
+delete:
+ifdef VERSION
+	@mike delete $(VERSION) --allow-empty --push
+	@echo "Deleted $(VERSION)"
+else
+	@echo "Error: missing VERSION"
+endif
+
+# `make list-versions` lists all currently-deployed versions.
+
+.PHONY: list-versions
+list-versions:
+	@mike list
+
+# `make delete-all-deployed-versions` clears all versions of the deployed site.
+
+.PHONY: delete-all-deployed-versions
+delete-all-deployed-versions:
+	@mike delete --all --allow-empty --push
+	@echo "Deleted all versions"
+
+##############################################################################
+# HELPFUL TEXTS
+
+define HELP
+
+make (or make help)
+  Display this list of make targets
+make check
+  Check loading the Agda source files for $(ROOT)
+
+make web
+  Generate web pages for $(ROOT)
+make clean-all
+  Remove all generated files
+make serve
+  Browse a generated website locally
+
+Note: Generated files should *not* be committed to the remote repository.
+
+VERSIONING OF GENERATED WEBSITES
+
+make deploy
+  Deploy an UNVERSIONED website on GitHub Pages 
+
+make initial VERSION=v
+  Deploy version v as the ONLY version on GitHub Pages
+make default VERSION=v
+  Deploy version v as the default version
+make extra VERSION=v
+  Deploy version v
+make delete VERSION=v
+  Remove deployed version v from GitHub Pages
+make list-versions
+  Display a list of all deployed versions
+make delete-all-deployed-versions
+  Remove all deployed versions from GitHub Pages
+
+Note: Deployment commands do NOT push local commits to the remote repository.
+
+endef
+
+# Note: all make commands load $(ROOT) to initialize HTML-FILES
+
+# `make debug` shows the values of most of the variables assigned in this file:
+
+.PHONY: debug
+export DEBUG
+debug:
+	@echo "$$DEBUG"
+
+define DEBUG
+
+DIR:     $(DIR)
+ROOT:    $(ROOT)
+PROJECT: $(PROJECT)
+
+INCLUDE-PATHS: $(INCLUDE-PATHS)
+ROOT-PATHS:    $(ROOT-PATHS)
+ROOT-FILES:    $(ROOT-FILES)
+
+HTML-FILES: $(HTML-FILES)
+
+MD-FILES:   $(MD-FILES)
+
+endef
+
+# The illustrative values below are from generating the Agda-Material website.
+
+agda-material: make debug
+
+DIR:     agda
+ROOT:    Test.index
+PROJECT: /Users/pdm/Projects/Agda/agda-material
+
+INCLUDE-PATHS:  agda
+ROOT-PATHS:      Test/index
+ROOT-FILES:    agda/Test/index.agda
+
+HTML-FILES: docs/html/Agda.Primitive.html docs/html/Test.Hierarchy.Sub.Base.html docs/html/Test.Hierarchy.Sub.html docs/html/Test.Literate.LaTeX.html docs/html/Test.Literate.Markdown.html docs/html/Test.Plain.Test.html docs/html/Test.Plain.Test2.html docs/html/Test.Search.Characters.html docs/html/Test.index.html
+
+MD-FILES:   docs/md/Agda/Primitive/index.md docs/md/Test/Hierarchy/Sub/Base/index.md docs/md/Test/Hierarchy/Sub/index.md docs/md/Test/Literate/LaTeX/index.md docs/md/Test/Literate/Markdown/index.md docs/md/Test/Plain/Test/index.md docs/md/Test/Plain/Test2/index.md docs/md/Test/Search/Characters/index.md docs/md/Test/index/index.md
