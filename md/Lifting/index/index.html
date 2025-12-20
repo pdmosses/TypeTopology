@@ -25,7 +25,7 @@
     
     
       
-        <title>index - TypeTopology</title>
+        <title>Lifting.index - TypeTopology</title>
       
     
     
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              index
+              Lifting.index
             
           </span>
         </div>
@@ -67033,26 +67033,26 @@ The lifting (aka partial-map classifier) monad.
 <code class="Agda">
 <a id="113" class="Symbol">{-#</a> <a id="117" class="Keyword">OPTIONS</a> <a id="125" class="Pragma">--safe</a> <a id="132" class="Pragma">--without-K</a> <a id="144" class="Symbol">#-}</a>
 
-<a id="149" class="Keyword">module</a> <a id="156" href="../../Lifting/index/" class="Module">Lifting.index</a> <a id="170" class="Keyword">where</a>
+<a id="149" class="Keyword">module</a> <a id="156" href="../../../Lifting/index/" class="Module">Lifting.index</a> <a id="170" class="Keyword">where</a>
 
-<a id="177" class="Keyword">import</a> <a id="184" href="../../Lifting/Algebras/" class="Module">Lifting.Algebras</a>
-<a id="201" class="Keyword">import</a> <a id="208" href="../../Lifting/Construction/" class="Module">Lifting.Construction</a>
-<a id="229" class="Keyword">import</a> <a id="236" href="../../Lifting/EmbeddingDirectly/" class="Module">Lifting.EmbeddingDirectly</a>
-<a id="262" class="Keyword">import</a> <a id="269" href="../../Lifting/EmbeddingViaSIP/" class="Module">Lifting.EmbeddingViaSIP</a>
-<a id="293" class="Keyword">import</a> <a id="300" href="../../Lifting/Identity/" class="Module">Lifting.Identity</a>
-<a id="317" class="Keyword">import</a> <a id="324" href="../../Lifting/IdentityViaSIP/" class="Module">Lifting.IdentityViaSIP</a>
-<a id="347" class="Keyword">import</a> <a id="354" href="../../Lifting/Miscelanea/" class="Module">Lifting.Miscelanea</a>                               <a id="403" class="Comment">-- By Tom de Jong 2019</a>
-<a id="426" class="Keyword">import</a> <a id="433" href="../../Lifting/Miscelanea-PropExt-FunExt/" class="Module">Lifting.Miscelanea-PropExt-FunExt</a>                <a id="482" class="Comment">-- By Tom de Jong 2019</a>
-<a id="505" class="Keyword">import</a> <a id="512" href="../../Lifting/Monad/" class="Module">Lifting.Monad</a>
-<a id="526" class="Keyword">import</a> <a id="533" href="../../Lifting/MonadVariation/" class="Module">Lifting.MonadVariation</a>
-<a id="556" class="Keyword">import</a> <a id="563" href="../../Lifting/Set/" class="Module">Lifting.Set</a>
-<a id="575" class="Keyword">import</a> <a id="582" href="../../Lifting/Size/" class="Module">Lifting.Size</a>
-<a id="595" class="Keyword">import</a> <a id="602" href="../../Lifting/UnivalentWildCategory/" class="Module">Lifting.UnivalentWildCategory</a>
-<a id="632" class="Keyword">import</a> <a id="639" href="../../Lifting/TwoAlgebrasOnOmega/" class="Module">Lifting.TwoAlgebrasOnOmega</a>
-<a id="666" class="Keyword">import</a> <a id="673" href="../../Lifting/AnAlgebraWhichIsNotAlwaysFree/" class="Module">Lifting.AnAlgebraWhichIsNotAlwaysFree</a>
-<a id="711" class="Keyword">import</a> <a id="718" href="../../Lifting/AnAlgebraWhichIsNotAlwaysFree-blackboard/" class="Module">Lifting.AnAlgebraWhichIsNotAlwaysFree-blackboard</a> <a id="767" class="Comment">-- (*)</a>
-<a id="774" class="Keyword">import</a> <a id="781" href="../../Lifting/PowersOfOmegaAreFreeAlgebras/" class="Module">Lifting.PowersOfOmegaAreFreeAlgebras</a>
-<a id="818" class="Keyword">import</a> <a id="825" href="../../Lifting/ProductsOfFreeAlgebrasAreFree/" class="Module">Lifting.ProductsOfFreeAlgebrasAreFree</a>
+<a id="177" class="Keyword">import</a> <a id="184" href="../../../Lifting/Algebras/" class="Module">Lifting.Algebras</a>
+<a id="201" class="Keyword">import</a> <a id="208" href="../../../Lifting/Construction/" class="Module">Lifting.Construction</a>
+<a id="229" class="Keyword">import</a> <a id="236" href="../../../Lifting/EmbeddingDirectly/" class="Module">Lifting.EmbeddingDirectly</a>
+<a id="262" class="Keyword">import</a> <a id="269" href="../../../Lifting/EmbeddingViaSIP/" class="Module">Lifting.EmbeddingViaSIP</a>
+<a id="293" class="Keyword">import</a> <a id="300" href="../../../Lifting/Identity/" class="Module">Lifting.Identity</a>
+<a id="317" class="Keyword">import</a> <a id="324" href="../../../Lifting/IdentityViaSIP/" class="Module">Lifting.IdentityViaSIP</a>
+<a id="347" class="Keyword">import</a> <a id="354" href="../../../Lifting/Miscelanea/" class="Module">Lifting.Miscelanea</a>                               <a id="403" class="Comment">-- By Tom de Jong 2019</a>
+<a id="426" class="Keyword">import</a> <a id="433" href="../../../Lifting/Miscelanea-PropExt-FunExt/" class="Module">Lifting.Miscelanea-PropExt-FunExt</a>                <a id="482" class="Comment">-- By Tom de Jong 2019</a>
+<a id="505" class="Keyword">import</a> <a id="512" href="../../../Lifting/Monad/" class="Module">Lifting.Monad</a>
+<a id="526" class="Keyword">import</a> <a id="533" href="../../../Lifting/MonadVariation/" class="Module">Lifting.MonadVariation</a>
+<a id="556" class="Keyword">import</a> <a id="563" href="../../../Lifting/Set/" class="Module">Lifting.Set</a>
+<a id="575" class="Keyword">import</a> <a id="582" href="../../../Lifting/Size/" class="Module">Lifting.Size</a>
+<a id="595" class="Keyword">import</a> <a id="602" href="../../../Lifting/UnivalentWildCategory/" class="Module">Lifting.UnivalentWildCategory</a>
+<a id="632" class="Keyword">import</a> <a id="639" href="../../../Lifting/TwoAlgebrasOnOmega/" class="Module">Lifting.TwoAlgebrasOnOmega</a>
+<a id="666" class="Keyword">import</a> <a id="673" href="../../../Lifting/AnAlgebraWhichIsNotAlwaysFree/" class="Module">Lifting.AnAlgebraWhichIsNotAlwaysFree</a>
+<a id="711" class="Keyword">import</a> <a id="718" href="../../../Lifting/AnAlgebraWhichIsNotAlwaysFree-blackboard/" class="Module">Lifting.AnAlgebraWhichIsNotAlwaysFree-blackboard</a> <a id="767" class="Comment">-- (*)</a>
+<a id="774" class="Keyword">import</a> <a id="781" href="../../../Lifting/PowersOfOmegaAreFreeAlgebras/" class="Module">Lifting.PowersOfOmegaAreFreeAlgebras</a>
+<a id="818" class="Keyword">import</a> <a id="825" href="../../../Lifting/ProductsOfFreeAlgebrasAreFree/" class="Module">Lifting.ProductsOfFreeAlgebrasAreFree</a>
 </code>
 
 (*) This file is almost superseded by

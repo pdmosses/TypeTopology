@@ -25,7 +25,7 @@
     
     
       
-        <title>RP-infinity - TypeTopology</title>
+        <title>SyntheticHomotopyTheory.RP-infinity - TypeTopology</title>
       
     
     
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RP-infinity
+              SyntheticHomotopyTheory.RP-infinity
             
           </span>
         </div>
@@ -67056,28 +67056,28 @@ sequential colimits, it is equivalent to a small type by the results of [1].
 <code class="Agda">
 <a id="948" class="Symbol">{-#</a> <a id="952" class="Keyword">OPTIONS</a> <a id="960" class="Pragma">--safe</a> <a id="967" class="Pragma">--without-K</a> <a id="979" class="Symbol">#-}</a>
 
-<a id="984" class="Keyword">open</a> <a id="989" class="Keyword">import</a> <a id="996" href="../../UF/PropTrunc/" class="Module">UF.PropTrunc</a>
+<a id="984" class="Keyword">open</a> <a id="989" class="Keyword">import</a> <a id="996" href="../../../UF/PropTrunc/" class="Module">UF.PropTrunc</a>
 
-<a id="1010" class="Keyword">module</a> <a id="1017" href="../../SyntheticHomotopyTheory/RP-infinity/" class="Module">SyntheticHomotopyTheory.RP-infinity</a>
-        <a id="1061" class="Symbol">(</a><a id="1062" href="../../SyntheticHomotopyTheory/RP-infinity/#1062" class="Bound">pt</a> <a id="1065" class="Symbol">:</a> <a id="1067" href="../../UF/PropTrunc/#486" class="Record">propositional-truncations-exist</a><a id="1098" class="Symbol">)</a>
+<a id="1010" class="Keyword">module</a> <a id="1017" href="../../../SyntheticHomotopyTheory/RP-infinity/" class="Module">SyntheticHomotopyTheory.RP-infinity</a>
+        <a id="1061" class="Symbol">(</a><a id="1062" href="../../../SyntheticHomotopyTheory/RP-infinity/#1062" class="Bound">pt</a> <a id="1065" class="Symbol">:</a> <a id="1067" href="../../../UF/PropTrunc/#486" class="Record">propositional-truncations-exist</a><a id="1098" class="Symbol">)</a>
        <a id="1107" class="Keyword">where</a>
 
-<a id="1114" class="Keyword">open</a> <a id="1119" href="../../UF/PropTrunc/#792" class="Module">PropositionalTruncation</a> <a id="1143" href="../../SyntheticHomotopyTheory/RP-infinity/#1062" class="Bound">pt</a>
+<a id="1114" class="Keyword">open</a> <a id="1119" href="../../../UF/PropTrunc/#792" class="Module">PropositionalTruncation</a> <a id="1143" href="../../../SyntheticHomotopyTheory/RP-infinity/#1062" class="Bound">pt</a>
 
-<a id="1147" class="Keyword">open</a> <a id="1152" class="Keyword">import</a> <a id="1159" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
-<a id="1172" class="Keyword">open</a> <a id="1177" class="Keyword">import</a> <a id="1184" href="../../UF/Equiv/" class="Module">UF.Equiv</a>
-<a id="1193" class="Keyword">open</a> <a id="1198" class="Keyword">import</a> <a id="1205" href="../../UF/EquivalenceExamples/" class="Module">UF.EquivalenceExamples</a>
-<a id="1228" class="Keyword">open</a> <a id="1233" class="Keyword">import</a> <a id="1240" href="../../UF/Univalence/" class="Module">UF.Univalence</a>
+<a id="1147" class="Keyword">open</a> <a id="1152" class="Keyword">import</a> <a id="1159" href="../../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
+<a id="1172" class="Keyword">open</a> <a id="1177" class="Keyword">import</a> <a id="1184" href="../../../UF/Equiv/" class="Module">UF.Equiv</a>
+<a id="1193" class="Keyword">open</a> <a id="1198" class="Keyword">import</a> <a id="1205" href="../../../UF/EquivalenceExamples/" class="Module">UF.EquivalenceExamples</a>
+<a id="1228" class="Keyword">open</a> <a id="1233" class="Keyword">import</a> <a id="1240" href="../../../UF/Univalence/" class="Module">UF.Univalence</a>
 
-<a id="RP∞"></a><a id="1255" href="../../SyntheticHomotopyTheory/RP-infinity/#1255" class="Function">RP∞</a> <a id="1259" class="Symbol">:</a> <a id="1261" href="../../MLTT/Universes/#4021" class="Function">𝓤₁</a> <a id="1264" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
-<a id="1266" href="../../SyntheticHomotopyTheory/RP-infinity/#1255" class="Function">RP∞</a> <a id="1270" class="Symbol">=</a> <a id="1272" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="1274" href="../../SyntheticHomotopyTheory/RP-infinity/#1274" class="Bound">X</a> <a id="1276" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="1278" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="1281" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>  <a id="1284" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="1286" href="../../UF/PropTrunc/#538" class="Field Operator">∥</a> <a id="1288" href="../../SyntheticHomotopyTheory/RP-infinity/#1274" class="Bound">X</a> <a id="1290" href="../../UF/Equiv/#1318" class="Function Operator">≃</a> <a id="1292" href="../../MLTT/Two/#124" class="Datatype">𝟚</a> <a id="1294" href="../../UF/PropTrunc/#538" class="Field Operator">∥</a>
+<a id="RP∞"></a><a id="1255" href="../../../SyntheticHomotopyTheory/RP-infinity/#1255" class="Function">RP∞</a> <a id="1259" class="Symbol">:</a> <a id="1261" href="../../../MLTT/Universes/#4021" class="Function">𝓤₁</a> <a id="1264" href="../../../MLTT/Universes/#3976" class="Function Operator">̇</a>
+<a id="1266" href="../../../SyntheticHomotopyTheory/RP-infinity/#1255" class="Function">RP∞</a> <a id="1270" class="Symbol">=</a> <a id="1272" href="../../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="1274" href="../../../SyntheticHomotopyTheory/RP-infinity/#1274" class="Bound">X</a> <a id="1276" href="../../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="1278" href="../../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="1281" href="../../../MLTT/Universes/#3976" class="Function Operator">̇</a>  <a id="1284" href="../../../MLTT/Sigma/#423" class="Function">,</a> <a id="1286" href="../../../UF/PropTrunc/#538" class="Field Operator">∥</a> <a id="1288" href="../../../SyntheticHomotopyTheory/RP-infinity/#1274" class="Bound">X</a> <a id="1290" href="../../../UF/Equiv/#1318" class="Function Operator">≃</a> <a id="1292" href="../../../MLTT/Two/#124" class="Datatype">𝟚</a> <a id="1294" href="../../../UF/PropTrunc/#538" class="Field Operator">∥</a>
 
-<a id="RP∞&#39;"></a><a id="1297" href="../../SyntheticHomotopyTheory/RP-infinity/#1297" class="Function">RP∞&#39;</a> <a id="1302" class="Symbol">:</a> <a id="1304" href="../../MLTT/Universes/#4021" class="Function">𝓤₁</a> <a id="1307" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
-<a id="1309" href="../../SyntheticHomotopyTheory/RP-infinity/#1297" class="Function">RP∞&#39;</a> <a id="1314" class="Symbol">=</a> <a id="1316" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="1318" href="../../SyntheticHomotopyTheory/RP-infinity/#1318" class="Bound">X</a> <a id="1320" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="1322" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="1325" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>  <a id="1328" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="1330" href="../../UF/PropTrunc/#538" class="Field Operator">∥</a> <a id="1332" href="../../SyntheticHomotopyTheory/RP-infinity/#1318" class="Bound">X</a> <a id="1334" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="1336" href="../../MLTT/Two/#124" class="Datatype">𝟚</a> <a id="1338" href="../../UF/PropTrunc/#538" class="Field Operator">∥</a>
+<a id="RP∞&#39;"></a><a id="1297" href="../../../SyntheticHomotopyTheory/RP-infinity/#1297" class="Function">RP∞&#39;</a> <a id="1302" class="Symbol">:</a> <a id="1304" href="../../../MLTT/Universes/#4021" class="Function">𝓤₁</a> <a id="1307" href="../../../MLTT/Universes/#3976" class="Function Operator">̇</a>
+<a id="1309" href="../../../SyntheticHomotopyTheory/RP-infinity/#1297" class="Function">RP∞&#39;</a> <a id="1314" class="Symbol">=</a> <a id="1316" href="../../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="1318" href="../../../SyntheticHomotopyTheory/RP-infinity/#1318" class="Bound">X</a> <a id="1320" href="../../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="1322" href="../../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="1325" href="../../../MLTT/Universes/#3976" class="Function Operator">̇</a>  <a id="1328" href="../../../MLTT/Sigma/#423" class="Function">,</a> <a id="1330" href="../../../UF/PropTrunc/#538" class="Field Operator">∥</a> <a id="1332" href="../../../SyntheticHomotopyTheory/RP-infinity/#1318" class="Bound">X</a> <a id="1334" href="../../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="1336" href="../../../MLTT/Two/#124" class="Datatype">𝟚</a> <a id="1338" href="../../../UF/PropTrunc/#538" class="Field Operator">∥</a>
 
-<a id="RP∞-equivalent-formulations"></a><a id="1341" href="../../SyntheticHomotopyTheory/RP-infinity/#1341" class="Function">RP∞-equivalent-formulations</a> <a id="1369" class="Symbol">:</a> <a id="1371" href="../../UF/Univalence/#412" class="Function">is-univalent</a> <a id="1384" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="1387" class="Symbol">→</a> <a id="1389" href="../../SyntheticHomotopyTheory/RP-infinity/#1255" class="Function">RP∞</a> <a id="1393" href="../../UF/Equiv/#1318" class="Function Operator">≃</a> <a id="1395" href="../../SyntheticHomotopyTheory/RP-infinity/#1297" class="Function">RP∞&#39;</a>
-<a id="1400" href="../../SyntheticHomotopyTheory/RP-infinity/#1341" class="Function">RP∞-equivalent-formulations</a> <a id="1428" href="../../SyntheticHomotopyTheory/RP-infinity/#1428" class="Bound">ua</a> <a id="1431" class="Symbol">=</a>
- <a id="1434" href="../../UF/EquivalenceExamples/#3378" class="Function">Σ-cong</a> <a id="1441" class="Symbol">(λ</a> <a id="1444" href="../../SyntheticHomotopyTheory/RP-infinity/#1444" class="Bound">X</a> <a id="1446" class="Symbol">→</a> <a id="1448" href="../../UF/EquivalenceExamples/#34522" class="Function">∥∥-cong</a> <a id="1456" href="../../SyntheticHomotopyTheory/RP-infinity/#1062" class="Bound">pt</a> <a id="1459" class="Symbol">(</a><a id="1460" href="../../UF/Equiv/#8434" class="Function">≃-sym</a> <a id="1466" class="Symbol">(</a><a id="1467" href="../../UF/Univalence/#1986" class="Function">univalence-≃</a> <a id="1480" href="../../SyntheticHomotopyTheory/RP-infinity/#1428" class="Bound">ua</a> <a id="1483" href="../../SyntheticHomotopyTheory/RP-infinity/#1444" class="Bound">X</a> <a id="1485" href="../../MLTT/Two/#124" class="Datatype">𝟚</a><a id="1486" class="Symbol">)))</a>
+<a id="RP∞-equivalent-formulations"></a><a id="1341" href="../../../SyntheticHomotopyTheory/RP-infinity/#1341" class="Function">RP∞-equivalent-formulations</a> <a id="1369" class="Symbol">:</a> <a id="1371" href="../../../UF/Univalence/#412" class="Function">is-univalent</a> <a id="1384" href="../../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="1387" class="Symbol">→</a> <a id="1389" href="../../../SyntheticHomotopyTheory/RP-infinity/#1255" class="Function">RP∞</a> <a id="1393" href="../../../UF/Equiv/#1318" class="Function Operator">≃</a> <a id="1395" href="../../../SyntheticHomotopyTheory/RP-infinity/#1297" class="Function">RP∞&#39;</a>
+<a id="1400" href="../../../SyntheticHomotopyTheory/RP-infinity/#1341" class="Function">RP∞-equivalent-formulations</a> <a id="1428" href="../../../SyntheticHomotopyTheory/RP-infinity/#1428" class="Bound">ua</a> <a id="1431" class="Symbol">=</a>
+ <a id="1434" href="../../../UF/EquivalenceExamples/#3378" class="Function">Σ-cong</a> <a id="1441" class="Symbol">(λ</a> <a id="1444" href="../../../SyntheticHomotopyTheory/RP-infinity/#1444" class="Bound">X</a> <a id="1446" class="Symbol">→</a> <a id="1448" href="../../../UF/EquivalenceExamples/#34522" class="Function">∥∥-cong</a> <a id="1456" href="../../../SyntheticHomotopyTheory/RP-infinity/#1062" class="Bound">pt</a> <a id="1459" class="Symbol">(</a><a id="1460" href="../../../UF/Equiv/#8434" class="Function">≃-sym</a> <a id="1466" class="Symbol">(</a><a id="1467" href="../../../UF/Univalence/#1986" class="Function">univalence-≃</a> <a id="1480" href="../../../SyntheticHomotopyTheory/RP-infinity/#1428" class="Bound">ua</a> <a id="1483" href="../../../SyntheticHomotopyTheory/RP-infinity/#1444" class="Bound">X</a> <a id="1485" href="../../../MLTT/Two/#124" class="Datatype">𝟚</a><a id="1486" class="Symbol">)))</a>
 </code>
 </pre>
 

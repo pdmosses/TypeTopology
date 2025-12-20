@@ -25,7 +25,7 @@
     
     
       
-        <title>Reader - TypeTopology</title>
+        <title>MonadOnTypes.Reader - TypeTopology</title>
       
     
     
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reader
+              MonadOnTypes.Reader
             
           </span>
         </div>
@@ -67031,20 +67031,20 @@
 <code class="Agda">
 <a id="50" class="Symbol">{-#</a> <a id="54" class="Keyword">OPTIONS</a> <a id="62" class="Pragma">--safe</a> <a id="69" class="Pragma">--without-K</a> <a id="81" class="Symbol">#-}</a>
 
-<a id="86" class="Keyword">open</a> <a id="91" class="Keyword">import</a> <a id="98" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a> <a id="111" class="Keyword">hiding</a> <a id="118" class="Symbol">(</a><a id="119" href="../../MLTT/Id/#438" class="Function">J</a><a id="120" class="Symbol">)</a>
+<a id="86" class="Keyword">open</a> <a id="91" class="Keyword">import</a> <a id="98" href="../../../MLTT/Spartan/" class="Module">MLTT.Spartan</a> <a id="111" class="Keyword">hiding</a> <a id="118" class="Symbol">(</a><a id="119" href="../../../MLTT/Id/#438" class="Function">J</a><a id="120" class="Symbol">)</a>
 
-<a id="123" class="Keyword">module</a> <a id="130" href="../../MonadOnTypes/Reader/" class="Module">MonadOnTypes.Reader</a> <a id="150" class="Keyword">where</a>
+<a id="123" class="Keyword">module</a> <a id="130" href="../../../MonadOnTypes/Reader/" class="Module">MonadOnTypes.Reader</a> <a id="150" class="Keyword">where</a>
 
-<a id="157" class="Keyword">open</a> <a id="162" class="Keyword">import</a> <a id="169" href="../../MonadOnTypes/Monad/" class="Module">MonadOnTypes.Monad</a>
+<a id="157" class="Keyword">open</a> <a id="162" class="Keyword">import</a> <a id="169" href="../../../MonadOnTypes/Monad/" class="Module">MonadOnTypes.Monad</a>
 
-<a id="Reader"></a><a id="189" href="../../MonadOnTypes/Reader/#189" class="Function">Reader</a> <a id="196" class="Symbol">:</a> <a id="198" href="../../Notation/General/#372" class="Function">Type</a> <a id="203" class="Symbol">→</a> <a id="205" href="../../MonadOnTypes/Monad/#263" class="Record">Monad</a>
-<a id="211" href="../../MonadOnTypes/Reader/#189" class="Function">Reader</a> <a id="218" href="../../MonadOnTypes/Reader/#218" class="Bound">A</a> <a id="220" class="Symbol">=</a> <a id="222" class="Keyword">record</a> <a id="229" class="Symbol">{</a>
-            <a id="243" href="../../MonadOnTypes/Monad/#315" class="Field">functor</a> <a id="251" class="Symbol">=</a> <a id="253" class="Symbol">λ</a> <a id="255" href="../../MonadOnTypes/Reader/#255" class="Bound">X</a> <a id="257" class="Symbol">→</a> <a id="259" href="../../MonadOnTypes/Reader/#218" class="Bound">A</a> <a id="261" class="Symbol">→</a> <a id="263" href="../../MonadOnTypes/Reader/#255" class="Bound">X</a> <a id="265" class="Symbol">;</a>
-            <a id="279" href="../../MonadOnTypes/Monad/#371" class="Field">η</a>     <a id="285" class="Symbol">=</a> <a id="287" class="Symbol">λ</a> <a id="289" href="../../MonadOnTypes/Reader/#289" class="Bound">x</a> <a id="291" href="../../MonadOnTypes/Reader/#291" class="Bound">_</a> <a id="293" class="Symbol">→</a> <a id="295" href="../../MonadOnTypes/Reader/#289" class="Bound">x</a> <a id="297" class="Symbol">;</a>
-            <a id="311" href="../../MonadOnTypes/Monad/#404" class="Field">ext</a>   <a id="317" class="Symbol">=</a> <a id="319" class="Symbol">λ</a> <a id="321" href="../../MonadOnTypes/Reader/#321" class="Bound">f</a> <a id="323" href="../../MonadOnTypes/Reader/#323" class="Bound">ρ</a> <a id="325" href="../../MonadOnTypes/Reader/#325" class="Bound">a</a> <a id="327" class="Symbol">→</a> <a id="329" href="../../MonadOnTypes/Reader/#321" class="Bound">f</a> <a id="331" class="Symbol">(</a><a id="332" href="../../MonadOnTypes/Reader/#323" class="Bound">ρ</a> <a id="334" href="../../MonadOnTypes/Reader/#325" class="Bound">a</a><a id="335" class="Symbol">)</a> <a id="337" href="../../MonadOnTypes/Reader/#325" class="Bound">a</a> <a id="339" class="Symbol">;</a>
-            <a id="353" href="../../MonadOnTypes/Monad/#453" class="Field">ext-η</a> <a id="359" class="Symbol">=</a> <a id="361" class="Symbol">λ</a> <a id="363" href="../../MonadOnTypes/Reader/#363" class="Bound">x</a> <a id="365" class="Symbol">→</a> <a id="367" href="../../MLTT/Identity-Type/#157" class="InductiveConstructor">refl</a> <a id="372" class="Symbol">;</a>
-            <a id="386" href="../../MonadOnTypes/Monad/#501" class="Field">unit</a>  <a id="392" class="Symbol">=</a> <a id="394" class="Symbol">λ</a> <a id="396" href="../../MonadOnTypes/Reader/#396" class="Bound">f</a> <a id="398" href="../../MonadOnTypes/Reader/#398" class="Bound">x</a> <a id="400" class="Symbol">→</a> <a id="402" href="../../MLTT/Identity-Type/#157" class="InductiveConstructor">refl</a> <a id="407" class="Symbol">;</a>
-            <a id="421" href="../../MonadOnTypes/Monad/#556" class="Field">assoc</a> <a id="427" class="Symbol">=</a> <a id="429" class="Symbol">λ</a> <a id="431" href="../../MonadOnTypes/Reader/#431" class="Bound">g</a> <a id="433" href="../../MonadOnTypes/Reader/#433" class="Bound">f</a> <a id="435" href="../../MonadOnTypes/Reader/#435" class="Bound">x</a> <a id="437" class="Symbol">→</a> <a id="439" href="../../MLTT/Identity-Type/#157" class="InductiveConstructor">refl</a>
+<a id="Reader"></a><a id="189" href="../../../MonadOnTypes/Reader/#189" class="Function">Reader</a> <a id="196" class="Symbol">:</a> <a id="198" href="../../../Notation/General/#372" class="Function">Type</a> <a id="203" class="Symbol">→</a> <a id="205" href="../../../MonadOnTypes/Monad/#263" class="Record">Monad</a>
+<a id="211" href="../../../MonadOnTypes/Reader/#189" class="Function">Reader</a> <a id="218" href="../../../MonadOnTypes/Reader/#218" class="Bound">A</a> <a id="220" class="Symbol">=</a> <a id="222" class="Keyword">record</a> <a id="229" class="Symbol">{</a>
+            <a id="243" href="../../../MonadOnTypes/Monad/#315" class="Field">functor</a> <a id="251" class="Symbol">=</a> <a id="253" class="Symbol">λ</a> <a id="255" href="../../../MonadOnTypes/Reader/#255" class="Bound">X</a> <a id="257" class="Symbol">→</a> <a id="259" href="../../../MonadOnTypes/Reader/#218" class="Bound">A</a> <a id="261" class="Symbol">→</a> <a id="263" href="../../../MonadOnTypes/Reader/#255" class="Bound">X</a> <a id="265" class="Symbol">;</a>
+            <a id="279" href="../../../MonadOnTypes/Monad/#371" class="Field">η</a>     <a id="285" class="Symbol">=</a> <a id="287" class="Symbol">λ</a> <a id="289" href="../../../MonadOnTypes/Reader/#289" class="Bound">x</a> <a id="291" href="../../../MonadOnTypes/Reader/#291" class="Bound">_</a> <a id="293" class="Symbol">→</a> <a id="295" href="../../../MonadOnTypes/Reader/#289" class="Bound">x</a> <a id="297" class="Symbol">;</a>
+            <a id="311" href="../../../MonadOnTypes/Monad/#404" class="Field">ext</a>   <a id="317" class="Symbol">=</a> <a id="319" class="Symbol">λ</a> <a id="321" href="../../../MonadOnTypes/Reader/#321" class="Bound">f</a> <a id="323" href="../../../MonadOnTypes/Reader/#323" class="Bound">ρ</a> <a id="325" href="../../../MonadOnTypes/Reader/#325" class="Bound">a</a> <a id="327" class="Symbol">→</a> <a id="329" href="../../../MonadOnTypes/Reader/#321" class="Bound">f</a> <a id="331" class="Symbol">(</a><a id="332" href="../../../MonadOnTypes/Reader/#323" class="Bound">ρ</a> <a id="334" href="../../../MonadOnTypes/Reader/#325" class="Bound">a</a><a id="335" class="Symbol">)</a> <a id="337" href="../../../MonadOnTypes/Reader/#325" class="Bound">a</a> <a id="339" class="Symbol">;</a>
+            <a id="353" href="../../../MonadOnTypes/Monad/#453" class="Field">ext-η</a> <a id="359" class="Symbol">=</a> <a id="361" class="Symbol">λ</a> <a id="363" href="../../../MonadOnTypes/Reader/#363" class="Bound">x</a> <a id="365" class="Symbol">→</a> <a id="367" href="../../../MLTT/Identity-Type/#157" class="InductiveConstructor">refl</a> <a id="372" class="Symbol">;</a>
+            <a id="386" href="../../../MonadOnTypes/Monad/#501" class="Field">unit</a>  <a id="392" class="Symbol">=</a> <a id="394" class="Symbol">λ</a> <a id="396" href="../../../MonadOnTypes/Reader/#396" class="Bound">f</a> <a id="398" href="../../../MonadOnTypes/Reader/#398" class="Bound">x</a> <a id="400" class="Symbol">→</a> <a id="402" href="../../../MLTT/Identity-Type/#157" class="InductiveConstructor">refl</a> <a id="407" class="Symbol">;</a>
+            <a id="421" href="../../../MonadOnTypes/Monad/#556" class="Field">assoc</a> <a id="427" class="Symbol">=</a> <a id="429" class="Symbol">λ</a> <a id="431" href="../../../MonadOnTypes/Reader/#431" class="Bound">g</a> <a id="433" href="../../../MonadOnTypes/Reader/#433" class="Bound">f</a> <a id="435" href="../../../MonadOnTypes/Reader/#435" class="Bound">x</a> <a id="437" class="Symbol">→</a> <a id="439" href="../../../MLTT/Identity-Type/#157" class="InductiveConstructor">refl</a>
           <a id="454" class="Symbol">}</a>
 </code>
 </pre>

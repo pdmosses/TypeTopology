@@ -25,7 +25,7 @@
     
     
       
-        <title>index - TypeTopology</title>
+        <title>GamesMGU.index - TypeTopology</title>
       
     
     
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              index
+              GamesMGU.index
             
           </span>
         </div>
@@ -67037,22 +67037,22 @@ monad of non-empty lists without repetitions for some applications.
 <code class="Agda">
 <a id="401" class="Symbol">{-#</a> <a id="405" class="Keyword">OPTIONS</a> <a id="413" class="Pragma">--safe</a> <a id="420" class="Pragma">--without-K</a> <a id="432" class="Pragma">--no-level-universe</a> <a id="452" class="Symbol">#-}</a>
 
-<a id="457" class="Keyword">module</a> <a id="464" href="../../GamesMGU/index/" class="Module">GamesMGU.index</a> <a id="479" class="Keyword">where</a>
+<a id="457" class="Keyword">module</a> <a id="464" href="../../../GamesMGU/index/" class="Module">GamesMGU.index</a> <a id="479" class="Keyword">where</a>
 
-<a id="486" class="Keyword">import</a> <a id="493" href="../../GamesMGU/Constructor/" class="Module">GamesMGU.Constructor</a>             <a id="526" class="Comment">-- For simplifying the construction of games.</a>
-<a id="572" class="Keyword">import</a> <a id="579" href="../../GamesMGU/Examples/" class="Module">GamesMGU.Examples</a>                <a id="612" class="Comment">-- Miscelaneous small examples.</a>
-<a id="644" class="Keyword">import</a> <a id="651" href="../../GamesMGU/FiniteHistoryDependent/" class="Module">GamesMGU.FiniteHistoryDependent</a>  <a id="684" class="Comment">-- Theory of finite history dependent games.</a>
-<a id="729" class="Keyword">import</a> <a id="736" href="../../GamesMGU/FiniteHistoryDependentMonadic/" class="Module">GamesMGU.FiniteHistoryDependentMonadic</a>
+<a id="486" class="Keyword">import</a> <a id="493" href="../../../GamesMGU/Constructor/" class="Module">GamesMGU.Constructor</a>             <a id="526" class="Comment">-- For simplifying the construction of games.</a>
+<a id="572" class="Keyword">import</a> <a id="579" href="../../../GamesMGU/Examples/" class="Module">GamesMGU.Examples</a>                <a id="612" class="Comment">-- Miscelaneous small examples.</a>
+<a id="644" class="Keyword">import</a> <a id="651" href="../../../GamesMGU/FiniteHistoryDependent/" class="Module">GamesMGU.FiniteHistoryDependent</a>  <a id="684" class="Comment">-- Theory of finite history dependent games.</a>
+<a id="729" class="Keyword">import</a> <a id="736" href="../../../GamesMGU/FiniteHistoryDependentMonadic/" class="Module">GamesMGU.FiniteHistoryDependentMonadic</a>
                                         <a id="815" class="Comment">-- With additional monad for irrational players.</a>
-<a id="864" class="Keyword">import</a> <a id="871" href="../../GamesMGU/FiniteHistoryDependentRelativeMonadic/" class="Module">GamesMGU.FiniteHistoryDependentRelativeMonadic</a>
+<a id="864" class="Keyword">import</a> <a id="871" href="../../../GamesMGU/FiniteHistoryDependentRelativeMonadic/" class="Module">GamesMGU.FiniteHistoryDependentRelativeMonadic</a>
                                         <a id="958" class="Comment">-- Same but with relative monad.</a>
-<a id="991" class="Keyword">import</a> <a id="998" href="../../GamesMGU/TicTacToe0/" class="Module">GamesMGU.TicTacToe0</a>
-<a id="1018" class="Keyword">import</a> <a id="1025" href="../../GamesMGU/TicTacToe1/" class="Module">GamesMGU.TicTacToe1</a>              <a id="1058" class="Comment">-- Like TicTacToe0 but using GamesMGU.Constructor.</a>
-<a id="1109" class="Keyword">import</a> <a id="1116" href="../../GamesMGU/TicTacToe2/" class="Module">GamesMGU.TicTacToe2</a>              <a id="1149" class="Comment">-- More efficient and less elegant version.</a>
-<a id="1193" class="Keyword">import</a> <a id="1200" href="../../GamesMGU/TypeTrees/" class="Module">GamesMGU.TypeTrees</a>               <a id="1233" class="Comment">-- Dependent type trees.</a>
-<a id="1258" class="Keyword">import</a> <a id="1265" href="../../GamesMGU/alpha-beta/" class="Module">GamesMGU.alpha-beta</a>              <a id="1298" class="Comment">-- Many new things for efficiency.</a>
-<a id="1333" class="Keyword">import</a> <a id="1340" href="../../GamesMGU/alpha-beta-examples/" class="Module">GamesMGU.alpha-beta-examples</a>
-<a id="1369" class="Keyword">import</a> <a id="1376" href="../../GamesMGU/Discussion/" class="Module">GamesMGU.Discussion</a>
+<a id="991" class="Keyword">import</a> <a id="998" href="../../../GamesMGU/TicTacToe0/" class="Module">GamesMGU.TicTacToe0</a>
+<a id="1018" class="Keyword">import</a> <a id="1025" href="../../../GamesMGU/TicTacToe1/" class="Module">GamesMGU.TicTacToe1</a>              <a id="1058" class="Comment">-- Like TicTacToe0 but using GamesMGU.Constructor.</a>
+<a id="1109" class="Keyword">import</a> <a id="1116" href="../../../GamesMGU/TicTacToe2/" class="Module">GamesMGU.TicTacToe2</a>              <a id="1149" class="Comment">-- More efficient and less elegant version.</a>
+<a id="1193" class="Keyword">import</a> <a id="1200" href="../../../GamesMGU/TypeTrees/" class="Module">GamesMGU.TypeTrees</a>               <a id="1233" class="Comment">-- Dependent type trees.</a>
+<a id="1258" class="Keyword">import</a> <a id="1265" href="../../../GamesMGU/alpha-beta/" class="Module">GamesMGU.alpha-beta</a>              <a id="1298" class="Comment">-- Many new things for efficiency.</a>
+<a id="1333" class="Keyword">import</a> <a id="1340" href="../../../GamesMGU/alpha-beta-examples/" class="Module">GamesMGU.alpha-beta-examples</a>
+<a id="1369" class="Keyword">import</a> <a id="1376" href="../../../GamesMGU/Discussion/" class="Module">GamesMGU.Discussion</a>
 </code>
 </pre>
 
