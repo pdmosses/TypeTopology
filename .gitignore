@@ -28,4 +28,5 @@ source/html/*
 #*
 docs/html/*
 docs/md/*
+docs.error/*
 site/*
