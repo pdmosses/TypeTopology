@@ -63348,8 +63348,7 @@ On 22/07/18 06:17, Michael Shulman wrote:
 >> y<x, and hence they will not have the same lower set),
 >> constructively this seems very dubious.
 
-<code class="Agda">
-<a id="1697" class="Symbol">{-#</a> <a id="1701" class="Keyword">OPTIONS</a> <a id="1709" class="Pragma">--safe</a> <a id="1716" class="Pragma">--without-K</a> <a id="1728" class="Symbol">#-}</a>
+<code class="Agda"><a id="1697" class="Symbol">{-#</a> <a id="1701" class="Keyword">OPTIONS</a> <a id="1709" class="Pragma">--safe</a> <a id="1716" class="Pragma">--without-K</a> <a id="1728" class="Symbol">#-}</a>
 
 <a id="1733" class="Keyword">open</a> <a id="1738" class="Keyword">import</a> <a id="1745" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 
@@ -63372,8 +63371,7 @@ On 22/07/18 06:17, Michael Shulman wrote:
 <a id="2122" class="Keyword">open</a> <a id="2127" class="Keyword">import</a> <a id="2134" href="../../UF/Subsingletons-FunExt/" class="Module">UF.Subsingletons-FunExt</a>
 
 <a id="fe₀"></a><a id="2159" href="../../Ordinals/ShulmanTaboo/#2159" class="Function">fe₀</a> <a id="2163" class="Symbol">:</a> <a id="2165" href="../../UF/FunExt/#850" class="Function">funext</a> <a id="2172" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="2175" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a>
-<a id="2178" href="../../Ordinals/ShulmanTaboo/#2159" class="Function">fe₀</a> <a id="2182" class="Symbol">=</a> <a id="2184" href="../../Ordinals/ShulmanTaboo/#1848" class="Bound">fe</a> <a id="2187" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="2190" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a>
-</code>
+<a id="2178" href="../../Ordinals/ShulmanTaboo/#2159" class="Function">fe₀</a> <a id="2182" class="Symbol">=</a> <a id="2184" href="../../Ordinals/ShulmanTaboo/#1848" class="Bound">fe</a> <a id="2187" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="2190" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a></code>
 
 The type of truth values is Ω, following topos-theoretic notation, and
 the ordinal of truth values, ordered by p < q iff p ＝ ⊥ and q ＝ ⊤, is
@@ -63381,21 +63379,18 @@ denoted by Ωₒ (the subscript is the letter "o", for "ordinal", and not
 the number zero). This is parametrized by an arbitrary universe, which
 in this module is instantiated to 𝓤₀.
 
-<code class="Agda">
-<a id="X"></a><a id="2542" href="../../Ordinals/ShulmanTaboo/#2542" class="Function">X</a> <a id="2544" class="Symbol">:</a> <a id="2546" href="../../MLTT/Universes/#4021" class="Function">𝓤₁</a> <a id="2549" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
+<code class="Agda"><a id="X"></a><a id="2542" href="../../Ordinals/ShulmanTaboo/#2542" class="Function">X</a> <a id="2544" class="Symbol">:</a> <a id="2546" href="../../MLTT/Universes/#4021" class="Function">𝓤₁</a> <a id="2549" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
 <a id="2551" href="../../Ordinals/ShulmanTaboo/#2542" class="Function">X</a> <a id="2553" class="Symbol">=</a> <a id="2555" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="2557" href="../../Ordinals/ShulmanTaboo/#2557" class="Bound">p</a> <a id="2559" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="2561" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="2563" href="../../Ordinals/OrdinalOfTruthValues/#607" class="Function">Ωₒ</a> <a id="2566" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a> <a id="2568" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="2570" href="../../MLTT/Negation/#278" class="Function Operator">¬</a> <a id="2572" class="Symbol">(</a><a id="2573" href="../../Ordinals/ShulmanTaboo/#2557" class="Bound">p</a> <a id="2575" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="2577" href="../../UF/SubtypeClassifier/#1732" class="Function">⊥</a><a id="2578" class="Symbol">)</a>
 
 <a id="recall-that"></a><a id="2581" href="../../Ordinals/ShulmanTaboo/#2581" class="Function">recall-that</a> <a id="2593" class="Symbol">:</a> <a id="2595" href="../../Ordinals/Notions/#6421" class="Function">is-extensional</a> <a id="2610" class="Symbol">(</a><a id="2611" href="../../Ordinals/Underlying/#344" class="Field">underlying-order</a> <a id="2628" href="../../Ordinals/OrdinalOfTruthValues/#607" class="Function">Ωₒ</a><a id="2630" class="Symbol">)</a>
-<a id="2632" href="../../Ordinals/ShulmanTaboo/#2581" class="Function">recall-that</a> <a id="2644" class="Symbol">=</a> <a id="2646" href="../../Ordinals/Type/#4213" class="Function">Extensionality</a> <a id="2661" href="../../Ordinals/OrdinalOfTruthValues/#607" class="Function">Ωₒ</a>
-</code>
+<a id="2632" href="../../Ordinals/ShulmanTaboo/#2581" class="Function">recall-that</a> <a id="2644" class="Symbol">=</a> <a id="2646" href="../../Ordinals/Type/#4213" class="Function">Extensionality</a> <a id="2661" href="../../Ordinals/OrdinalOfTruthValues/#607" class="Function">Ωₒ</a></code>
 
 However, the extensionality of the restriction of the underlying order
 of the ordinal Ωₒ of truth values to X is a constructive taboo (it
 implies excluded middle), as shown by Shulman in the message quoted
 above:
 
-<code class="Agda">
-<a id="_≺_"></a><a id="2905" href="../../Ordinals/ShulmanTaboo/#2905" class="Function Operator">_≺_</a> <a id="2909" class="Symbol">:</a> <a id="2911" href="../../Ordinals/ShulmanTaboo/#2542" class="Function">X</a> <a id="2913" class="Symbol">→</a> <a id="2915" href="../../Ordinals/ShulmanTaboo/#2542" class="Function">X</a> <a id="2917" class="Symbol">→</a> <a id="2919" href="../../MLTT/Universes/#4021" class="Function">𝓤₁</a> <a id="2922" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
+<code class="Agda"><a id="_≺_"></a><a id="2905" href="../../Ordinals/ShulmanTaboo/#2905" class="Function Operator">_≺_</a> <a id="2909" class="Symbol">:</a> <a id="2911" href="../../Ordinals/ShulmanTaboo/#2542" class="Function">X</a> <a id="2913" class="Symbol">→</a> <a id="2915" href="../../Ordinals/ShulmanTaboo/#2542" class="Function">X</a> <a id="2917" class="Symbol">→</a> <a id="2919" href="../../MLTT/Universes/#4021" class="Function">𝓤₁</a> <a id="2922" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
 <a id="2924" class="Symbol">(</a><a id="2925" href="../../Ordinals/ShulmanTaboo/#2925" class="Bound">p</a> <a id="2927" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2929" class="Symbol">_)</a> <a id="2932" href="../../Ordinals/ShulmanTaboo/#2905" class="Function Operator">≺</a> <a id="2934" class="Symbol">(</a><a id="2935" href="../../Ordinals/ShulmanTaboo/#2935" class="Bound">q</a> <a id="2937" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2939" class="Symbol">_)</a> <a id="2942" class="Symbol">=</a> <a id="2944" href="../../Ordinals/ShulmanTaboo/#2925" class="Bound">p</a> <a id="2946" href="../../Ordinals/Underlying/#344" class="Field">≺⟨</a> <a id="2949" href="../../Ordinals/OrdinalOfTruthValues/#607" class="Function">Ωₒ</a> <a id="2952" href="../../Ordinals/Underlying/#344" class="Field">⟩</a> <a id="2954" href="../../Ordinals/ShulmanTaboo/#2935" class="Bound">q</a>
 
 <a id="shulmans-taboo"></a><a id="2957" href="../../Ordinals/ShulmanTaboo/#2957" class="Function">shulmans-taboo</a> <a id="2972" class="Symbol">:</a> <a id="2974" href="../../Ordinals/Notions/#6421" class="Function">is-extensional</a> <a id="2989" href="../../Ordinals/ShulmanTaboo/#2905" class="Function Operator">_≺_</a> <a id="2993" class="Symbol">→</a> <a id="2995" href="../../UF/ClassicalLogic/#988" class="Function">EM</a> <a id="2998" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a>
@@ -63423,8 +63418,7 @@ above:
     <a id="3473" href="../../Ordinals/ShulmanTaboo/#3459" class="Function">r</a> <a id="3475" class="Symbol">=</a> <a id="3477" href="../../Ordinals/ShulmanTaboo/#3048" class="Function">i</a> <a id="3479" href="../../Ordinals/ShulmanTaboo/#3309" class="Function">p</a> <a id="3481" href="../../Ordinals/ShulmanTaboo/#3311" class="Function">q</a>
 
     <a id="3488" href="../../Ordinals/ShulmanTaboo/#3488" class="Function">s</a> <a id="3490" class="Symbol">:</a> <a id="3492" href="../../MLTT/Negation/#1040" class="Function Operator">¬¬</a> <a id="3495" href="../../Ordinals/ShulmanTaboo/#3276" class="Bound">P</a> <a id="3497" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="3499" href="../../Ordinals/ShulmanTaboo/#3276" class="Bound">P</a>
-    <a id="3505" href="../../Ordinals/ShulmanTaboo/#3488" class="Function">s</a> <a id="3507" class="Symbol">=</a> <a id="3509" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="3512" class="Symbol">(</a><a id="3513" href="../../MLTT/Sigma-Type/#198" class="Field">pr₁</a> <a id="3517" href="../../MLTT/Pi/#513" class="Function Operator">∘</a> <a id="3519" href="../../MLTT/Sigma-Type/#198" class="Field">pr₁</a><a id="3522" class="Symbol">)</a> <a id="3524" href="../../Ordinals/ShulmanTaboo/#3459" class="Function">r</a>
-</code>
+    <a id="3505" href="../../Ordinals/ShulmanTaboo/#3488" class="Function">s</a> <a id="3507" class="Symbol">=</a> <a id="3509" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="3512" class="Symbol">(</a><a id="3513" href="../../MLTT/Sigma-Type/#198" class="Field">pr₁</a> <a id="3517" href="../../MLTT/Pi/#513" class="Function Operator">∘</a> <a id="3519" href="../../MLTT/Sigma-Type/#198" class="Field">pr₁</a><a id="3522" class="Symbol">)</a> <a id="3524" href="../../Ordinals/ShulmanTaboo/#3459" class="Function">r</a></code>
 
 TODO. Use this to show that if the sum of any ordinal-indexed family
 of ordinals is an ordinal under the lexicographic ordering, then

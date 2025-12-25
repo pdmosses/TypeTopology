@@ -63324,8 +63324,7 @@ working in an arbitrary topos, which may or may not be a topological
 topos, and we are interested in proving things synthetically in
 topological toposes.
 
-<code class="Agda">
-<a id="388" class="Symbol">{-#</a> <a id="392" class="Keyword">OPTIONS</a> <a id="400" class="Pragma">--safe</a> <a id="407" class="Pragma">--without-K</a> <a id="419" class="Symbol">#-}</a>
+<code class="Agda"><a id="388" class="Symbol">{-#</a> <a id="392" class="Keyword">OPTIONS</a> <a id="400" class="Pragma">--safe</a> <a id="407" class="Pragma">--without-K</a> <a id="419" class="Symbol">#-}</a>
 
 <a id="424" class="Keyword">open</a> <a id="429" class="Keyword">import</a> <a id="436" href="../../UF/FunExt/" class="Module">UF.FunExt</a>
 
@@ -63337,27 +63336,23 @@ topological toposes.
 <a id="555" class="Keyword">open</a> <a id="560" class="Keyword">import</a> <a id="567" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 <a id="580" class="Keyword">open</a> <a id="585" class="Keyword">import</a> <a id="592" href="../../Notation/CanonicalMap/" class="Module">Notation.CanonicalMap</a>
 <a id="614" class="Keyword">open</a> <a id="619" class="Keyword">import</a> <a id="626" href="../../Taboos/BasicDiscontinuity/" class="Module">Taboos.BasicDiscontinuity</a> <a id="652" href="../../TypeTopology/SequentiallyHausdorff/#498" class="Bound">fe₀</a>
-<a id="656" class="Keyword">open</a> <a id="661" class="Keyword">import</a> <a id="668" href="../../Taboos/WLPO/" class="Module">Taboos.WLPO</a>
-</code>
+<a id="656" class="Keyword">open</a> <a id="661" class="Keyword">import</a> <a id="668" href="../../Taboos/WLPO/" class="Module">Taboos.WLPO</a></code>
 
 A topological space is sequentially Hausdorff if every sequence
 converges to at most one point. In our synthetic setting, this can be
 formulated as follows, following the above blog post by Chris
 Grossack.
 
-<code class="Agda">
-<a id="is-sequentially-Hausdorff"></a><a id="914" href="../../TypeTopology/SequentiallyHausdorff/#914" class="Function">is-sequentially-Hausdorff</a> <a id="940" class="Symbol">:</a> <a id="942" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="944" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="946" class="Symbol">→</a> <a id="948" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="950" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
+<code class="Agda"><a id="is-sequentially-Hausdorff"></a><a id="914" href="../../TypeTopology/SequentiallyHausdorff/#914" class="Function">is-sequentially-Hausdorff</a> <a id="940" class="Symbol">:</a> <a id="942" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="944" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="946" class="Symbol">→</a> <a id="948" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="950" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
 <a id="952" href="../../TypeTopology/SequentiallyHausdorff/#914" class="Function">is-sequentially-Hausdorff</a> <a id="978" href="../../TypeTopology/SequentiallyHausdorff/#978" class="Bound">X</a> <a id="980" class="Symbol">=</a> <a id="982" class="Symbol">(</a><a id="983" href="../../TypeTopology/SequentiallyHausdorff/#983" class="Bound">f</a> <a id="985" href="../../TypeTopology/SequentiallyHausdorff/#985" class="Bound">g</a> <a id="987" class="Symbol">:</a> <a id="989" href="../../CoNaturals/GenericConvergentSequence/#1332" class="Function">ℕ∞</a> <a id="992" class="Symbol">→</a> <a id="994" href="../../TypeTopology/SequentiallyHausdorff/#978" class="Bound">X</a><a id="995" class="Symbol">)</a>
                             <a id="1025" class="Symbol">→</a> <a id="1027" class="Symbol">((</a><a id="1029" href="../../TypeTopology/SequentiallyHausdorff/#1029" class="Bound">n</a> <a id="1031" class="Symbol">:</a> <a id="1033" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a><a id="1034" class="Symbol">)</a> <a id="1036" class="Symbol">→</a> <a id="1038" href="../../TypeTopology/SequentiallyHausdorff/#983" class="Bound">f</a> <a id="1040" class="Symbol">(</a><a id="1041" href="../../Notation/CanonicalMap/#359" class="Field">ι</a> <a id="1043" href="../../TypeTopology/SequentiallyHausdorff/#1029" class="Bound">n</a><a id="1044" class="Symbol">)</a> <a id="1046" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="1048" href="../../TypeTopology/SequentiallyHausdorff/#985" class="Bound">g</a> <a id="1050" class="Symbol">(</a><a id="1051" href="../../Notation/CanonicalMap/#359" class="Field">ι</a> <a id="1053" href="../../TypeTopology/SequentiallyHausdorff/#1029" class="Bound">n</a><a id="1054" class="Symbol">))</a>
-                            <a id="1085" class="Symbol">→</a> <a id="1087" href="../../TypeTopology/SequentiallyHausdorff/#983" class="Bound">f</a> <a id="1089" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a> <a id="1091" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="1093" href="../../TypeTopology/SequentiallyHausdorff/#985" class="Bound">g</a> <a id="1095" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a>
-</code>
+                            <a id="1085" class="Symbol">→</a> <a id="1087" href="../../TypeTopology/SequentiallyHausdorff/#983" class="Bound">f</a> <a id="1089" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a> <a id="1091" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="1093" href="../../TypeTopology/SequentiallyHausdorff/#985" class="Bound">g</a> <a id="1095" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a></code>
 
 If WLPO holds in our topos, then our topos is not topological, in any
 conceivable sense, and no type with two distinct points is
 sequentially Hausdorff.
 
-<code class="Agda">
-<a id="no-non-trivial-sequentially-Hausdorff-types-under-WLPO"></a><a id="1278" href="../../TypeTopology/SequentiallyHausdorff/#1278" class="Function">no-non-trivial-sequentially-Hausdorff-types-under-WLPO</a>
+<code class="Agda"><a id="no-non-trivial-sequentially-Hausdorff-types-under-WLPO"></a><a id="1278" href="../../TypeTopology/SequentiallyHausdorff/#1278" class="Function">no-non-trivial-sequentially-Hausdorff-types-under-WLPO</a>
  <a id="1334" class="Symbol">:</a> <a id="1336" href="../../Taboos/WLPO/#1337" class="Function">WLPO</a>
  <a id="1342" class="Symbol">→</a> <a id="1344" class="Symbol">(</a><a id="1345" href="../../TypeTopology/SequentiallyHausdorff/#1345" class="Bound">X</a> <a id="1347" class="Symbol">:</a> <a id="1349" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="1351" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="1353" class="Symbol">)</a>
  <a id="1356" class="Symbol">→</a> <a id="1358" href="../../MLTT/Negation/#689" class="Function">has-two-distinct-points</a> <a id="1382" href="../../TypeTopology/SequentiallyHausdorff/#1345" class="Bound">X</a>
@@ -63392,8 +63387,7 @@ sequentially Hausdorff.
   <a id="2028" href="../../TypeTopology/SequentiallyHausdorff/#2018" class="Function">III</a> <a id="2032" class="Symbol">=</a> <a id="2034" href="../../TypeTopology/SequentiallyHausdorff/#1492" class="Bound">d</a> <a id="2036" class="Symbol">(</a><a id="2037" href="../../TypeTopology/SequentiallyHausdorff/#1482" class="Bound">x₀</a>  <a id="2041" href="../../MLTT/Id/#3170" class="Function Operator">＝⟨refl⟩</a>
            <a id="2060" href="../../TypeTopology/SequentiallyHausdorff/#1524" class="Function">f</a> <a id="2062" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a> <a id="2064" href="../../MLTT/Id/#2703" class="Function Operator">＝⟨</a> <a id="2067" href="../../TypeTopology/SequentiallyHausdorff/#1495" class="Bound">X-is-seq-Haus</a> <a id="2081" href="../../TypeTopology/SequentiallyHausdorff/#1524" class="Function">f</a> <a id="2083" href="../../TypeTopology/SequentiallyHausdorff/#1630" class="Function">g</a> <a id="2085" href="../../TypeTopology/SequentiallyHausdorff/#1798" class="Function">a</a> <a id="2087" href="../../MLTT/Id/#2703" class="Function Operator">⟩</a>
            <a id="2100" href="../../TypeTopology/SequentiallyHausdorff/#1630" class="Function">g</a> <a id="2102" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a> <a id="2104" href="../../MLTT/Id/#2703" class="Function Operator">＝⟨</a> <a id="2107" href="../../TypeTopology/SequentiallyHausdorff/#1921" class="Function">II</a> <a id="2110" class="Symbol">(</a><a id="2111" href="../../TypeTopology/SequentiallyHausdorff/#1473" class="Bound">wlpo</a> <a id="2116" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a><a id="2117" class="Symbol">)</a> <a id="2119" href="../../MLTT/Id/#2703" class="Function Operator">⟩</a>
-           <a id="2132" href="../../TypeTopology/SequentiallyHausdorff/#1487" class="Bound">x₁</a>  <a id="2136" href="../../MLTT/Id/#2785" class="Function Operator">∎</a><a id="2137" class="Symbol">)</a>
-</code>
+           <a id="2132" href="../../TypeTopology/SequentiallyHausdorff/#1487" class="Bound">x₁</a>  <a id="2136" href="../../MLTT/Id/#2785" class="Function Operator">∎</a><a id="2137" class="Symbol">)</a></code>
 
 The reason WLPO doesn't hold topological in toposes is that the
 negation of WLPO is a weak continuity principle [1], which holds in
@@ -63406,8 +63400,7 @@ principles.
 To begin with, we show that all totally separated types are
 sequentially Hausdorff in topological toposes.
 
-<code class="Agda">
-<a id="2597" class="Keyword">open</a> <a id="2602" class="Keyword">import</a> <a id="2609" href="../../TypeTopology/TotallySeparated/" class="Module">TypeTopology.TotallySeparated</a>
+<code class="Agda"><a id="2597" class="Keyword">open</a> <a id="2602" class="Keyword">import</a> <a id="2609" href="../../TypeTopology/TotallySeparated/" class="Module">TypeTopology.TotallySeparated</a>
 <a id="2639" class="Keyword">open</a> <a id="2644" class="Keyword">import</a> <a id="2651" href="../../UF/DiscreteAndSeparated/" class="Module">UF.DiscreteAndSeparated</a>
 
 <a id="totally-separated-types-are-sequentially-Hausdorff"></a><a id="2676" href="../../TypeTopology/SequentiallyHausdorff/#2676" class="Function">totally-separated-types-are-sequentially-Hausdorff</a>
@@ -63433,8 +63426,7 @@ sequentially Hausdorff in topological toposes.
     <a id="3197" href="../../TypeTopology/SequentiallyHausdorff/#3170" class="Function">I₃</a> <a id="3200" class="Symbol">=</a> <a id="3202" href="../../UF/DiscreteAndSeparated/#7545" class="Function">𝟚-is-¬¬-separated</a> <a id="3220" class="Symbol">(</a><a id="3221" href="../../TypeTopology/SequentiallyHausdorff/#2935" class="Bound">p</a> <a id="3223" class="Symbol">(</a><a id="3224" href="../../TypeTopology/SequentiallyHausdorff/#2875" class="Bound">f</a> <a id="3226" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a><a id="3227" class="Symbol">))</a> <a id="3230" class="Symbol">(</a><a id="3231" href="../../TypeTopology/SequentiallyHausdorff/#2935" class="Bound">p</a> <a id="3233" class="Symbol">(</a><a id="3234" href="../../TypeTopology/SequentiallyHausdorff/#2877" class="Bound">g</a> <a id="3236" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a><a id="3237" class="Symbol">))</a> <a id="3240" href="../../TypeTopology/SequentiallyHausdorff/#3105" class="Function">I₂</a>
 
   <a id="3246" href="../../TypeTopology/SequentiallyHausdorff/#3246" class="Function">II</a> <a id="3249" class="Symbol">:</a> <a id="3251" href="../../TypeTopology/SequentiallyHausdorff/#2875" class="Bound">f</a> <a id="3253" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a> <a id="3255" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="3257" href="../../TypeTopology/SequentiallyHausdorff/#2877" class="Bound">g</a> <a id="3259" href="../../CoNaturals/GenericConvergentSequence/#6051" class="Function">∞</a>
-  <a id="3263" href="../../TypeTopology/SequentiallyHausdorff/#3246" class="Function">II</a> <a id="3266" class="Symbol">=</a> <a id="3268" href="../../TypeTopology/SequentiallyHausdorff/#2867" class="Bound">X-is-ts</a> <a id="3276" href="../../TypeTopology/SequentiallyHausdorff/#2895" class="Function">I</a>
-</code>
+  <a id="3263" href="../../TypeTopology/SequentiallyHausdorff/#3246" class="Function">II</a> <a id="3266" class="Symbol">=</a> <a id="3268" href="../../TypeTopology/SequentiallyHausdorff/#2867" class="Bound">X-is-ts</a> <a id="3276" href="../../TypeTopology/SequentiallyHausdorff/#2895" class="Function">I</a></code>
 
 There are plenty of totally separated types. For example, the types 𝟚,
 ℕ and ℕ∞ are totally separated, and the totally separated types are
@@ -63453,8 +63445,7 @@ which amounts to ℕ∞ with the point ∞ split into two copies
     ∞₀ = (∞ , λ _ → ₀),
     ∞₁ = (∞ , λ _ → ₁).
 
-<code class="Agda">
-<a id="3974" class="Keyword">open</a> <a id="3979" class="Keyword">import</a> <a id="3986" href="../../TypeTopology/FailureOfTotalSeparatedness/" class="Module">TypeTopology.FailureOfTotalSeparatedness</a> <a id="4027" href="../../TypeTopology/SequentiallyHausdorff/#498" class="Bound">fe₀</a>
+<code class="Agda"><a id="3974" class="Keyword">open</a> <a id="3979" class="Keyword">import</a> <a id="3986" href="../../TypeTopology/FailureOfTotalSeparatedness/" class="Module">TypeTopology.FailureOfTotalSeparatedness</a> <a id="4027" href="../../TypeTopology/SequentiallyHausdorff/#498" class="Bound">fe₀</a>
 
 <a id="ℕ∞₂-is-not-sequentially-Hausdorff"></a><a id="4032" href="../../TypeTopology/SequentiallyHausdorff/#4032" class="Function">ℕ∞₂-is-not-sequentially-Hausdorff</a> <a id="4066" class="Symbol">:</a> <a id="4068" href="../../MLTT/Negation/#278" class="Function Operator">¬</a> <a id="4070" href="../../TypeTopology/SequentiallyHausdorff/#914" class="Function">is-sequentially-Hausdorff</a> <a id="4096" href="../../TypeTopology/FailureOfTotalSeparatedness/#2455" class="Function">ℕ∞₂</a>
 <a id="4100" href="../../TypeTopology/SequentiallyHausdorff/#4032" class="Function">ℕ∞₂-is-not-sequentially-Hausdorff</a> <a id="4134" href="../../TypeTopology/SequentiallyHausdorff/#4134" class="Bound">h</a> <a id="4136" class="Symbol">=</a> <a id="4138" href="../../TypeTopology/SequentiallyHausdorff/#4458" class="Function">III</a>
@@ -63473,19 +63464,16 @@ which amounts to ℕ∞ with the point ∞ split into two copies
   <a id="4442" href="../../TypeTopology/SequentiallyHausdorff/#4427" class="Function">II</a> <a id="4445" class="Symbol">=</a> <a id="4447" href="../../TypeTopology/SequentiallyHausdorff/#4134" class="Bound">h</a> <a id="4449" href="../../TypeTopology/SequentiallyHausdorff/#4151" class="Function">f</a> <a id="4451" href="../../TypeTopology/SequentiallyHausdorff/#4153" class="Function">g</a> <a id="4453" href="../../TypeTopology/SequentiallyHausdorff/#4366" class="Function">a</a>
 
   <a id="4458" href="../../TypeTopology/SequentiallyHausdorff/#4458" class="Function">III</a> <a id="4462" class="Symbol">:</a> <a id="4464" href="../../MLTT/Empty-Type/#121" class="Datatype">𝟘</a>
-  <a id="4468" href="../../TypeTopology/SequentiallyHausdorff/#4458" class="Function">III</a> <a id="4472" class="Symbol">=</a> <a id="4474" href="../../TypeTopology/FailureOfTotalSeparatedness/#4345" class="Function">∞₀-and-∞₁-different</a> <a id="4494" href="../../TypeTopology/SequentiallyHausdorff/#4427" class="Function">II</a>
-</code>
+  <a id="4468" href="../../TypeTopology/SequentiallyHausdorff/#4458" class="Function">III</a> <a id="4472" class="Symbol">=</a> <a id="4474" href="../../TypeTopology/FailureOfTotalSeparatedness/#4345" class="Function">∞₀-and-∞₁-different</a> <a id="4494" href="../../TypeTopology/SequentiallyHausdorff/#4427" class="Function">II</a></code>
 
 The following was already proved in TypeTopology.FailureOfTotalSeparatedness.
 
-<code class="Agda">
-<a id="ℕ∞₂-is-not-totally-separated-in-topological-toposes"></a><a id="4603" href="../../TypeTopology/SequentiallyHausdorff/#4603" class="Function">ℕ∞₂-is-not-totally-separated-in-topological-toposes</a>
+<code class="Agda"><a id="ℕ∞₂-is-not-totally-separated-in-topological-toposes"></a><a id="4603" href="../../TypeTopology/SequentiallyHausdorff/#4603" class="Function">ℕ∞₂-is-not-totally-separated-in-topological-toposes</a>
  <a id="4656" class="Symbol">:</a> <a id="4658" href="../../MLTT/Negation/#278" class="Function Operator">¬</a> <a id="4660" href="../../Taboos/WLPO/#1337" class="Function">WLPO</a>
  <a id="4666" class="Symbol">→</a> <a id="4668" href="../../MLTT/Negation/#278" class="Function Operator">¬</a> <a id="4670" href="../../TypeTopology/TotallySeparated/#3829" class="Function">is-totally-separated</a> <a id="4691" href="../../TypeTopology/FailureOfTotalSeparatedness/#2455" class="Function">ℕ∞₂</a>
 <a id="4695" href="../../TypeTopology/SequentiallyHausdorff/#4603" class="Function">ℕ∞₂-is-not-totally-separated-in-topological-toposes</a> <a id="4747" href="../../TypeTopology/SequentiallyHausdorff/#4747" class="Bound">nwlpo</a> <a id="4753" href="../../TypeTopology/SequentiallyHausdorff/#4753" class="Bound">ts</a> <a id="4756" class="Symbol">=</a>
  <a id="4759" href="../../TypeTopology/SequentiallyHausdorff/#4032" class="Function">ℕ∞₂-is-not-sequentially-Hausdorff</a>
-  <a id="4795" class="Symbol">(</a><a id="4796" href="../../TypeTopology/SequentiallyHausdorff/#2676" class="Function">totally-separated-types-are-sequentially-Hausdorff</a> <a id="4847" href="../../TypeTopology/SequentiallyHausdorff/#4747" class="Bound">nwlpo</a> <a id="4853" href="../../TypeTopology/FailureOfTotalSeparatedness/#2455" class="Function">ℕ∞₂</a> <a id="4857" href="../../TypeTopology/SequentiallyHausdorff/#4753" class="Bound">ts</a><a id="4859" class="Symbol">)</a>
-</code>
+  <a id="4795" class="Symbol">(</a><a id="4796" href="../../TypeTopology/SequentiallyHausdorff/#2676" class="Function">totally-separated-types-are-sequentially-Hausdorff</a> <a id="4847" href="../../TypeTopology/SequentiallyHausdorff/#4747" class="Bound">nwlpo</a> <a id="4853" href="../../TypeTopology/FailureOfTotalSeparatedness/#2455" class="Function">ℕ∞₂</a> <a id="4857" href="../../TypeTopology/SequentiallyHausdorff/#4753" class="Bound">ts</a><a id="4859" class="Symbol">)</a></code>
 
 The proof given here is the same, but factored in two steps, by
 considering sequentially Hausdorff spaces as an intermediate step.

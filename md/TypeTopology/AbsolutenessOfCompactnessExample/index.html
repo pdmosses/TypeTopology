@@ -63319,8 +63319,7 @@ We demonstrate the upwards absoluteness of compactness, by using it to
 give an alternative proof of the propositional Tychonoff theorem (as
 proved in the module TypeTopology.PropTychonoff).
 
-<code class="Agda">
-<a id="247" class="Symbol">{-#</a> <a id="251" class="Keyword">OPTIONS</a> <a id="259" class="Pragma">--safe</a> <a id="266" class="Pragma">--without-K</a> <a id="278" class="Symbol">#-}</a>
+<code class="Agda"><a id="247" class="Symbol">{-#</a> <a id="251" class="Keyword">OPTIONS</a> <a id="259" class="Pragma">--safe</a> <a id="266" class="Pragma">--without-K</a> <a id="278" class="Symbol">#-}</a>
 <a id="282" class="Keyword">open</a> <a id="287" class="Keyword">import</a> <a id="294" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 
 <a id="308" class="Keyword">import</a> <a id="315" href="../../Modal/Open/" class="Module">Modal.Open</a>
@@ -63338,8 +63337,7 @@ proved in the module TypeTopology.PropTychonoff).
  <a id="619" class="Symbol">(</a><a id="620" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#620" class="Bound">fe</a> <a id="623" class="Symbol">:</a> <a id="625" href="../../UF/FunExt/#850" class="Function">funext</a> <a id="632" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="634" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a><a id="635" class="Symbol">)</a>
  <a id="638" class="Symbol">(</a><a id="639" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="641" class="Symbol">:</a> <a id="643" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="645" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="647" class="Symbol">)</a>
  <a id="650" class="Symbol">(</a><a id="651" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#651" class="Bound">P-is-prop</a> <a id="661" class="Symbol">:</a> <a id="663" href="../../UF/Subsingletons/#469" class="Function">is-prop</a> <a id="671" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a><a id="672" class="Symbol">)</a>
- <a id="675" class="Keyword">where</a>
-</code>
+ <a id="675" class="Keyword">where</a></code>
 
 We are given a proposition P as a parameter and function
 extensionality. We use this in a sequence of module imports.
@@ -63347,60 +63345,48 @@ extensionality. We use this in a sequence of module imports.
 First of all, we give P to the open modality module, as well as
 function extensionality to get results about the open modality on P.
 
-<code class="Agda">
-<a id="961" class="Keyword">open</a> <a id="966" href="../../Modal/Open/" class="Module">Modal.Open</a> <a id="977" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#620" class="Bound">fe</a> <a id="980" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="982" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#651" class="Bound">P-is-prop</a>
-</code>
+<code class="Agda"><a id="961" class="Keyword">open</a> <a id="966" href="../../Modal/Open/" class="Module">Modal.Open</a> <a id="977" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#620" class="Bound">fe</a> <a id="980" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="982" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#651" class="Bound">P-is-prop</a></code>
 
 The open modality module gives us proofs that the open modality is
 reflective and Σ-closed. We hand these off to the
 SigmaClosedReflectiveSubuniverse module.
 
-<code class="Agda">
-<a id="1178" class="Keyword">open</a> <a id="1183" href="../../Modal/SigmaClosedReflectiveSubuniverse/" class="Module">Modal.SigmaClosedReflectiveSubuniverse</a>
- <a id="1223" href="../../Modal/Open/#981" class="Function">open-subuniverse</a> <a id="1240" href="../../Modal/Open/#2288" class="Function">open-is-reflective</a> <a id="1259" href="../../Modal/Open/#2849" class="Function">open-is-sigma-closed</a>
-</code>
+<code class="Agda"><a id="1178" class="Keyword">open</a> <a id="1183" href="../../Modal/SigmaClosedReflectiveSubuniverse/" class="Module">Modal.SigmaClosedReflectiveSubuniverse</a>
+ <a id="1223" href="../../Modal/Open/#981" class="Function">open-subuniverse</a> <a id="1240" href="../../Modal/Open/#2288" class="Function">open-is-reflective</a> <a id="1259" href="../../Modal/Open/#2849" class="Function">open-is-sigma-closed</a></code>
 
 We also hand off the open modality as a parameter to the
 AbsolutenessOfCompactness module.
 
-<code class="Agda">
-<a id="1399" class="Keyword">open</a> <a id="1404" href="../../TypeTopology/AbsolutenessOfCompactness/" class="Module">TypeTopology.AbsolutenessOfCompactness</a>
- <a id="1444" href="../../Modal/Open/#981" class="Function">open-subuniverse</a> <a id="1461" href="../../Modal/Open/#2288" class="Function">open-is-reflective</a>
-</code>
+<code class="Agda"><a id="1399" class="Keyword">open</a> <a id="1404" href="../../TypeTopology/AbsolutenessOfCompactness/" class="Module">TypeTopology.AbsolutenessOfCompactness</a>
+ <a id="1444" href="../../Modal/Open/#981" class="Function">open-subuniverse</a> <a id="1461" href="../../Modal/Open/#2288" class="Function">open-is-reflective</a></code>
 
 Finally, we recall that AbsolutenessOfCompactness has a submodule that
 requires the extra assumptions of function extensionality and that the
 reflective subuniverse is Σ-closed and replete. We have all of these,
 so we pass them on as parameters to the submodule.
 
-<code class="Agda">
-<a id="1771" class="Keyword">open</a> <a id="1776" href="../../TypeTopology/AbsolutenessOfCompactness/#10838" class="Module">WithFunExtAndRepleteSigmaClosed</a>
- <a id="1809" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#620" class="Bound">fe</a> <a id="1812" href="../../Modal/Open/#2849" class="Function">open-is-sigma-closed</a> <a id="1833" href="../../Modal/Open/#2676" class="Function">open-is-replete</a>
-</code>
+<code class="Agda"><a id="1771" class="Keyword">open</a> <a id="1776" href="../../TypeTopology/AbsolutenessOfCompactness/#10838" class="Module">WithFunExtAndRepleteSigmaClosed</a>
+ <a id="1809" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#620" class="Bound">fe</a> <a id="1812" href="../../Modal/Open/#2849" class="Function">open-is-sigma-closed</a> <a id="1833" href="../../Modal/Open/#2676" class="Function">open-is-replete</a></code>
 
 If we apply the theorems in AbsolutenessOfCompactness directly, the
 best we can get is the following non dependent version of
 propositional Tychonoff.
 
-<code class="Agda">
-<a id="non-dependent-prop-tychonoff"></a><a id="2028" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2028" class="Function">non-dependent-prop-tychonoff</a>
+<code class="Agda"><a id="non-dependent-prop-tychonoff"></a><a id="2028" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2028" class="Function">non-dependent-prop-tychonoff</a>
  <a id="2058" class="Symbol">:</a> <a id="2060" class="Symbol">(</a><a id="2061" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2061" class="Bound">A</a> <a id="2063" class="Symbol">:</a> <a id="2065" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#632" class="Bound">𝓤</a> <a id="2067" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="2069" class="Symbol">)</a>
  <a id="2072" class="Symbol">→</a> <a id="2074" class="Symbol">(</a><a id="2075" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="2077" class="Symbol">→</a> <a id="2079" href="../../TypeTopology/CompactTypes/#4300" class="Function">is-compact∙</a> <a id="2091" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2061" class="Bound">A</a><a id="2092" class="Symbol">)</a>
  <a id="2095" class="Symbol">→</a> <a id="2097" href="../../TypeTopology/CompactTypes/#4300" class="Function">is-compact∙</a> <a id="2109" class="Symbol">(</a><a id="2110" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="2112" class="Symbol">→</a> <a id="2114" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2061" class="Bound">A</a><a id="2115" class="Symbol">)</a>
-<a id="2117" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2028" class="Function">non-dependent-prop-tychonoff</a> <a id="2146" class="Symbol">=</a> <a id="2148" href="../../TypeTopology/AbsolutenessOfCompactness/#14417" class="Function">modalities-preserve-compact</a>
-</code>
+<a id="2117" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2028" class="Function">non-dependent-prop-tychonoff</a> <a id="2146" class="Symbol">=</a> <a id="2148" href="../../TypeTopology/AbsolutenessOfCompactness/#14417" class="Function">modalities-preserve-compact</a></code>
 
 In order to get a new proof of propositional Tychonoff, we need to
 show how to derive it from the non-dependent version.
 
-<code class="Agda">
-<a id="prop-tychonoff₂"></a><a id="2325" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2325" class="Function">prop-tychonoff₂</a>
+<code class="Agda"><a id="prop-tychonoff₂"></a><a id="2325" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2325" class="Function">prop-tychonoff₂</a>
  <a id="2342" class="Symbol">:</a> <a id="2344" class="Symbol">(</a><a id="2345" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2345" class="Bound">A</a> <a id="2347" class="Symbol">:</a> <a id="2349" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="2351" class="Symbol">→</a> <a id="2353" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#632" class="Bound">𝓤</a> <a id="2355" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="2357" class="Symbol">)</a>
  <a id="2360" class="Symbol">→</a> <a id="2362" class="Symbol">((</a><a id="2364" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2364" class="Bound">z</a> <a id="2366" class="Symbol">:</a> <a id="2368" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a><a id="2369" class="Symbol">)</a> <a id="2371" class="Symbol">→</a> <a id="2373" href="../../TypeTopology/CompactTypes/#4300" class="Function">is-compact∙</a> <a id="2385" class="Symbol">(</a><a id="2386" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2345" class="Bound">A</a> <a id="2388" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2364" class="Bound">z</a><a id="2389" class="Symbol">))</a>
  <a id="2393" class="Symbol">→</a> <a id="2395" href="../../TypeTopology/CompactTypes/#4300" class="Function">is-compact∙</a> <a id="2407" class="Symbol">(</a><a id="2408" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="2410" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2345" class="Bound">A</a><a id="2411" class="Symbol">)</a>
 <a id="2413" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2325" class="Function">prop-tychonoff₂</a> <a id="2429" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="2431" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2431" class="Bound">A-compact</a> <a id="2441" class="Symbol">=</a> <a id="2443" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#4483" class="Function">ΠA-compact</a>
- <a id="2455" class="Keyword">where</a>
-</code>
+ <a id="2455" class="Keyword">where</a></code>
 
 We are given a family of types A : P → 𝓤 ̇ and we aim to apply the
 non-dependent version above to the product Π A. In order to do this,
@@ -63414,24 +63400,20 @@ straight from the original propositional Tychonoff proof. Namely, if P
 is true, as witnessed by an inhabitant z, then Π A is equivalent to A
 z, and so is compact.
 
-<code class="Agda">
-  <a id="3099" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3099" class="Function">𝕗</a> <a id="3101" class="Symbol">:</a> <a id="3103" class="Symbol">(</a><a id="3104" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3104" class="Bound">z</a> <a id="3106" class="Symbol">:</a> <a id="3108" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a><a id="3109" class="Symbol">)</a> <a id="3111" class="Symbol">→</a> <a id="3113" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="3115" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="3117" href="../../UF/Equiv/#1318" class="Function Operator">≃</a> <a id="3119" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="3121" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3104" class="Bound">z</a>
+<code class="Agda"><a id="3099" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3099" class="Function">𝕗</a> <a id="3101" class="Symbol">:</a> <a id="3103" class="Symbol">(</a><a id="3104" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3104" class="Bound">z</a> <a id="3106" class="Symbol">:</a> <a id="3108" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a><a id="3109" class="Symbol">)</a> <a id="3111" class="Symbol">→</a> <a id="3113" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="3115" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="3117" href="../../UF/Equiv/#1318" class="Function Operator">≃</a> <a id="3119" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="3121" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3104" class="Bound">z</a>
   <a id="3125" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3099" class="Function">𝕗</a> <a id="3127" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3127" class="Bound">z</a> <a id="3129" class="Symbol">=</a> <a id="3131" href="../../UF/PropIndexedPiSigma/#1326" class="Function">prop-indexed-product</a> <a id="3152" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3127" class="Bound">z</a> <a id="3154" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#620" class="Bound">fe</a> <a id="3157" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#651" class="Bound">P-is-prop</a>
 
   <a id="3170" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3170" class="Function">product-locally-compact</a> <a id="3194" class="Symbol">:</a> <a id="3196" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="3198" class="Symbol">→</a> <a id="3200" href="../../TypeTopology/CompactTypes/#4300" class="Function">is-compact∙</a> <a id="3212" class="Symbol">(</a><a id="3213" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="3215" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="3216" class="Symbol">)</a>
   <a id="3220" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3170" class="Function">product-locally-compact</a> <a id="3244" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3244" class="Bound">z</a> <a id="3246" class="Symbol">=</a>
    <a id="3251" href="../../TypeTopology/CompactTypes/#17610" class="Function">compact∙-types-are-closed-under-equiv</a>
-    <a id="3293" class="Symbol">(</a><a id="3294" href="../../UF/Equiv/#8434" class="Function">≃-sym</a> <a id="3300" class="Symbol">(</a><a id="3301" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3099" class="Function">𝕗</a> <a id="3303" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3244" class="Bound">z</a><a id="3304" class="Symbol">))</a> <a id="3307" class="Symbol">(</a><a id="3308" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2431" class="Bound">A-compact</a> <a id="3318" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3244" class="Bound">z</a><a id="3319" class="Symbol">)</a>
-</code>
+    <a id="3293" class="Symbol">(</a><a id="3294" href="../../UF/Equiv/#8434" class="Function">≃-sym</a> <a id="3300" class="Symbol">(</a><a id="3301" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3099" class="Function">𝕗</a> <a id="3303" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3244" class="Bound">z</a><a id="3304" class="Symbol">))</a> <a id="3307" class="Symbol">(</a><a id="3308" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2431" class="Bound">A-compact</a> <a id="3318" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3244" class="Bound">z</a><a id="3319" class="Symbol">)</a></code>
 
 We can now apply the non dependent version above to show that P → Π A
 is compact.
 
-<code class="Agda">
-  <a id="3433" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3433" class="Function">P→ΠA-compact</a> <a id="3446" class="Symbol">:</a> <a id="3448" href="../../TypeTopology/CompactTypes/#4300" class="Function">is-compact∙</a> <a id="3460" class="Symbol">(</a><a id="3461" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="3463" class="Symbol">→</a> <a id="3465" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="3467" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="3468" class="Symbol">)</a>
+<code class="Agda"><a id="3433" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3433" class="Function">P→ΠA-compact</a> <a id="3446" class="Symbol">:</a> <a id="3448" href="../../TypeTopology/CompactTypes/#4300" class="Function">is-compact∙</a> <a id="3460" class="Symbol">(</a><a id="3461" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="3463" class="Symbol">→</a> <a id="3465" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="3467" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="3468" class="Symbol">)</a>
   <a id="3472" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3433" class="Function">P→ΠA-compact</a> <a id="3485" class="Symbol">=</a>
-   <a id="3490" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2028" class="Function">non-dependent-prop-tychonoff</a> <a id="3519" class="Symbol">(</a><a id="3520" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="3522" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="3523" class="Symbol">)</a> <a id="3525" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3170" class="Function">product-locally-compact</a>
-</code>
+   <a id="3490" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2028" class="Function">non-dependent-prop-tychonoff</a> <a id="3519" class="Symbol">(</a><a id="3520" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="3522" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="3523" class="Symbol">)</a> <a id="3525" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3170" class="Function">product-locally-compact</a></code>
 
 To deduce that Π A is compact, it suffices to show that it is
 equivalent to P → Π A. This can be shown directly, but we will give a
@@ -63442,19 +63424,15 @@ First note that given z : P, we known that P is true and so every type
 is modal for the open modality on P. Hence, in particular A z is
 modal.
 
-<code class="Agda">
-  <a id="3924" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3924" class="Function">A-modal</a> <a id="3932" class="Symbol">:</a> <a id="3934" class="Symbol">(</a><a id="3935" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3935" class="Bound">z</a> <a id="3937" class="Symbol">:</a> <a id="3939" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a><a id="3940" class="Symbol">)</a> <a id="3942" class="Symbol">→</a> <a id="3944" href="../../Modal/ReflectiveSubuniverse/#538" class="Function">is-modal</a> <a id="3953" class="Symbol">(</a><a id="3954" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="3956" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3935" class="Bound">z</a><a id="3957" class="Symbol">)</a>
-  <a id="3961" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3924" class="Function">A-modal</a> <a id="3969" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3969" class="Bound">z</a> <a id="3971" class="Symbol">=</a> <a id="3973" href="../../Modal/Open/#3390" class="Function">P-true-implies-all-modal</a> <a id="3998" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3969" class="Bound">z</a> <a id="4000" class="Symbol">(</a><a id="4001" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="4003" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3969" class="Bound">z</a><a id="4004" class="Symbol">)</a>
-</code>
+<code class="Agda"><a id="3924" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3924" class="Function">A-modal</a> <a id="3932" class="Symbol">:</a> <a id="3934" class="Symbol">(</a><a id="3935" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3935" class="Bound">z</a> <a id="3937" class="Symbol">:</a> <a id="3939" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a><a id="3940" class="Symbol">)</a> <a id="3942" class="Symbol">→</a> <a id="3944" href="../../Modal/ReflectiveSubuniverse/#538" class="Function">is-modal</a> <a id="3953" class="Symbol">(</a><a id="3954" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="3956" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3935" class="Bound">z</a><a id="3957" class="Symbol">)</a>
+  <a id="3961" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3924" class="Function">A-modal</a> <a id="3969" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3969" class="Bound">z</a> <a id="3971" class="Symbol">=</a> <a id="3973" href="../../Modal/Open/#3390" class="Function">P-true-implies-all-modal</a> <a id="3998" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3969" class="Bound">z</a> <a id="4000" class="Symbol">(</a><a id="4001" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="4003" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3969" class="Bound">z</a><a id="4004" class="Symbol">)</a></code>
 
 Since A is a family of modal types its product Π A is also modal.
 
-<code class="Agda">
-  <a id="4102" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#4102" class="Function">ΠA-modal</a> <a id="4111" class="Symbol">:</a> <a id="4113" href="../../Modal/ReflectiveSubuniverse/#538" class="Function">is-modal</a> <a id="4122" class="Symbol">(</a><a id="4123" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="4125" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="4126" class="Symbol">)</a>
+<code class="Agda"><a id="4102" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#4102" class="Function">ΠA-modal</a> <a id="4111" class="Symbol">:</a> <a id="4113" href="../../Modal/ReflectiveSubuniverse/#538" class="Function">is-modal</a> <a id="4122" class="Symbol">(</a><a id="4123" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="4125" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="4126" class="Symbol">)</a>
   <a id="4130" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#4102" class="Function">ΠA-modal</a> <a id="4139" class="Symbol">=</a>
    <a id="4144" href="../../Modal/ReflectiveSubuniverse/#6477" class="Function">products-of-modal-types-are-modal</a>
-    <a id="4182" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#620" class="Bound">fe</a> <a id="4185" href="../../Modal/Open/#2676" class="Function">open-is-replete</a> <a id="4201" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="4203" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="4205" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3924" class="Function">A-modal</a>
-</code>
+    <a id="4182" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#620" class="Bound">fe</a> <a id="4185" href="../../Modal/Open/#2676" class="Function">open-is-replete</a> <a id="4201" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#639" class="Bound">P</a> <a id="4203" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a> <a id="4205" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3924" class="Function">A-modal</a></code>
 
 However, the fact that Π A is modal precisely tells us that the unit
 map of the modality Π A → (P → Π A) is an equivalence.
@@ -63462,13 +63440,11 @@ map of the modality Π A → (P → Π A) is an equivalence.
 Putting this together with the earlier proof that P → Π A is modal
 allows us to complete the proof of the theorem.
 
-<code class="Agda">
-  <a id="4483" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#4483" class="Function">ΠA-compact</a> <a id="4494" class="Symbol">:</a> <a id="4496" href="../../TypeTopology/CompactTypes/#4300" class="Function">is-compact∙</a> <a id="4508" class="Symbol">(</a><a id="4509" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="4511" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="4512" class="Symbol">)</a>
+<code class="Agda"><a id="4483" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#4483" class="Function">ΠA-compact</a> <a id="4494" class="Symbol">:</a> <a id="4496" href="../../TypeTopology/CompactTypes/#4300" class="Function">is-compact∙</a> <a id="4508" class="Symbol">(</a><a id="4509" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="4511" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="4512" class="Symbol">)</a>
   <a id="4516" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#4483" class="Function">ΠA-compact</a> <a id="4527" class="Symbol">=</a>
    <a id="4532" href="../../TypeTopology/CompactTypes/#17610" class="Function">compact∙-types-are-closed-under-equiv</a>
     <a id="4574" class="Symbol">(</a><a id="4575" href="../../UF/Equiv/#8434" class="Function">≃-sym</a> <a id="4581" class="Symbol">((</a><a id="4583" href="../../Modal/Open/#855" class="Function">open-unit</a> <a id="4593" class="Symbol">(</a><a id="4594" href="../../MLTT/Pi/#164" class="Function">Π</a> <a id="4596" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#2429" class="Bound">A</a><a id="4597" class="Symbol">))</a> <a id="4600" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4602" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#4102" class="Function">ΠA-modal</a><a id="4610" class="Symbol">))</a>
-    <a id="4617" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3433" class="Function">P→ΠA-compact</a>
-</code>
+    <a id="4617" href="../../TypeTopology/AbsolutenessOfCompactnessExample/#3433" class="Function">P→ΠA-compact</a></code>
 </pre>
 
 

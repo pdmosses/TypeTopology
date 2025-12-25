@@ -63315,8 +63315,7 @@
 <h1 id="finorder">Fin.Order</h1>
 <pre class="Agda">Martin Escardo, 10th Dec 2019.
 
-<code class="Agda">
-<a id="47" class="Symbol">{-#</a> <a id="51" class="Keyword">OPTIONS</a> <a id="59" class="Pragma">--safe</a> <a id="66" class="Pragma">--without-K</a> <a id="78" class="Symbol">#-}</a>
+<code class="Agda"><a id="47" class="Symbol">{-#</a> <a id="51" class="Keyword">OPTIONS</a> <a id="59" class="Pragma">--safe</a> <a id="66" class="Pragma">--without-K</a> <a id="78" class="Symbol">#-}</a>
 
 <a id="83" class="Keyword">module</a> <a id="90" href="../../Fin/Order/" class="Module">Fin.Order</a> <a id="100" class="Keyword">where</a>
 
@@ -63331,15 +63330,13 @@
 <a id="350" class="Keyword">open</a> <a id="355" class="Keyword">import</a> <a id="362" href="../../UF/Base/" class="Module">UF.Base</a>
 <a id="370" class="Keyword">open</a> <a id="375" class="Keyword">import</a> <a id="382" href="../../UF/FunExt/" class="Module">UF.FunExt</a>
 <a id="392" class="Keyword">open</a> <a id="397" class="Keyword">import</a> <a id="404" href="../../UF/Subsingletons/" class="Module">UF.Subsingletons</a>
-<a id="421" class="Keyword">open</a> <a id="426" class="Keyword">import</a> <a id="433" href="../../UF/Subsingletons-FunExt/" class="Module">UF.Subsingletons-FunExt</a>
-</code>
+<a id="421" class="Keyword">open</a> <a id="426" class="Keyword">import</a> <a id="433" href="../../UF/Subsingletons-FunExt/" class="Module">UF.Subsingletons-FunExt</a></code>
 
 We define the natural order of Fin n by reduction to the natural order
 of ℕ so that the canonical embedding Fin n → ℕ is order preserving and
 reflecting, using the above isomorphic manifestation of the type Fin n.
 
-<code class="Agda">
-<a id="699" class="Keyword">module</a> <a id="706" href="../../Fin/Order/#706" class="Module">_</a> <a id="708" class="Symbol">{</a><a id="709" href="../../Fin/Order/#709" class="Bound">n</a> <a id="711" class="Symbol">:</a> <a id="713" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a><a id="714" class="Symbol">}</a> <a id="716" class="Keyword">where</a>
+<code class="Agda"><a id="699" class="Keyword">module</a> <a id="706" href="../../Fin/Order/#706" class="Module">_</a> <a id="708" class="Symbol">{</a><a id="709" href="../../Fin/Order/#709" class="Bound">n</a> <a id="711" class="Symbol">:</a> <a id="713" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a><a id="714" class="Symbol">}</a> <a id="716" class="Keyword">where</a>
  <a id="723" class="Keyword">instance</a>
   <a id="734" href="../../Fin/Order/#734" class="Function">Strict-Order-Fin-Fin</a> <a id="755" class="Symbol">:</a> <a id="757" href="../../Notation/Order/#192" class="Record">Strict-Order</a> <a id="770" class="Symbol">(</a><a id="771" href="../../Fin/Type/#157" class="Function">Fin</a> <a id="775" href="../../Fin/Order/#709" class="Bound">n</a><a id="776" class="Symbol">)</a> <a id="778" class="Symbol">(</a><a id="779" href="../../Fin/Type/#157" class="Function">Fin</a> <a id="783" href="../../Fin/Order/#709" class="Bound">n</a><a id="784" class="Symbol">)</a>
   <a id="788" href="../../Notation/Order/#272" class="Field Operator">_&lt;_</a> <a id="792" class="Symbol">{{</a><a id="794" href="../../Fin/Order/#734" class="Function">Strict-Order-Fin-Fin</a><a id="814" class="Symbol">}}</a> <a id="817" href="../../Fin/Order/#817" class="Bound">i</a> <a id="819" href="../../Fin/Order/#819" class="Bound">j</a> <a id="821" class="Symbol">=</a> <a id="823" href="../../Fin/Embeddings/#377" class="Function Operator">⟦</a> <a id="825" href="../../Fin/Order/#817" class="Bound">i</a> <a id="827" href="../../Fin/Embeddings/#377" class="Function Operator">⟧</a> <a id="829" href="../../Notation/Order/#272" class="Field Operator">&lt;</a> <a id="831" href="../../Fin/Embeddings/#377" class="Function Operator">⟦</a> <a id="833" href="../../Fin/Order/#819" class="Bound">j</a> <a id="835" href="../../Fin/Embeddings/#377" class="Function Operator">⟧</a>
@@ -63497,8 +63494,7 @@ reflecting, using the above isomorphic manifestation of the type Fin n.
                    <a id="4990" class="Symbol">(λ</a> <a id="4993" href="../../Fin/Order/#4993" class="Bound">b</a> <a id="4995" class="Symbol">→</a> <a id="4997" href="../../Naturals/Order/#552" class="Function">≤-is-prop-valued</a> <a id="5014" class="Symbol">(</a><a id="5015" href="../../Fin/Embeddings/#377" class="Function Operator">⟦_⟧</a> <a id="5019" href="../../Fin/Order/#4874" class="Bound">j</a><a id="5020" class="Symbol">)</a> <a id="5022" class="Symbol">(</a><a id="5023" href="../../Fin/Embeddings/#377" class="Function Operator">⟦_⟧</a> <a id="5027" href="../../Fin/Order/#4947" class="Bound">k</a><a id="5028" class="Symbol">))))</a>
 
   <a id="5036" href="../../Fin/Order/#5036" class="Function">γ</a> <a id="5038" class="Symbol">:</a> <a id="5040" href="../../Fin/Order/#4651" class="Bound">i</a> <a id="5042" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5044" href="../../Fin/Order/#4655" class="Bound">a</a> <a id="5046" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5048" href="../../Fin/Order/#4659" class="Bound">l</a> <a id="5050" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="5052" href="../../Fin/Order/#4663" class="Bound">i&#39;</a> <a id="5055" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5057" href="../../Fin/Order/#4668" class="Bound">a&#39;</a> <a id="5060" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5062" href="../../Fin/Order/#4673" class="Bound">l&#39;</a>
-  <a id="5067" href="../../Fin/Order/#5036" class="Function">γ</a> <a id="5069" class="Symbol">=</a> <a id="5071" href="../../UF/Base/#15181" class="Function">to-Σ-＝</a> <a id="5078" class="Symbol">(</a><a id="5079" href="../../Fin/Order/#4690" class="Function">p</a> <a id="5081" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5083" href="../../Fin/Order/#4820" class="Function">H</a> <a id="5085" class="Symbol">_</a> <a id="5087" class="Symbol">_</a> <a id="5089" class="Symbol">_)</a>
-</code>
+  <a id="5067" href="../../Fin/Order/#5036" class="Function">γ</a> <a id="5069" class="Symbol">=</a> <a id="5071" href="../../UF/Base/#15181" class="Function">to-Σ-＝</a> <a id="5078" class="Symbol">(</a><a id="5079" href="../../Fin/Order/#4690" class="Function">p</a> <a id="5081" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5083" href="../../Fin/Order/#4820" class="Function">H</a> <a id="5085" class="Symbol">_</a> <a id="5087" class="Symbol">_</a> <a id="5089" class="Symbol">_)</a></code>
 </pre>
 
 

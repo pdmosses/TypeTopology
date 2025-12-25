@@ -63334,21 +63334,17 @@ https://doi.org/10.23638/LMCS-16(1:2)2020
 <a id="451" class="Keyword">open</a> <a id="456" class="Keyword">import</a> <a id="463" href="../../UF/FunExt/" class="Module">UF.FunExt</a>
 <a id="473" class="Keyword">open</a> <a id="478" class="Keyword">import</a> <a id="485" href="../../UF/Subsingletons/" class="Module">UF.Subsingletons</a>
 
-<a id="503" class="Keyword">module</a> <a id="510" href="../../Modal/Open/" class="Module">Modal.Open</a>
-</code>
+<a id="503" class="Keyword">module</a> <a id="510" href="../../Modal/Open/" class="Module">Modal.Open</a></code>
 
 Function extensionality is required for even some quite basic results
 about open modalities, so we will assume it throughout.
 
-<code class="Agda">
- <a id="676" class="Symbol">(</a><a id="677" href="../../Modal/Open/#677" class="Bound">fe</a> <a id="680" class="Symbol">:</a> <a id="682" href="../../UF/FunExt/#850" class="Function">funext</a> <a id="689" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="691" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a><a id="692" class="Symbol">)</a>
-</code>
+<code class="Agda"><a id="676" class="Symbol">(</a><a id="677" href="../../Modal/Open/#677" class="Bound">fe</a> <a id="680" class="Symbol">:</a> <a id="682" href="../../UF/FunExt/#850" class="Function">funext</a> <a id="689" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="691" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a><a id="692" class="Symbol">)</a></code>
 
 There is an open modality for each proposition P. We fix such a
 proposition throughout.
 
-<code class="Agda">
- <a id="811" class="Symbol">(</a><a id="812" href="../../Modal/Open/#812" class="Bound">P</a> <a id="814" class="Symbol">:</a> <a id="816" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="818" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="820" class="Symbol">)</a>
+<code class="Agda"><a id="811" class="Symbol">(</a><a id="812" href="../../Modal/Open/#812" class="Bound">P</a> <a id="814" class="Symbol">:</a> <a id="816" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="818" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="820" class="Symbol">)</a>
  <a id="823" class="Symbol">(</a><a id="824" href="../../Modal/Open/#824" class="Bound">P-is-prop</a> <a id="834" class="Symbol">:</a> <a id="836" href="../../UF/Subsingletons/#469" class="Function">is-prop</a> <a id="844" href="../../Modal/Open/#812" class="Bound">P</a><a id="845" class="Symbol">)</a>
  <a id="848" class="Keyword">where</a>
 
@@ -63360,14 +63356,12 @@ proposition throughout.
 
 <a id="open-subuniverse"></a><a id="981" href="../../Modal/Open/#981" class="Function">open-subuniverse</a> <a id="998" class="Symbol">:</a> <a id="1000" href="../../Modal/Subuniverse/#296" class="Function">subuniverse</a> <a id="1012" href="../../Modal/Open/#689" class="Bound">𝓤</a> <a id="1014" href="../../Modal/Open/#689" class="Bound">𝓤</a>
 <a id="1016" href="../../Modal/Open/#981" class="Function">open-subuniverse</a> <a id="1033" class="Symbol">=</a>
- <a id="1036" href="../../Modal/Open/#913" class="Function">is-open-modal</a> <a id="1050" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="1052" class="Symbol">λ</a> <a id="1054" href="../../Modal/Open/#1054" class="Bound">A</a> <a id="1056" class="Symbol">→</a> <a id="1058" href="../../UF/Equiv-FunExt/#6389" class="Function">being-equiv-is-prop&#39;&#39;</a> <a id="1080" href="../../Modal/Open/#677" class="Bound">fe</a> <a id="1083" class="Symbol">_</a>
-</code>
+ <a id="1036" href="../../Modal/Open/#913" class="Function">is-open-modal</a> <a id="1050" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="1052" class="Symbol">λ</a> <a id="1054" href="../../Modal/Open/#1054" class="Bound">A</a> <a id="1056" class="Symbol">→</a> <a id="1058" href="../../UF/Equiv-FunExt/#6389" class="Function">being-equiv-is-prop&#39;&#39;</a> <a id="1080" href="../../Modal/Open/#677" class="Bound">fe</a> <a id="1083" class="Symbol">_</a></code>
 
 The reflection has a very simple description - it just sends A to the
 exponential P → A. We then need to check that it is a reflection.
 
-<code class="Agda">
-<a id="exponential-is-modal"></a><a id="1249" href="../../Modal/Open/#1249" class="Function">exponential-is-modal</a> <a id="1270" class="Symbol">:</a> <a id="1272" class="Symbol">(</a><a id="1273" href="../../Modal/Open/#1273" class="Bound">A</a> <a id="1275" class="Symbol">:</a> <a id="1277" href="../../Modal/Open/#689" class="Bound">𝓤</a> <a id="1279" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="1281" class="Symbol">)</a> <a id="1283" class="Symbol">→</a> <a id="1285" href="../../Modal/Open/#913" class="Function">is-open-modal</a> <a id="1299" class="Symbol">(</a><a id="1300" href="../../Modal/Open/#812" class="Bound">P</a> <a id="1302" class="Symbol">→</a> <a id="1304" href="../../Modal/Open/#1273" class="Bound">A</a><a id="1305" class="Symbol">)</a>
+<code class="Agda"><a id="exponential-is-modal"></a><a id="1249" href="../../Modal/Open/#1249" class="Function">exponential-is-modal</a> <a id="1270" class="Symbol">:</a> <a id="1272" class="Symbol">(</a><a id="1273" href="../../Modal/Open/#1273" class="Bound">A</a> <a id="1275" class="Symbol">:</a> <a id="1277" href="../../Modal/Open/#689" class="Bound">𝓤</a> <a id="1279" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="1281" class="Symbol">)</a> <a id="1283" class="Symbol">→</a> <a id="1285" href="../../Modal/Open/#913" class="Function">is-open-modal</a> <a id="1299" class="Symbol">(</a><a id="1300" href="../../Modal/Open/#812" class="Bound">P</a> <a id="1302" class="Symbol">→</a> <a id="1304" href="../../Modal/Open/#1273" class="Bound">A</a><a id="1305" class="Symbol">)</a>
 <a id="1307" href="../../Modal/Open/#1249" class="Function">exponential-is-modal</a> <a id="1328" href="../../Modal/Open/#1328" class="Bound">A</a> <a id="1330" class="Symbol">=</a>
  <a id="1333" class="Symbol">((λ</a> <a id="1337" href="../../Modal/Open/#1337" class="Bound">f</a> <a id="1339" href="../../Modal/Open/#1339" class="Bound">p</a> <a id="1341" class="Symbol">→</a> <a id="1343" href="../../Modal/Open/#1337" class="Bound">f</a> <a id="1345" href="../../Modal/Open/#1339" class="Bound">p</a> <a id="1347" href="../../Modal/Open/#1339" class="Bound">p</a><a id="1348" class="Symbol">)</a> <a id="1350" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a>
   <a id="1354" class="Symbol">(λ</a> <a id="1357" href="../../Modal/Open/#1357" class="Bound">f</a> <a id="1359" class="Symbol">→</a>
@@ -63409,15 +63403,13 @@ exponential P → A. We then need to check that it is a reflection.
 <a id="open-is-reflective"></a><a id="2288" href="../../Modal/Open/#2288" class="Function">open-is-reflective</a> <a id="2307" class="Symbol">:</a> <a id="2309" href="../../Modal/Subuniverse/#1082" class="Function">subuniverse-is-reflective</a> <a id="2335" href="../../Modal/Open/#981" class="Function">open-subuniverse</a>
 <a id="2352" href="../../Modal/Open/#2288" class="Function">open-is-reflective</a> <a id="2371" href="../../Modal/Open/#2371" class="Bound">A</a> <a id="2373" class="Symbol">=</a>
  <a id="2376" class="Symbol">(((</a><a id="2379" href="../../Modal/Open/#812" class="Bound">P</a> <a id="2381" class="Symbol">→</a> <a id="2383" href="../../Modal/Open/#2371" class="Bound">A</a><a id="2384" class="Symbol">)</a> <a id="2386" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2388" class="Symbol">(</a><a id="2389" href="../../Modal/Open/#1249" class="Function">exponential-is-modal</a> <a id="2410" href="../../Modal/Open/#2371" class="Bound">A</a><a id="2411" class="Symbol">))</a> <a id="2414" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2416" class="Symbol">(</a><a id="2417" href="../../Modal/Open/#855" class="Function">open-unit</a> <a id="2427" href="../../Modal/Open/#2371" class="Bound">A</a><a id="2428" class="Symbol">))</a> <a id="2431" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a>
- <a id="2434" href="../../Modal/Open/#1481" class="Function">exponential-is-reflection</a> <a id="2460" href="../../Modal/Open/#2371" class="Bound">A</a>
-</code>
+ <a id="2434" href="../../Modal/Open/#1481" class="Function">exponential-is-reflection</a> <a id="2460" href="../../Modal/Open/#2371" class="Bound">A</a></code>
 
 We can show moreover that the reflective subuniverse is replete,
 using only function extensionality rather than univalence, and that it
 is Σ-closed. This confirms that it is a modality.
 
-<code class="Agda">
-<a id="open-is-replete"></a><a id="2676" href="../../Modal/Open/#2676" class="Function">open-is-replete</a> <a id="2692" class="Symbol">:</a> <a id="2694" href="../../Modal/Subuniverse/#1199" class="Function">subuniverse-is-replete</a> <a id="2717" href="../../Modal/Open/#981" class="Function">open-subuniverse</a>
+<code class="Agda"><a id="open-is-replete"></a><a id="2676" href="../../Modal/Open/#2676" class="Function">open-is-replete</a> <a id="2692" class="Symbol">:</a> <a id="2694" href="../../Modal/Subuniverse/#1199" class="Function">subuniverse-is-replete</a> <a id="2717" href="../../Modal/Open/#981" class="Function">open-subuniverse</a>
 <a id="2734" href="../../Modal/Open/#2676" class="Function">open-is-replete</a> <a id="2750" href="../../Modal/Open/#2750" class="Bound">A</a> <a id="2752" href="../../Modal/Open/#2752" class="Bound">B</a> <a id="2754" href="../../Modal/Open/#2754" class="Bound">e</a> <a id="2756" href="../../Modal/Open/#2756" class="Bound">B-modal</a> <a id="2764" class="Symbol">=</a>
  <a id="2767" href="../../UF/Equiv/#26367" class="Function">≃-2-out-of-3-left</a>
   <a id="2787" class="Symbol">(</a><a id="2788" href="../../MLTT/Sigma-Type/#209" class="Field">pr₂</a> <a id="2792" class="Symbol">(</a><a id="2793" href="../../UF/EquivalenceExamples/#15758" class="Function">→cong&#39;</a> <a id="2800" href="../../Modal/Open/#677" class="Bound">fe</a> <a id="2803" href="../../Modal/Open/#677" class="Bound">fe</a> <a id="2806" href="../../Modal/Open/#2754" class="Bound">e</a><a id="2807" class="Symbol">))</a>
@@ -63433,23 +63425,20 @@ is Σ-closed. This confirms that it is a modality.
   <a id="3099" href="../../Modal/Open/#3040" class="Function">unit-equiv</a> <a id="3110" class="Symbol">=</a>
    <a id="3115" href="../../UF/EquivalenceExamples/#20404" class="Function">Σ-bicong</a> <a id="3124" class="Symbol">_</a> <a id="3126" class="Symbol">_</a>
     <a id="3132" class="Symbol">((</a><a id="3134" href="../../Modal/Open/#855" class="Function">open-unit</a> <a id="3144" href="../../Modal/Open/#2938" class="Bound">A</a><a id="3145" class="Symbol">)</a> <a id="3147" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="3149" href="../../Modal/Open/#2942" class="Bound">A-modal</a><a id="3156" class="Symbol">)</a>
-    <a id="3162" class="Symbol">(λ</a> <a id="3165" href="../../Modal/Open/#3165" class="Bound">a</a> <a id="3167" class="Symbol">→</a> <a id="3169" class="Symbol">(</a><a id="3170" href="../../Modal/Open/#855" class="Function">open-unit</a> <a id="3180" class="Symbol">(</a><a id="3181" href="../../Modal/Open/#2940" class="Bound">B</a> <a id="3183" href="../../Modal/Open/#3165" class="Bound">a</a><a id="3184" class="Symbol">))</a> <a id="3187" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="3189" class="Symbol">(</a><a id="3190" href="../../Modal/Open/#2950" class="Bound">B-modal</a> <a id="3198" href="../../Modal/Open/#3165" class="Bound">a</a><a id="3199" class="Symbol">))</a>
-</code>
+    <a id="3162" class="Symbol">(λ</a> <a id="3165" href="../../Modal/Open/#3165" class="Bound">a</a> <a id="3167" class="Symbol">→</a> <a id="3169" class="Symbol">(</a><a id="3170" href="../../Modal/Open/#855" class="Function">open-unit</a> <a id="3180" class="Symbol">(</a><a id="3181" href="../../Modal/Open/#2940" class="Bound">B</a> <a id="3183" href="../../Modal/Open/#3165" class="Bound">a</a><a id="3184" class="Symbol">))</a> <a id="3187" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="3189" class="Symbol">(</a><a id="3190" href="../../Modal/Open/#2950" class="Bound">B-modal</a> <a id="3198" href="../../Modal/Open/#3165" class="Bound">a</a><a id="3199" class="Symbol">))</a></code>
 
 We add a useful lemma for the absoluteness of compactness: if P is a
 true proposition then the open modality is trivial, in the sense that
 all types are modal.
 
-<code class="Agda">
-<a id="P-true-implies-all-modal"></a><a id="3390" href="../../Modal/Open/#3390" class="Function">P-true-implies-all-modal</a>
+<code class="Agda"><a id="P-true-implies-all-modal"></a><a id="3390" href="../../Modal/Open/#3390" class="Function">P-true-implies-all-modal</a>
  <a id="3416" class="Symbol">:</a> <a id="3418" class="Symbol">(</a><a id="3419" href="../../Modal/Open/#3419" class="Bound">z</a> <a id="3421" class="Symbol">:</a> <a id="3423" href="../../Modal/Open/#812" class="Bound">P</a><a id="3424" class="Symbol">)</a> <a id="3426" class="Symbol">→</a> <a id="3428" class="Symbol">(</a><a id="3429" href="../../Modal/Open/#3429" class="Bound">A</a> <a id="3431" class="Symbol">:</a> <a id="3433" href="../../Modal/Open/#689" class="Bound">𝓤</a> <a id="3435" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="3437" class="Symbol">)</a> <a id="3439" class="Symbol">→</a> <a id="3441" href="../../Modal/Open/#913" class="Function">is-open-modal</a> <a id="3455" href="../../Modal/Open/#3429" class="Bound">A</a>
 <a id="3457" href="../../Modal/Open/#3390" class="Function">P-true-implies-all-modal</a> <a id="3482" href="../../Modal/Open/#3482" class="Bound">z</a> <a id="3484" href="../../Modal/Open/#3484" class="Bound">A</a> <a id="3486" class="Symbol">=</a>
  <a id="3489" href="../../UF/Equiv/#7436" class="Function">qinvs-are-equivs</a>
   <a id="3508" class="Symbol">(</a><a id="3509" href="../../Modal/Open/#855" class="Function">open-unit</a> <a id="3519" href="../../Modal/Open/#3484" class="Bound">A</a><a id="3520" class="Symbol">)</a>
   <a id="3524" class="Symbol">((λ</a> <a id="3528" href="../../Modal/Open/#3528" class="Bound">f</a> <a id="3530" class="Symbol">→</a> <a id="3532" href="../../Modal/Open/#3528" class="Bound">f</a> <a id="3534" href="../../Modal/Open/#3482" class="Bound">z</a><a id="3535" class="Symbol">)</a> <a id="3537" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a>
    <a id="3542" class="Symbol">((λ</a> <a id="3546" href="../../Modal/Open/#3546" class="Bound">a</a> <a id="3548" class="Symbol">→</a> <a id="3550" href="../../MLTT/Identity-Type/#157" class="InductiveConstructor">refl</a><a id="3554" class="Symbol">)</a> <a id="3556" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a>
-   <a id="3561" class="Symbol">(λ</a> <a id="3564" href="../../Modal/Open/#3564" class="Bound">f</a> <a id="3566" class="Symbol">→</a> <a id="3568" href="../../UF/FunExt/#1242" class="Function">dfunext</a> <a id="3576" href="../../Modal/Open/#677" class="Bound">fe</a> <a id="3579" class="Symbol">(λ</a> <a id="3582" href="../../Modal/Open/#3582" class="Bound">z&#39;</a> <a id="3585" class="Symbol">→</a> <a id="3587" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="3590" href="../../Modal/Open/#3564" class="Bound">f</a> <a id="3592" class="Symbol">(</a><a id="3593" href="../../Modal/Open/#824" class="Bound">P-is-prop</a> <a id="3603" href="../../Modal/Open/#3482" class="Bound">z</a> <a id="3605" href="../../Modal/Open/#3582" class="Bound">z&#39;</a><a id="3607" class="Symbol">)))))</a>
-</code>
+   <a id="3561" class="Symbol">(λ</a> <a id="3564" href="../../Modal/Open/#3564" class="Bound">f</a> <a id="3566" class="Symbol">→</a> <a id="3568" href="../../UF/FunExt/#1242" class="Function">dfunext</a> <a id="3576" href="../../Modal/Open/#677" class="Bound">fe</a> <a id="3579" class="Symbol">(λ</a> <a id="3582" href="../../Modal/Open/#3582" class="Bound">z&#39;</a> <a id="3585" class="Symbol">→</a> <a id="3587" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="3590" href="../../Modal/Open/#3564" class="Bound">f</a> <a id="3592" class="Symbol">(</a><a id="3593" href="../../Modal/Open/#824" class="Bound">P-is-prop</a> <a id="3603" href="../../Modal/Open/#3482" class="Bound">z</a> <a id="3605" href="../../Modal/Open/#3582" class="Bound">z&#39;</a><a id="3607" class="Symbol">)))))</a></code>
 </pre>
 
 

@@ -63321,8 +63321,7 @@ in DedekindReals.Extension.
 By the uniformly continuous extension theorem, it is also proved that these
 functions are indeed extensions, and are uniformly continuous.
 
-<code class="Agda">
-<a id="310" class="Symbol">{-#</a> <a id="314" class="Keyword">OPTIONS</a> <a id="322" class="Pragma">--safe</a> <a id="329" class="Pragma">--without-K</a> <a id="341" class="Pragma">--lossy-unification</a> <a id="361" class="Symbol">#-}</a>
+<code class="Agda"><a id="310" class="Symbol">{-#</a> <a id="314" class="Keyword">OPTIONS</a> <a id="322" class="Pragma">--safe</a> <a id="329" class="Pragma">--without-K</a> <a id="341" class="Pragma">--lossy-unification</a> <a id="361" class="Symbol">#-}</a>
 
 <a id="366" class="Keyword">open</a> <a id="371" class="Keyword">import</a> <a id="378" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a> <a id="391" class="Keyword">renaming</a> <a id="400" class="Symbol">(</a><a id="401" href="../../MLTT/Plus-Type/#120" class="Datatype Operator">_+_</a> <a id="405" class="Symbol">to</a> <a id="408" class="Datatype Operator">_∔_</a><a id="411" class="Symbol">)</a>
 <a id="413" class="Keyword">open</a> <a id="418" class="Keyword">import</a> <a id="425" href="../../Notation/CanonicalMap/" class="Module">Notation.CanonicalMap</a>
@@ -63346,8 +63345,7 @@ functions are indeed extensions, and are uniformly continuous.
 <a id="829" class="Keyword">open</a> <a id="834" href="../../UF/PropTrunc/#792" class="Module">PropositionalTruncation</a> <a id="858" href="../../DedekindReals/Functions/#783" class="Bound">pt</a>
 
 <a id="862" class="Keyword">open</a> <a id="867" class="Keyword">import</a> <a id="874" href="../../DedekindReals/Type/" class="Module">DedekindReals.Type</a> <a id="893" href="../../DedekindReals/Functions/#748" class="Bound">fe</a> <a id="896" href="../../DedekindReals/Functions/#765" class="Bound">pe</a> <a id="899" href="../../DedekindReals/Functions/#783" class="Bound">pt</a>
-<a id="902" class="Keyword">open</a> <a id="907" class="Keyword">import</a> <a id="914" href="../../DedekindReals/Extension/" class="Module">DedekindReals.Extension</a> <a id="938" href="../../DedekindReals/Functions/#748" class="Bound">fe</a> <a id="941" href="../../DedekindReals/Functions/#765" class="Bound">pe</a> <a id="944" href="../../DedekindReals/Functions/#783" class="Bound">pt</a>
-</code>
+<a id="902" class="Keyword">open</a> <a id="907" class="Keyword">import</a> <a id="914" href="../../DedekindReals/Extension/" class="Module">DedekindReals.Extension</a> <a id="938" href="../../DedekindReals/Functions/#748" class="Bound">fe</a> <a id="941" href="../../DedekindReals/Functions/#765" class="Bound">pe</a> <a id="944" href="../../DedekindReals/Functions/#783" class="Bound">pt</a></code>
 
 The following examples extends the increment function on rationals to a function
 on reals. The function which increments by one is clearly uniformly continuous
@@ -63355,8 +63353,7 @@ on reals. The function which increments by one is clearly uniformly continuous
 extension theorem we see that ℝ-incr agrees with ℚ-incr for every rational
 input.
 
-<code class="Agda">
-<a id="ℚ-incr"></a><a id="1293" href="../../DedekindReals/Functions/#1293" class="Function">ℚ-incr</a> <a id="1300" class="Symbol">:</a> <a id="1302" href="../../Rationals/Type/#678" class="Function">ℚ</a> <a id="1304" class="Symbol">→</a> <a id="1306" href="../../Rationals/Type/#678" class="Function">ℚ</a>
+<code class="Agda"><a id="ℚ-incr"></a><a id="1293" href="../../DedekindReals/Functions/#1293" class="Function">ℚ-incr</a> <a id="1300" class="Symbol">:</a> <a id="1302" href="../../Rationals/Type/#678" class="Function">ℚ</a> <a id="1304" class="Symbol">→</a> <a id="1306" href="../../Rationals/Type/#678" class="Function">ℚ</a>
 <a id="1308" href="../../DedekindReals/Functions/#1293" class="Function">ℚ-incr</a> <a id="1315" href="../../DedekindReals/Functions/#1315" class="Bound">q</a> <a id="1317" class="Symbol">=</a> <a id="1319" href="../../DedekindReals/Functions/#1315" class="Bound">q</a> <a id="1321" href="../../Rationals/Addition/#511" class="Function Operator">+</a> <a id="1323" href="../../Rationals/Type/#4597" class="Function">1ℚ</a>
 
 <a id="ℚ-incr-uc"></a><a id="1327" href="../../DedekindReals/Functions/#1327" class="Function">ℚ-incr-uc</a> <a id="1337" class="Symbol">:</a> <a id="1339" href="../../DedekindReals/Extension/#2486" class="Function">ℚ-is-uniformly-continuous</a> <a id="1365" href="../../DedekindReals/Functions/#1293" class="Function">ℚ-incr</a>
@@ -63396,13 +63393,11 @@ input.
     <a id="2380" href="../../DedekindReals/Functions/#2354" class="Function">l₃</a> <a id="2383" class="Symbol">=</a> <a id="2385" href="../../Rationals/Order/#36070" class="Function">ℚ&lt;-swap-right-add</a> <a id="2403" href="../../DedekindReals/Functions/#2316" class="Bound">x</a> <a id="2405" href="../../DedekindReals/Functions/#2318" class="Bound">x₀</a> <a id="2408" href="../../DedekindReals/Functions/#2213" class="Bound">ε</a> <a id="2410" href="../../DedekindReals/Functions/#2327" class="Bound">l₂</a>
 
     <a id="2418" href="../../DedekindReals/Functions/#2418" class="Function">l₄</a> <a id="2421" class="Symbol">:</a> <a id="2423" href="../../Rationals/Negation/#590" class="Function Operator">-</a> <a id="2425" href="../../DedekindReals/Functions/#2316" class="Bound">x</a> <a id="2427" href="../../Notation/Order/#272" class="Field Operator">&lt;</a> <a id="2429" class="Symbol">(</a><a id="2430" href="../../Rationals/Negation/#590" class="Function Operator">-</a> <a id="2432" href="../../DedekindReals/Functions/#2318" class="Bound">x₀</a><a id="2434" class="Symbol">)</a> <a id="2436" href="../../Rationals/Addition/#511" class="Function Operator">+</a> <a id="2438" href="../../DedekindReals/Functions/#2213" class="Bound">ε</a>
-    <a id="2444" href="../../DedekindReals/Functions/#2418" class="Function">l₄</a> <a id="2447" class="Symbol">=</a> <a id="2449" href="../../Rationals/Order/#36328" class="Function">ℚ&lt;-swap-left-neg</a> <a id="2466" href="../../DedekindReals/Functions/#2318" class="Bound">x₀</a> <a id="2469" href="../../DedekindReals/Functions/#2213" class="Bound">ε</a> <a id="2471" href="../../DedekindReals/Functions/#2316" class="Bound">x</a> <a id="2473" href="../../DedekindReals/Functions/#2322" class="Bound">l₁</a>
-</code>
+    <a id="2444" href="../../DedekindReals/Functions/#2418" class="Function">l₄</a> <a id="2447" class="Symbol">=</a> <a id="2449" href="../../Rationals/Order/#36328" class="Function">ℚ&lt;-swap-left-neg</a> <a id="2466" href="../../DedekindReals/Functions/#2318" class="Bound">x₀</a> <a id="2469" href="../../DedekindReals/Functions/#2213" class="Bound">ε</a> <a id="2471" href="../../DedekindReals/Functions/#2316" class="Bound">x</a> <a id="2473" href="../../DedekindReals/Functions/#2322" class="Bound">l₁</a></code>
 
 Also given is negation of reals, and the absolute value of reals.
 
-<code class="Agda">
-<a id="ℝ-_"></a><a id="2570" href="../../DedekindReals/Functions/#2570" class="Function Operator">ℝ-_</a> <a id="2574" class="Symbol">:</a> <a id="2576" href="../../DedekindReals/Type/#1494" class="Function">ℝ</a> <a id="2578" class="Symbol">→</a> <a id="2580" href="../../DedekindReals/Type/#1494" class="Function">ℝ</a>
+<code class="Agda"><a id="ℝ-_"></a><a id="2570" href="../../DedekindReals/Functions/#2570" class="Function Operator">ℝ-_</a> <a id="2574" class="Symbol">:</a> <a id="2576" href="../../DedekindReals/Type/#1494" class="Function">ℝ</a> <a id="2578" class="Symbol">→</a> <a id="2580" href="../../DedekindReals/Type/#1494" class="Function">ℝ</a>
 <a id="2582" href="../../DedekindReals/Functions/#2570" class="Function Operator">ℝ-_</a> <a id="2586" class="Symbol">=</a> <a id="2588" href="../../DedekindReals/Extension/#7383" class="Function">extend</a> <a id="2595" href="../../Rationals/Negation/#590" class="Function Operator">-_</a> <a id="2598" href="../../DedekindReals/Functions/#2155" class="Function">ℚ-neg-is-uc</a>
 
 <a id="ℝ-neg-agrees-with-ℚ"></a><a id="2611" href="../../DedekindReals/Functions/#2611" class="Function">ℝ-neg-agrees-with-ℚ</a> <a id="2631" class="Symbol">:</a> <a id="2633" class="Symbol">(</a><a id="2634" href="../../DedekindReals/Functions/#2634" class="Bound">q</a> <a id="2636" class="Symbol">:</a> <a id="2638" href="../../Rationals/Type/#678" class="Function">ℚ</a><a id="2639" class="Symbol">)</a> <a id="2641" class="Symbol">→</a> <a id="2643" href="../../DedekindReals/Functions/#2570" class="Function Operator">ℝ-</a> <a id="2646" class="Symbol">(</a><a id="2647" href="../../Notation/CanonicalMap/#359" class="Field">ι</a> <a id="2649" href="../../DedekindReals/Functions/#2634" class="Bound">q</a><a id="2650" class="Symbol">)</a> <a id="2652" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="2654" href="../../Notation/CanonicalMap/#359" class="Field">ι</a> <a id="2656" class="Symbol">(</a><a id="2657" href="../../Rationals/Negation/#590" class="Function Operator">-</a> <a id="2659" href="../../DedekindReals/Functions/#2634" class="Bound">q</a><a id="2660" class="Symbol">)</a>
@@ -63483,8 +63478,7 @@ Also given is negation of reals, and the absolute value of reals.
 <a id="4862" href="../../DedekindReals/Functions/#4802" class="Function">ℝ-abs-agrees-with-ℚ-abs</a> <a id="4886" class="Symbol">=</a> <a id="4888" href="../../DedekindReals/Extension/#23137" class="Function">extend-is-extension</a> <a id="4908" href="../../Rationals/Abs/#773" class="Function">abs</a> <a id="4912" href="../../DedekindReals/Functions/#2808" class="Function">abs-uc</a>
 
 <a id="ℝ-abs-uc"></a><a id="4920" href="../../DedekindReals/Functions/#4920" class="Function">ℝ-abs-uc</a> <a id="4929" class="Symbol">:</a> <a id="4931" href="../../DedekindReals/Extension/#2636" class="Function">ℝ-is-uniformly-continuous</a> <a id="4957" href="../../DedekindReals/Functions/#4761" class="Function">ℝ-abs</a>
-<a id="4963" href="../../DedekindReals/Functions/#4920" class="Function">ℝ-abs-uc</a> <a id="4972" class="Symbol">=</a> <a id="4974" href="../../DedekindReals/Extension/#21109" class="Function">extensions-uc</a> <a id="4988" href="../../Rationals/Abs/#773" class="Function">abs</a> <a id="4992" href="../../DedekindReals/Functions/#2808" class="Function">abs-uc</a>
-</code>
+<a id="4963" href="../../DedekindReals/Functions/#4920" class="Function">ℝ-abs-uc</a> <a id="4972" class="Symbol">=</a> <a id="4974" href="../../DedekindReals/Extension/#21109" class="Function">extensions-uc</a> <a id="4988" href="../../Rationals/Abs/#773" class="Function">abs</a> <a id="4992" href="../../DedekindReals/Functions/#2808" class="Function">abs-uc</a></code>
 </pre>
 
 

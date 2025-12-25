@@ -63330,8 +63330,7 @@ and
   M.H. Escardo and Thomas Streicher. Annals of Pure and Applied Logic,
   2016.
 
-<code class="Agda">
-<a id="512" class="Symbol">{-#</a> <a id="516" class="Keyword">OPTIONS</a> <a id="524" class="Pragma">--safe</a> <a id="531" class="Pragma">--without-K</a> <a id="543" class="Symbol">#-}</a>
+<code class="Agda"><a id="512" class="Symbol">{-#</a> <a id="516" class="Keyword">OPTIONS</a> <a id="524" class="Pragma">--safe</a> <a id="531" class="Pragma">--without-K</a> <a id="543" class="Symbol">#-}</a>
 
 <a id="548" class="Keyword">module</a> <a id="555" href="../../TypeTopology/DisconnectedTypes/" class="Module">TypeTopology.DisconnectedTypes</a> <a id="586" class="Keyword">where</a>
 
@@ -63341,14 +63340,12 @@ and
 <a id="682" class="Keyword">open</a> <a id="687" class="Keyword">import</a> <a id="694" href="../../UF/DiscreteAndSeparated/" class="Module">UF.DiscreteAndSeparated</a>
 <a id="718" class="Keyword">open</a> <a id="723" class="Keyword">import</a> <a id="730" href="../../UF/Equiv/" class="Module">UF.Equiv</a>
 <a id="739" class="Keyword">open</a> <a id="744" class="Keyword">import</a> <a id="751" href="../../UF/Hedberg/" class="Module">UF.Hedberg</a>
-<a id="762" class="Keyword">open</a> <a id="767" class="Keyword">import</a> <a id="774" href="../../UF/Retracts/" class="Module">UF.Retracts</a>
-</code>
+<a id="762" class="Keyword">open</a> <a id="767" class="Keyword">import</a> <a id="774" href="../../UF/Retracts/" class="Module">UF.Retracts</a></code>
 
 The following notions of disconnectedness are data rather than
 property.
 
-<code class="Agda">
-<a id="is-disconnected₀"></a><a id="887" href="../../TypeTopology/DisconnectedTypes/#887" class="Function">is-disconnected₀</a> <a id="904" class="Symbol">:</a> <a id="906" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="908" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="910" class="Symbol">→</a> <a id="912" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="914" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
+<code class="Agda"><a id="is-disconnected₀"></a><a id="887" href="../../TypeTopology/DisconnectedTypes/#887" class="Function">is-disconnected₀</a> <a id="904" class="Symbol">:</a> <a id="906" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="908" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="910" class="Symbol">→</a> <a id="912" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="914" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
 <a id="916" href="../../TypeTopology/DisconnectedTypes/#887" class="Function">is-disconnected₀</a> <a id="933" href="../../TypeTopology/DisconnectedTypes/#933" class="Bound">X</a> <a id="935" class="Symbol">=</a> <a id="937" href="../../UF/Retracts/#1306" class="Function Operator">retract</a> <a id="945" href="../../MLTT/Two/#124" class="Datatype">𝟚</a> <a id="947" href="../../UF/Retracts/#1306" class="Function Operator">of</a> <a id="950" href="../../TypeTopology/DisconnectedTypes/#933" class="Bound">X</a>
 
 <a id="is-disconnected₁"></a><a id="953" href="../../TypeTopology/DisconnectedTypes/#953" class="Function">is-disconnected₁</a> <a id="970" class="Symbol">:</a> <a id="972" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="974" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="976" class="Symbol">→</a> <a id="978" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="980" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
@@ -63415,21 +63412,17 @@ property.
 
     <a id="3222" href="../../TypeTopology/DisconnectedTypes/#3222" class="Function">ps</a> <a id="3225" class="Symbol">:</a> <a id="3227" href="../../TypeTopology/DisconnectedTypes/#3108" class="Function">p</a> <a id="3229" href="../../MLTT/Pi/#513" class="Function Operator">∘</a> <a id="3231" href="../../TypeTopology/DisconnectedTypes/#3165" class="Function">s</a> <a id="3233" href="../../MLTT/Id/#1889" class="Function Operator">∼</a> <a id="3235" href="../../MLTT/Pi/#444" class="Function">id</a>
     <a id="3242" href="../../TypeTopology/DisconnectedTypes/#3222" class="Function">ps</a> <a id="3245" href="../../MLTT/Two/#140" class="InductiveConstructor">₀</a> <a id="3247" class="Symbol">=</a> <a id="3249" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="3252" class="Symbol">(</a><a id="3253" href="../../MLTT/Plus/#397" class="Function">cases</a> <a id="3259" class="Symbol">(λ</a> <a id="3262" href="../../TypeTopology/DisconnectedTypes/#3262" class="Bound">_</a> <a id="3264" class="Symbol">→</a> <a id="3266" href="../../MLTT/Two/#140" class="InductiveConstructor">₀</a><a id="3267" class="Symbol">)</a> <a id="3269" class="Symbol">(λ</a> <a id="3272" href="../../TypeTopology/DisconnectedTypes/#3272" class="Bound">_</a> <a id="3274" class="Symbol">→</a> <a id="3276" href="../../MLTT/Two/#147" class="InductiveConstructor">₁</a><a id="3277" class="Symbol">))</a> <a id="3280" class="Symbol">(</a><a id="3281" href="../../TypeTopology/DisconnectedTypes/#3077" class="Bound">γϕ</a> <a id="3284" class="Symbol">(</a><a id="3285" href="../../MLTT/Plus-Type/#169" class="InductiveConstructor">inl</a> <a id="3289" href="../../TypeTopology/DisconnectedTypes/#3058" class="Bound">x₀</a><a id="3291" class="Symbol">))</a>
-    <a id="3298" href="../../TypeTopology/DisconnectedTypes/#3222" class="Function">ps</a> <a id="3301" href="../../MLTT/Two/#147" class="InductiveConstructor">₁</a> <a id="3303" class="Symbol">=</a> <a id="3305" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="3308" class="Symbol">(</a><a id="3309" href="../../MLTT/Plus/#397" class="Function">cases</a> <a id="3315" class="Symbol">(λ</a> <a id="3318" href="../../TypeTopology/DisconnectedTypes/#3318" class="Bound">_</a> <a id="3320" class="Symbol">→</a> <a id="3322" href="../../MLTT/Two/#140" class="InductiveConstructor">₀</a><a id="3323" class="Symbol">)</a> <a id="3325" class="Symbol">(λ</a> <a id="3328" href="../../TypeTopology/DisconnectedTypes/#3328" class="Bound">_</a> <a id="3330" class="Symbol">→</a> <a id="3332" href="../../MLTT/Two/#147" class="InductiveConstructor">₁</a><a id="3333" class="Symbol">))</a> <a id="3336" class="Symbol">(</a><a id="3337" href="../../TypeTopology/DisconnectedTypes/#3077" class="Bound">γϕ</a> <a id="3340" class="Symbol">(</a><a id="3341" href="../../MLTT/Plus-Type/#186" class="InductiveConstructor">inr</a> <a id="3345" href="../../TypeTopology/DisconnectedTypes/#3063" class="Bound">x₁</a><a id="3347" class="Symbol">))</a>
-</code>
+    <a id="3298" href="../../TypeTopology/DisconnectedTypes/#3222" class="Function">ps</a> <a id="3301" href="../../MLTT/Two/#147" class="InductiveConstructor">₁</a> <a id="3303" class="Symbol">=</a> <a id="3305" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="3308" class="Symbol">(</a><a id="3309" href="../../MLTT/Plus/#397" class="Function">cases</a> <a id="3315" class="Symbol">(λ</a> <a id="3318" href="../../TypeTopology/DisconnectedTypes/#3318" class="Bound">_</a> <a id="3320" class="Symbol">→</a> <a id="3322" href="../../MLTT/Two/#140" class="InductiveConstructor">₀</a><a id="3323" class="Symbol">)</a> <a id="3325" class="Symbol">(λ</a> <a id="3328" href="../../TypeTopology/DisconnectedTypes/#3328" class="Bound">_</a> <a id="3330" class="Symbol">→</a> <a id="3332" href="../../MLTT/Two/#147" class="InductiveConstructor">₁</a><a id="3333" class="Symbol">))</a> <a id="3336" class="Symbol">(</a><a id="3337" href="../../TypeTopology/DisconnectedTypes/#3077" class="Bound">γϕ</a> <a id="3340" class="Symbol">(</a><a id="3341" href="../../MLTT/Plus-Type/#186" class="InductiveConstructor">inr</a> <a id="3345" href="../../TypeTopology/DisconnectedTypes/#3063" class="Bound">x₁</a><a id="3347" class="Symbol">))</a></code>
 
 The following is our official notion of disconnectedness (logically
 equivalent to the other ones):
 
-<code class="Agda">
-<a id="is-disconnected"></a><a id="3477" href="../../TypeTopology/DisconnectedTypes/#3477" class="Function">is-disconnected</a> <a id="3493" class="Symbol">:</a> <a id="3495" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="3497" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="3499" class="Symbol">→</a> <a id="3501" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="3503" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
-<a id="3505" href="../../TypeTopology/DisconnectedTypes/#3477" class="Function">is-disconnected</a> <a id="3521" class="Symbol">=</a> <a id="3523" href="../../TypeTopology/DisconnectedTypes/#887" class="Function">is-disconnected₀</a>
-</code>
+<code class="Agda"><a id="is-disconnected"></a><a id="3477" href="../../TypeTopology/DisconnectedTypes/#3477" class="Function">is-disconnected</a> <a id="3493" class="Symbol">:</a> <a id="3495" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="3497" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="3499" class="Symbol">→</a> <a id="3501" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="3503" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
+<a id="3505" href="../../TypeTopology/DisconnectedTypes/#3477" class="Function">is-disconnected</a> <a id="3521" class="Symbol">=</a> <a id="3523" href="../../TypeTopology/DisconnectedTypes/#887" class="Function">is-disconnected₀</a></code>
 
 Some examples:
 
-<code class="Agda">
-<a id="𝟚-is-disconnected"></a><a id="3583" href="../../TypeTopology/DisconnectedTypes/#3583" class="Function">𝟚-is-disconnected</a> <a id="3601" class="Symbol">:</a> <a id="3603" href="../../TypeTopology/DisconnectedTypes/#3477" class="Function">is-disconnected</a> <a id="3619" href="../../MLTT/Two/#124" class="Datatype">𝟚</a>
+<code class="Agda"><a id="𝟚-is-disconnected"></a><a id="3583" href="../../TypeTopology/DisconnectedTypes/#3583" class="Function">𝟚-is-disconnected</a> <a id="3601" class="Symbol">:</a> <a id="3603" href="../../TypeTopology/DisconnectedTypes/#3477" class="Function">is-disconnected</a> <a id="3619" href="../../MLTT/Two/#124" class="Datatype">𝟚</a>
 <a id="3621" href="../../TypeTopology/DisconnectedTypes/#3583" class="Function">𝟚-is-disconnected</a> <a id="3639" class="Symbol">=</a> <a id="3641" href="../../UF/Retracts/#2959" class="Function">identity-retraction</a>
 
 <a id="ℕ-is-disconnected"></a><a id="3662" href="../../TypeTopology/DisconnectedTypes/#3662" class="Function">ℕ-is-disconnected</a> <a id="3680" class="Symbol">:</a> <a id="3682" href="../../TypeTopology/DisconnectedTypes/#3477" class="Function">is-disconnected</a> <a id="3698" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a>
@@ -63472,8 +63465,7 @@ Some examples:
                         <a id="4793" class="Symbol">→</a> <a id="4795" href="../../UF/Retracts/#1306" class="Function Operator">retract</a> <a id="4803" href="../../TypeTopology/DisconnectedTypes/#4748" class="Bound">X</a> <a id="4805" href="../../UF/Retracts/#1306" class="Function Operator">of</a> <a id="4808" href="../../TypeTopology/DisconnectedTypes/#4759" class="Bound">Y</a>
                         <a id="4834" class="Symbol">→</a> <a id="4836" href="../../TypeTopology/DisconnectedTypes/#3477" class="Function">is-disconnected</a> <a id="4852" href="../../TypeTopology/DisconnectedTypes/#4748" class="Bound">X</a>
                         <a id="4878" class="Symbol">→</a> <a id="4880" href="../../TypeTopology/DisconnectedTypes/#3477" class="Function">is-disconnected</a> <a id="4896" href="../../TypeTopology/DisconnectedTypes/#4759" class="Bound">Y</a>
-<a id="4898" href="../../TypeTopology/DisconnectedTypes/#4721" class="Function">retract-is-disconnected</a> <a id="4922" class="Symbol">=</a> <a id="4924" href="../../UF/Retracts/#5143" class="Function">retracts-compose</a>
-</code>
+<a id="4898" href="../../TypeTopology/DisconnectedTypes/#4721" class="Function">retract-is-disconnected</a> <a id="4922" class="Symbol">=</a> <a id="4924" href="../../UF/Retracts/#5143" class="Function">retracts-compose</a></code>
 
 TODO. Define totally disconnected. Then maybe for compact types the
 notions of total disconnectedness and total separatedness agree.
@@ -63481,8 +63473,7 @@ notions of total disconnectedness and total separatedness agree.
 The negation of disconnectedness can be expressed positively in
 various equivalent ways.
 
-<code class="Agda">
-<a id="5192" class="Keyword">open</a> <a id="5197" class="Keyword">import</a> <a id="5204" href="../../TypeTopology/TotallySeparated/" class="Module">TypeTopology.TotallySeparated</a>
+<code class="Agda"><a id="5192" class="Keyword">open</a> <a id="5197" class="Keyword">import</a> <a id="5204" href="../../TypeTopology/TotallySeparated/" class="Module">TypeTopology.TotallySeparated</a>
 <a id="5234" class="Keyword">open</a> <a id="5239" class="Keyword">import</a> <a id="5246" href="../../UF/FunExt/" class="Module">UF.FunExt</a>
 <a id="5256" class="Keyword">open</a> <a id="5261" class="Keyword">import</a> <a id="5268" href="../../UF/Subsingletons/" class="Module">UF.Subsingletons</a>
 <a id="5285" class="Keyword">open</a> <a id="5290" class="Keyword">import</a> <a id="5297" href="../../UF/Subsingletons-FunExt/" class="Module">UF.Subsingletons-FunExt</a>
@@ -63559,8 +63550,7 @@ various equivalent ways.
 <a id="7829" href="../../TypeTopology/DisconnectedTypes/#7804" class="Function">is-connected</a> <a id="7842" class="Symbol">=</a> <a id="7844" href="../../TypeTopology/DisconnectedTypes/#5322" class="Function">is-connected₀</a>
 
 <a id="being-connected-is-prop"></a><a id="7859" href="../../TypeTopology/DisconnectedTypes/#7859" class="Function">being-connected-is-prop</a> <a id="7883" class="Symbol">:</a> <a id="7885" class="Symbol">{</a><a id="7886" href="../../TypeTopology/DisconnectedTypes/#7886" class="Bound">X</a> <a id="7888" class="Symbol">:</a> <a id="7890" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="7892" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="7894" class="Symbol">}</a> <a id="7896" class="Symbol">→</a> <a id="7898" href="../../UF/FunExt/#1047" class="Function">Fun-Ext</a> <a id="7906" class="Symbol">→</a> <a id="7908" href="../../UF/Subsingletons/#469" class="Function">is-prop</a> <a id="7916" class="Symbol">(</a><a id="7917" href="../../TypeTopology/DisconnectedTypes/#7804" class="Function">is-connected</a> <a id="7930" href="../../TypeTopology/DisconnectedTypes/#7886" class="Bound">X</a><a id="7931" class="Symbol">)</a>
-<a id="7933" href="../../TypeTopology/DisconnectedTypes/#7859" class="Function">being-connected-is-prop</a> <a id="7957" href="../../TypeTopology/DisconnectedTypes/#7957" class="Bound">fe</a> <a id="7960" class="Symbol">=</a> <a id="7962" href="../../UF/Subsingletons-FunExt/#5120" class="Function">Π₃-is-prop</a> <a id="7973" href="../../TypeTopology/DisconnectedTypes/#7957" class="Bound">fe</a> <a id="7976" class="Symbol">(λ</a> <a id="7979" href="../../TypeTopology/DisconnectedTypes/#7979" class="Bound">f</a> <a id="7981" href="../../TypeTopology/DisconnectedTypes/#7981" class="Bound">x</a> <a id="7983" href="../../TypeTopology/DisconnectedTypes/#7983" class="Bound">y</a> <a id="7985" class="Symbol">→</a> <a id="7987" href="../../UF/DiscreteAndSeparated/#22835" class="Function">𝟚-is-set</a><a id="7995" class="Symbol">)</a>
-</code>
+<a id="7933" href="../../TypeTopology/DisconnectedTypes/#7859" class="Function">being-connected-is-prop</a> <a id="7957" href="../../TypeTopology/DisconnectedTypes/#7957" class="Bound">fe</a> <a id="7960" class="Symbol">=</a> <a id="7962" href="../../UF/Subsingletons-FunExt/#5120" class="Function">Π₃-is-prop</a> <a id="7973" href="../../TypeTopology/DisconnectedTypes/#7957" class="Bound">fe</a> <a id="7976" class="Symbol">(λ</a> <a id="7979" href="../../TypeTopology/DisconnectedTypes/#7979" class="Bound">f</a> <a id="7981" href="../../TypeTopology/DisconnectedTypes/#7981" class="Bound">x</a> <a id="7983" href="../../TypeTopology/DisconnectedTypes/#7983" class="Bound">y</a> <a id="7985" class="Symbol">→</a> <a id="7987" href="../../UF/DiscreteAndSeparated/#22835" class="Function">𝟚-is-set</a><a id="7995" class="Symbol">)</a></code>
 </pre>
 
 

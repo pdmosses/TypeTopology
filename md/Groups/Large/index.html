@@ -63332,8 +63332,7 @@ small. This is the case, however, if the embedding has small fibers
 Most of the work for the conclusions of this file is done, and
 explained, in the module Groups.Free.
 
-<code class="Agda">
-<a id="760" class="Symbol">{-#</a> <a id="764" class="Keyword">OPTIONS</a> <a id="772" class="Pragma">--safe</a> <a id="779" class="Pragma">--without-K</a> <a id="791" class="Symbol">#-}</a>
+<code class="Agda"><a id="760" class="Symbol">{-#</a> <a id="764" class="Keyword">OPTIONS</a> <a id="772" class="Pragma">--safe</a> <a id="779" class="Pragma">--without-K</a> <a id="791" class="Symbol">#-}</a>
 
 <a id="796" class="Keyword">open</a> <a id="801" class="Keyword">import</a> <a id="808" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 <a id="821" class="Keyword">open</a> <a id="826" class="Keyword">import</a> <a id="833" href="../../UF/FunExt/" class="Module">UF.FunExt</a>
@@ -63349,14 +63348,12 @@ explained, in the module Groups.Free.
 <a id="1026" class="Keyword">open</a> <a id="1031" class="Keyword">import</a> <a id="1038" href="../../Groups/Free/" class="Module">Groups.Free</a>
 <a id="1050" class="Keyword">open</a> <a id="1055" class="Keyword">import</a> <a id="1062" href="../../Groups/Type/" class="Module">Groups.Type</a>
 <a id="1074" class="Keyword">open</a> <a id="1079" class="Keyword">import</a> <a id="1086" href="../../UF/Sets/" class="Module">UF.Sets</a>
-<a id="1094" class="Keyword">open</a> <a id="1099" class="Keyword">import</a> <a id="1106" href="../../UF/Size/" class="Module">UF.Size</a>
-</code>
+<a id="1094" class="Keyword">open</a> <a id="1099" class="Keyword">import</a> <a id="1106" href="../../UF/Size/" class="Module">UF.Size</a></code>
 
 Given any large, locally small set A, we can construct a large group
 with no small copy.
 
-<code class="Agda">
-<a id="large-group-with-no-small-copy"></a><a id="1231" href="../../Groups/Large/#1231" class="Function">large-group-with-no-small-copy</a> <a id="1262" class="Symbol">:</a> <a id="1264" class="Symbol">(</a><a id="1265" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="1267" href="../../Groups/Large/#1267" class="Bound">A</a> <a id="1269" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="1271" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="1273" href="../../Agda/Primitive/#931" class="Primitive Operator">⁺</a> <a id="1275" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="1277" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="1279" href="../../UF/Sets/#709" class="Function">is-set</a> <a id="1286" href="../../Groups/Large/#1267" class="Bound">A</a>
+<code class="Agda"><a id="large-group-with-no-small-copy"></a><a id="1231" href="../../Groups/Large/#1231" class="Function">large-group-with-no-small-copy</a> <a id="1262" class="Symbol">:</a> <a id="1264" class="Symbol">(</a><a id="1265" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="1267" href="../../Groups/Large/#1267" class="Bound">A</a> <a id="1269" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="1271" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="1273" href="../../Agda/Primitive/#931" class="Primitive Operator">⁺</a> <a id="1275" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="1277" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="1279" href="../../UF/Sets/#709" class="Function">is-set</a> <a id="1286" href="../../Groups/Large/#1267" class="Bound">A</a>
                                               <a id="1334" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="1336" href="../../UF/Size/#21232" class="Function">is-large</a> <a id="1345" href="../../Groups/Large/#1267" class="Bound">A</a>
                                               <a id="1393" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="1395" href="../../UF/Size/#27207" class="Function">is-locally-small</a> <a id="1412" href="../../Groups/Large/#1267" class="Bound">A</a><a id="1413" class="Symbol">)</a>
                                <a id="1446" class="Symbol">→</a> <a id="1448" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="1450" href="../../Groups/Large/#1450" class="Bound">𝓕</a> <a id="1452" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="1454" href="../../Groups/Type/#3789" class="Function">Group</a> <a id="1460" class="Symbol">(</a><a id="1461" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="1463" href="../../Agda/Primitive/#931" class="Primitive Operator">⁺</a><a id="1464" class="Symbol">)</a> <a id="1466" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="1468" class="Symbol">((</a><a id="1470" href="../../Groups/Large/#1470" class="Bound">𝓖</a> <a id="1472" class="Symbol">:</a> <a id="1474" href="../../Groups/Type/#3789" class="Function">Group</a> <a id="1480" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a><a id="1481" class="Symbol">)</a> <a id="1483" class="Symbol">→</a> <a id="1485" href="../../MLTT/Negation/#278" class="Function Operator">¬</a> <a id="1487" class="Symbol">(</a><a id="1488" href="../../Groups/Large/#1470" class="Bound">𝓖</a> <a id="1490" href="../../Groups/Type/#10041" class="Function Operator">≅</a> <a id="1492" href="../../Groups/Large/#1450" class="Bound">𝓕</a><a id="1493" class="Symbol">))</a>
@@ -63380,8 +63377,7 @@ with no small copy.
       <a id="2088" href="../../Groups/Large/#2061" class="Function">h</a> <a id="2090" class="Symbol">=</a> <a id="2092" href="../../Groups/Type/#520" class="Function Operator">⟨</a> <a id="2094" href="../../Groups/Large/#2010" class="Bound">𝓖</a> <a id="2096" href="../../Groups/Type/#520" class="Function Operator">⟩</a> <a id="2098" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2100" href="../../Groups/Large/#2013" class="Bound">g</a> <a id="2102" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2104" href="../../Groups/Large/#2017" class="Bound">g-is-equiv</a>
 
       <a id="2122" href="../../Groups/Large/#2122" class="Function">α</a> <a id="2124" class="Symbol">:</a> <a id="2126" href="../../MLTT/Empty-Type/#121" class="Datatype">𝟘</a>
-      <a id="2134" href="../../Groups/Large/#2122" class="Function">α</a> <a id="2136" class="Symbol">=</a> <a id="2138" href="../../Groups/Large/#1548" class="Bound">A-is-large</a> <a id="2149" class="Symbol">(</a><a id="2150" href="../../Groups/Large/#1754" class="Function">free-group-small-gives-generating-set-small</a> <a id="2194" href="../../Groups/Large/#2061" class="Function">h</a><a id="2195" class="Symbol">)</a>
-</code>
+      <a id="2134" href="../../Groups/Large/#2122" class="Function">α</a> <a id="2136" class="Symbol">=</a> <a id="2138" href="../../Groups/Large/#1548" class="Bound">A-is-large</a> <a id="2149" class="Symbol">(</a><a id="2150" href="../../Groups/Large/#1754" class="Function">free-group-small-gives-generating-set-small</a> <a id="2194" href="../../Groups/Large/#2061" class="Function">h</a><a id="2195" class="Symbol">)</a></code>
 
 In the module BuraliForti we instantiate A to the set of ordinals,
 which is large and locally small, to construct a large group with no

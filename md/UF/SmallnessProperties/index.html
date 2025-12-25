@@ -63317,8 +63317,7 @@
 
 In collaboration with Marc Bezem, Thierry Coquand, Peter Dybjer.
 
-<code class="Agda">
-<a id="114" class="Symbol">{-#</a> <a id="118" class="Keyword">OPTIONS</a> <a id="126" class="Pragma">--safe</a> <a id="133" class="Pragma">--without-K</a> <a id="145" class="Symbol">#-}</a>
+<code class="Agda"><a id="114" class="Symbol">{-#</a> <a id="118" class="Keyword">OPTIONS</a> <a id="126" class="Pragma">--safe</a> <a id="133" class="Pragma">--without-K</a> <a id="145" class="Symbol">#-}</a>
 
 <a id="150" class="Keyword">module</a> <a id="157" href="../../UF/SmallnessProperties/" class="Module">UF.SmallnessProperties</a> <a id="180" class="Keyword">where</a>
 
@@ -63511,13 +63510,11 @@ In collaboration with Marc Bezem, Thierry Coquand, Peter Dybjer.
                        <a id="6531" href="../../UF/Equiv/#7569" class="Function">qinveq</a> <a id="6538" class="Symbol">(</a><a id="6539" href="../../UF/PropTrunc/#1817" class="Function">∥∥-functor</a> <a id="6550" href="../../UF/Equiv/#3278" class="Function Operator">⌜</a> <a id="6552" href="../../UF/SmallnessProperties/#6494" class="Bound">𝕗</a> <a id="6554" href="../../UF/Equiv/#3278" class="Function Operator">⌝</a><a id="6555" class="Symbol">)</a>
                         <a id="6581" class="Symbol">(</a><a id="6582" href="../../UF/PropTrunc/#1817" class="Function">∥∥-functor</a> <a id="6593" href="../../UF/Equiv/#3569" class="Function Operator">⌜</a> <a id="6595" href="../../UF/SmallnessProperties/#6494" class="Bound">𝕗</a> <a id="6597" href="../../UF/Equiv/#3569" class="Function Operator">⌝⁻¹</a> <a id="6601" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a>
                          <a id="6628" class="Symbol">(λ</a> <a id="6631" href="../../UF/SmallnessProperties/#6631" class="Bound">_</a> <a id="6633" class="Symbol">→</a> <a id="6635" href="../../UF/PropTrunc/#573" class="Field">∥∥-is-prop</a> <a id="6646" class="Symbol">_</a> <a id="6648" class="Symbol">_)</a> <a id="6651" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a>
-                         <a id="6678" class="Symbol">(λ</a> <a id="6681" href="../../UF/SmallnessProperties/#6681" class="Bound">_</a> <a id="6683" class="Symbol">→</a> <a id="6685" href="../../UF/PropTrunc/#573" class="Field">∥∥-is-prop</a> <a id="6696" class="Symbol">_</a> <a id="6698" class="Symbol">_))</a>
-</code>
+                         <a id="6678" class="Symbol">(λ</a> <a id="6681" href="../../UF/SmallnessProperties/#6681" class="Bound">_</a> <a id="6683" class="Symbol">→</a> <a id="6685" href="../../UF/PropTrunc/#573" class="Field">∥∥-is-prop</a> <a id="6696" class="Symbol">_</a> <a id="6698" class="Symbol">_))</a></code>
 
 Added by Martin Escardo and Tom de Jong 14th November 2024.
 
-<code class="Agda">
-<a id="6790" class="Keyword">open</a> <a id="6795" class="Keyword">import</a> <a id="6802" href="../../UF/UA-FunExt/" class="Module">UF.UA-FunExt</a>
+<code class="Agda"><a id="6790" class="Keyword">open</a> <a id="6795" class="Keyword">import</a> <a id="6802" href="../../UF/UA-FunExt/" class="Module">UF.UA-FunExt</a>
 <a id="6815" class="Keyword">open</a> <a id="6820" class="Keyword">import</a> <a id="6827" href="../../UF/Univalence/" class="Module">UF.Univalence</a>
 
 <a id="Id-is-small"></a><a id="6842" href="../../UF/SmallnessProperties/#6842" class="Function">Id-is-small</a> <a id="6854" class="Symbol">:</a> <a id="6856" href="../../UF/Univalence/#412" class="Function">is-univalent</a> <a id="6869" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a>
@@ -63534,8 +63531,7 @@ Added by Martin Escardo and Tom de Jong 14th November 2024.
     <a id="7211" href="../../UF/SmallnessProperties/#7191" class="Function">fe</a> <a id="7214" class="Symbol">=</a> <a id="7216" href="../../UF/UA-FunExt/#1775" class="Function">univalence-gives-funext</a> <a id="7240" href="../../UF/SmallnessProperties/#6983" class="Bound">ua</a>
 
     <a id="7248" href="../../UF/SmallnessProperties/#7248" class="Function">I</a>  <a id="7251" class="Symbol">=</a> <a id="7253" href="../../UF/EquivalenceExamples/#3378" class="Function">Σ-cong</a> <a id="7260" class="Symbol">(λ</a> <a id="7263" href="../../UF/SmallnessProperties/#7263" class="Bound">x</a> <a id="7265" class="Symbol">→</a> <a id="7267" href="../../UF/EquivalenceExamples/#6369" class="Function">Π-cong</a> <a id="7274" href="../../UF/SmallnessProperties/#7191" class="Function">fe</a> <a id="7277" href="../../UF/SmallnessProperties/#6986" class="Bound">fe⁺</a> <a id="7281" class="Symbol">(λ</a> <a id="7284" href="../../UF/SmallnessProperties/#7284" class="Bound">y</a> <a id="7286" class="Symbol">→</a> <a id="7288" href="../../UF/Equiv/#8434" class="Function">≃-sym</a> <a id="7294" class="Symbol">(</a><a id="7295" href="../../UF/Univalence/#1986" class="Function">univalence-≃</a> <a id="7308" href="../../UF/SmallnessProperties/#6983" class="Bound">ua</a> <a id="7311" class="Symbol">_</a> <a id="7313" class="Symbol">_)))</a>
-    <a id="7322" href="../../UF/SmallnessProperties/#7322" class="Function">II</a> <a id="7325" class="Symbol">=</a> <a id="7327" href="../../UF/EquivalenceExamples/#3378" class="Function">Σ-cong</a> <a id="7334" class="Symbol">(λ</a> <a id="7337" href="../../UF/SmallnessProperties/#7337" class="Bound">x</a> <a id="7339" class="Symbol">→</a> <a id="7341" href="../../UF/Equiv/#8434" class="Function">≃-sym</a> <a id="7347" class="Symbol">(</a><a id="7348" href="../../UF/FunExt/#1101" class="Function">≃-funext</a> <a id="7357" href="../../UF/SmallnessProperties/#6986" class="Bound">fe⁺</a> <a id="7361" class="Symbol">_</a> <a id="7363" class="Symbol">_))</a>
-</code>
+    <a id="7322" href="../../UF/SmallnessProperties/#7322" class="Function">II</a> <a id="7325" class="Symbol">=</a> <a id="7327" href="../../UF/EquivalenceExamples/#3378" class="Function">Σ-cong</a> <a id="7334" class="Symbol">(λ</a> <a id="7337" href="../../UF/SmallnessProperties/#7337" class="Bound">x</a> <a id="7339" class="Symbol">→</a> <a id="7341" href="../../UF/Equiv/#8434" class="Function">≃-sym</a> <a id="7347" class="Symbol">(</a><a id="7348" href="../../UF/FunExt/#1101" class="Function">≃-funext</a> <a id="7357" href="../../UF/SmallnessProperties/#6986" class="Bound">fe⁺</a> <a id="7361" class="Symbol">_</a> <a id="7363" class="Symbol">_))</a></code>
 </pre>
 
 

@@ -63325,8 +63325,7 @@ has precisely two automorphisms (the identity and negation).
 But, in any topos, if there is an automorphism of Ω different from the
 identity, then the topos is boolean.
 
-<code class="Agda">
-<a id="441" class="Symbol">{-#</a> <a id="445" class="Keyword">OPTIONS</a> <a id="453" class="Pragma">--safe</a> <a id="460" class="Pragma">--without-K</a> <a id="472" class="Symbol">#-}</a>
+<code class="Agda"><a id="441" class="Symbol">{-#</a> <a id="445" class="Keyword">OPTIONS</a> <a id="453" class="Pragma">--safe</a> <a id="460" class="Pragma">--without-K</a> <a id="472" class="Symbol">#-}</a>
 
 <a id="477" class="Keyword">open</a> <a id="482" class="Keyword">import</a> <a id="489" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 <a id="502" class="Keyword">open</a> <a id="507" class="Keyword">import</a> <a id="514" href="../../UF/ClassicalLogic/" class="Module">UF.ClassicalLogic</a>
@@ -63344,14 +63343,12 @@ identity, then the topos is boolean.
         <a id="836" class="Symbol">(</a><a id="837" href="../../Higgs/Rigidity/#837" class="Bound">pe</a> <a id="840" class="Symbol">:</a> <a id="842" href="../../UF/Subsingletons/#7674" class="Function">propext</a> <a id="850" href="../../Higgs/Rigidity/#791" class="Bound">𝓤</a><a id="851" class="Symbol">)</a>
        <a id="860" class="Keyword">where</a>
 
-<a id="867" class="Keyword">open</a> <a id="872" class="Keyword">import</a> <a id="879" href="../../Higgs/InvolutionTheorem/" class="Module">Higgs.InvolutionTheorem</a> <a id="903" href="../../Higgs/Rigidity/#814" class="Bound">fe</a> <a id="906" href="../../Higgs/Rigidity/#837" class="Bound">pe</a>
-</code>
+<a id="867" class="Keyword">open</a> <a id="872" class="Keyword">import</a> <a id="879" href="../../Higgs/InvolutionTheorem/" class="Module">Higgs.InvolutionTheorem</a> <a id="903" href="../../Higgs/Rigidity/#814" class="Bound">fe</a> <a id="906" href="../../Higgs/Rigidity/#837" class="Bound">pe</a></code>
 
 From the existence of certain automorphisms of Ω, we conclude that
 excluded middle holds.
 
-<code class="Agda">
-<a id="Ω-automorphism-that-maps-⊤-to-⊥-gives-EM"></a><a id="1027" href="../../Higgs/Rigidity/#1027" class="Function">Ω-automorphism-that-maps-⊤-to-⊥-gives-EM</a>
+<code class="Agda"><a id="Ω-automorphism-that-maps-⊤-to-⊥-gives-EM"></a><a id="1027" href="../../Higgs/Rigidity/#1027" class="Function">Ω-automorphism-that-maps-⊤-to-⊥-gives-EM</a>
  <a id="1069" class="Symbol">:</a> <a id="1071" class="Symbol">(</a><a id="1072" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="1074" href="../../Higgs/Rigidity/#1074" class="Bound">𝕗</a> <a id="1076" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="1078" href="../../UF/Equiv/#1380" class="Function">Aut</a> <a id="1082" href="../../Higgs/InvolutionTheorem/#1140" class="Function">Ω</a> <a id="1084" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="1086" href="../../UF/Equiv/#3278" class="Function Operator">⌜</a> <a id="1088" href="../../Higgs/Rigidity/#1074" class="Bound">𝕗</a> <a id="1090" href="../../UF/Equiv/#3278" class="Function Operator">⌝</a> <a id="1092" href="../../UF/SubtypeClassifier/#1734" class="Function">⊤</a> <a id="1094" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="1096" href="../../UF/SubtypeClassifier/#1732" class="Function">⊥</a><a id="1097" class="Symbol">)</a>
  <a id="1100" class="Symbol">→</a> <a id="1102" href="../../UF/ClassicalLogic/#988" class="Function">EM</a> <a id="1105" href="../../Higgs/Rigidity/#791" class="Bound">𝓤</a>
 <a id="1107" href="../../Higgs/Rigidity/#1027" class="Function">Ω-automorphism-that-maps-⊤-to-⊥-gives-EM</a> <a id="1148" class="Symbol">((</a><a id="1150" href="../../Higgs/Rigidity/#1150" class="Bound">f</a> <a id="1152" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="1154" href="../../Higgs/Rigidity/#1154" class="Bound">f-is-equiv</a><a id="1164" class="Symbol">)</a> <a id="1166" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="1168" href="../../Higgs/Rigidity/#1168" class="Bound">e</a><a id="1169" class="Symbol">)</a> <a id="1171" class="Symbol">=</a> <a id="1173" href="../../Higgs/Rigidity/#1887" class="Function">II</a>
@@ -63388,13 +63385,11 @@ excluded middle holds.
 <a id="2062" href="../../Higgs/Rigidity/#1938" class="Function">Ω-automorphism-swap-≃</a> <a id="2084" href="../../Higgs/Rigidity/#2084" class="Bound">𝕗</a> <a id="2086" class="Symbol">{</a><a id="2087" href="../../Higgs/Rigidity/#2087" class="Bound">p</a><a id="2088" class="Symbol">}</a> <a id="2090" class="Symbol">{</a><a id="2091" href="../../Higgs/Rigidity/#2091" class="Bound">q</a><a id="2092" class="Symbol">}</a> <a id="2094" class="Symbol">=</a>
  <a id="2097" href="../../UF/Equiv/#27455" class="Function">involution-swap-≃</a> <a id="2115" href="../../UF/Equiv/#3278" class="Function Operator">⌜</a> <a id="2117" href="../../Higgs/Rigidity/#2084" class="Bound">𝕗</a> <a id="2119" href="../../UF/Equiv/#3278" class="Function Operator">⌝</a>
   <a id="2123" class="Symbol">(</a><a id="2124" href="../../Higgs/InvolutionTheorem/#2662" class="Function">automorphisms-of-Ω-are-involutive</a> <a id="2158" href="../../UF/Equiv/#3278" class="Function Operator">⌜</a> <a id="2160" href="../../Higgs/Rigidity/#2084" class="Bound">𝕗</a> <a id="2162" href="../../UF/Equiv/#3278" class="Function Operator">⌝</a> <a id="2164" href="../../UF/Equiv/#3384" class="Function Operator">⌜</a> <a id="2166" href="../../Higgs/Rigidity/#2084" class="Bound">𝕗</a> <a id="2168" href="../../UF/Equiv/#3384" class="Function Operator">⌝-is-equiv</a><a id="2178" class="Symbol">)</a>
-  <a id="2182" class="Symbol">(</a><a id="2183" href="../../UF/SubtypeClassifier-Properties/#473" class="Function">Ω-is-set</a> <a id="2192" href="../../Higgs/Rigidity/#814" class="Bound">fe</a> <a id="2195" href="../../Higgs/Rigidity/#837" class="Bound">pe</a><a id="2197" class="Symbol">)</a>
-</code>
+  <a id="2182" class="Symbol">(</a><a id="2183" href="../../UF/SubtypeClassifier-Properties/#473" class="Function">Ω-is-set</a> <a id="2192" href="../../Higgs/Rigidity/#814" class="Bound">fe</a> <a id="2195" href="../../Higgs/Rigidity/#837" class="Bound">pe</a><a id="2197" class="Symbol">)</a></code>
 
 A stronger version of the following is proved below.
 
-<code class="Agda">
-<a id="Ω-automorphism-apart-from-id-gives-EM"></a><a id="2280" href="../../Higgs/Rigidity/#2280" class="Function">Ω-automorphism-apart-from-id-gives-EM</a>
+<code class="Agda"><a id="Ω-automorphism-apart-from-id-gives-EM"></a><a id="2280" href="../../Higgs/Rigidity/#2280" class="Function">Ω-automorphism-apart-from-id-gives-EM</a>
  <a id="2319" class="Symbol">:</a> <a id="2321" class="Symbol">(</a><a id="2322" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="2324" href="../../Higgs/Rigidity/#2324" class="Bound">𝕗</a> <a id="2326" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="2328" href="../../UF/Equiv/#1380" class="Function">Aut</a> <a id="2332" href="../../Higgs/InvolutionTheorem/#1140" class="Function">Ω</a> <a id="2334" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="2336" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="2338" href="../../Higgs/Rigidity/#2338" class="Bound">p₀</a> <a id="2341" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="2343" href="../../Higgs/InvolutionTheorem/#1140" class="Function">Ω</a> <a id="2345" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="2347" href="../../UF/Equiv/#3278" class="Function Operator">⌜</a> <a id="2349" href="../../Higgs/Rigidity/#2324" class="Bound">𝕗</a> <a id="2351" href="../../UF/Equiv/#3278" class="Function Operator">⌝</a> <a id="2353" href="../../Higgs/Rigidity/#2338" class="Bound">p₀</a> <a id="2356" href="../../MLTT/Negation/#635" class="Function Operator">≠</a> <a id="2358" href="../../Higgs/Rigidity/#2338" class="Bound">p₀</a><a id="2360" class="Symbol">)</a>
  <a id="2363" class="Symbol">→</a> <a id="2365" href="../../UF/ClassicalLogic/#988" class="Function">EM</a> <a id="2368" href="../../Higgs/Rigidity/#791" class="Bound">𝓤</a>
 <a id="2370" href="../../Higgs/Rigidity/#2280" class="Function">Ω-automorphism-apart-from-id-gives-EM</a> <a id="2408" class="Symbol">(</a><a id="2409" href="../../Higgs/Rigidity/#2409" class="Bound">𝕗</a><a id="2410" class="Symbol">@(</a><a id="2412" href="../../Higgs/Rigidity/#2412" class="Bound">f</a> <a id="2414" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2416" href="../../Higgs/Rigidity/#2416" class="Bound">f-is-equiv</a><a id="2426" class="Symbol">)</a> <a id="2428" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2430" href="../../Higgs/Rigidity/#2430" class="Bound">p₀</a> <a id="2433" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2435" href="../../Higgs/Rigidity/#2435" class="Bound">ν</a><a id="2436" class="Symbol">)</a> <a id="2438" class="Symbol">=</a> <a id="2440" href="../../Higgs/Rigidity/#3086" class="Function">VIII</a>
@@ -63430,8 +63425,7 @@ A stronger version of the following is proved below.
   <a id="3032" href="../../Higgs/Rigidity/#3016" class="Function">VII</a> <a id="3036" class="Symbol">=</a> <a id="3038" href="../../UF/SubtypeClassifier/#4833" class="Function">different-from-⊤-gives-equal-⊥</a> <a id="3069" href="../../Higgs/Rigidity/#814" class="Bound">fe</a> <a id="3072" href="../../Higgs/Rigidity/#837" class="Bound">pe</a> <a id="3075" class="Symbol">(</a><a id="3076" href="../../Higgs/Rigidity/#2412" class="Bound">f</a> <a id="3078" href="../../UF/SubtypeClassifier/#1734" class="Function">⊤</a><a id="3079" class="Symbol">)</a> <a id="3081" href="../../Higgs/Rigidity/#2454" class="Function">I</a>
 
   <a id="3086" href="../../Higgs/Rigidity/#3086" class="Function">VIII</a> <a id="3091" class="Symbol">:</a> <a id="3093" href="../../UF/ClassicalLogic/#988" class="Function">EM</a> <a id="3096" href="../../Higgs/Rigidity/#791" class="Bound">𝓤</a>
-  <a id="3100" href="../../Higgs/Rigidity/#3086" class="Function">VIII</a> <a id="3105" class="Symbol">=</a> <a id="3107" href="../../Higgs/Rigidity/#1027" class="Function">Ω-automorphism-that-maps-⊤-to-⊥-gives-EM</a> <a id="3148" class="Symbol">(</a><a id="3149" href="../../Higgs/Rigidity/#2409" class="Bound">𝕗</a> <a id="3151" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="3153" href="../../Higgs/Rigidity/#3016" class="Function">VII</a><a id="3156" class="Symbol">)</a>
-</code>
+  <a id="3100" href="../../Higgs/Rigidity/#3086" class="Function">VIII</a> <a id="3105" class="Symbol">=</a> <a id="3107" href="../../Higgs/Rigidity/#1027" class="Function">Ω-automorphism-that-maps-⊤-to-⊥-gives-EM</a> <a id="3148" class="Symbol">(</a><a id="3149" href="../../Higgs/Rigidity/#2409" class="Bound">𝕗</a> <a id="3151" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="3153" href="../../Higgs/Rigidity/#3016" class="Function">VII</a><a id="3156" class="Symbol">)</a></code>
 
 Notice that we can replace "Σ" by "∃" in the above propositions, to
 get the same conclusion EM 𝓤, because the type EM 𝓤 is a proposition.
@@ -63457,8 +63451,7 @@ proofs.
     https://doi.org/10.1016/0168-0072(87)90060-1
     https://core.ac.uk/download/pdf/81927529.pdf
 
-<code class="Agda">
-<a id="4170" class="Keyword">private</a>
+<code class="Agda"><a id="4170" class="Keyword">private</a>
  <a id="fe&#39;"></a><a id="4179" href="../../Higgs/Rigidity/#4179" class="Function">fe&#39;</a> <a id="4183" class="Symbol">:</a> <a id="4185" href="../../UF/FunExt/#995" class="Function">FunExt</a>
  <a id="4193" href="../../Higgs/Rigidity/#4179" class="Function">fe&#39;</a> <a id="4197" href="../../Higgs/Rigidity/#4197" class="Bound">𝓥</a> <a id="4199" href="../../Higgs/Rigidity/#4199" class="Bound">𝓦</a> <a id="4201" class="Symbol">=</a> <a id="4203" href="../../Higgs/Rigidity/#814" class="Bound">fe</a> <a id="4206" class="Symbol">{</a><a id="4207" href="../../Higgs/Rigidity/#4197" class="Bound">𝓥</a><a id="4208" class="Symbol">}</a> <a id="4210" class="Symbol">{</a><a id="4211" href="../../Higgs/Rigidity/#4199" class="Bound">𝓦</a><a id="4212" class="Symbol">}</a>
 
@@ -63486,16 +63479,14 @@ proofs.
 <a id="eval-at-⊤-is-embedding"></a><a id="4670" href="../../Higgs/Rigidity/#4670" class="Function">eval-at-⊤-is-embedding</a> <a id="4693" class="Symbol">:</a> <a id="4695" href="../../UF/Embeddings/#625" class="Function">is-embedding</a> <a id="4708" href="../../Higgs/Rigidity/#4215" class="Function">eval-at-⊤</a>
 <a id="4718" href="../../Higgs/Rigidity/#4670" class="Function">eval-at-⊤-is-embedding</a> <a id="4741" class="Symbol">=</a> <a id="4743" href="../../UF/Embeddings/#10595" class="Function">lc-maps-into-sets-are-embeddings</a>
                           <a id="4802" href="../../Higgs/Rigidity/#4215" class="Function">eval-at-⊤</a> <a id="4812" href="../../Higgs/Rigidity/#4260" class="Function">eval-at-⊤-is-lc</a>
-                          <a id="4854" class="Symbol">(</a><a id="4855" href="../../UF/SubtypeClassifier-Properties/#473" class="Function">Ω-is-set</a> <a id="4864" href="../../Higgs/Rigidity/#814" class="Bound">fe</a> <a id="4867" href="../../Higgs/Rigidity/#837" class="Bound">pe</a><a id="4869" class="Symbol">)</a>
-</code>
+                          <a id="4854" class="Symbol">(</a><a id="4855" href="../../UF/SubtypeClassifier-Properties/#473" class="Function">Ω-is-set</a> <a id="4864" href="../../Higgs/Rigidity/#814" class="Bound">fe</a> <a id="4867" href="../../Higgs/Rigidity/#837" class="Bound">pe</a><a id="4869" class="Symbol">)</a></code>
 
 From this we conclude that there can't be any automorphism of Ω
 distinct from the identity unless excluded middle holds. I don't think
 this has been observed before in the literature, but it may have been
 observed in the folklore.
 
-<code class="Agda">
-<a id="Ω-automorphism-distinct-from-𝕚𝕕-gives-EM"></a><a id="5130" href="../../Higgs/Rigidity/#5130" class="Function">Ω-automorphism-distinct-from-𝕚𝕕-gives-EM</a>
+<code class="Agda"><a id="Ω-automorphism-distinct-from-𝕚𝕕-gives-EM"></a><a id="5130" href="../../Higgs/Rigidity/#5130" class="Function">Ω-automorphism-distinct-from-𝕚𝕕-gives-EM</a>
  <a id="5172" class="Symbol">:</a> <a id="5174" class="Symbol">(</a><a id="5175" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="5177" href="../../Higgs/Rigidity/#5177" class="Bound">𝕗</a> <a id="5179" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="5181" href="../../UF/Equiv/#1380" class="Function">Aut</a> <a id="5185" href="../../Higgs/InvolutionTheorem/#1140" class="Function">Ω</a> <a id="5187" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="5189" href="../../Higgs/Rigidity/#5177" class="Bound">𝕗</a> <a id="5191" href="../../MLTT/Negation/#635" class="Function Operator">≠</a> <a id="5193" href="../../UF/Equiv/#1576" class="Function">𝕚𝕕</a><a id="5195" class="Symbol">)</a>
  <a id="5198" class="Symbol">→</a> <a id="5200" href="../../UF/ClassicalLogic/#988" class="Function">EM</a> <a id="5203" href="../../Higgs/Rigidity/#791" class="Bound">𝓤</a>
 <a id="5205" href="../../Higgs/Rigidity/#5130" class="Function">Ω-automorphism-distinct-from-𝕚𝕕-gives-EM</a> <a id="5246" class="Symbol">(</a><a id="5247" href="../../Higgs/Rigidity/#5247" class="Bound">𝕗</a> <a id="5249" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5251" href="../../Higgs/Rigidity/#5251" class="Bound">ν</a><a id="5252" class="Symbol">)</a> <a id="5254" class="Symbol">=</a> <a id="5256" href="../../Higgs/Rigidity/#5461" class="Function">IV</a>
@@ -63513,8 +63504,7 @@ observed in the folklore.
   <a id="5406" href="../../Higgs/Rigidity/#5390" class="Function">III</a> <a id="5410" class="Symbol">=</a> <a id="5412" href="../../UF/SubtypeClassifier/#4833" class="Function">different-from-⊤-gives-equal-⊥</a> <a id="5443" href="../../Higgs/Rigidity/#814" class="Bound">fe</a> <a id="5446" href="../../Higgs/Rigidity/#837" class="Bound">pe</a> <a id="5449" class="Symbol">(</a><a id="5450" href="../../Higgs/Rigidity/#5268" class="Function">f</a> <a id="5452" href="../../UF/SubtypeClassifier/#1734" class="Function">⊤</a><a id="5453" class="Symbol">)</a> <a id="5455" href="../../Higgs/Rigidity/#5348" class="Function">II</a>
 
   <a id="5461" href="../../Higgs/Rigidity/#5461" class="Function">IV</a> <a id="5464" class="Symbol">:</a> <a id="5466" href="../../UF/ClassicalLogic/#988" class="Function">EM</a> <a id="5469" href="../../Higgs/Rigidity/#791" class="Bound">𝓤</a>
-  <a id="5473" href="../../Higgs/Rigidity/#5461" class="Function">IV</a> <a id="5476" class="Symbol">=</a> <a id="5478" href="../../Higgs/Rigidity/#1027" class="Function">Ω-automorphism-that-maps-⊤-to-⊥-gives-EM</a> <a id="5519" class="Symbol">(</a><a id="5520" href="../../Higgs/Rigidity/#5247" class="Bound">𝕗</a> <a id="5522" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5524" href="../../Higgs/Rigidity/#5390" class="Function">III</a><a id="5527" class="Symbol">)</a>
-</code>
+  <a id="5473" href="../../Higgs/Rigidity/#5461" class="Function">IV</a> <a id="5476" class="Symbol">=</a> <a id="5478" href="../../Higgs/Rigidity/#1027" class="Function">Ω-automorphism-that-maps-⊤-to-⊥-gives-EM</a> <a id="5519" class="Symbol">(</a><a id="5520" href="../../Higgs/Rigidity/#5247" class="Bound">𝕗</a> <a id="5522" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5524" href="../../Higgs/Rigidity/#5390" class="Function">III</a><a id="5527" class="Symbol">)</a></code>
 
 It follows that the type Σ f ꞉ Aut Ω , f ≠ id is a proposition,
 constructively. In boolean toposes it is a singleton, in non-boolean

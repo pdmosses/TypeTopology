@@ -63317,8 +63317,7 @@
 
 Various maps of ordinals, including equivalences.
 
-<code class="Agda">
-<a id="95" class="Symbol">{-#</a> <a id="99" class="Keyword">OPTIONS</a> <a id="107" class="Pragma">--safe</a> <a id="114" class="Pragma">--without-K</a> <a id="126" class="Symbol">#-}</a>
+<code class="Agda"><a id="95" class="Symbol">{-#</a> <a id="99" class="Keyword">OPTIONS</a> <a id="107" class="Pragma">--safe</a> <a id="114" class="Pragma">--without-K</a> <a id="126" class="Symbol">#-}</a>
 
 
 <a id="132" class="Keyword">module</a> <a id="139" href="../../Ordinals/Maps/" class="Module">Ordinals.Maps</a> <a id="153" class="Keyword">where</a>
@@ -63332,14 +63331,12 @@ Various maps of ordinals, including equivalences.
 <a id="318" class="Keyword">open</a> <a id="323" class="Keyword">import</a> <a id="330" href="../../UF/Equiv/" class="Module">UF.Equiv</a>
 <a id="339" class="Keyword">open</a> <a id="344" class="Keyword">import</a> <a id="351" href="../../UF/FunExt/" class="Module">UF.FunExt</a>
 <a id="361" class="Keyword">open</a> <a id="366" class="Keyword">import</a> <a id="373" href="../../UF/Subsingletons/" class="Module">UF.Subsingletons</a>
-<a id="390" class="Keyword">open</a> <a id="395" class="Keyword">import</a> <a id="402" href="../../UF/Subsingletons-FunExt/" class="Module">UF.Subsingletons-FunExt</a>
-</code>
+<a id="390" class="Keyword">open</a> <a id="395" class="Keyword">import</a> <a id="402" href="../../UF/Subsingletons-FunExt/" class="Module">UF.Subsingletons-FunExt</a></code>
 
 Maps of ordinals. A simulation gives a notion of embedding of
 ordinals, making them into a poset, as proved below.
 
-<code class="Agda">
-<a id="is-order-preserving"></a><a id="569" href="../../Ordinals/Maps/#569" class="Function">is-order-preserving</a>
+<code class="Agda"><a id="is-order-preserving"></a><a id="569" href="../../Ordinals/Maps/#569" class="Function">is-order-preserving</a>
  <a id="is-monotone"></a><a id="590" href="../../Ordinals/Maps/#590" class="Function">is-monotone</a>
  <a id="is-order-reflecting"></a><a id="603" href="../../Ordinals/Maps/#603" class="Function">is-order-reflecting</a>
  <a id="is-order-embedding"></a><a id="624" href="../../Ordinals/Maps/#624" class="Function">is-order-embedding</a>
@@ -63667,15 +63664,13 @@ ordinals, making them into a poset, as proved below.
           <a id="10978" href="../../Ordinals/Maps/#10668" class="Bound">z</a>    <a id="10983" href="../../MLTT/Id/#2785" class="Function Operator">∎</a>
 
   <a id="10988" href="../../Ordinals/Maps/#10988" class="Function">γ</a> <a id="10990" class="Symbol">:</a> <a id="10992" href="../../Ordinals/Maps/#9996" class="Bound">f</a> <a id="10994" href="../../Ordinals/Maps/#10019" class="Bound">x</a> <a id="10996" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="10998" href="../../Ordinals/Maps/#9998" class="Bound">f&#39;</a> <a id="11001" href="../../Ordinals/Maps/#10019" class="Bound">x</a>
-  <a id="11005" href="../../Ordinals/Maps/#10988" class="Function">γ</a> <a id="11007" class="Symbol">=</a> <a id="11009" href="../../Ordinals/Maps/#10034" class="Function">φ</a> <a id="11011" href="../../Ordinals/Maps/#10019" class="Bound">x</a> <a id="11013" class="Symbol">(</a><a id="11014" href="../../Ordinals/Type/#1843" class="Function">Well-foundedness</a> <a id="11031" href="../../Ordinals/Maps/#9992" class="Bound">α</a> <a id="11033" href="../../Ordinals/Maps/#10019" class="Bound">x</a><a id="11034" class="Symbol">)</a>
-</code>
+  <a id="11005" href="../../Ordinals/Maps/#10988" class="Function">γ</a> <a id="11007" class="Symbol">=</a> <a id="11009" href="../../Ordinals/Maps/#10034" class="Function">φ</a> <a id="11011" href="../../Ordinals/Maps/#10019" class="Bound">x</a> <a id="11013" class="Symbol">(</a><a id="11014" href="../../Ordinals/Type/#1843" class="Function">Well-foundedness</a> <a id="11031" href="../../Ordinals/Maps/#9992" class="Bound">α</a> <a id="11033" href="../../Ordinals/Maps/#10019" class="Bound">x</a><a id="11034" class="Symbol">)</a></code>
 
 Added 29th March 2022.
 
 Simulations preserve least elements.
 
-<code class="Agda">
-<a id="initial-segments-preserve-least"></a><a id="11125" href="../../Ordinals/Maps/#11125" class="Function">initial-segments-preserve-least</a> <a id="11157" class="Symbol">:</a>
+<code class="Agda"><a id="initial-segments-preserve-least"></a><a id="11125" href="../../Ordinals/Maps/#11125" class="Function">initial-segments-preserve-least</a> <a id="11157" class="Symbol">:</a>
    <a id="11162" class="Symbol">(</a><a id="11163" href="../../Ordinals/Maps/#11163" class="Bound">α</a> <a id="11165" class="Symbol">:</a> <a id="11167" href="../../Ordinals/Type/#600" class="Function">Ordinal</a> <a id="11175" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a><a id="11176" class="Symbol">)</a> <a id="11178" class="Symbol">(</a><a id="11179" href="../../Ordinals/Maps/#11179" class="Bound">β</a> <a id="11181" class="Symbol">:</a> <a id="11183" href="../../Ordinals/Type/#600" class="Function">Ordinal</a> <a id="11191" href="../../MLTT/Universes/#3835" class="Generalizable">𝓥</a><a id="11192" class="Symbol">)</a>
    <a id="11197" class="Symbol">(</a><a id="11198" href="../../Ordinals/Maps/#11198" class="Bound">x</a> <a id="11200" class="Symbol">:</a> <a id="11202" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="11204" href="../../Ordinals/Maps/#11163" class="Bound">α</a> <a id="11206" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a><a id="11207" class="Symbol">)</a> <a id="11209" class="Symbol">(</a><a id="11210" href="../../Ordinals/Maps/#11210" class="Bound">y</a> <a id="11212" class="Symbol">:</a> <a id="11214" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="11216" href="../../Ordinals/Maps/#11179" class="Bound">β</a> <a id="11218" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a><a id="11219" class="Symbol">)</a>
    <a id="11224" class="Symbol">(</a><a id="11225" href="../../Ordinals/Maps/#11225" class="Bound">f</a> <a id="11227" class="Symbol">:</a> <a id="11229" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="11231" href="../../Ordinals/Maps/#11163" class="Bound">α</a> <a id="11233" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a> <a id="11235" class="Symbol">→</a> <a id="11237" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="11239" href="../../Ordinals/Maps/#11179" class="Bound">β</a> <a id="11241" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a><a id="11242" class="Symbol">)</a>
@@ -63717,8 +63712,7 @@ Simulations preserve least elements.
                            <a id="11999" class="Symbol">→</a> <a id="12001" href="../../Ordinals/Type/#4721" class="Function">is-least</a> <a id="12010" href="../../Ordinals/Maps/#11764" class="Bound">β</a> <a id="12012" href="../../Ordinals/Maps/#11821" class="Bound">y</a>
                            <a id="12041" class="Symbol">→</a> <a id="12043" href="../../Ordinals/Maps/#11862" class="Bound">f</a> <a id="12045" href="../../Ordinals/Maps/#11809" class="Bound">x</a> <a id="12047" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="12049" href="../../Ordinals/Maps/#11821" class="Bound">y</a>
 <a id="12051" href="../../Ordinals/Maps/#11718" class="Function">simulations-preserve-least</a> <a id="12078" href="../../Ordinals/Maps/#12078" class="Bound">α</a> <a id="12080" href="../../Ordinals/Maps/#12080" class="Bound">β</a> <a id="12082" href="../../Ordinals/Maps/#12082" class="Bound">x</a> <a id="12084" href="../../Ordinals/Maps/#12084" class="Bound">y</a> <a id="12086" href="../../Ordinals/Maps/#12086" class="Bound">f</a> <a id="12088" class="Symbol">(</a><a id="12089" href="../../Ordinals/Maps/#12089" class="Bound">i</a> <a id="12091" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="12093" class="Symbol">_)</a> <a id="12096" class="Symbol">=</a>
- <a id="12099" href="../../Ordinals/Maps/#11125" class="Function">initial-segments-preserve-least</a> <a id="12131" href="../../Ordinals/Maps/#12078" class="Bound">α</a> <a id="12133" href="../../Ordinals/Maps/#12080" class="Bound">β</a> <a id="12135" href="../../Ordinals/Maps/#12082" class="Bound">x</a> <a id="12137" href="../../Ordinals/Maps/#12084" class="Bound">y</a> <a id="12139" href="../../Ordinals/Maps/#12086" class="Bound">f</a> <a id="12141" href="../../Ordinals/Maps/#12089" class="Bound">i</a>
-</code>
+ <a id="12099" href="../../Ordinals/Maps/#11125" class="Function">initial-segments-preserve-least</a> <a id="12131" href="../../Ordinals/Maps/#12078" class="Bound">α</a> <a id="12133" href="../../Ordinals/Maps/#12080" class="Bound">β</a> <a id="12135" href="../../Ordinals/Maps/#12082" class="Bound">x</a> <a id="12137" href="../../Ordinals/Maps/#12084" class="Bound">y</a> <a id="12139" href="../../Ordinals/Maps/#12086" class="Bound">f</a> <a id="12141" href="../../Ordinals/Maps/#12089" class="Bound">i</a></code>
 
 Added in March 2022 by Tom de Jong:
 
@@ -63737,8 +63731,7 @@ Using the techniques that were used above to prove that being a simulation is
 property, we show the definition of simulation with ∃ to be equivalent to the
 original one.
 
-<code class="Agda">
-<a id="12917" class="Keyword">open</a> <a id="12922" class="Keyword">import</a> <a id="12929" href="../../UF/PropTrunc/" class="Module">UF.PropTrunc</a>
+<code class="Agda"><a id="12917" class="Keyword">open</a> <a id="12922" class="Keyword">import</a> <a id="12929" href="../../UF/PropTrunc/" class="Module">UF.PropTrunc</a>
 
 <a id="12943" class="Keyword">module</a> <a id="12950" href="../../Ordinals/Maps/#12950" class="Module">_</a> <a id="12952" class="Symbol">(</a><a id="12953" href="../../Ordinals/Maps/#12953" class="Bound">pt</a> <a id="12956" class="Symbol">:</a> <a id="12958" href="../../UF/PropTrunc/#486" class="Record">propositional-truncations-exist</a><a id="12989" class="Symbol">)</a>
          <a id="13000" class="Symbol">(</a><a id="13001" href="../../Ordinals/Maps/#13001" class="Bound">fe</a> <a id="13004" class="Symbol">:</a> <a id="13006" href="../../UF/FunExt/#995" class="Function">FunExt</a><a id="13012" class="Symbol">)</a>
@@ -63825,8 +63818,7 @@ original one.
 
 Added 11 December 2024 by Tom de Jong.
 
-<code class="Agda">
-<a id="order-reflecting-partial-surjections-are-initial-segments"></a><a id="15830" href="../../Ordinals/Maps/#15830" class="Function">order-reflecting-partial-surjections-are-initial-segments</a>
+<code class="Agda"><a id="order-reflecting-partial-surjections-are-initial-segments"></a><a id="15830" href="../../Ordinals/Maps/#15830" class="Function">order-reflecting-partial-surjections-are-initial-segments</a>
  <a id="15889" class="Symbol">:</a> <a id="15891" class="Symbol">(</a><a id="15892" href="../../Ordinals/Maps/#15892" class="Bound">α</a> <a id="15894" class="Symbol">:</a> <a id="15896" href="../../Ordinals/Type/#600" class="Function">Ordinal</a> <a id="15904" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a><a id="15905" class="Symbol">)</a> <a id="15907" class="Symbol">(</a><a id="15908" href="../../Ordinals/Maps/#15908" class="Bound">β</a> <a id="15910" class="Symbol">:</a> <a id="15912" href="../../Ordinals/Type/#600" class="Function">Ordinal</a> <a id="15920" href="../../MLTT/Universes/#3835" class="Generalizable">𝓥</a><a id="15921" class="Symbol">)</a> <a id="15923" class="Symbol">(</a><a id="15924" href="../../Ordinals/Maps/#15924" class="Bound">f</a> <a id="15926" class="Symbol">:</a> <a id="15928" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="15930" href="../../Ordinals/Maps/#15892" class="Bound">α</a> <a id="15932" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a> <a id="15934" class="Symbol">→</a> <a id="15936" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="15938" href="../../Ordinals/Maps/#15908" class="Bound">β</a> <a id="15940" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a><a id="15941" class="Symbol">)</a>
  <a id="15944" class="Symbol">→</a> <a id="15946" href="../../Ordinals/Maps/#603" class="Function">is-order-reflecting</a> <a id="15966" href="../../Ordinals/Maps/#15892" class="Bound">α</a> <a id="15968" href="../../Ordinals/Maps/#15908" class="Bound">β</a> <a id="15970" href="../../Ordinals/Maps/#15924" class="Bound">f</a>
  <a id="15973" class="Symbol">→</a> <a id="15975" class="Symbol">((</a><a id="15977" href="../../Ordinals/Maps/#15977" class="Bound">a</a> <a id="15979" class="Symbol">:</a> <a id="15981" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="15983" href="../../Ordinals/Maps/#15892" class="Bound">α</a> <a id="15985" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a><a id="15986" class="Symbol">)</a> <a id="15988" class="Symbol">(</a><a id="15989" href="../../Ordinals/Maps/#15989" class="Bound">b</a> <a id="15991" class="Symbol">:</a> <a id="15993" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="15995" href="../../Ordinals/Maps/#15908" class="Bound">β</a> <a id="15997" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a><a id="15998" class="Symbol">)</a> <a id="16000" class="Symbol">→</a> <a id="16002" href="../../Ordinals/Maps/#15989" class="Bound">b</a> <a id="16004" href="../../Ordinals/Underlying/#344" class="Field">≺⟨</a> <a id="16007" href="../../Ordinals/Maps/#15908" class="Bound">β</a> <a id="16009" href="../../Ordinals/Underlying/#344" class="Field">⟩</a> <a id="16011" href="../../Ordinals/Maps/#15924" class="Bound">f</a> <a id="16013" href="../../Ordinals/Maps/#15977" class="Bound">a</a> <a id="16015" class="Symbol">→</a> <a id="16017" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="16019" href="../../Ordinals/Maps/#16019" class="Bound">a&#39;</a> <a id="16022" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="16024" href="../../Ordinals/Underlying/#315" class="Field Operator">⟨</a> <a id="16026" href="../../Ordinals/Maps/#15892" class="Bound">α</a> <a id="16028" href="../../Ordinals/Underlying/#315" class="Field Operator">⟩</a> <a id="16030" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="16032" href="../../Ordinals/Maps/#15924" class="Bound">f</a> <a id="16034" href="../../Ordinals/Maps/#16019" class="Bound">a&#39;</a> <a id="16037" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="16039" href="../../Ordinals/Maps/#15989" class="Bound">b</a><a id="16040" class="Symbol">)</a>

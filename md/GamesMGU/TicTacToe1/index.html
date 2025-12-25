@@ -63320,8 +63320,7 @@ in other files.
 
 TODO. Organaze this module better, following the organization of TicTacToe0.
 
-<code class="Agda">
-<a id="224" class="Symbol">{-#</a> <a id="228" class="Keyword">OPTIONS</a> <a id="236" class="Pragma">--safe</a> <a id="243" class="Pragma">--without-K</a> <a id="255" class="Pragma">--no-level-universe</a> <a id="275" class="Symbol">#-}</a>
+<code class="Agda"><a id="224" class="Symbol">{-#</a> <a id="228" class="Keyword">OPTIONS</a> <a id="236" class="Pragma">--safe</a> <a id="243" class="Pragma">--without-K</a> <a id="255" class="Pragma">--no-level-universe</a> <a id="275" class="Symbol">#-}</a>
 
 <a id="280" class="Keyword">module</a> <a id="287" href="../../GamesMGU/TicTacToe1/" class="Module">GamesMGU.TicTacToe1</a> <a id="307" class="Keyword">where</a>
 
@@ -63361,13 +63360,11 @@ TODO. Organaze this module better, following the organization of TicTacToe0.
 
   <a id="1051" href="../../GamesMGU/TicTacToe1/#1051" class="Function">Grid</a>   <a id="1058" class="Symbol">=</a> <a id="1060" href="../../GamesMGU/TicTacToe1/#581" class="Function">𝟛</a> <a id="1062" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="1064" href="../../GamesMGU/TicTacToe1/#581" class="Function">𝟛</a>
   <a id="1068" href="../../GamesMGU/TicTacToe1/#1068" class="Function">Matrix</a> <a id="1075" class="Symbol">=</a> <a id="1077" href="../../GamesMGU/TicTacToe1/#1051" class="Function">Grid</a> <a id="1082" class="Symbol">→</a> <a id="1084" href="../../MLTT/Maybe/#110" class="Datatype">Maybe</a> <a id="1090" href="../../GamesMGU/TicTacToe1/#824" class="Datatype">Player</a>
-  <a id="1099" href="../../GamesMGU/TicTacToe1/#1099" class="Function">Board</a>  <a id="1106" class="Symbol">=</a> <a id="1108" href="../../GamesMGU/TicTacToe1/#824" class="Datatype">Player</a> <a id="1115" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="1117" href="../../GamesMGU/TicTacToe1/#1068" class="Function">Matrix</a>
-</code>
+  <a id="1099" href="../../GamesMGU/TicTacToe1/#1099" class="Function">Board</a>  <a id="1106" class="Symbol">=</a> <a id="1108" href="../../GamesMGU/TicTacToe1/#824" class="Datatype">Player</a> <a id="1115" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="1117" href="../../GamesMGU/TicTacToe1/#1068" class="Function">Matrix</a></code>
 
 Convention: in a board (p , A), p is the opponent of the the current player.
 
-<code class="Agda">
-  <a id="1231" href="../../GamesMGU/TicTacToe1/#1231" class="Function">wins</a> <a id="1236" class="Symbol">:</a> <a id="1238" href="../../GamesMGU/TicTacToe1/#824" class="Datatype">Player</a> <a id="1245" class="Symbol">→</a> <a id="1247" href="../../GamesMGU/TicTacToe1/#1068" class="Function">Matrix</a> <a id="1254" class="Symbol">→</a> <a id="1256" href="../../MLTT/Bool/#109" class="Datatype">Bool</a>
+<code class="Agda"><a id="1231" href="../../GamesMGU/TicTacToe1/#1231" class="Function">wins</a> <a id="1236" class="Symbol">:</a> <a id="1238" href="../../GamesMGU/TicTacToe1/#824" class="Datatype">Player</a> <a id="1245" class="Symbol">→</a> <a id="1247" href="../../GamesMGU/TicTacToe1/#1068" class="Function">Matrix</a> <a id="1254" class="Symbol">→</a> <a id="1256" href="../../MLTT/Bool/#109" class="Datatype">Bool</a>
   <a id="1263" href="../../GamesMGU/TicTacToe1/#1231" class="Function">wins</a> <a id="1268" href="../../GamesMGU/TicTacToe1/#1268" class="Bound">p</a> <a id="1270" href="../../GamesMGU/TicTacToe1/#1270" class="Bound">A</a> <a id="1272" class="Symbol">=</a> <a id="1274" href="../../GamesMGU/TicTacToe1/#1973" class="Function">line</a> <a id="1279" href="../../MLTT/Bool/#740" class="Function Operator">||</a> <a id="1282" href="../../GamesMGU/TicTacToe1/#1999" class="Function">col</a> <a id="1286" href="../../MLTT/Bool/#740" class="Function Operator">||</a> <a id="1289" href="../../GamesMGU/TicTacToe1/#2025" class="Function">diag</a>
    <a id="1297" class="Keyword">where</a>
     <a id="1307" href="../../GamesMGU/TicTacToe1/#1307" class="Function Operator">_is_</a> <a id="1312" class="Symbol">:</a> <a id="1314" href="../../MLTT/Maybe/#110" class="Datatype">Maybe</a> <a id="1320" href="../../GamesMGU/TicTacToe1/#824" class="Datatype">Player</a> <a id="1327" class="Symbol">→</a> <a id="1329" href="../../GamesMGU/TicTacToe1/#824" class="Datatype">Player</a> <a id="1336" class="Symbol">→</a> <a id="1338" href="../../MLTT/Bool/#109" class="Datatype">Bool</a>
@@ -63451,8 +63448,7 @@ Convention: in a board (p , A), p is the opponent of the the current player.
                              <a id="3898" class="Symbol">→</a> <a id="3900" href="../../MLTT/Plus-Type/#169" class="InductiveConstructor">inl</a> <a id="3904" href="../../GamesMGU/TicTacToe1/#956" class="InductiveConstructor">draw</a><a id="3908" class="Symbol">)</a>
 
 <a id="t₁"></a><a id="3911" href="../../GamesMGU/TicTacToe1/#3911" class="Function">t₁</a> <a id="3914" class="Symbol">:</a> <a id="3916" href="../../GamesMGU/TicTacToe1/#581" class="Function">𝟛</a>
-<a id="3918" href="../../GamesMGU/TicTacToe1/#3911" class="Function">t₁</a> <a id="3921" class="Symbol">=</a> <a id="3923" href="../../GamesMGU/FiniteHistoryDependent/#3579" class="Function">optimal-outcome</a> <a id="3939" href="../../GamesMGU/TicTacToe1/#733" class="Function">tic-tac-toe₁</a>
-</code>
+<a id="3918" href="../../GamesMGU/TicTacToe1/#3911" class="Function">t₁</a> <a id="3921" class="Symbol">=</a> <a id="3923" href="../../GamesMGU/FiniteHistoryDependent/#3579" class="Function">optimal-outcome</a> <a id="3939" href="../../GamesMGU/TicTacToe1/#733" class="Function">tic-tac-toe₁</a></code>
 
 The above computation takes too long, due to the use of brute-force
 search. A more efficient one is in another file.

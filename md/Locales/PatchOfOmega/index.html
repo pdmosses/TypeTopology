@@ -63315,8 +63315,7 @@
 <h1 id="localespatchofomega">Locales.PatchOfOmega</h1>
 <pre class="Agda">Ayberk Tosun, 17 August 2023.
 
-<code class="Agda">
-<a id="52" class="Symbol">{-#</a> <a id="56" class="Keyword">OPTIONS</a> <a id="64" class="Pragma">--safe</a> <a id="71" class="Pragma">--without-K</a> <a id="83" class="Symbol">#-}</a>
+<code class="Agda"><a id="52" class="Symbol">{-#</a> <a id="56" class="Keyword">OPTIONS</a> <a id="64" class="Pragma">--safe</a> <a id="71" class="Pragma">--without-K</a> <a id="83" class="Symbol">#-}</a>
 
 <a id="88" class="Keyword">open</a> <a id="93" class="Keyword">import</a> <a id="100" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 <a id="113" class="Keyword">open</a> <a id="118" class="Keyword">import</a> <a id="125" href="../../UF/PropTrunc/" class="Module">UF.PropTrunc</a>
@@ -63336,33 +63335,26 @@
 <a id="589" class="Keyword">open</a> <a id="594" class="Keyword">import</a> <a id="601" href="../../Locales/Spectrality/SpectralLocale/" class="Module">Locales.Spectrality.SpectralLocale</a>     <a id="640" href="../../Locales/PatchOfOmega/#272" class="Bound">pt</a> <a id="643" href="../../Locales/PatchOfOmega/#339" class="Bound">fe</a>
 <a id="646" class="Keyword">open</a> <a id="651" class="Keyword">import</a> <a id="658" href="../../Locales/Spectrality/SpectralityOfOmega/" class="Module">Locales.Spectrality.SpectralityOfOmega</a> <a id="697" href="../../Locales/PatchOfOmega/#272" class="Bound">pt</a> <a id="700" href="../../Locales/PatchOfOmega/#339" class="Bound">fe</a> <a id="703" href="../../Locales/PatchOfOmega/#382" class="Bound">sr</a>
 <a id="706" class="Keyword">open</a> <a id="711" class="Keyword">import</a> <a id="718" href="../../Locales/PatchLocale/" class="Module">Locales.PatchLocale</a>                    <a id="757" href="../../Locales/PatchOfOmega/#272" class="Bound">pt</a> <a id="760" href="../../Locales/PatchOfOmega/#339" class="Bound">fe</a> <a id="763" href="../../Locales/PatchOfOmega/#382" class="Bound">sr</a>
-<a id="766" class="Keyword">open</a> <a id="771" class="Keyword">import</a> <a id="778" href="../../Locales/InitialFrame/" class="Module">Locales.InitialFrame</a>                   <a id="817" href="../../Locales/PatchOfOmega/#272" class="Bound">pt</a> <a id="820" href="../../Locales/PatchOfOmega/#339" class="Bound">fe</a>
-</code>
+<a id="766" class="Keyword">open</a> <a id="771" class="Keyword">import</a> <a id="778" href="../../Locales/InitialFrame/" class="Module">Locales.InitialFrame</a>                   <a id="817" href="../../Locales/PatchOfOmega/#272" class="Bound">pt</a> <a id="820" href="../../Locales/PatchOfOmega/#339" class="Bound">fe</a></code>
 
 This is the terminal locale which I denote by `𝟏-loc`
 
-<code class="Agda">
-<a id="𝟏L"></a><a id="905" href="../../Locales/PatchOfOmega/#905" class="Function">𝟏L</a> <a id="908" class="Symbol">:</a> <a id="910" href="../../Locales/Frame/#59183" class="Record">Locale</a> <a id="917" class="Symbol">(</a><a id="918" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="920" href="../../Agda/Primitive/#931" class="Primitive Operator">⁺</a><a id="921" class="Symbol">)</a> <a id="923" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="925" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a>
-<a id="927" href="../../Locales/PatchOfOmega/#905" class="Function">𝟏L</a> <a id="930" class="Symbol">=</a> <a id="932" href="../../Locales/Spectrality/SpectralityOfOmega/#1288" class="Function">𝟏-loc</a> <a id="938" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="940" href="../../Locales/PatchOfOmega/#480" class="Bound">pe</a>
-</code>
+<code class="Agda"><a id="𝟏L"></a><a id="905" href="../../Locales/PatchOfOmega/#905" class="Function">𝟏L</a> <a id="908" class="Symbol">:</a> <a id="910" href="../../Locales/Frame/#59183" class="Record">Locale</a> <a id="917" class="Symbol">(</a><a id="918" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="920" href="../../Agda/Primitive/#931" class="Primitive Operator">⁺</a><a id="921" class="Symbol">)</a> <a id="923" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="925" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a>
+<a id="927" href="../../Locales/PatchOfOmega/#905" class="Function">𝟏L</a> <a id="930" class="Symbol">=</a> <a id="932" href="../../Locales/Spectrality/SpectralityOfOmega/#1288" class="Function">𝟏-loc</a> <a id="938" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="940" href="../../Locales/PatchOfOmega/#480" class="Bound">pe</a></code>
 
 We know that `Ω-Frm` is spectral.
 
-<code class="Agda">
-<a id="1005" class="Keyword">open</a> <a id="1010" href="../../Locales/InitialFrame/#8642" class="Module">Spectrality-of-𝟎</a> <a id="1027" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="1029" href="../../Locales/PatchOfOmega/#480" class="Bound">pe</a>
+<code class="Agda"><a id="1005" class="Keyword">open</a> <a id="1010" href="../../Locales/InitialFrame/#8642" class="Module">Spectrality-of-𝟎</a> <a id="1027" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="1029" href="../../Locales/PatchOfOmega/#480" class="Bound">pe</a>
 
 <a id="Ω-is-spectral"></a><a id="1033" href="../../Locales/PatchOfOmega/#1033" class="Function">Ω-is-spectral</a> <a id="1047" class="Symbol">:</a>  <a id="1050" href="../../Locales/Spectrality/SpectralLocale/#2273" class="Function">is-spectral</a> <a id="1062" href="../../Locales/PatchOfOmega/#905" class="Function">𝟏L</a> <a id="1065" href="../../UF/SubtypeClassifier/#478" class="Function Operator">holds</a>
-<a id="1071" href="../../Locales/PatchOfOmega/#1033" class="Function">Ω-is-spectral</a> <a id="1085" class="Symbol">=</a> <a id="1087" href="../../Locales/Spectrality/SpectralityOfOmega/#4417" class="Function">𝟎-𝔽𝕣𝕞-is-spectral</a> <a id="1105" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="1107" href="../../Locales/PatchOfOmega/#480" class="Bound">pe</a>
-</code>
+<a id="1071" href="../../Locales/PatchOfOmega/#1033" class="Function">Ω-is-spectral</a> <a id="1085" class="Symbol">=</a> <a id="1087" href="../../Locales/Spectrality/SpectralityOfOmega/#4417" class="Function">𝟎-𝔽𝕣𝕞-is-spectral</a> <a id="1105" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="1107" href="../../Locales/PatchOfOmega/#480" class="Bound">pe</a></code>
 
 This means that we can easily compute the patch of `Ω`.
 
-<code class="Agda">
-<a id="1194" class="Keyword">open</a> <a id="1199" href="../../Locales/PatchLocale/#1288" class="Module">PatchConstruction</a> <a id="1217" href="../../Locales/PatchOfOmega/#905" class="Function">𝟏L</a> <a id="1220" href="../../Locales/PatchOfOmega/#1033" class="Function">Ω-is-spectral</a> <a id="1234" class="Keyword">renaming</a> <a id="1243" class="Symbol">(</a><a id="1244" href="../../Locales/PatchLocale/#31439" class="Function">Patch</a> <a id="1250" class="Symbol">to</a> <a id="1253" class="Function">patch-Ω</a><a id="1260" class="Symbol">)</a>
+<code class="Agda"><a id="1194" class="Keyword">open</a> <a id="1199" href="../../Locales/PatchLocale/#1288" class="Module">PatchConstruction</a> <a id="1217" href="../../Locales/PatchOfOmega/#905" class="Function">𝟏L</a> <a id="1220" href="../../Locales/PatchOfOmega/#1033" class="Function">Ω-is-spectral</a> <a id="1234" class="Keyword">renaming</a> <a id="1243" class="Symbol">(</a><a id="1244" href="../../Locales/PatchLocale/#31439" class="Function">Patch</a> <a id="1250" class="Symbol">to</a> <a id="1253" class="Function">patch-Ω</a><a id="1260" class="Symbol">)</a>
 
 <a id="patch-of-Ω"></a><a id="1263" href="../../Locales/PatchOfOmega/#1263" class="Function">patch-of-Ω</a> <a id="1274" class="Symbol">:</a> <a id="1276" href="../../Locales/Frame/#59183" class="Record">Locale</a> <a id="1283" class="Symbol">(</a><a id="1284" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="1286" href="../../Agda/Primitive/#931" class="Primitive Operator">⁺</a><a id="1287" class="Symbol">)</a> <a id="1289" class="Symbol">(</a><a id="1290" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a> <a id="1292" href="../../Agda/Primitive/#931" class="Primitive Operator">⁺</a><a id="1293" class="Symbol">)</a> <a id="1295" href="../../Locales/PatchOfOmega/#436" class="Bound">𝓤</a>
-<a id="1297" href="../../Locales/PatchOfOmega/#1263" class="Function">patch-of-Ω</a> <a id="1308" class="Symbol">=</a> <a id="1310" href="../../Locales/PatchOfOmega/#1253" class="Function">patch-Ω</a>
-</code>
+<a id="1297" href="../../Locales/PatchOfOmega/#1263" class="Function">patch-of-Ω</a> <a id="1308" class="Symbol">=</a> <a id="1310" href="../../Locales/PatchOfOmega/#1253" class="Function">patch-Ω</a></code>
 </pre>
 
 
