@@ -63344,25 +63344,30 @@ efficiency. By combining this with Part 1, we obtain an efficient way
 to play the original game G optimally, with a proof of
 correctness. (But we don't prove efficiency theorems.)
 
-<code class="Agda"><a id="1520" class="Symbol">{-#</a> <a id="1524" class="Keyword">OPTIONS</a> <a id="1532" class="Pragma">--safe</a> <a id="1539" class="Pragma">--without-K</a> <a id="1551" class="Pragma">--no-exact-split</a> <a id="1568" class="Pragma">--no-level-universe</a> <a id="1588" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="1520" class="Symbol">{-#</a> <a id="1524" class="Keyword">OPTIONS</a> <a id="1532" class="Pragma">--safe</a> <a id="1539" class="Pragma">--without-K</a> <a id="1551" class="Pragma">--no-exact-split</a> <a id="1568" class="Pragma">--no-level-universe</a> <a id="1588" class="Symbol">#-}</a>
 
-<a id="1593" class="Keyword">open</a> <a id="1598" class="Keyword">import</a> <a id="1605" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a> <a id="1618" class="Keyword">hiding</a> <a id="1625" class="Symbol">(</a><a id="1626" href="../../MLTT/Id/#438" class="Function">J</a><a id="1627" class="Symbol">)</a></code>
+<a id="1593" class="Keyword">open</a> <a id="1598" class="Keyword">import</a> <a id="1605" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a> <a id="1618" class="Keyword">hiding</a> <a id="1625" class="Symbol">(</a><a id="1626" href="../../MLTT/Id/#438" class="Function">J</a><a id="1627" class="Symbol">)</a>
 
+</code>
 Part 0.
 
 We now define standard minimax games.
 
-<code class="Agda"><a id="1704" class="Keyword">module</a> <a id="1711" href="../../GamesMGU/alpha-beta-examples/" class="Module">GamesMGU.alpha-beta-examples</a> <a id="1740" class="Keyword">where</a>
+<code class="Agda">
+<a id="1704" class="Keyword">module</a> <a id="1711" href="../../GamesMGU/alpha-beta-examples/" class="Module">GamesMGU.alpha-beta-examples</a> <a id="1740" class="Keyword">where</a>
 
 <a id="1747" class="Keyword">open</a> <a id="1752" class="Keyword">import</a> <a id="1759" href="../../MLTT/Athenian/" class="Module">MLTT.Athenian</a>
 <a id="1773" class="Keyword">open</a> <a id="1778" class="Keyword">import</a> <a id="1785" href="../../MLTT/Fin/" class="Module">MLTT.Fin</a>
 <a id="1794" class="Keyword">open</a> <a id="1799" class="Keyword">import</a> <a id="1806" href="../../Naturals/Order/" class="Module">Naturals.Order</a>
-<a id="1821" class="Keyword">open</a> <a id="1826" class="Keyword">import</a> <a id="1833" href="../../UF/FunExt/" class="Module">UF.FunExt</a></code>
+<a id="1821" class="Keyword">open</a> <a id="1826" class="Keyword">import</a> <a id="1833" href="../../UF/FunExt/" class="Module">UF.FunExt</a>
 
+</code>
 Example from Wikipedia:
 https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning
 
-<code class="Agda"><a id="1952" class="Keyword">module</a> <a id="example-from-wikipedia"></a><a id="1959" href="../../GamesMGU/alpha-beta-examples/#1959" class="Module">example-from-wikipedia</a> <a id="1982" class="Keyword">where</a>
+<code class="Agda">
+<a id="1952" class="Keyword">module</a> <a id="example-from-wikipedia"></a><a id="1959" href="../../GamesMGU/alpha-beta-examples/#1959" class="Module">example-from-wikipedia</a> <a id="1982" class="Keyword">where</a>
 
  <a id="1990" class="Keyword">open</a> <a id="1995" class="Keyword">import</a> <a id="2002" href="../../GamesMGU/alpha-beta/" class="Module">GamesMGU.alpha-beta</a> <a id="2022" class="Symbol">{</a><a id="2023" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a><a id="2025" class="Symbol">}</a> <a id="2027" class="Symbol">{</a><a id="2028" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a><a id="2030" class="Symbol">}</a> <a id="2032" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="2034" href="../../Naturals/Order/#4096" class="Function Operator">_&lt;ℕ_</a> <a id="2039" href="../../Naturals/Order/#9179" class="Function">&lt;-decidable</a> <a id="2051" class="Keyword">public</a>
 
@@ -63417,11 +63422,13 @@ https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning
 
  wikipedia-optimal-play＝ : wikipedia-optimal-play ＝ (𝟏 , 𝟎 , 𝟎 , 𝟎 , ⟨⟩)
  wikipedia-optimal-play＝ = refl
- -}</a></code>
+ -}</a>
 
+</code>
 Example from Wikipedia again.
 
-<code class="Agda"><a id="3609" class="Keyword">module</a> <a id="example-from-wikipedia&#39;"></a><a id="3616" href="../../GamesMGU/alpha-beta-examples/#3616" class="Module">example-from-wikipedia&#39;</a> <a id="3640" class="Keyword">where</a>
+<code class="Agda">
+<a id="3609" class="Keyword">module</a> <a id="example-from-wikipedia&#39;"></a><a id="3616" href="../../GamesMGU/alpha-beta-examples/#3616" class="Module">example-from-wikipedia&#39;</a> <a id="3640" class="Keyword">where</a>
 
  <a id="3648" class="Keyword">open</a> <a id="3653" href="../../GamesMGU/alpha-beta-examples/#1959" class="Module">example-from-wikipedia</a>
 
@@ -63434,8 +63441,9 @@ Example from Wikipedia again.
  <a id="3877" href="../../GamesMGU/alpha-beta-examples/#3823" class="Function">wikipedia-optimal-outcome&#39;</a> <a id="3904" class="Symbol">=</a> <a id="3906" href="../../GamesMGU/FiniteHistoryDependent/#3579" class="Function">optimal-outcome</a> <a id="3922" class="Symbol">(</a><a id="3923" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="3925" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="3927" href="../../GamesMGU/TypeTrees/#963" class="Function">Path</a> <a id="3932" href="../../GamesMGU/alpha-beta-examples/#2060" class="Function">wikipedia-tree</a><a id="3946" class="Symbol">)</a> <a id="3948" href="../../GamesMGU/alpha-beta-examples/#3678" class="Function">wikipedia-G&#39;</a>
 
  <a id="example-from-wikipedia&#39;.wikipedia-optimal-outcome＝&#39;"></a><a id="3963" href="../../GamesMGU/alpha-beta-examples/#3963" class="Function">wikipedia-optimal-outcome＝&#39;</a> <a id="3991" class="Symbol">:</a> <a id="3993" href="../../GamesMGU/alpha-beta-examples/#3823" class="Function">wikipedia-optimal-outcome&#39;</a> <a id="4020" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="4022" class="Symbol">(</a><a id="4023" class="Number">6</a> <a id="4025" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4027" href="../../MLTT/Fin/#345" class="InductiveConstructor">𝟏</a> <a id="4029" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4031" href="../../MLTT/Fin/#175" class="InductiveConstructor">𝟎</a> <a id="4033" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4035" href="../../MLTT/Fin/#175" class="InductiveConstructor">𝟎</a> <a id="4037" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4039" href="../../MLTT/Fin/#175" class="InductiveConstructor">𝟎</a> <a id="4041" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4043" href="../../GamesMGU/TypeTrees/#1330" class="InductiveConstructor">⟨⟩</a><a id="4045" class="Symbol">)</a>
- <a id="4048" href="../../GamesMGU/alpha-beta-examples/#3963" class="Function">wikipedia-optimal-outcome＝&#39;</a> <a id="4076" class="Symbol">=</a> <a id="4078" href="../../MLTT/Identity-Type/#157" class="InductiveConstructor">refl</a></code>
+ <a id="4048" href="../../GamesMGU/alpha-beta-examples/#3963" class="Function">wikipedia-optimal-outcome＝&#39;</a> <a id="4076" class="Symbol">=</a> <a id="4078" href="../../MLTT/Identity-Type/#157" class="InductiveConstructor">refl</a>
 
+</code>
 module example-from-wikipedia' where
 
 
@@ -63462,7 +63470,8 @@ module example-from-wikipedia' where
 
 Two versions of tic-tac-toe.
 
-<code class="Agda"><a id="4747" class="Keyword">module</a> <a id="tic-tac-toe"></a><a id="4754" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a> <a id="4766" class="Keyword">where</a>
+<code class="Agda">
+<a id="4747" class="Keyword">module</a> <a id="tic-tac-toe"></a><a id="4754" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a> <a id="4766" class="Keyword">where</a>
 
  <a id="4774" class="Keyword">open</a> <a id="4779" class="Keyword">import</a> <a id="4786" href="../../GamesMGU/alpha-beta/" class="Module">GamesMGU.alpha-beta</a> <a id="4806" class="Symbol">{</a><a id="4807" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a><a id="4809" class="Symbol">}</a> <a id="4811" class="Symbol">{</a><a id="4812" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a><a id="4814" class="Symbol">}</a> <a id="4816" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="4818" href="../../Naturals/Order/#4096" class="Function Operator">_&lt;ℕ_</a> <a id="4823" href="../../Naturals/Order/#9179" class="Function">&lt;-decidable</a>
 
@@ -63693,8 +63702,9 @@ Two versions of tic-tac-toe.
     <a id="11267" class="Keyword">open</a> <a id="11272" href="../../GamesMGU/alpha-beta/#9205" class="Module">minimax⋆</a>
 
   <a id="tic-tac-toe.version₂.TTT-optimal-outcome⋆"></a><a id="11284" href="../../GamesMGU/alpha-beta-examples/#11284" class="Function">TTT-optimal-outcome⋆</a> <a id="11305" class="Symbol">:</a> <a id="11307" href="../../GamesMGU/alpha-beta-examples/#9008" class="Function">R</a> <a id="11309" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="11311" href="../../GamesMGU/TypeTrees/#963" class="Function">Path</a> <a id="11316" href="../../GamesMGU/alpha-beta-examples/#8690" class="Function">TTT-tree</a>
-  <a id="11327" href="../../GamesMGU/alpha-beta-examples/#11284" class="Function">TTT-optimal-outcome⋆</a> <a id="11348" class="Symbol">=</a> <a id="11350" href="../../GamesMGU/FiniteHistoryDependent/#3579" class="Function">optimal-outcome</a> <a id="11366" class="Symbol">(</a><a id="11367" href="../../GamesMGU/alpha-beta-examples/#9008" class="Function">R</a> <a id="11369" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="11371" href="../../GamesMGU/alpha-beta-examples/#9008" class="Function">R</a> <a id="11373" class="Symbol">→</a> <a id="11375" href="../../GamesMGU/alpha-beta-examples/#9008" class="Function">R</a> <a id="11377" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="11379" href="../../GamesMGU/TypeTrees/#963" class="Function">Path</a> <a id="11384" href="../../GamesMGU/alpha-beta-examples/#8690" class="Function">TTT-tree</a><a id="11392" class="Symbol">)</a> <a id="11394" href="../../GamesMGU/alpha-beta-examples/#11159" class="Function">TTT-G⋆</a> <a id="11401" class="Symbol">(</a><a id="11402" class="Number">0</a> <a id="11404" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="11406" class="Number">2</a><a id="11407" class="Symbol">)</a></code>
+  <a id="11327" href="../../GamesMGU/alpha-beta-examples/#11284" class="Function">TTT-optimal-outcome⋆</a> <a id="11348" class="Symbol">=</a> <a id="11350" href="../../GamesMGU/FiniteHistoryDependent/#3579" class="Function">optimal-outcome</a> <a id="11366" class="Symbol">(</a><a id="11367" href="../../GamesMGU/alpha-beta-examples/#9008" class="Function">R</a> <a id="11369" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="11371" href="../../GamesMGU/alpha-beta-examples/#9008" class="Function">R</a> <a id="11373" class="Symbol">→</a> <a id="11375" href="../../GamesMGU/alpha-beta-examples/#9008" class="Function">R</a> <a id="11377" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="11379" href="../../GamesMGU/TypeTrees/#963" class="Function">Path</a> <a id="11384" href="../../GamesMGU/alpha-beta-examples/#8690" class="Function">TTT-tree</a><a id="11392" class="Symbol">)</a> <a id="11394" href="../../GamesMGU/alpha-beta-examples/#11159" class="Function">TTT-G⋆</a> <a id="11401" class="Symbol">(</a><a id="11402" class="Number">0</a> <a id="11404" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="11406" class="Number">2</a><a id="11407" class="Symbol">)</a>
 
+</code>
 Slow. 28 minutes in a MacBook Air M1
  TTT-optimal-outcome＝⋆ : TTT-optimal-outcome⋆
                        ＝ (1 , ((0 :: in-head)
@@ -63712,77 +63722,94 @@ Slow. 28 minutes in a MacBook Air M1
 This computes the optimal outcome using the standard minimax
 algorithm with quantifiers:
 
-<code class="Agda"><a id="test"></a><a id="12152" href="../../GamesMGU/alpha-beta-examples/#12152" class="Function">test</a> <a id="12157" class="Symbol">:</a> <a id="12159" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="12161" class="Comment">-- 22.7 seconds with `agda --compile` on a Mac M2</a>
+<code class="Agda">
+<a id="test"></a><a id="12152" href="../../GamesMGU/alpha-beta-examples/#12152" class="Function">test</a> <a id="12157" class="Symbol">:</a> <a id="12159" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="12161" class="Comment">-- 22.7 seconds with `agda --compile` on a Mac M2</a>
 <a id="12211" href="../../GamesMGU/alpha-beta-examples/#12152" class="Function">test</a> <a id="12216" class="Symbol">=</a> <a id="12218" href="../../GamesMGU/alpha-beta-examples/#7626" class="Function">TTT-optimal-outcome</a>
  <a id="12239" class="Keyword">where</a>
   <a id="12247" class="Keyword">open</a> <a id="12252" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a>
-  <a id="12266" class="Keyword">open</a> <a id="12271" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a></code>
+  <a id="12266" class="Keyword">open</a> <a id="12271" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a>
 
+</code>
 This is like test above, but using a different implementation of
 the tic-tac-toe board:
 
-<code class="Agda"><a id="-test"></a><a id="12396" href="../../GamesMGU/alpha-beta-examples/#12396" class="Function">-test</a> <a id="12402" class="Symbol">:</a> <a id="12404" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="12406" class="Comment">-- 22.6 seconds with `agda --compile` on a Mac M2</a>
+<code class="Agda">
+<a id="-test"></a><a id="12396" href="../../GamesMGU/alpha-beta-examples/#12396" class="Function">-test</a> <a id="12402" class="Symbol">:</a> <a id="12404" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="12406" class="Comment">-- 22.6 seconds with `agda --compile` on a Mac M2</a>
 <a id="12456" href="../../GamesMGU/alpha-beta-examples/#12396" class="Function">-test</a> <a id="12462" class="Symbol">=</a> <a id="12464" href="../../GamesMGU/alpha-beta-examples/#10859" class="Function">TTT-optimal-outcome</a>
  <a id="12485" class="Keyword">where</a>
   <a id="12493" class="Keyword">open</a> <a id="12498" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a>
-  <a id="12512" class="Keyword">open</a> <a id="12517" href="../../GamesMGU/alpha-beta-examples/#8471" class="Module">version₂</a></code>
+  <a id="12512" class="Keyword">open</a> <a id="12517" href="../../GamesMGU/alpha-beta-examples/#8471" class="Module">version₂</a>
 
+
+</code>
 This tries to compute an optimal play using selection functions
 without any optimization:
 
-<code class="Agda"><a id="testo"></a><a id="12645" href="../../GamesMGU/alpha-beta-examples/#12645" class="Function">testo</a> <a id="12651" class="Symbol">:</a> <a id="12653" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="12658" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="12660" class="Comment">-- It didn&#39;t finish in 7 hours  with `agda --compile` on a Mac M2</a>
+<code class="Agda">
+<a id="testo"></a><a id="12645" href="../../GamesMGU/alpha-beta-examples/#12645" class="Function">testo</a> <a id="12651" class="Symbol">:</a> <a id="12653" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="12658" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="12660" class="Comment">-- It didn&#39;t finish in 7 hours  with `agda --compile` on a Mac M2</a>
 <a id="12726" href="../../GamesMGU/alpha-beta-examples/#12645" class="Function">testo</a> <a id="12732" class="Symbol">=</a> <a id="12734" href="../../GamesMGU/alpha-beta-examples/#5567" class="Function">remove-proofs</a> <a id="12748" class="Symbol">_</a> <a id="12750" href="../../GamesMGU/alpha-beta-examples/#5908" class="Function">all-moves</a> <a id="12760" href="../../GamesMGU/alpha-beta-examples/#8180" class="Function">TTT-optimal-play</a>
  <a id="12778" class="Keyword">where</a>
   <a id="12786" class="Keyword">open</a> <a id="12791" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a>
-  <a id="12805" class="Keyword">open</a> <a id="12810" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a></code>
+  <a id="12805" class="Keyword">open</a> <a id="12810" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a>
 
+</code>
 This computes an optimal play using monadic selection functions,
 with the reader monad, to implement alpha-beta prunning, which is a
 new technique introduced in this file:
 
-<code class="Agda"><a id="test†"></a><a id="13019" href="../../GamesMGU/alpha-beta-examples/#13019" class="Function">test†</a> <a id="13025" class="Symbol">:</a> <a id="13027" href="../../UF/FunExt/#1047" class="Function">Fun-Ext</a> <a id="13035" class="Symbol">→</a> <a id="13037" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="13042" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="13044" class="Comment">-- 15 seconds with `agda --compile` on a Mac M2</a>
+<code class="Agda">
+<a id="test†"></a><a id="13019" href="../../GamesMGU/alpha-beta-examples/#13019" class="Function">test†</a> <a id="13025" class="Symbol">:</a> <a id="13027" href="../../UF/FunExt/#1047" class="Function">Fun-Ext</a> <a id="13035" class="Symbol">→</a> <a id="13037" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="13042" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="13044" class="Comment">-- 15 seconds with `agda --compile` on a Mac M2</a>
 <a id="13092" href="../../GamesMGU/alpha-beta-examples/#13019" class="Function">test†</a> <a id="13098" href="../../GamesMGU/alpha-beta-examples/#13098" class="Bound">fe</a> <a id="13101" class="Symbol">=</a> <a id="13103" href="../../GamesMGU/alpha-beta-examples/#5567" class="Function">remove-proofs</a> <a id="13117" class="Symbol">_</a> <a id="13119" href="../../GamesMGU/alpha-beta-examples/#5908" class="Function">all-moves</a> <a id="13129" class="Symbol">(</a><a id="13130" href="../../GamesMGU/alpha-beta-examples/#8311" class="Function">TTT-optimal-play†</a> <a id="13148" href="../../GamesMGU/alpha-beta-examples/#13098" class="Bound">fe</a><a id="13150" class="Symbol">)</a>
  <a id="13153" class="Keyword">where</a>
   <a id="13161" class="Keyword">open</a> <a id="13166" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a>
-  <a id="13180" class="Keyword">open</a> <a id="13185" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a></code>
+  <a id="13180" class="Keyword">open</a> <a id="13185" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a>
 
+</code>
 This computes an optimal play using quantifiers, which is a new
 technique introduced in this file:
 
-<code class="Agda"><a id="test&#39;"></a><a id="13321" href="../../GamesMGU/alpha-beta-examples/#13321" class="Function">test&#39;</a> <a id="13327" class="Symbol">:</a> <a id="13329" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="13334" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="13336" class="Comment">-- 22.7 seconds with `agda --compile` on a Mac M2</a>
+<code class="Agda">
+<a id="test&#39;"></a><a id="13321" href="../../GamesMGU/alpha-beta-examples/#13321" class="Function">test&#39;</a> <a id="13327" class="Symbol">:</a> <a id="13329" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="13334" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="13336" class="Comment">-- 22.7 seconds with `agda --compile` on a Mac M2</a>
 <a id="13386" href="../../GamesMGU/alpha-beta-examples/#13321" class="Function">test&#39;</a> <a id="13392" class="Symbol">=</a> <a id="13394" href="../../GamesMGU/alpha-beta-examples/#5567" class="Function">remove-proofs</a> <a id="13408" class="Symbol">_</a> <a id="13410" href="../../GamesMGU/alpha-beta-examples/#5908" class="Function">all-moves</a> <a id="13420" class="Symbol">(</a><a id="13421" href="../../MLTT/Sigma-Type/#209" class="Field">pr₂</a> <a id="13425" href="../../GamesMGU/alpha-beta-examples/#7814" class="Function">TTT-optimal-outcome&#39;</a><a id="13445" class="Symbol">)</a>
  <a id="13448" class="Keyword">where</a>
   <a id="13456" class="Keyword">open</a> <a id="13461" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a>
-  <a id="13475" class="Keyword">open</a> <a id="13480" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a></code>
+  <a id="13475" class="Keyword">open</a> <a id="13480" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a>
 
+</code>
 This is like test' above, but uses a different implementation of the
 tic-tac-toe board:
 
-<code class="Agda"><a id="-test&#39;"></a><a id="13605" href="../../GamesMGU/alpha-beta-examples/#13605" class="Function">-test&#39;</a> <a id="13612" class="Symbol">:</a> <a id="13614" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="13619" class="Symbol">(</a><a id="13620" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="13622" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="13624" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a><a id="13625" class="Symbol">)</a> <a id="13627" class="Comment">-- 27.7 seconds with `agda --compile` on a Mac M2</a>
+<code class="Agda">
+<a id="-test&#39;"></a><a id="13605" href="../../GamesMGU/alpha-beta-examples/#13605" class="Function">-test&#39;</a> <a id="13612" class="Symbol">:</a> <a id="13614" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="13619" class="Symbol">(</a><a id="13620" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="13622" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="13624" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a><a id="13625" class="Symbol">)</a> <a id="13627" class="Comment">-- 27.7 seconds with `agda --compile` on a Mac M2</a>
 <a id="13677" href="../../GamesMGU/alpha-beta-examples/#13605" class="Function">-test&#39;</a> <a id="13684" class="Symbol">=</a> <a id="13686" href="../../GamesMGU/alpha-beta-examples/#5567" class="Function">remove-proofs</a> <a id="13700" class="Symbol">_</a> <a id="13702" href="../../GamesMGU/alpha-beta-examples/#8506" class="Function">all-moves</a> <a id="13712" class="Symbol">(</a><a id="13713" href="../../MLTT/Sigma-Type/#209" class="Field">pr₂</a> <a id="13717" href="../../GamesMGU/alpha-beta-examples/#11047" class="Function">TTT-optimal-outcome&#39;</a><a id="13737" class="Symbol">)</a>
  <a id="13740" class="Keyword">where</a>
   <a id="13748" class="Keyword">open</a> <a id="13753" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a>
-  <a id="13767" class="Keyword">open</a> <a id="13772" href="../../GamesMGU/alpha-beta-examples/#8471" class="Module">version₂</a></code>
+  <a id="13767" class="Keyword">open</a> <a id="13772" href="../../GamesMGU/alpha-beta-examples/#8471" class="Module">version₂</a>
 
+</code>
 This computes again an optimal play using monadic quantifiers, with
 the reader monad, rather than selection functions, to implement
 alpha-beta prunning, which is also a new thing in this file:
 
-<code class="Agda"><a id="test⋆"></a><a id="14002" href="../../GamesMGU/alpha-beta-examples/#14002" class="Function">test⋆</a> <a id="14008" class="Symbol">:</a> <a id="14010" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="14015" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="14017" class="Comment">-- 2.8 seconds with `agda --compile` on a Mac M2</a>
+<code class="Agda">
+<a id="test⋆"></a><a id="14002" href="../../GamesMGU/alpha-beta-examples/#14002" class="Function">test⋆</a> <a id="14008" class="Symbol">:</a> <a id="14010" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="14015" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="14017" class="Comment">-- 2.8 seconds with `agda --compile` on a Mac M2</a>
 <a id="14066" href="../../GamesMGU/alpha-beta-examples/#14002" class="Function">test⋆</a> <a id="14072" class="Symbol">=</a> <a id="14074" href="../../GamesMGU/alpha-beta-examples/#5567" class="Function">remove-proofs</a> <a id="14088" class="Symbol">_</a> <a id="14090" href="../../GamesMGU/alpha-beta-examples/#5908" class="Function">all-moves</a> <a id="14100" class="Symbol">(</a><a id="14101" href="../../MLTT/Sigma-Type/#209" class="Field">pr₂</a> <a id="14105" href="../../GamesMGU/alpha-beta-examples/#8051" class="Function">TTT-optimal-outcome⋆</a><a id="14125" class="Symbol">)</a>
  <a id="14128" class="Keyword">where</a>
   <a id="14136" class="Keyword">open</a> <a id="14141" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a>
-  <a id="14155" class="Keyword">open</a> <a id="14160" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a></code>
+  <a id="14155" class="Keyword">open</a> <a id="14160" href="../../GamesMGU/alpha-beta-examples/#5853" class="Module">version₁</a>
 
+</code>
 This is like test⋆ above, but uses a different implementation of
 the tic-tac-toe board:
 
-<code class="Agda"><a id="-test⋆"></a><a id="14285" href="../../GamesMGU/alpha-beta-examples/#14285" class="Function">-test⋆</a> <a id="14292" class="Symbol">:</a> <a id="14294" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="14299" class="Symbol">(</a><a id="14300" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="14302" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="14304" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a><a id="14305" class="Symbol">)</a> <a id="14307" class="Comment">-- 3.3 seconds with `agda --compile` on a Mac M2</a>
+<code class="Agda">
+<a id="-test⋆"></a><a id="14285" href="../../GamesMGU/alpha-beta-examples/#14285" class="Function">-test⋆</a> <a id="14292" class="Symbol">:</a> <a id="14294" href="../../MLTT/List/#488" class="Datatype">List</a> <a id="14299" class="Symbol">(</a><a id="14300" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="14302" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="14304" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a><a id="14305" class="Symbol">)</a> <a id="14307" class="Comment">-- 3.3 seconds with `agda --compile` on a Mac M2</a>
 <a id="14356" href="../../GamesMGU/alpha-beta-examples/#14285" class="Function">-test⋆</a> <a id="14363" class="Symbol">=</a> <a id="14365" href="../../GamesMGU/alpha-beta-examples/#5567" class="Function">remove-proofs</a> <a id="14379" class="Symbol">_</a> <a id="14381" href="../../GamesMGU/alpha-beta-examples/#8506" class="Function">all-moves</a> <a id="14391" class="Symbol">(</a><a id="14392" href="../../MLTT/Sigma-Type/#209" class="Field">pr₂</a> <a id="14396" href="../../GamesMGU/alpha-beta-examples/#11284" class="Function">TTT-optimal-outcome⋆</a><a id="14416" class="Symbol">)</a>
  <a id="14419" class="Keyword">where</a>
   <a id="14427" class="Keyword">open</a> <a id="14432" href="../../GamesMGU/alpha-beta-examples/#4754" class="Module">tic-tac-toe</a>
-  <a id="14446" class="Keyword">open</a> <a id="14451" href="../../GamesMGU/alpha-beta-examples/#8471" class="Module">version₂</a></code>
+  <a id="14446" class="Keyword">open</a> <a id="14451" href="../../GamesMGU/alpha-beta-examples/#8471" class="Module">version₂</a>
 
+</code>
 So the alpha-beta prunned version is 8 times faster.
 
 NB. The strictness option for compilation quadruples the run time.

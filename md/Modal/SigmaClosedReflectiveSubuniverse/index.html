@@ -63335,14 +63335,14 @@ https://doi.org/10.23638/LMCS-16(1:2)2020
  <a id="671" class="Symbol">(</a><a id="672" href="../../Modal/SigmaClosedReflectiveSubuniverse/#672" class="Bound">P</a> <a id="674" class="Symbol">:</a> <a id="676" href="../../Modal/Subuniverse/#296" class="Function">subuniverse</a> <a id="688" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="690" href="../../MLTT/Universes/#3835" class="Generalizable">𝓥</a><a id="691" class="Symbol">)</a>
  <a id="694" class="Symbol">(</a><a id="695" href="../../Modal/SigmaClosedReflectiveSubuniverse/#695" class="Bound">P-is-reflective</a> <a id="711" class="Symbol">:</a> <a id="713" href="../../Modal/Subuniverse/#1082" class="Function">subuniverse-is-reflective</a> <a id="739" href="../../Modal/SigmaClosedReflectiveSubuniverse/#672" class="Bound">P</a><a id="740" class="Symbol">)</a>
  <a id="743" class="Symbol">(</a><a id="744" href="../../Modal/SigmaClosedReflectiveSubuniverse/#744" class="Bound">P-is-sigma-closed</a> <a id="762" class="Symbol">:</a> <a id="764" href="../../Modal/Subuniverse/#1594" class="Function">subuniverse-is-sigma-closed</a> <a id="792" href="../../Modal/SigmaClosedReflectiveSubuniverse/#672" class="Bound">P</a><a id="793" class="Symbol">)</a>
- <a id="796" class="Keyword">where</a></code>
-
+ <a id="796" class="Keyword">where</a>
+</code>
 A Σ-closed reflective subuniverse is in particular a reflective
 subuniverse, so we first import everything already proved for
 reflective subuniverses in general.
 
-<code class="Agda"><a id="990" class="Keyword">open</a> <a id="995" class="Keyword">import</a> <a id="1002" href="../../Modal/ReflectiveSubuniverse/" class="Module">Modal.ReflectiveSubuniverse</a> <a id="1030" href="../../Modal/SigmaClosedReflectiveSubuniverse/#672" class="Bound">P</a> <a id="1032" href="../../Modal/SigmaClosedReflectiveSubuniverse/#695" class="Bound">P-is-reflective</a> <a id="1048" class="Keyword">public</a></code>
-
+<code class="Agda"><a id="990" class="Keyword">open</a> <a id="995" class="Keyword">import</a> <a id="1002" href="../../Modal/ReflectiveSubuniverse/" class="Module">Modal.ReflectiveSubuniverse</a> <a id="1030" href="../../Modal/SigmaClosedReflectiveSubuniverse/#672" class="Bound">P</a> <a id="1032" href="../../Modal/SigmaClosedReflectiveSubuniverse/#695" class="Bound">P-is-reflective</a> <a id="1048" class="Keyword">public</a>
+</code>
 We can now prove the induction principle. We do this as a direct
 proof from the Σ-closed condition, using it together with the
 recursion principle to construct a map g : ○ A → Σ a : ○ A, B a and
@@ -63369,8 +63369,8 @@ on ○ A.
        <a id="1750" class="Symbol">_</a> <a id="1752" class="Symbol">_</a>
        <a id="1761" class="Symbol">(</a><a id="1762" href="../../Modal/ReflectiveSubuniverse/#805" class="Function">○-is-modal</a> <a id="1773" class="Symbol">_)</a>
        <a id="1783" class="Symbol">_</a> <a id="1785" class="Symbol">_</a>
-       <a id="1794" class="Symbol">(</a><a id="1795" href="../../UF/FunExt/#1242" class="Function">dfunext</a> <a id="1803" href="../../Modal/SigmaClosedReflectiveSubuniverse/#1520" class="Bound">fe</a> <a id="1806" class="Symbol">(λ</a> <a id="1809" href="../../Modal/SigmaClosedReflectiveSubuniverse/#1809" class="Bound">a</a> <a id="1811" class="Symbol">→</a> <a id="1813" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="1816" href="../../MLTT/Sigma-Type/#198" class="Field">pr₁</a> <a id="1820" class="Symbol">(</a><a id="1821" href="../../Modal/ReflectiveSubuniverse/#1664" class="Function">○-rec-compute</a> <a id="1835" class="Symbol">_</a> <a id="1837" class="Symbol">_</a> <a id="1839" class="Symbol">_</a> <a id="1841" class="Symbol">_</a> <a id="1843" href="../../Modal/SigmaClosedReflectiveSubuniverse/#1809" class="Bound">a</a><a id="1844" class="Symbol">)))</a></code>
-</pre>
+       <a id="1794" class="Symbol">(</a><a id="1795" href="../../UF/FunExt/#1242" class="Function">dfunext</a> <a id="1803" href="../../Modal/SigmaClosedReflectiveSubuniverse/#1520" class="Bound">fe</a> <a id="1806" class="Symbol">(λ</a> <a id="1809" href="../../Modal/SigmaClosedReflectiveSubuniverse/#1809" class="Bound">a</a> <a id="1811" class="Symbol">→</a> <a id="1813" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="1816" href="../../MLTT/Sigma-Type/#198" class="Field">pr₁</a> <a id="1820" class="Symbol">(</a><a id="1821" href="../../Modal/ReflectiveSubuniverse/#1664" class="Function">○-rec-compute</a> <a id="1835" class="Symbol">_</a> <a id="1837" class="Symbol">_</a> <a id="1839" class="Symbol">_</a> <a id="1841" class="Symbol">_</a> <a id="1843" href="../../Modal/SigmaClosedReflectiveSubuniverse/#1809" class="Bound">a</a><a id="1844" class="Symbol">)))</a>
+</code></pre>
 
 
 

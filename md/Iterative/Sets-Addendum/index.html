@@ -63321,7 +63321,8 @@ Some constructions with iterative sets.
 
  * The type of iterative sets is algebraically injective.
 
-<code class="Agda"><a id="198" class="Symbol">{-#</a> <a id="202" class="Keyword">OPTIONS</a> <a id="210" class="Pragma">--safe</a> <a id="217" class="Pragma">--without-K</a> <a id="229" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="198" class="Symbol">{-#</a> <a id="202" class="Keyword">OPTIONS</a> <a id="210" class="Pragma">--safe</a> <a id="217" class="Pragma">--without-K</a> <a id="229" class="Symbol">#-}</a>
 
 <a id="234" class="Keyword">open</a> <a id="239" class="Keyword">import</a> <a id="246" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 <a id="259" class="Keyword">open</a> <a id="264" class="Keyword">import</a> <a id="271" href="../../UF/Univalence/" class="Module">UF.Univalence</a>
@@ -63361,11 +63362,13 @@ Some constructions with iterative sets.
 <a id="866" href="../../Iterative/Sets-Addendum/#859" class="Function">𝟙ⱽ</a> <a id="869" class="Symbol">=</a> <a id="871" href="../../Iterative/Multisets-Addendum/#1471" class="Function">𝟙ᴹ</a> <a id="874" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="876" href="../../Iterative/Multisets-Addendum/#1500" class="Function">𝟙ᴹ-is-iset</a>
 
 <a id="𝟘ⱽ-is-not-𝟙ⱽ"></a><a id="888" href="../../Iterative/Sets-Addendum/#888" class="Function">𝟘ⱽ-is-not-𝟙ⱽ</a> <a id="901" class="Symbol">:</a> <a id="903" href="../../Iterative/Sets-Addendum/#830" class="Function">𝟘ⱽ</a> <a id="906" href="../../MLTT/Negation/#635" class="Function Operator">≠</a> <a id="908" href="../../Iterative/Sets-Addendum/#859" class="Function">𝟙ⱽ</a>
-<a id="911" href="../../Iterative/Sets-Addendum/#888" class="Function">𝟘ⱽ-is-not-𝟙ⱽ</a> <a id="924" href="../../Iterative/Sets-Addendum/#924" class="Bound">p</a> <a id="926" class="Symbol">=</a> <a id="928" href="../../Iterative/Multisets-Addendum/#1735" class="Function">𝟘ᴹ-is-not-𝟙ᴹ</a> <a id="941" class="Symbol">(</a><a id="942" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="945" href="../../Iterative/Sets/#2892" class="Function">underlying-mset</a> <a id="961" href="../../Iterative/Sets-Addendum/#924" class="Bound">p</a><a id="962" class="Symbol">)</a></code>
+<a id="911" href="../../Iterative/Sets-Addendum/#888" class="Function">𝟘ⱽ-is-not-𝟙ⱽ</a> <a id="924" href="../../Iterative/Sets-Addendum/#924" class="Bound">p</a> <a id="926" class="Symbol">=</a> <a id="928" href="../../Iterative/Multisets-Addendum/#1735" class="Function">𝟘ᴹ-is-not-𝟙ᴹ</a> <a id="941" class="Symbol">(</a><a id="942" href="../../MLTT/Id/#1136" class="Function">ap</a> <a id="945" href="../../Iterative/Sets/#2892" class="Function">underlying-mset</a> <a id="961" href="../../Iterative/Sets-Addendum/#924" class="Bound">p</a><a id="962" class="Symbol">)</a>
 
+</code>
 Subsets.
 
-<code class="Agda"><a id="1001" class="Keyword">open</a> <a id="1006" class="Keyword">import</a> <a id="1013" href="../../UF/Equiv/" class="Module">UF.Equiv</a>
+<code class="Agda">
+<a id="1001" class="Keyword">open</a> <a id="1006" class="Keyword">import</a> <a id="1013" href="../../UF/Equiv/" class="Module">UF.Equiv</a>
 <a id="1022" class="Keyword">open</a> <a id="1027" class="Keyword">import</a> <a id="1034" href="../../UF/Embeddings/" class="Module">UF.Embeddings</a>
 <a id="1048" class="Keyword">open</a> <a id="1053" class="Keyword">import</a> <a id="1060" href="../../UF/Subsingletons/" class="Module">UF.Subsingletons</a>
 <a id="1077" class="Keyword">open</a> <a id="1082" class="Keyword">import</a> <a id="1089" href="../../UF/SubtypeClassifier/" class="Module">UF.SubtypeClassifier</a>
@@ -63397,12 +63400,14 @@ Subsets.
 
 <a id="subset-↔"></a><a id="1934" href="../../Iterative/Sets-Addendum/#1934" class="Function">subset-↔</a> <a id="1943" class="Symbol">:</a> <a id="1945" class="Symbol">(</a><a id="1946" href="../../Iterative/Sets-Addendum/#1946" class="Bound">A</a> <a id="1948" class="Symbol">:</a> <a id="1950" href="../../Iterative/Sets/#2594" class="Function">𝕍</a><a id="1951" class="Symbol">)</a> <a id="1953" class="Symbol">(</a><a id="1954" href="../../Iterative/Sets-Addendum/#1954" class="Bound">P</a> <a id="1956" class="Symbol">:</a> <a id="1958" href="../../Iterative/Sets/#2594" class="Function">𝕍</a> <a id="1960" class="Symbol">→</a> <a id="1962" href="../../UF/SubtypeClassifier/#422" class="Function">Ω</a> <a id="1964" href="../../Iterative/Sets-Addendum/#352" class="Bound">𝓤</a><a id="1965" class="Symbol">)</a>
          <a id="1976" class="Symbol">→</a> <a id="1978" class="Symbol">(</a><a id="1979" href="../../Iterative/Sets-Addendum/#1979" class="Bound">B</a> <a id="1981" class="Symbol">:</a> <a id="1983" href="../../Iterative/Sets/#2594" class="Function">𝕍</a><a id="1984" class="Symbol">)</a> <a id="1986" class="Symbol">→</a> <a id="1988" class="Symbol">(</a><a id="1989" href="../../Iterative/Sets-Addendum/#1979" class="Bound">B</a> <a id="1991" href="../../Iterative/Sets/#4193" class="Function Operator">∈</a> <a id="1993" href="../../Iterative/Sets-Addendum/#1866" class="Function">subset</a> <a id="2000" href="../../Iterative/Sets-Addendum/#1946" class="Bound">A</a> <a id="2002" href="../../Iterative/Sets-Addendum/#1954" class="Bound">P</a><a id="2003" class="Symbol">)</a> <a id="2005" href="../../Notation/General/#2690" class="Function Operator">↔</a> <a id="2007" class="Symbol">(</a><a id="2008" href="../../Iterative/Sets-Addendum/#1979" class="Bound">B</a> <a id="2010" href="../../Iterative/Sets/#4193" class="Function Operator">∈</a> <a id="2012" href="../../Iterative/Sets-Addendum/#1946" class="Bound">A</a> <a id="2014" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="2016" href="../../Iterative/Sets-Addendum/#1954" class="Bound">P</a> <a id="2018" href="../../Iterative/Sets-Addendum/#1979" class="Bound">B</a> <a id="2020" href="../../UF/SubtypeClassifier/#478" class="Function Operator">holds</a><a id="2025" class="Symbol">)</a>
-<a id="2027" href="../../Iterative/Sets-Addendum/#1934" class="Function">subset-↔</a> <a id="2036" href="../../Iterative/Sets-Addendum/#2036" class="Bound">A</a> <a id="2038" href="../../Iterative/Sets-Addendum/#2038" class="Bound">P</a> <a id="2040" class="Symbol">=</a> <a id="2042" href="../../MLTT/Sigma-Type/#209" class="Field">pr₂</a> <a id="2046" class="Symbol">(</a><a id="2047" href="../../Iterative/Sets-Addendum/#1111" class="Function">𝕍-separation</a> <a id="2060" href="../../Iterative/Sets-Addendum/#2036" class="Bound">A</a> <a id="2062" href="../../Iterative/Sets-Addendum/#2038" class="Bound">P</a><a id="2063" class="Symbol">)</a></code>
+<a id="2027" href="../../Iterative/Sets-Addendum/#1934" class="Function">subset-↔</a> <a id="2036" href="../../Iterative/Sets-Addendum/#2036" class="Bound">A</a> <a id="2038" href="../../Iterative/Sets-Addendum/#2038" class="Bound">P</a> <a id="2040" class="Symbol">=</a> <a id="2042" href="../../MLTT/Sigma-Type/#209" class="Field">pr₂</a> <a id="2046" class="Symbol">(</a><a id="2047" href="../../Iterative/Sets-Addendum/#1111" class="Function">𝕍-separation</a> <a id="2060" href="../../Iterative/Sets-Addendum/#2036" class="Bound">A</a> <a id="2062" href="../../Iterative/Sets-Addendum/#2038" class="Bound">P</a><a id="2063" class="Symbol">)</a>
 
+</code>
 The type of multisets is large, in the sense that it doesn' have a
 small copy.
 
-<code class="Agda"><a id="𝕍-is-large"></a><a id="2172" href="../../Iterative/Sets-Addendum/#2172" class="Function">𝕍-is-large</a> <a id="2183" class="Symbol">:</a> <a id="2185" href="../../UF/Size/#21232" class="Function">is-large</a> <a id="2194" href="../../Iterative/Sets/#2594" class="Function">𝕍</a>
+<code class="Agda">
+<a id="𝕍-is-large"></a><a id="2172" href="../../Iterative/Sets-Addendum/#2172" class="Function">𝕍-is-large</a> <a id="2183" class="Symbol">:</a> <a id="2185" href="../../UF/Size/#21232" class="Function">is-large</a> <a id="2194" href="../../Iterative/Sets/#2594" class="Function">𝕍</a>
 <a id="2196" href="../../Iterative/Sets-Addendum/#2172" class="Function">𝕍-is-large</a> <a id="2207" class="Symbol">(</a><a id="2208" href="../../Iterative/Sets-Addendum/#2208" class="Bound">X</a> <a id="2210" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2212" href="../../Iterative/Sets-Addendum/#2212" class="Bound">𝕗</a><a id="2213" class="Symbol">)</a> <a id="2215" class="Symbol">=</a> <a id="2217" href="../../Iterative/Sets-Addendum/#2827" class="Function">III</a>
  <a id="2222" class="Keyword">where</a>
   <a id="2230" href="../../Iterative/Sets-Addendum/#2230" class="Function">have-𝕗</a> <a id="2237" class="Symbol">:</a> <a id="2239" href="../../Iterative/Sets-Addendum/#2208" class="Bound">X</a> <a id="2241" href="../../UF/Equiv/#1318" class="Function Operator">≃</a> <a id="2243" href="../../Iterative/Sets/#2594" class="Function">𝕍</a>
@@ -63439,12 +63444,14 @@ small copy.
   <a id="2768" href="../../Iterative/Sets-Addendum/#2741" class="Function">II</a> <a id="2771" href="../../Iterative/Sets-Addendum/#2771" class="Bound">ν</a> <a id="2773" class="Symbol">=</a> <a id="2775" href="../../UF/Equiv/#3278" class="Function Operator">⌜</a> <a id="2777" href="../../Iterative/Sets-Addendum/#2626" class="Function">h</a> <a id="2779" href="../../UF/Equiv/#3278" class="Function Operator">⌝</a> <a id="2781" class="Symbol">(</a><a id="2782" href="../../Notation/General/#2824" class="Function">rl-implication</a> <a id="2797" class="Symbol">(</a><a id="2798" href="../../Iterative/Sets-Addendum/#2559" class="Function">g</a> <a id="2800" href="../../Iterative/Sets-Addendum/#2533" class="Function">R</a><a id="2801" class="Symbol">)</a> <a id="2803" class="Symbol">(</a><a id="2804" href="../../Iterative/Sets-Addendum/#2357" class="Function">A-universal</a> <a id="2816" href="../../Iterative/Sets-Addendum/#2533" class="Function">R</a> <a id="2818" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2820" href="../../Iterative/Sets-Addendum/#2771" class="Bound">ν</a><a id="2821" class="Symbol">))</a>
 
   <a id="2827" href="../../Iterative/Sets-Addendum/#2827" class="Function">III</a> <a id="2831" class="Symbol">:</a> <a id="2833" href="../../MLTT/Empty-Type/#121" class="Datatype">𝟘</a>
-  <a id="2837" href="../../Iterative/Sets-Addendum/#2827" class="Function">III</a> <a id="2841" class="Symbol">=</a> <a id="2843" href="../../MLTT/Negation/#5955" class="Function">not-equivalent-to-own-negation</a> <a id="2874" class="Symbol">(</a><a id="2875" href="../../Iterative/Sets-Addendum/#2667" class="Function">I</a> <a id="2877" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2879" href="../../Iterative/Sets-Addendum/#2741" class="Function">II</a><a id="2881" class="Symbol">)</a></code>
+  <a id="2837" href="../../Iterative/Sets-Addendum/#2827" class="Function">III</a> <a id="2841" class="Symbol">=</a> <a id="2843" href="../../MLTT/Negation/#5955" class="Function">not-equivalent-to-own-negation</a> <a id="2874" class="Symbol">(</a><a id="2875" href="../../Iterative/Sets-Addendum/#2667" class="Function">I</a> <a id="2877" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2879" href="../../Iterative/Sets-Addendum/#2741" class="Function">II</a><a id="2881" class="Symbol">)</a>
 
+</code>
 The type of iterative sets is algebraically injective, which is a new
 result.
 
-<code class="Agda"><a id="2989" class="Keyword">open</a> <a id="2994" class="Keyword">import</a> <a id="3001" href="../../InjectiveTypes/Blackboard/" class="Module">InjectiveTypes.Blackboard</a> <a id="3027" href="../../Iterative/Sets-Addendum/#754" class="Function">fe&#39;</a>
+<code class="Agda">
+<a id="2989" class="Keyword">open</a> <a id="2994" class="Keyword">import</a> <a id="3001" href="../../InjectiveTypes/Blackboard/" class="Module">InjectiveTypes.Blackboard</a> <a id="3027" href="../../Iterative/Sets-Addendum/#754" class="Function">fe&#39;</a>
 
 <a id="3032" class="Keyword">module</a> <a id="3039" href="../../Iterative/Sets-Addendum/#3039" class="Module">_</a> <a id="3041" class="Symbol">(</a><a id="3042" href="../../Iterative/Sets-Addendum/#3042" class="Bound">pt</a> <a id="3045" class="Symbol">:</a> <a id="3047" href="../../UF/PropTrunc/#486" class="Record">propositional-truncations-exist</a><a id="3078" class="Symbol">)</a>
          <a id="3089" class="Symbol">(</a><a id="3090" href="../../Iterative/Sets-Addendum/#3090" class="Bound">sr</a> <a id="3093" class="Symbol">:</a> <a id="3095" href="../../UF/Size/#33889" class="Function">Set-Replacement</a> <a id="3111" href="../../Iterative/Sets-Addendum/#3042" class="Bound">pt</a><a id="3113" class="Symbol">)</a>
@@ -63453,18 +63460,21 @@ result.
  <a id="3130" href="../../Iterative/Sets-Addendum/#3130" class="Function">𝕍-is-ainjective</a> <a id="3146" class="Symbol">:</a> <a id="3148" href="../../InjectiveTypes/Blackboard/#15851" class="Function">ainjective-type</a> <a id="3164" href="../../Iterative/Sets/#2594" class="Function">𝕍</a> <a id="3166" href="../../Iterative/Sets-Addendum/#352" class="Bound">𝓤</a> <a id="3168" href="../../Iterative/Sets-Addendum/#352" class="Bound">𝓤</a>
  <a id="3171" href="../../Iterative/Sets-Addendum/#3130" class="Function">𝕍-is-ainjective</a> <a id="3187" class="Symbol">=</a> <a id="3189" href="../../InjectiveTypes/Blackboard/#17384" class="Function">retract-of-ainjective</a> <a id="3211" href="../../Iterative/Sets/#2594" class="Function">𝕍</a> <a id="3213" href="../../Iterative/Multisets/#691" class="Function">𝕄</a> <a id="3215" href="../../Iterative/Multisets-Addendum/#9071" class="Function">𝕄-is-ainjective</a> <a id="3231" href="../../Iterative/Sets/#20920" class="Function">𝕍-is-retract-of-𝕄</a>
   <a id="3251" class="Keyword">where</a>
-   <a id="3260" class="Keyword">open</a> <a id="3265" href="../../Iterative/Sets/#17418" class="Module">unions-of-iterative-sets</a> <a id="3290" href="../../Iterative/Sets-Addendum/#3042" class="Bound">pt</a> <a id="3293" href="../../Iterative/Sets-Addendum/#3090" class="Bound">sr</a></code>
+   <a id="3260" class="Keyword">open</a> <a id="3265" href="../../Iterative/Sets/#17418" class="Module">unions-of-iterative-sets</a> <a id="3290" href="../../Iterative/Sets-Addendum/#3042" class="Bound">pt</a> <a id="3293" href="../../Iterative/Sets-Addendum/#3090" class="Bound">sr</a>
 
+</code>
 It follows that 𝕍 has no non-trivial decidable properties unless weak
 excluded middle holds.
 
-<code class="Agda"><a id="3418" href="../../Iterative/Sets-Addendum/#3418" class="Function">decomposition-of-𝕍-gives-WEM</a> <a id="3447" class="Symbol">:</a> <a id="3449" href="../../Taboos/Decomposability/#1912" class="Function">decomposition</a> <a id="3463" href="../../Iterative/Sets/#2594" class="Function">𝕍</a> <a id="3465" class="Symbol">→</a> <a id="3467" href="../../UF/ClassicalLogic/#2134" class="Function">typal-WEM</a> <a id="3477" href="../../Iterative/Sets-Addendum/#352" class="Bound">𝓤</a>
+<code class="Agda">
+ <a id="3418" href="../../Iterative/Sets-Addendum/#3418" class="Function">decomposition-of-𝕍-gives-WEM</a> <a id="3447" class="Symbol">:</a> <a id="3449" href="../../Taboos/Decomposability/#1912" class="Function">decomposition</a> <a id="3463" href="../../Iterative/Sets/#2594" class="Function">𝕍</a> <a id="3465" class="Symbol">→</a> <a id="3467" href="../../UF/ClassicalLogic/#2134" class="Function">typal-WEM</a> <a id="3477" href="../../Iterative/Sets-Addendum/#352" class="Bound">𝓤</a>
  <a id="3480" href="../../Iterative/Sets-Addendum/#3418" class="Function">decomposition-of-𝕍-gives-WEM</a> <a id="3509" class="Symbol">=</a>
   <a id="3513" href="../../Taboos/Decomposability/#17029" class="Function">decomposition-of-ainjective-type-gives-WEM</a>
    <a id="3559" class="Symbol">(</a><a id="3560" href="../../UF/Univalence/#11165" class="Function">univalence-gives-propext</a> <a id="3585" class="Symbol">(</a><a id="3586" href="../../Iterative/Sets-Addendum/#326" class="Bound">ua</a> <a id="3589" href="../../Iterative/Sets-Addendum/#352" class="Bound">𝓤</a><a id="3590" class="Symbol">))</a>
    <a id="3596" href="../../Iterative/Sets/#2594" class="Function">𝕍</a>
-   <a id="3601" href="../../Iterative/Sets-Addendum/#3130" class="Function">𝕍-is-ainjective</a></code>
+   <a id="3601" href="../../Iterative/Sets-Addendum/#3130" class="Function">𝕍-is-ainjective</a>
 
+</code>
 The results of this file seem to be new.
 </pre>
 

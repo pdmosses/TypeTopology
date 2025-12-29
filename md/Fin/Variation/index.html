@@ -63315,7 +63315,8 @@
 <h1 id="finvariation">Fin.Variation</h1>
 <pre class="Agda">Martin Escardo, 2nd December 2019
 
-<code class="Agda"><a id="50" class="Symbol">{-#</a> <a id="54" class="Keyword">OPTIONS</a> <a id="62" class="Pragma">--safe</a> <a id="69" class="Pragma">--without-K</a> <a id="81" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="50" class="Symbol">{-#</a> <a id="54" class="Keyword">OPTIONS</a> <a id="62" class="Pragma">--safe</a> <a id="69" class="Pragma">--without-K</a> <a id="81" class="Symbol">#-}</a>
 
 <a id="86" class="Keyword">module</a> <a id="93" href="../../Fin/Variation/" class="Module">Fin.Variation</a> <a id="107" class="Keyword">where</a>
 
@@ -63324,11 +63325,13 @@
 <a id="136" class="Keyword">open</a> <a id="141" class="Keyword">import</a> <a id="148" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 <a id="161" class="Keyword">open</a> <a id="166" class="Keyword">import</a> <a id="173" href="../../Naturals/Order/" class="Module">Naturals.Order</a>
 <a id="188" class="Keyword">open</a> <a id="193" class="Keyword">import</a> <a id="200" href="../../Notation/Order/" class="Module">Notation.Order</a>
-<a id="215" class="Keyword">open</a> <a id="220" class="Keyword">import</a> <a id="227" href="../../UF/Equiv/" class="Module">UF.Equiv</a></code>
+<a id="215" class="Keyword">open</a> <a id="220" class="Keyword">import</a> <a id="227" href="../../UF/Equiv/" class="Module">UF.Equiv</a>
 
+</code>
 An isomorphic copy of the type Fin n:
 
-<code class="Agda"><a id="Fin&#39;"></a><a id="302" href="../../Fin/Variation/#302" class="Function">Fin&#39;</a> <a id="307" class="Symbol">:</a> <a id="309" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="311" class="Symbol">→</a> <a id="313" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="316" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
+<code class="Agda">
+<a id="Fin&#39;"></a><a id="302" href="../../Fin/Variation/#302" class="Function">Fin&#39;</a> <a id="307" class="Symbol">:</a> <a id="309" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="311" class="Symbol">→</a> <a id="313" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="316" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a>
 <a id="318" href="../../Fin/Variation/#302" class="Function">Fin&#39;</a> <a id="323" href="../../Fin/Variation/#323" class="Bound">n</a> <a id="325" class="Symbol">=</a> <a id="327" href="../../MLTT/Sigma/#423" class="Function">Σ</a> <a id="329" href="../../Fin/Variation/#329" class="Bound">k</a> <a id="331" href="../../MLTT/Sigma/#423" class="Function">꞉</a> <a id="333" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a> <a id="335" href="../../MLTT/Sigma/#423" class="Function">,</a> <a id="337" href="../../Fin/Variation/#329" class="Bound">k</a> <a id="339" href="../../Notation/Order/#272" class="Field Operator">&lt;</a> <a id="341" href="../../Fin/Variation/#323" class="Bound">n</a>
 
 <a id="𝟎&#39;"></a><a id="344" href="../../Fin/Variation/#344" class="Function">𝟎&#39;</a> <a id="347" class="Symbol">:</a> <a id="349" class="Symbol">{</a><a id="350" href="../../Fin/Variation/#350" class="Bound">n</a> <a id="352" class="Symbol">:</a> <a id="354" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a><a id="355" class="Symbol">}</a> <a id="357" class="Symbol">→</a> <a id="359" href="../../Fin/Variation/#302" class="Function">Fin&#39;</a> <a id="364" class="Symbol">(</a><a id="365" href="../../MLTT/Natural-Numbers-Type/#123" class="InductiveConstructor">succ</a> <a id="370" href="../../Fin/Variation/#350" class="Bound">n</a><a id="371" class="Symbol">)</a>
@@ -63364,8 +63367,9 @@ An isomorphic copy of the type Fin n:
 
 
 <a id="≃-Fin"></a><a id="1313" href="../../Fin/Variation/#1313" class="Function">≃-Fin</a> <a id="1319" class="Symbol">:</a> <a id="1321" class="Symbol">(</a><a id="1322" href="../../Fin/Variation/#1322" class="Bound">n</a> <a id="1324" class="Symbol">:</a> <a id="1326" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a><a id="1327" class="Symbol">)</a> <a id="1329" class="Symbol">→</a> <a id="1331" href="../../Fin/Type/#157" class="Function">Fin</a> <a id="1335" href="../../Fin/Variation/#1322" class="Bound">n</a> <a id="1337" href="../../UF/Equiv/#1318" class="Function Operator">≃</a> <a id="1339" href="../../Fin/Variation/#302" class="Function">Fin&#39;</a> <a id="1344" href="../../Fin/Variation/#1322" class="Bound">n</a>
-<a id="1346" href="../../Fin/Variation/#1313" class="Function">≃-Fin</a> <a id="1352" href="../../Fin/Variation/#1352" class="Bound">n</a> <a id="1354" class="Symbol">=</a> <a id="1356" href="../../Fin/Variation/#654" class="Function">Fin-prime</a> <a id="1366" href="../../Fin/Variation/#1352" class="Bound">n</a> <a id="1368" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="1370" href="../../Fin/Variation/#1145" class="Function">Fin-prime-is-equiv</a> <a id="1389" href="../../Fin/Variation/#1352" class="Bound">n</a></code>
-</pre>
+<a id="1346" href="../../Fin/Variation/#1313" class="Function">≃-Fin</a> <a id="1352" href="../../Fin/Variation/#1352" class="Bound">n</a> <a id="1354" class="Symbol">=</a> <a id="1356" href="../../Fin/Variation/#654" class="Function">Fin-prime</a> <a id="1366" href="../../Fin/Variation/#1352" class="Bound">n</a> <a id="1368" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="1370" href="../../Fin/Variation/#1145" class="Function">Fin-prime-is-equiv</a> <a id="1389" href="../../Fin/Variation/#1352" class="Bound">n</a>
+
+</code></pre>
 
 
 

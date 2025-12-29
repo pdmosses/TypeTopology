@@ -63321,7 +63321,8 @@ Aug 18, 2021
 --------------------------------------------------------------------------------
 
 
-<code class="Agda"><a id="263" class="Symbol">{-#</a> <a id="267" class="Keyword">OPTIONS</a> <a id="275" class="Pragma">--safe</a> <a id="282" class="Pragma">--without-K</a> <a id="294" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="263" class="Symbol">{-#</a> <a id="267" class="Keyword">OPTIONS</a> <a id="275" class="Pragma">--safe</a> <a id="282" class="Pragma">--without-K</a> <a id="294" class="Symbol">#-}</a>
 
 <a id="299" class="Keyword">open</a> <a id="304" class="Keyword">import</a> <a id="311" href="../../Groups/Type/" class="Module">Groups.Type</a>
 <a id="323" class="Keyword">open</a> <a id="328" class="Keyword">import</a> <a id="335" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
@@ -63330,13 +63331,15 @@ Aug 18, 2021
 <a id="394" class="Keyword">open</a> <a id="399" class="Keyword">import</a> <a id="406" href="../../UF/PropTrunc/" class="Module">UF.PropTrunc</a>
 <a id="419" class="Keyword">open</a> <a id="424" class="Keyword">import</a> <a id="431" href="../../UF/Sets/" class="Module">UF.Sets</a>
 <a id="439" class="Keyword">open</a> <a id="444" class="Keyword">import</a> <a id="451" href="../../UF/Sets-Properties/" class="Module">UF.Sets-Properties</a>
-<a id="470" class="Keyword">open</a> <a id="475" class="Keyword">import</a> <a id="482" href="../../UF/Subsingletons-Properties/" class="Module">UF.Subsingletons-Properties</a></code>
+<a id="470" class="Keyword">open</a> <a id="475" class="Keyword">import</a> <a id="482" href="../../UF/Subsingletons-Properties/" class="Module">UF.Subsingletons-Properties</a>
 
+</code>
 The image of a group homomorphism has an underlying type which is the
 \emph{image} of the underlying function as defined in
 UF-ImageAndSurjection.
 
-<code class="Agda"><a id="685" class="Keyword">module</a> <a id="692" href="../../Groups/Image/" class="Module">Groups.Image</a> <a id="705" class="Symbol">(</a><a id="706" href="../../Groups/Image/#706" class="Bound">pt</a> <a id="709" class="Symbol">:</a> <a id="711" href="../../UF/PropTrunc/#486" class="Record">propositional-truncations-exist</a><a id="742" class="Symbol">)</a> <a id="744" class="Keyword">where</a>
+<code class="Agda">
+<a id="685" class="Keyword">module</a> <a id="692" href="../../Groups/Image/" class="Module">Groups.Image</a> <a id="705" class="Symbol">(</a><a id="706" href="../../Groups/Image/#706" class="Bound">pt</a> <a id="709" class="Symbol">:</a> <a id="711" href="../../UF/PropTrunc/#486" class="Record">propositional-truncations-exist</a><a id="742" class="Symbol">)</a> <a id="744" class="Keyword">where</a>
 
 <a id="751" class="Keyword">open</a> <a id="756" class="Keyword">import</a> <a id="763" href="../../UF/ImageAndSurjection/" class="Module">UF.ImageAndSurjection</a> <a id="785" href="../../Groups/Image/#706" class="Bound">pt</a>
 <a id="788" class="Keyword">open</a> <a id="793" href="../../UF/PropTrunc/#792" class="Module">PropositionalTruncation</a> <a id="817" href="../../Groups/Image/#706" class="Bound">pt</a>
@@ -63391,8 +63394,9 @@ UF-ImageAndSurjection.
          <a id="2779" href="../../Groups/Image/#2703" class="Function">inv-left-im</a> <a id="2791" class="Symbol">(</a><a id="2792" href="../../Groups/Image/#2792" class="Bound">y</a> <a id="2794" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2796" href="../../Groups/Image/#2796" class="Bound">p</a><a id="2797" class="Symbol">)</a> <a id="2799" class="Symbol">=</a> <a id="2801" href="../../UF/Base/#15181" class="Function">to-Σ-＝</a> <a id="2808" class="Symbol">((</a><a id="2810" href="../../Groups/Type/#5346" class="Function">inv-left</a> <a id="2819" href="../../Groups/Image/#1034" class="Bound">Y</a> <a id="2821" href="../../Groups/Image/#2792" class="Bound">y</a><a id="2822" class="Symbol">)</a> <a id="2824" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2826" class="Symbol">(</a><a id="2827" href="../../UF/PropTrunc/#573" class="Field">∥∥-is-prop</a> <a id="2838" class="Symbol">_</a> <a id="2840" class="Symbol">_))</a>
 
          <a id="2854" href="../../Groups/Image/#2854" class="Function">inv-right-im</a> <a id="2867" class="Symbol">:</a> <a id="2869" class="Symbol">(</a><a id="2870" href="../../Groups/Image/#2870" class="Bound">u</a> <a id="2872" class="Symbol">:</a> <a id="2874" href="../../Groups/Image/#1457" class="Function">Im</a><a id="2876" class="Symbol">)</a> <a id="2878" class="Symbol">→</a> <a id="2880" href="../../Groups/Image/#1502" class="Function">group-structure-im</a> <a id="2899" href="../../Groups/Image/#2870" class="Bound">u</a> <a id="2901" class="Symbol">(</a><a id="2902" href="../../Groups/Image/#2477" class="Function">inv-im</a> <a id="2909" href="../../Groups/Image/#2870" class="Bound">u</a><a id="2910" class="Symbol">)</a> <a id="2912" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="2914" href="../../Groups/Image/#2082" class="Function">unit-im</a>
-         <a id="2931" href="../../Groups/Image/#2854" class="Function">inv-right-im</a> <a id="2944" class="Symbol">(</a><a id="2945" href="../../Groups/Image/#2945" class="Bound">y</a> <a id="2947" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2949" href="../../Groups/Image/#2949" class="Bound">p</a><a id="2950" class="Symbol">)</a> <a id="2952" class="Symbol">=</a> <a id="2954" href="../../UF/Base/#15181" class="Function">to-Σ-＝</a> <a id="2961" class="Symbol">((</a><a id="2963" href="../../Groups/Type/#5484" class="Function">inv-right</a> <a id="2973" href="../../Groups/Image/#1034" class="Bound">Y</a> <a id="2975" href="../../Groups/Image/#2945" class="Bound">y</a><a id="2976" class="Symbol">)</a> <a id="2978" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2980" class="Symbol">(</a><a id="2981" href="../../UF/PropTrunc/#573" class="Field">∥∥-is-prop</a> <a id="2992" class="Symbol">_</a> <a id="2994" class="Symbol">_))</a></code>
+         <a id="2931" href="../../Groups/Image/#2854" class="Function">inv-right-im</a> <a id="2944" class="Symbol">(</a><a id="2945" href="../../Groups/Image/#2945" class="Bound">y</a> <a id="2947" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2949" href="../../Groups/Image/#2949" class="Bound">p</a><a id="2950" class="Symbol">)</a> <a id="2952" class="Symbol">=</a> <a id="2954" href="../../UF/Base/#15181" class="Function">to-Σ-＝</a> <a id="2961" class="Symbol">((</a><a id="2963" href="../../Groups/Type/#5484" class="Function">inv-right</a> <a id="2973" href="../../Groups/Image/#1034" class="Bound">Y</a> <a id="2975" href="../../Groups/Image/#2945" class="Bound">y</a><a id="2976" class="Symbol">)</a> <a id="2978" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="2980" class="Symbol">(</a><a id="2981" href="../../UF/PropTrunc/#573" class="Field">∥∥-is-prop</a> <a id="2992" class="Symbol">_</a> <a id="2994" class="Symbol">_))</a>
 
+</code>
 
 The group image comes with two canonical maps. One is the "injection"
 into the target. We prove that it is left-cancellable, hence an
@@ -63400,7 +63404,8 @@ embedding. The other is the obvious map from the source, and we prove
 it is a surjection.
 
 
-<code class="Agda"><a id="3257" class="Comment">-- Canonical map from the image to the target</a>
+<code class="Agda">
+     <a id="3257" class="Comment">-- Canonical map from the image to the target</a>
      <a id="3308" href="../../Groups/Image/#3308" class="Function">group-image-inj</a> <a id="3324" class="Symbol">:</a> <a id="3326" href="../../Groups/Type/#520" class="Function Operator">⟨</a> <a id="3328" href="../../Groups/Image/#1100" class="Function">group-image</a> <a id="3340" href="../../Groups/Type/#520" class="Function Operator">⟩</a> <a id="3342" class="Symbol">→</a> <a id="3344" href="../../Groups/Type/#520" class="Function Operator">⟨</a> <a id="3346" href="../../Groups/Image/#1034" class="Bound">Y</a> <a id="3348" href="../../Groups/Type/#520" class="Function Operator">⟩</a>
      <a id="3355" href="../../Groups/Image/#3308" class="Function">group-image-inj</a> <a id="3371" class="Symbol">=</a> <a id="3373" class="Symbol">λ</a> <a id="3375" class="Symbol">{</a> <a id="3377" class="Symbol">(</a><a id="3378" href="../../Groups/Image/#3378" class="Bound">y</a> <a id="3380" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="3382" href="../../Groups/Image/#3382" class="Bound">p</a><a id="3383" class="Symbol">)</a> <a id="3385" class="Symbol">→</a> <a id="3387" href="../../Groups/Image/#3378" class="Bound">y</a><a id="3388" class="Symbol">}</a>
 
@@ -63431,8 +63436,9 @@ it is a surjection.
      <a id="4432" href="../../Groups/Image/#4432" class="Function">group-image-srj-is-surjection</a> <a id="4462" class="Symbol">:</a> <a id="4464" href="../../UF/ImageAndSurjection/#1587" class="Function">is-surjection</a> <a id="4478" href="../../Groups/Image/#4192" class="Function">group-image-srj</a>
      <a id="4499" href="../../Groups/Image/#4432" class="Function">group-image-srj-is-surjection</a> <a id="4529" class="Symbol">(</a><a id="4530" href="../../Groups/Image/#4530" class="Bound">y</a> <a id="4532" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4534" href="../../Groups/Image/#4534" class="Bound">p</a><a id="4535" class="Symbol">)</a> <a id="4537" class="Symbol">=</a> <a id="4539" class="Keyword">do</a>
        <a id="4549" href="../../Groups/Image/#4549" class="Bound">x</a> <a id="4551" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4553" href="../../Groups/Image/#4553" class="Bound">u</a> <a id="4555" href="../../UF/PropTrunc/#6872" class="Function Operator">←</a> <a id="4557" href="../../Groups/Image/#4534" class="Bound">p</a>
-       <a id="4566" href="../../UF/PropTrunc/#630" class="Field Operator">∣</a> <a id="4568" href="../../Groups/Image/#4549" class="Bound">x</a> <a id="4570" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4572" href="../../UF/Base/#15181" class="Function">to-Σ-＝</a> <a id="4579" class="Symbol">(</a><a id="4580" href="../../Groups/Image/#4553" class="Bound">u</a> <a id="4582" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4584" class="Symbol">(</a><a id="4585" href="../../UF/PropTrunc/#573" class="Field">∥∥-is-prop</a> <a id="4596" class="Symbol">_</a> <a id="4598" class="Symbol">_))</a> <a id="4602" href="../../UF/PropTrunc/#630" class="Field Operator">∣</a></code>
-</pre>
+       <a id="4566" href="../../UF/PropTrunc/#630" class="Field Operator">∣</a> <a id="4568" href="../../Groups/Image/#4549" class="Bound">x</a> <a id="4570" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4572" href="../../UF/Base/#15181" class="Function">to-Σ-＝</a> <a id="4579" class="Symbol">(</a><a id="4580" href="../../Groups/Image/#4553" class="Bound">u</a> <a id="4582" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="4584" class="Symbol">(</a><a id="4585" href="../../UF/PropTrunc/#573" class="Field">∥∥-is-prop</a> <a id="4596" class="Symbol">_</a> <a id="4598" class="Symbol">_))</a> <a id="4602" href="../../UF/PropTrunc/#630" class="Field Operator">∣</a>
+
+</code></pre>
 
 
 

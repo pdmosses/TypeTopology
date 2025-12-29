@@ -63301,15 +63301,17 @@ https://agda.readthedocs.io/en/latest/tools/command-line-options.html#consistenc
 See the module (1) below for an explanation of the philosophy of
 TypeTopology, and in particular which type theory is adopted.
 
-<code class="Agda"><a id="978" class="Symbol">{-#</a> <a id="982" class="Keyword">OPTIONS</a> <a id="990" class="Pragma">--without-K</a> <a id="1002" class="Pragma">--no-level-universe</a> <a id="1022" class="Pragma">--guardedness</a> <a id="1036" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="978" class="Symbol">{-#</a> <a id="982" class="Keyword">OPTIONS</a> <a id="990" class="Pragma">--without-K</a> <a id="1002" class="Pragma">--no-level-universe</a> <a id="1022" class="Pragma">--guardedness</a> <a id="1036" class="Symbol">#-}</a>
 
 <a id="1041" class="Keyword">import</a> <a id="1048" href="../index/" class="Module">index</a>                                <a id="1085" class="Comment">-- (1)</a>
 <a id="1092" class="Keyword">import</a> <a id="1099" href="../GamesMGU/" class="Module">GamesMGU.index</a>                       <a id="1136" class="Comment">-- (2)</a>
 <a id="1143" class="Keyword">import</a> <a id="1150" href="../MonadOnTypesMGU/" class="Module">MonadOnTypesMGU.index</a>                <a id="1187" class="Comment">-- (2)</a>
 <a id="1194" class="Keyword">import</a> <a id="1201" href="../RelativeMonadOnStructuredTypes/" class="Module">RelativeMonadOnStructuredTypes.index</a> <a id="1238" class="Comment">-- (2)</a>
 <a id="1245" class="Keyword">import</a> <a id="1252" href="../Unsafe/" class="Module">Unsafe.index</a>                         <a id="1289" class="Comment">-- (3)</a>
-<a id="1296" class="Keyword">import</a> <a id="1303" href="../InfinitePigeon/" class="Module">InfinitePigeon.index</a>                 <a id="1340" class="Comment">-- (4)</a></code>
+<a id="1296" class="Keyword">import</a> <a id="1303" href="../InfinitePigeon/" class="Module">InfinitePigeon.index</a>                 <a id="1340" class="Comment">-- (4)</a>
 
+</code>
 (1) Of --safe modules using --without-K and --level-universe.
 (2) Of modules with --safe and --without-K but --no-level-universe.
 (3) Of unsafe modules.

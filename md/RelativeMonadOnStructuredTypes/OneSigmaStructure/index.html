@@ -63315,7 +63315,8 @@
 <h1 id="relativemonadonstructuredtypesonesigmastructure">RelativeMonadOnStructuredTypes.OneSigmaStructure</h1>
 <pre class="Agda">Martin Escardo, Paulo Oliva, June 2024
 
-<code class="Agda"><a id="55" class="Symbol">{-#</a> <a id="59" class="Keyword">OPTIONS</a> <a id="67" class="Pragma">--safe</a> <a id="74" class="Pragma">--without-K</a> <a id="86" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="55" class="Symbol">{-#</a> <a id="59" class="Keyword">OPTIONS</a> <a id="67" class="Pragma">--safe</a> <a id="74" class="Pragma">--without-K</a> <a id="86" class="Symbol">#-}</a>
 
 <a id="91" class="Keyword">open</a> <a id="96" class="Keyword">import</a> <a id="103" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 
@@ -63350,11 +63351,13 @@
 
  <a id="766" class="Keyword">syntax</a> <a id="773" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#639" class="Function">Sigmaₛ</a> <a id="780" class="Bound">𝓧</a> <a id="782" class="Symbol">(λ</a> <a id="785" class="Bound">x</a> <a id="787" class="Symbol">→</a> <a id="789" class="Bound">𝓨</a><a id="790" class="Symbol">)</a> <a id="792" class="Symbol">=</a> <a id="794" class="Function">Σₛ</a> <a id="797" class="Bound">x</a> <a id="799" class="Function">꞉</a> <a id="801" class="Bound">𝓧</a> <a id="803" class="Function">,</a> <a id="805" class="Bound">𝓨</a>
 
- <a id="809" class="Keyword">infixr</a> <a id="816" class="Number">-1</a> <a id="819" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#639" class="Function">Sigmaₛ</a></code>
+ <a id="809" class="Keyword">infixr</a> <a id="816" class="Number">-1</a> <a id="819" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#639" class="Function">Sigmaₛ</a>
 
+</code>
 Some typical examples that we are going to need.
 
-<code class="Agda"><a id="903" class="Keyword">open</a> <a id="908" class="Keyword">import</a> <a id="915" href="../../UF/DiscreteAndSeparated/" class="Module">UF.DiscreteAndSeparated</a>
+<code class="Agda">
+<a id="903" class="Keyword">open</a> <a id="908" class="Keyword">import</a> <a id="915" href="../../UF/DiscreteAndSeparated/" class="Module">UF.DiscreteAndSeparated</a>
 <a id="939" class="Keyword">open</a> <a id="944" class="Keyword">import</a> <a id="951" href="../../TypeTopology/SigmaDiscreteAndTotallySeparated/" class="Module">TypeTopology.SigmaDiscreteAndTotallySeparated</a>
 
 <a id="discrete-𝟙-Σ-structure"></a><a id="998" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#998" class="Function">discrete-𝟙-Σ-structure</a> <a id="1021" class="Symbol">:</a> <a id="1023" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#187" class="Record">𝟙-Σ-structure</a>
@@ -63363,8 +63366,9 @@ Some typical examples that we are going to need.
   <a id="1074" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#221" class="Field">S</a>      <a id="1081" class="Symbol">=</a> <a id="1083" href="../../UF/DiscreteAndSeparated/#1828" class="Function">is-discrete</a> <a id="1095" class="Symbol">;</a>
   <a id="1099" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#254" class="Field">𝟙-is-S</a> <a id="1106" class="Symbol">=</a> <a id="1108" href="../../UF/DiscreteAndSeparated/#2121" class="Function">𝟙-is-discrete</a> <a id="1122" class="Symbol">;</a>
   <a id="1126" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#531" class="Field">Σ-is-S</a> <a id="1133" class="Symbol">=</a> <a id="1135" class="Symbol">λ</a> <a id="1137" class="Symbol">(</a><a id="1138" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#1138" class="Bound">X</a> <a id="1140" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="1142" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#1142" class="Bound">d</a><a id="1143" class="Symbol">)</a> <a id="1145" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#1145" class="Bound">𝓨</a> <a id="1147" class="Symbol">→</a> <a id="1149" href="../../TypeTopology/SigmaDiscreteAndTotallySeparated/#1610" class="Function">Σ-is-discrete</a> <a id="1163" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#1142" class="Bound">d</a> <a id="1165" class="Symbol">(λ</a> <a id="1168" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#1168" class="Bound">x</a> <a id="1170" class="Symbol">→</a> <a id="1172" href="../../MLTT/Sigma-Type/#209" class="Field">pr₂</a> <a id="1176" class="Symbol">(</a><a id="1177" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#1145" class="Bound">𝓨</a> <a id="1179" href="../../RelativeMonadOnStructuredTypes/OneSigmaStructure/#1168" class="Bound">x</a><a id="1180" class="Symbol">))</a>
-  <a id="1185" class="Symbol">}</a></code>
-</pre>
+  <a id="1185" class="Symbol">}</a>
+
+</code></pre>
 
 
 

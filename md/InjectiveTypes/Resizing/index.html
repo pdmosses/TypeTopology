@@ -63369,7 +63369,8 @@ as soon as it has two distinct points, other than in models that
 validate Ω¬¬ 𝓤₀ resizing (in which Ω¬¬ 𝓤₀, being a retract of Ω 𝓤₀, is
 injective and serves as an example of such a D).
 
-<code class="Agda"><a id="2022" class="Symbol">{-#</a> <a id="2026" class="Keyword">OPTIONS</a> <a id="2034" class="Pragma">--safe</a> <a id="2041" class="Pragma">--without-K</a> <a id="2053" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="2022" class="Symbol">{-#</a> <a id="2026" class="Keyword">OPTIONS</a> <a id="2034" class="Pragma">--safe</a> <a id="2041" class="Pragma">--without-K</a> <a id="2053" class="Symbol">#-}</a>
 
 <a id="2058" class="Keyword">open</a> <a id="2063" class="Keyword">import</a> <a id="2070" href="../../UF/Univalence/" class="Module">UF.Univalence</a>
 <a id="2084" class="Keyword">open</a> <a id="2089" class="Keyword">import</a> <a id="2096" href="../../UF/PropTrunc/" class="Module">UF.PropTrunc</a>
@@ -63405,8 +63406,9 @@ injective and serves as an example of such a D).
  <a id="2675" href="../../InjectiveTypes/Resizing/#2659" class="Function">pe&#39;</a> <a id="2679" class="Symbol">{</a><a id="2680" href="../../InjectiveTypes/Resizing/#2680" class="Bound">𝓤</a><a id="2681" class="Symbol">}</a> <a id="2683" class="Symbol">=</a> <a id="2685" href="../../InjectiveTypes/Resizing/#2610" class="Function">pe</a> <a id="2688" href="../../InjectiveTypes/Resizing/#2680" class="Bound">𝓤</a>
 
 <a id="2691" class="Keyword">open</a> <a id="2696" class="Keyword">import</a> <a id="2703" href="../../InjectiveTypes/Article/" class="Module">InjectiveTypes.Article</a> <a id="2726" href="../../InjectiveTypes/Resizing/#2150" class="Bound">ua</a> <a id="2729" href="../../InjectiveTypes/Resizing/#2176" class="Bound">pt</a>
-<a id="2732" class="Keyword">open</a> <a id="2737" class="Keyword">import</a> <a id="2744" href="../../InjectiveTypes/OverSmallMaps/" class="Module">InjectiveTypes.OverSmallMaps</a> <a id="2773" href="../../InjectiveTypes/Resizing/#2525" class="Function">fe</a></code>
+<a id="2732" class="Keyword">open</a> <a id="2737" class="Keyword">import</a> <a id="2744" href="../../InjectiveTypes/OverSmallMaps/" class="Module">InjectiveTypes.OverSmallMaps</a> <a id="2773" href="../../InjectiveTypes/Resizing/#2525" class="Function">fe</a>
 
+</code>
 The fact that retracts of small types are small is proved in Theorem
 2.13 of
 
@@ -63430,7 +63432,8 @@ TODO. Formalize the proof of the following
 `retracts-of-small-types-are-small` hypothesis, which is provided in the
 above two papers.
 
-<code class="Agda"><a id="retracts-of-small-types-are-small"></a><a id="3521" href="../../InjectiveTypes/Resizing/#3521" class="Function">retracts-of-small-types-are-small</a> <a id="3555" class="Symbol">:</a> <a id="3557" href="../../Agda/Primitive/#512" class="Primitive">𝓤ω</a>
+<code class="Agda">
+<a id="retracts-of-small-types-are-small"></a><a id="3521" href="../../InjectiveTypes/Resizing/#3521" class="Function">retracts-of-small-types-are-small</a> <a id="3555" class="Symbol">:</a> <a id="3557" href="../../Agda/Primitive/#512" class="Primitive">𝓤ω</a>
 <a id="3560" href="../../InjectiveTypes/Resizing/#3521" class="Function">retracts-of-small-types-are-small</a> <a id="3594" class="Symbol">=</a>
    <a id="3599" class="Symbol">{</a><a id="3600" href="../../InjectiveTypes/Resizing/#3600" class="Bound">𝓤</a> <a id="3602" href="../../InjectiveTypes/Resizing/#3602" class="Bound">𝓥</a> <a id="3604" href="../../InjectiveTypes/Resizing/#3604" class="Bound">𝓦</a> <a id="3606" class="Symbol">:</a> <a id="3608" href="../../Agda/Primitive/#742" class="Postulate">Universe</a><a id="3616" class="Symbol">}</a>
    <a id="3621" class="Symbol">{</a><a id="3622" href="../../InjectiveTypes/Resizing/#3622" class="Bound">X</a> <a id="3624" class="Symbol">:</a> <a id="3626" href="../../InjectiveTypes/Resizing/#3600" class="Bound">𝓤</a> <a id="3628" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="3630" class="Symbol">}</a>
@@ -63515,34 +63518,39 @@ above two papers.
     <a id="5675" href="../../InjectiveTypes/Resizing/#5646" class="Function">ρ</a> <a id="5677" class="Symbol">=</a> <a id="5679" href="../../InjectiveTypes/Resizing/#5408" class="Function">r</a> <a id="5681" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5683" href="../../InjectiveTypes/Resizing/#4314" class="Bound">s</a> <a id="5685" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="5687" href="../../InjectiveTypes/Resizing/#5491" class="Function">rs</a>
 
     <a id="5695" href="../../InjectiveTypes/Resizing/#5695" class="Function">Ω¬¬-is-small</a> <a id="5708" class="Symbol">:</a> <a id="5710" href="../../UF/NotNotStablePropositions/#1134" class="Function">Ω¬¬</a> <a id="5714" href="../../InjectiveTypes/Resizing/#3962" class="Bound">𝓤</a> <a id="5716" href="../../UF/Size/#2097" class="Function Operator">is</a> <a id="5719" href="../../InjectiveTypes/Resizing/#3962" class="Bound">𝓤</a> <a id="5721" href="../../UF/Size/#2097" class="Function Operator">small</a>
-    <a id="5731" href="../../InjectiveTypes/Resizing/#5695" class="Function">Ω¬¬-is-small</a> <a id="5744" class="Symbol">=</a> <a id="5746" href="../../InjectiveTypes/Resizing/#3973" class="Bound">small-retracts</a> <a id="5761" href="../../InjectiveTypes/Resizing/#5646" class="Function">ρ</a> <a id="5763" class="Symbol">(</a><a id="5764" href="../../UF/Size/#2177" class="Function">native-size</a> <a id="5776" href="../../InjectiveTypes/Resizing/#3988" class="Bound">D</a><a id="5777" class="Symbol">)</a></code>
+    <a id="5731" href="../../InjectiveTypes/Resizing/#5695" class="Function">Ω¬¬-is-small</a> <a id="5744" class="Symbol">=</a> <a id="5746" href="../../InjectiveTypes/Resizing/#3973" class="Bound">small-retracts</a> <a id="5761" href="../../InjectiveTypes/Resizing/#5646" class="Function">ρ</a> <a id="5763" class="Symbol">(</a><a id="5764" href="../../UF/Size/#2177" class="Function">native-size</a> <a id="5776" href="../../InjectiveTypes/Resizing/#3988" class="Bound">D</a><a id="5777" class="Symbol">)</a>
 
+</code>
 A special case of the above is the following, which says that no type
 in the first universe 𝓤₀ can be injective as soon as it has two
 distinct points, other than in models that validate Ω¬¬ 𝓤₀ resizing
 (in which Ω¬¬ 𝓤₀, being a retract of Ω 𝓤₀, is injective).
 
-<code class="Agda"><a id="small₀-ainjective-type-with-two-distinct-points-gives-Ω¬¬-resizing"></a><a id="6067" href="../../InjectiveTypes/Resizing/#6067" class="Function">small₀-ainjective-type-with-two-distinct-points-gives-Ω¬¬-resizing</a>
+<code class="Agda">
+<a id="small₀-ainjective-type-with-two-distinct-points-gives-Ω¬¬-resizing"></a><a id="6067" href="../../InjectiveTypes/Resizing/#6067" class="Function">small₀-ainjective-type-with-two-distinct-points-gives-Ω¬¬-resizing</a>
  <a id="6135" class="Symbol">:</a> <a id="6137" href="../../InjectiveTypes/Resizing/#3521" class="Function">retracts-of-small-types-are-small</a>
  <a id="6172" class="Symbol">→</a> <a id="6174" class="Symbol">(</a><a id="6175" href="../../InjectiveTypes/Resizing/#6175" class="Bound">D</a> <a id="6177" class="Symbol">:</a> <a id="6179" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="6182" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="6184" class="Symbol">)</a>
  <a id="6187" class="Symbol">→</a> <a id="6189" href="../../InjectiveTypes/Article/#9808" class="Function">ainjective-type</a> <a id="6205" href="../../InjectiveTypes/Resizing/#6175" class="Bound">D</a> <a id="6207" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="6210" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a>
  <a id="6214" class="Symbol">→</a> <a id="6216" href="../../MLTT/Negation/#689" class="Function">has-two-distinct-points</a> <a id="6240" href="../../InjectiveTypes/Resizing/#6175" class="Bound">D</a>
  <a id="6243" class="Symbol">→</a> <a id="6245" href="../../UF/NotNotStablePropositions/#1134" class="Function">Ω¬¬</a> <a id="6249" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="6252" href="../../UF/Size/#2097" class="Function Operator">is</a> <a id="6255" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="6258" href="../../UF/Size/#2097" class="Function Operator">small</a>
 <a id="6264" href="../../InjectiveTypes/Resizing/#6067" class="Function">small₀-ainjective-type-with-two-distinct-points-gives-Ω¬¬-resizing</a> <a id="6331" class="Symbol">=</a>
- <a id="6334" href="../../InjectiveTypes/Resizing/#3697" class="Function">small-ainjective-type-with-two-distinct-points-gives-Ω¬¬-resizing</a></code>
+ <a id="6334" href="../../InjectiveTypes/Resizing/#3697" class="Function">small-ainjective-type-with-two-distinct-points-gives-Ω¬¬-resizing</a>
 
+</code>
 Of course, making the universe parameters for the injectivity of D
 bigger doesn't help:
 
-<code class="Agda"><a id="small₁-ainjective-types-with-two-distinct-points-gives-Ω¬¬-resizing"></a><a id="6516" href="../../InjectiveTypes/Resizing/#6516" class="Function">small₁-ainjective-types-with-two-distinct-points-gives-Ω¬¬-resizing</a>
+<code class="Agda">
+<a id="small₁-ainjective-types-with-two-distinct-points-gives-Ω¬¬-resizing"></a><a id="6516" href="../../InjectiveTypes/Resizing/#6516" class="Function">small₁-ainjective-types-with-two-distinct-points-gives-Ω¬¬-resizing</a>
  <a id="6585" class="Symbol">:</a> <a id="6587" href="../../InjectiveTypes/Resizing/#3521" class="Function">retracts-of-small-types-are-small</a>
  <a id="6622" class="Symbol">→</a> <a id="6624" class="Symbol">(</a><a id="6625" href="../../InjectiveTypes/Resizing/#6625" class="Bound">D</a> <a id="6627" class="Symbol">:</a> <a id="6629" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="6632" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="6634" class="Symbol">)</a>
  <a id="6637" class="Symbol">→</a> <a id="6639" href="../../InjectiveTypes/Article/#9808" class="Function">ainjective-type</a> <a id="6655" href="../../InjectiveTypes/Resizing/#6625" class="Bound">D</a> <a id="6657" href="../../MLTT/Universes/#3835" class="Generalizable">𝓥</a> <a id="6659" href="../../MLTT/Universes/#3837" class="Generalizable">𝓦</a>
  <a id="6662" class="Symbol">→</a> <a id="6664" href="../../MLTT/Negation/#689" class="Function">has-two-distinct-points</a> <a id="6688" href="../../InjectiveTypes/Resizing/#6625" class="Bound">D</a>
  <a id="6691" class="Symbol">→</a> <a id="6693" href="../../UF/NotNotStablePropositions/#1134" class="Function">Ω¬¬</a> <a id="6697" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="6700" href="../../UF/Size/#2097" class="Function Operator">is</a> <a id="6703" href="../../Agda/Primitive/#915" class="Primitive">𝓤₀</a> <a id="6706" href="../../UF/Size/#2097" class="Function Operator">small</a>
 <a id="6712" href="../../InjectiveTypes/Resizing/#6516" class="Function">small₁-ainjective-types-with-two-distinct-points-gives-Ω¬¬-resizing</a> <a id="6780" class="Symbol">=</a>
- <a id="6783" href="../../InjectiveTypes/Resizing/#3697" class="Function">small-ainjective-type-with-two-distinct-points-gives-Ω¬¬-resizing</a></code>
+ <a id="6783" href="../../InjectiveTypes/Resizing/#3697" class="Function">small-ainjective-type-with-two-distinct-points-gives-Ω¬¬-resizing</a>
 
+</code>
 Question. Can the homotopy circle S¹ be injective, for some choice of
 universe parameter, without assuming excluded middle or resizing? If
 not, can any other connected type in the first universe 𝓤₀, possibly
@@ -63564,7 +63572,8 @@ and in particular e.g.
 
   ainjective-type (𝓤 ̇ ) (𝓤 ⁺) 𝓥 → ainjective-type (𝓤 ̇ ) (𝓤 ⁺) (𝓤 ⁺).
 
-<code class="Agda"><a id="7552" class="Keyword">module</a> <a id="Ω¬¬-resizing-examples"></a><a id="7559" href="../../InjectiveTypes/Resizing/#7559" class="Module">Ω¬¬-resizing-examples</a>
+<code class="Agda">
+<a id="7552" class="Keyword">module</a> <a id="Ω¬¬-resizing-examples"></a><a id="7559" href="../../InjectiveTypes/Resizing/#7559" class="Module">Ω¬¬-resizing-examples</a>
         <a id="7589" class="Symbol">(</a><a id="7590" href="../../InjectiveTypes/Resizing/#7590" class="Bound">small-retracts</a> <a id="7605" class="Symbol">:</a> <a id="7607" href="../../InjectiveTypes/Resizing/#3521" class="Function">retracts-of-small-types-are-small</a><a id="7640" class="Symbol">)</a>
        <a id="7649" class="Keyword">where</a>
 
@@ -63665,8 +63674,9 @@ and in particular e.g.
    <a id="10830" href="../../InjectiveTypes/Resizing/#7590" class="Bound">small-retracts</a>
    <a id="10848" class="Symbol">(</a><a id="10849" href="../../Iterative/Sets/#2594" class="Function">𝕍</a> <a id="10851" href="../../InjectiveTypes/Resizing/#10731" class="Bound">𝓤</a><a id="10852" class="Symbol">)</a>
    <a id="10857" href="../../InjectiveTypes/Resizing/#10738" class="Bound">ainj</a>
-   <a id="10865" class="Symbol">((</a><a id="10867" href="../../Iterative/Sets-Addendum/#830" class="Function">𝟘ⱽ</a> <a id="10870" href="../../InjectiveTypes/Resizing/#10731" class="Bound">𝓤</a> <a id="10872" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="10874" href="../../Iterative/Sets-Addendum/#859" class="Function">𝟙ⱽ</a> <a id="10877" href="../../InjectiveTypes/Resizing/#10731" class="Bound">𝓤</a><a id="10878" class="Symbol">)</a> <a id="10880" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="10882" href="../../Iterative/Sets-Addendum/#888" class="Function">𝟘ⱽ-is-not-𝟙ⱽ</a> <a id="10895" href="../../InjectiveTypes/Resizing/#10731" class="Bound">𝓤</a><a id="10896" class="Symbol">)</a></code>
+   <a id="10865" class="Symbol">((</a><a id="10867" href="../../Iterative/Sets-Addendum/#830" class="Function">𝟘ⱽ</a> <a id="10870" href="../../InjectiveTypes/Resizing/#10731" class="Bound">𝓤</a> <a id="10872" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="10874" href="../../Iterative/Sets-Addendum/#859" class="Function">𝟙ⱽ</a> <a id="10877" href="../../InjectiveTypes/Resizing/#10731" class="Bound">𝓤</a><a id="10878" class="Symbol">)</a> <a id="10880" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="10882" href="../../Iterative/Sets-Addendum/#888" class="Function">𝟘ⱽ-is-not-𝟙ⱽ</a> <a id="10895" href="../../InjectiveTypes/Resizing/#10731" class="Bound">𝓤</a><a id="10896" class="Symbol">)</a>
 
+</code>
 TODO. The type of monoids is injective (InjectiveTypes.MathematicalStructures).
 We get the same resizing conclusion as above by considering the
 monoids freely generated by the types 𝟘 and 𝟙 respectively (singleton

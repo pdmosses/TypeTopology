@@ -63317,7 +63317,8 @@
 
 Based on Egbert Rijke's "Introduction to Homotopy Type Theory".
 
-<code class="Agda"><a id="124" class="Symbol">{-#</a> <a id="128" class="Keyword">OPTIONS</a> <a id="136" class="Pragma">--safe</a> <a id="143" class="Pragma">--without-K</a> <a id="155" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="124" class="Symbol">{-#</a> <a id="128" class="Keyword">OPTIONS</a> <a id="136" class="Pragma">--safe</a> <a id="143" class="Pragma">--without-K</a> <a id="155" class="Symbol">#-}</a>
 
 <a id="160" class="Keyword">module</a> <a id="167" href="../../UF/IdentitySystems/" class="Module">UF.IdentitySystems</a> <a id="186" class="Keyword">where</a>
 
@@ -63475,8 +63476,9 @@ Based on Egbert Rijke's "Introduction to Homotopy Type Theory".
 
 <a id="3832" class="Keyword">module</a> <a id="3839" href="../../UF/IdentitySystems/#3839" class="Module">_</a> <a id="3841" class="Symbol">(</a><a id="3842" href="../../UF/IdentitySystems/#3842" class="Bound">fe</a> <a id="3845" class="Symbol">:</a> <a id="3847" href="../../UF/FunExt/#850" class="Function">funext</a> <a id="3854" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="3856" href="../../MLTT/Universes/#3835" class="Generalizable">𝓥</a><a id="3857" class="Symbol">)</a> <a id="3859" class="Symbol">{</a><a id="3860" href="../../UF/IdentitySystems/#3860" class="Bound">A</a> <a id="3862" class="Symbol">:</a> <a id="3864" href="../../MLTT/Universes/#3833" class="Generalizable">𝓤</a> <a id="3866" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="3868" class="Symbol">}</a> <a id="3870" class="Symbol">{</a><a id="3871" href="../../UF/IdentitySystems/#3871" class="Bound">B</a> <a id="3873" class="Symbol">:</a> <a id="3875" href="../../MLTT/Universes/#3835" class="Generalizable">𝓥</a> <a id="3877" href="../../MLTT/Universes/#3976" class="Function Operator">̇</a> <a id="3879" class="Symbol">}</a> <a id="3881" class="Symbol">(</a><a id="3882" href="../../UF/IdentitySystems/#3882" class="Bound">f</a> <a id="3884" class="Symbol">:</a> <a id="3886" href="../../UF/IdentitySystems/#3860" class="Bound">A</a> <a id="3888" class="Symbol">→</a> <a id="3890" href="../../UF/IdentitySystems/#3871" class="Bound">B</a><a id="3891" class="Symbol">)</a> <a id="3893" class="Keyword">where</a>
  <a id="3900" href="../../UF/IdentitySystems/#3900" class="Function">homotopy-id-sys</a> <a id="3916" class="Symbol">:</a> <a id="3918" href="../../UF/IdentitySystems/#1186" class="Record">Id-Sys</a> <a id="3925" class="Symbol">(</a><a id="3926" href="../../UF/IdentitySystems/#3854" class="Bound">𝓤</a> <a id="3928" href="../../Agda/Primitive/#961" class="Primitive Operator">⊔</a> <a id="3930" href="../../UF/IdentitySystems/#3856" class="Bound">𝓥</a><a id="3931" class="Symbol">)</a> <a id="3933" class="Symbol">(</a><a id="3934" href="../../UF/IdentitySystems/#3860" class="Bound">A</a> <a id="3936" class="Symbol">→</a> <a id="3938" href="../../UF/IdentitySystems/#3871" class="Bound">B</a><a id="3939" class="Symbol">)</a> <a id="3941" href="../../UF/IdentitySystems/#3882" class="Bound">f</a>
- <a id="3944" href="../../UF/IdentitySystems/#3900" class="Function">homotopy-id-sys</a> <a id="3960" class="Symbol">=</a> <a id="3962" href="../../UF/IdentitySystems/#1775" class="Function">from-path-characterization.id-sys</a> <a id="3996" href="../../MLTT/Id/#1889" class="Function Operator">_∼_</a> <a id="4000" class="Symbol">(</a><a id="4001" href="../../UF/FunExt/#1770" class="Function">happly-≃</a> <a id="4010" href="../../UF/IdentitySystems/#3842" class="Bound">fe</a><a id="4012" class="Symbol">)</a> <a id="4014" href="../../UF/IdentitySystems/#3882" class="Bound">f</a></code>
-</pre>
+ <a id="3944" href="../../UF/IdentitySystems/#3900" class="Function">homotopy-id-sys</a> <a id="3960" class="Symbol">=</a> <a id="3962" href="../../UF/IdentitySystems/#1775" class="Function">from-path-characterization.id-sys</a> <a id="3996" href="../../MLTT/Id/#1889" class="Function Operator">_∼_</a> <a id="4000" class="Symbol">(</a><a id="4001" href="../../UF/FunExt/#1770" class="Function">happly-≃</a> <a id="4010" href="../../UF/IdentitySystems/#3842" class="Bound">fe</a><a id="4012" class="Symbol">)</a> <a id="4014" href="../../UF/IdentitySystems/#3882" class="Bound">f</a>
+
+</code></pre>
 
 
 

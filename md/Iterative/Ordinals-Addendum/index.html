@@ -63320,7 +63320,8 @@ More about iterative ordinals and their relation to iterative (multi)sets.
  * Assuming propositional resizing, Ord is retract of 𝕄 and a also a
    retract of 𝕍.
 
-<code class="Agda"><a id="220" class="Symbol">{-#</a> <a id="224" class="Keyword">OPTIONS</a> <a id="232" class="Pragma">--safe</a> <a id="239" class="Pragma">--without-K</a> <a id="251" class="Pragma">--lossy-unification</a> <a id="271" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="220" class="Symbol">{-#</a> <a id="224" class="Keyword">OPTIONS</a> <a id="232" class="Pragma">--safe</a> <a id="239" class="Pragma">--without-K</a> <a id="251" class="Pragma">--lossy-unification</a> <a id="271" class="Symbol">#-}</a>
 
 <a id="276" class="Keyword">open</a> <a id="281" class="Keyword">import</a> <a id="288" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 <a id="301" class="Keyword">open</a> <a id="306" class="Keyword">import</a> <a id="313" href="../../UF/Univalence/" class="Module">UF.Univalence</a>
@@ -63370,28 +63371,31 @@ More about iterative ordinals and their relation to iterative (multi)sets.
  <a id="1343" href="../../Iterative/Ordinals-Addendum/#1272" class="Function">almost-a-retraction-𝕍</a> <a id="1365" class="Symbol">=</a> <a id="1367" href="../../Ordinals/Injectivity/#2709" class="Function">Ordinal-is-ainjective</a> <a id="1389" class="Symbol">(</a><a id="1390" href="../../Iterative/Ordinals-Addendum/#372" class="Bound">ua</a> <a id="1393" href="../../Iterative/Ordinals-Addendum/#483" class="Function">𝓤⁺</a><a id="1395" class="Symbol">)</a>
                           <a id="1423" href="../../Iterative/Ordinals/#25000" class="Function">Ord-to-𝕍</a>
                           <a id="1458" href="../../Iterative/Ordinals/#25819" class="Function">Ord-to-𝕍-is-embedding</a>
-                          <a id="1506" href="../../UF/Embeddings/#2308" class="Function Operator">⌊</a> <a id="1508" href="../../Iterative/Ordinals-Addendum/#963" class="Function">e</a> <a id="1510" href="../../UF/Embeddings/#2308" class="Function Operator">⌋</a></code>
-
+                          <a id="1506" href="../../UF/Embeddings/#2308" class="Function Operator">⌊</a> <a id="1508" href="../../Iterative/Ordinals-Addendum/#963" class="Function">e</a> <a id="1510" href="../../UF/Embeddings/#2308" class="Function Operator">⌋</a>
+</code>
 To get retractions we would like to extend the identity functions,
 rather than ⌊ e ⌋, but the universe levels get on the way. Unless we
 assume propositional resizing.
 
-<code class="Agda"><a id="Ord-is-retract-of-𝕄"></a><a id="1706" href="../../Iterative/Ordinals-Addendum/#1706" class="Function">Ord-is-retract-of-𝕄</a> <a id="1726" class="Symbol">:</a> <a id="1728" href="../../UF/Size/#2811" class="Function">propositional-resizing</a> <a id="1751" href="../../Iterative/Ordinals-Addendum/#483" class="Function">𝓤⁺</a> <a id="1754" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a>
+<code class="Agda">
+<a id="Ord-is-retract-of-𝕄"></a><a id="1706" href="../../Iterative/Ordinals-Addendum/#1706" class="Function">Ord-is-retract-of-𝕄</a> <a id="1726" class="Symbol">:</a> <a id="1728" href="../../UF/Size/#2811" class="Function">propositional-resizing</a> <a id="1751" href="../../Iterative/Ordinals-Addendum/#483" class="Function">𝓤⁺</a> <a id="1754" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a>
                     <a id="1776" class="Symbol">→</a> <a id="1778" href="../../UF/Retracts/#1306" class="Function Operator">retract</a> <a id="1786" href="../../Iterative/Ordinals/#19190" class="Function">Ord</a> <a id="1790" href="../../UF/Retracts/#1306" class="Function Operator">of</a> <a id="1793" href="../../Iterative/Multisets/#691" class="Function">𝕄</a>
 <a id="1795" href="../../Iterative/Ordinals-Addendum/#1706" class="Function">Ord-is-retract-of-𝕄</a> <a id="1815" href="../../Iterative/Ordinals-Addendum/#1815" class="Bound">pe</a> <a id="1818" class="Symbol">=</a> <a id="1820" href="../../InjectiveTypes/Blackboard/#17074" class="Function">embedding-retract</a> <a id="1838" href="../../Iterative/Ordinals/#19190" class="Function">Ord</a> <a id="1842" href="../../Iterative/Multisets/#691" class="Function">𝕄</a> <a id="1844" href="../../Iterative/Ordinals/#21937" class="Function">Ord-to-𝕄</a>
                            <a id="1880" href="../../Iterative/Ordinals/#26152" class="Function">Ord-to-𝕄-is-embedding</a>
                            <a id="1929" class="Symbol">(</a><a id="1930" href="../../InjectiveTypes/Blackboard/#38310" class="Function">ainjective-resizing</a> <a id="1950" class="Symbol">{</a><a id="1951" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="1952" class="Symbol">}</a> <a id="1954" class="Symbol">{</a><a id="1955" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="1956" class="Symbol">}</a> <a id="1958" href="../../Iterative/Ordinals-Addendum/#1815" class="Bound">pe</a> <a id="1961" class="Symbol">(</a><a id="1962" href="../../Ordinals/Type/#600" class="Function">Ordinal</a> <a id="1970" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="1971" class="Symbol">)</a>
-                             <a id="2002" class="Symbol">(</a><a id="2003" href="../../Ordinals/Injectivity/#2709" class="Function">Ordinal-is-ainjective</a> <a id="2025" class="Symbol">(</a><a id="2026" href="../../Iterative/Ordinals-Addendum/#372" class="Bound">ua</a> <a id="2029" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="2030" class="Symbol">)))</a></code>
+                             <a id="2002" class="Symbol">(</a><a id="2003" href="../../Ordinals/Injectivity/#2709" class="Function">Ordinal-is-ainjective</a> <a id="2025" class="Symbol">(</a><a id="2026" href="../../Iterative/Ordinals-Addendum/#372" class="Bound">ua</a> <a id="2029" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="2030" class="Symbol">)))</a>
 
+</code>
 TODO. Can we get the same conclusion without propositional resizing?
 
-<code class="Agda"><a id="Ord-is-retract-of-𝕍"></a><a id="2131" href="../../Iterative/Ordinals-Addendum/#2131" class="Function">Ord-is-retract-of-𝕍</a> <a id="2151" class="Symbol">:</a> <a id="2153" href="../../UF/Size/#2811" class="Function">propositional-resizing</a> <a id="2176" href="../../Iterative/Ordinals-Addendum/#483" class="Function">𝓤⁺</a> <a id="2179" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a>
+<code class="Agda">
+<a id="Ord-is-retract-of-𝕍"></a><a id="2131" href="../../Iterative/Ordinals-Addendum/#2131" class="Function">Ord-is-retract-of-𝕍</a> <a id="2151" class="Symbol">:</a> <a id="2153" href="../../UF/Size/#2811" class="Function">propositional-resizing</a> <a id="2176" href="../../Iterative/Ordinals-Addendum/#483" class="Function">𝓤⁺</a> <a id="2179" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a>
                     <a id="2201" class="Symbol">→</a> <a id="2203" href="../../UF/Retracts/#1306" class="Function Operator">retract</a> <a id="2211" href="../../Iterative/Ordinals/#19190" class="Function">Ord</a> <a id="2215" href="../../UF/Retracts/#1306" class="Function Operator">of</a> <a id="2218" href="../../Iterative/Sets/#2594" class="Function">𝕍</a>
 <a id="2220" href="../../Iterative/Ordinals-Addendum/#2131" class="Function">Ord-is-retract-of-𝕍</a> <a id="2240" href="../../Iterative/Ordinals-Addendum/#2240" class="Bound">pe</a> <a id="2243" class="Symbol">=</a> <a id="2245" href="../../InjectiveTypes/Blackboard/#17074" class="Function">embedding-retract</a> <a id="2263" href="../../Iterative/Ordinals/#19190" class="Function">Ord</a> <a id="2267" href="../../Iterative/Sets/#2594" class="Function">𝕍</a> <a id="2269" href="../../Iterative/Ordinals/#25000" class="Function">Ord-to-𝕍</a>
                           <a id="2304" href="../../Iterative/Ordinals/#25819" class="Function">Ord-to-𝕍-is-embedding</a>
                           <a id="2352" class="Symbol">(</a><a id="2353" href="../../InjectiveTypes/Blackboard/#38310" class="Function">ainjective-resizing</a> <a id="2373" class="Symbol">{</a><a id="2374" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="2375" class="Symbol">}</a> <a id="2377" class="Symbol">{</a><a id="2378" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="2379" class="Symbol">}</a> <a id="2381" href="../../Iterative/Ordinals-Addendum/#2240" class="Bound">pe</a> <a id="2384" class="Symbol">(</a><a id="2385" href="../../Ordinals/Type/#600" class="Function">Ordinal</a> <a id="2393" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="2394" class="Symbol">)</a>
-                            <a id="2424" class="Symbol">(</a><a id="2425" href="../../Ordinals/Injectivity/#2709" class="Function">Ordinal-is-ainjective</a> <a id="2447" class="Symbol">(</a><a id="2448" href="../../Iterative/Ordinals-Addendum/#372" class="Bound">ua</a> <a id="2451" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="2452" class="Symbol">)))</a></code>
-
+                            <a id="2424" class="Symbol">(</a><a id="2425" href="../../Ordinals/Injectivity/#2709" class="Function">Ordinal-is-ainjective</a> <a id="2447" class="Symbol">(</a><a id="2448" href="../../Iterative/Ordinals-Addendum/#372" class="Bound">ua</a> <a id="2451" href="../../Iterative/Ordinals-Addendum/#398" class="Bound">𝓤</a><a id="2452" class="Symbol">)))</a>
+</code>
 It is actually possible to prove this without propositional
 resizing. For the retraction, we map an iterative set to its rank. For
 this we need set quotients or, equivalently, set replacement. This is

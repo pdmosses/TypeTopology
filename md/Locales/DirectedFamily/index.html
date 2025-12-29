@@ -63324,7 +63324,8 @@ in the `Locales.Frame` module, even though they concern only the underlying
 order of frames. This is a new module in which I will be collecting such proofs
 and constructions that involve only the order of a given frame.
 
-<code class="Agda"><a id="570" class="Symbol">{-#</a> <a id="574" class="Keyword">OPTIONS</a> <a id="582" class="Pragma">--safe</a> <a id="589" class="Pragma">--without-K</a> <a id="601" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="570" class="Symbol">{-#</a> <a id="574" class="Keyword">OPTIONS</a> <a id="582" class="Pragma">--safe</a> <a id="589" class="Pragma">--without-K</a> <a id="601" class="Symbol">#-}</a>
 
 <a id="606" class="Keyword">open</a> <a id="611" class="Keyword">import</a> <a id="618" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a>
 <a id="631" class="Keyword">open</a> <a id="636" class="Keyword">import</a> <a id="643" href="../../UF/FunExt/" class="Module">UF.FunExt</a>
@@ -63342,18 +63343,22 @@ and constructions that involve only the order of a given frame.
 <a id="898" class="Keyword">open</a> <a id="903" class="Keyword">import</a> <a id="910" href="../../UF/Logic/" class="Module">UF.Logic</a>
 
 <a id="920" class="Keyword">open</a> <a id="925" href="../../UF/Logic/#8479" class="Module">AllCombinators</a> <a id="940" href="../../Locales/DirectedFamily/#751" class="Bound">pt</a> <a id="943" href="../../Locales/DirectedFamily/#798" class="Bound">fe</a>
-<a id="946" class="Keyword">open</a> <a id="951" href="../../UF/PropTrunc/#792" class="Module">PropositionalTruncation</a> <a id="975" href="../../Locales/DirectedFamily/#751" class="Bound">pt</a></code>
+<a id="946" class="Keyword">open</a> <a id="951" href="../../UF/PropTrunc/#792" class="Module">PropositionalTruncation</a> <a id="975" href="../../Locales/DirectedFamily/#751" class="Bound">pt</a>
 
+</code>
 \section{Directed families}
 
 Alias for the order just to be able to declare fixity without warnings.
 
-<code class="Agda"><a id="1107" class="Keyword">infix</a> <a id="1113" class="Number">7</a> <a id="1115" href="../../Locales/DirectedFamily/#1119" class="Function Operator">_⊑_</a>
-<a id="_⊑_"></a><a id="1119" href="../../Locales/DirectedFamily/#1119" class="Function Operator">_⊑_</a> <a id="1123" class="Symbol">=</a> <a id="1125" href="../../Locales/DirectedFamily/#840" class="Bound Operator">_≤_</a></code>
+<code class="Agda">
+<a id="1107" class="Keyword">infix</a> <a id="1113" class="Number">7</a> <a id="1115" href="../../Locales/DirectedFamily/#1119" class="Function Operator">_⊑_</a>
+<a id="_⊑_"></a><a id="1119" href="../../Locales/DirectedFamily/#1119" class="Function Operator">_⊑_</a> <a id="1123" class="Symbol">=</a> <a id="1125" href="../../Locales/DirectedFamily/#840" class="Bound Operator">_≤_</a>
 
+</code>
 Definition of directedness.
 
-<code class="Agda"><a id="is-closed-under-binary-upper-bounds"></a><a id="1185" href="../../Locales/DirectedFamily/#1185" class="Function">is-closed-under-binary-upper-bounds</a> <a id="1221" class="Symbol">:</a> <a id="1223" href="../../Slice/Family/#286" class="Function">Fam</a> <a id="1227" href="../../MLTT/Universes/#3837" class="Generalizable">𝓦</a> <a id="1229" href="../../Locales/DirectedFamily/#821" class="Bound">X</a> <a id="1231" class="Symbol">→</a> <a id="1233" href="../../UF/SubtypeClassifier/#422" class="Function">Ω</a> <a id="1235" class="Symbol">(</a><a id="1236" href="../../Locales/DirectedFamily/#856" class="Bound">𝓥</a> <a id="1238" href="../../Agda/Primitive/#961" class="Primitive Operator">⊔</a> <a id="1240" href="../../MLTT/Universes/#3837" class="Generalizable">𝓦</a><a id="1241" class="Symbol">)</a>
+<code class="Agda">
+<a id="is-closed-under-binary-upper-bounds"></a><a id="1185" href="../../Locales/DirectedFamily/#1185" class="Function">is-closed-under-binary-upper-bounds</a> <a id="1221" class="Symbol">:</a> <a id="1223" href="../../Slice/Family/#286" class="Function">Fam</a> <a id="1227" href="../../MLTT/Universes/#3837" class="Generalizable">𝓦</a> <a id="1229" href="../../Locales/DirectedFamily/#821" class="Bound">X</a> <a id="1231" class="Symbol">→</a> <a id="1233" href="../../UF/SubtypeClassifier/#422" class="Function">Ω</a> <a id="1235" class="Symbol">(</a><a id="1236" href="../../Locales/DirectedFamily/#856" class="Bound">𝓥</a> <a id="1238" href="../../Agda/Primitive/#961" class="Primitive Operator">⊔</a> <a id="1240" href="../../MLTT/Universes/#3837" class="Generalizable">𝓦</a><a id="1241" class="Symbol">)</a>
 <a id="1243" href="../../Locales/DirectedFamily/#1185" class="Function">is-closed-under-binary-upper-bounds</a> <a id="1279" href="../../Locales/DirectedFamily/#1279" class="Bound">S</a> <a id="1281" class="Symbol">=</a>
  <a id="1284" href="../../UF/Logic/#2657" class="Function">Ɐ</a> <a id="1286" href="../../Locales/DirectedFamily/#1286" class="Bound">i</a> <a id="1288" href="../../UF/Logic/#2657" class="Function">꞉</a> <a id="1290" href="../../Locales/DirectedFamily/#1372" class="Function">I</a> <a id="1292" href="../../UF/Logic/#2657" class="Function">,</a> <a id="1294" href="../../UF/Logic/#2657" class="Function">Ɐ</a> <a id="1296" href="../../Locales/DirectedFamily/#1296" class="Bound">j</a> <a id="1298" href="../../UF/Logic/#2657" class="Function">꞉</a> <a id="1300" href="../../Locales/DirectedFamily/#1372" class="Function">I</a> <a id="1302" href="../../UF/Logic/#2657" class="Function">,</a> <a id="1304" href="../../UF/Logic/#7704" class="Function">Ǝₚ</a> <a id="1307" href="../../Locales/DirectedFamily/#1307" class="Bound">k</a> <a id="1309" href="../../UF/Logic/#7704" class="Function">꞉</a> <a id="1311" href="../../Locales/DirectedFamily/#1372" class="Function">I</a> <a id="1313" href="../../UF/Logic/#7704" class="Function">,</a> <a id="1315" class="Symbol">((</a><a id="1317" href="../../Locales/DirectedFamily/#1279" class="Bound">S</a> <a id="1319" href="../../Slice/Family/#460" class="Function Operator">[</a> <a id="1321" href="../../Locales/DirectedFamily/#1286" class="Bound">i</a> <a id="1323" href="../../Slice/Family/#460" class="Function Operator">]</a> <a id="1325" href="../../Locales/DirectedFamily/#1119" class="Function Operator">⊑</a> <a id="1327" href="../../Locales/DirectedFamily/#1279" class="Bound">S</a> <a id="1329" href="../../Slice/Family/#460" class="Function Operator">[</a> <a id="1331" href="../../Locales/DirectedFamily/#1307" class="Bound">k</a> <a id="1333" href="../../Slice/Family/#460" class="Function Operator">]</a><a id="1334" class="Symbol">)</a> <a id="1336" href="../../UF/Logic/#734" class="Function Operator">∧</a> <a id="1338" class="Symbol">(</a><a id="1339" href="../../Locales/DirectedFamily/#1279" class="Bound">S</a> <a id="1341" href="../../Slice/Family/#460" class="Function Operator">[</a> <a id="1343" href="../../Locales/DirectedFamily/#1296" class="Bound">j</a> <a id="1345" href="../../Slice/Family/#460" class="Function Operator">]</a><a id="1346" class="Symbol">)</a> <a id="1348" href="../../Locales/DirectedFamily/#840" class="Bound Operator">≤</a> <a id="1350" class="Symbol">(</a><a id="1351" href="../../Locales/DirectedFamily/#1279" class="Bound">S</a> <a id="1353" href="../../Slice/Family/#460" class="Function Operator">[</a> <a id="1355" href="../../Locales/DirectedFamily/#1307" class="Bound">k</a> <a id="1357" href="../../Slice/Family/#460" class="Function Operator">]</a><a id="1358" class="Symbol">))</a>
   <a id="1363" class="Keyword">where</a>
@@ -63370,8 +63375,9 @@ Definition of directedness.
  <a id="1697" class="Symbol">:</a> <a id="1699" class="Symbol">(</a><a id="1700" href="../../Locales/DirectedFamily/#1700" class="Bound">S</a> <a id="1702" class="Symbol">:</a> <a id="1704" href="../../Slice/Family/#286" class="Function">Fam</a> <a id="1708" href="../../MLTT/Universes/#3837" class="Generalizable">𝓦</a> <a id="1710" href="../../Locales/DirectedFamily/#821" class="Bound">X</a><a id="1711" class="Symbol">)</a>
  <a id="1714" class="Symbol">→</a> <a id="1716" class="Symbol">(</a><a id="1717" href="../../Locales/DirectedFamily/#1385" class="Function">is-directed</a> <a id="1729" href="../../Locales/DirectedFamily/#1700" class="Bound">S</a>
  <a id="1732" href="../../UF/Logic/#3649" class="Function Operator">⇒</a> <a id="1734" href="../../Locales/DirectedFamily/#1185" class="Function">is-closed-under-binary-upper-bounds</a> <a id="1770" href="../../Locales/DirectedFamily/#1700" class="Bound">S</a><a id="1771" class="Symbol">)</a> <a id="1773" href="../../UF/SubtypeClassifier/#478" class="Function Operator">holds</a>
-<a id="1779" href="../../Locales/DirectedFamily/#1646" class="Function">directed-implies-closed-under-binary-upper-bounds</a> <a id="1829" href="../../Locales/DirectedFamily/#1829" class="Bound">S</a> <a id="1831" class="Symbol">(_</a> <a id="1834" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="1836" href="../../Locales/DirectedFamily/#1836" class="Bound">υ</a><a id="1837" class="Symbol">)</a> <a id="1839" class="Symbol">=</a> <a id="1841" href="../../Locales/DirectedFamily/#1836" class="Bound">υ</a></code>
-</pre>
+<a id="1779" href="../../Locales/DirectedFamily/#1646" class="Function">directed-implies-closed-under-binary-upper-bounds</a> <a id="1829" href="../../Locales/DirectedFamily/#1829" class="Bound">S</a> <a id="1831" class="Symbol">(_</a> <a id="1834" href="../../MLTT/Sigma/#395" class="InductiveConstructor Operator">,</a> <a id="1836" href="../../Locales/DirectedFamily/#1836" class="Bound">υ</a><a id="1837" class="Symbol">)</a> <a id="1839" class="Symbol">=</a> <a id="1841" href="../../Locales/DirectedFamily/#1836" class="Bound">υ</a>
+
+</code></pre>
 
 
 

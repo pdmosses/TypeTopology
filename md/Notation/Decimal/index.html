@@ -63320,7 +63320,8 @@ decimal literals to types other than just the natural numbers.
 
 See https://agda.readthedocs.io/en/latest/language/literal-overloading.html
 
-<code class="Agda"><a id="263" class="Symbol">{-#</a> <a id="267" class="Keyword">OPTIONS</a> <a id="275" class="Pragma">--safe</a> <a id="282" class="Pragma">--without-K</a> <a id="294" class="Symbol">#-}</a>
+<code class="Agda">
+<a id="263" class="Symbol">{-#</a> <a id="267" class="Keyword">OPTIONS</a> <a id="275" class="Pragma">--safe</a> <a id="282" class="Pragma">--without-K</a> <a id="294" class="Symbol">#-}</a>
 
 <a id="299" class="Keyword">module</a> <a id="306" href="../../Notation/Decimal/" class="Module">Notation.Decimal</a> <a id="323" class="Keyword">where</a>
 
@@ -63372,15 +63373,18 @@ See https://agda.readthedocs.io/en/latest/language/literal-overloading.html
  <a id="1406" class="Keyword">record</a> <a id="1413" class="Symbol">{</a>
    <a id="1418" href="../../Notation/Decimal/#722" class="Field">constraint</a> <a id="1429" class="Symbol">=</a> <a id="1431" class="Symbol">λ</a> <a id="1433" href="../../Notation/Decimal/#1433" class="Bound">_</a> <a id="1435" class="Symbol">→</a> <a id="1437" href="../../Notation/Decimal/#924" class="Datatype">No-Constraint</a>
  <a id="1452" class="Symbol">;</a> <a id="1454" href="../../Notation/Decimal/#747" class="Field">fromNeg</a> <a id="1462" class="Symbol">=</a> <a id="1464" href="../../Notation/Decimal/#1401" class="Bound">f</a>
- <a id="1467" class="Symbol">}</a></code>
+ <a id="1467" class="Symbol">}</a>
 
+</code>
 The natural place for this would be MLTT.NaturalNumbers, but then we
 would get a circular dependency.
 
-<code class="Agda"><a id="1599" class="Keyword">instance</a>
+<code class="Agda">
+<a id="1599" class="Keyword">instance</a>
  <a id="Decimal-ℕ-to-ℕ"></a><a id="1609" href="../../Notation/Decimal/#1609" class="Function">Decimal-ℕ-to-ℕ</a> <a id="1624" class="Symbol">:</a> <a id="1626" href="../../Notation/Decimal/#397" class="Record">Decimal</a> <a id="1634" href="../../MLTT/Natural-Numbers-Type/#96" class="Datatype">ℕ</a>
- <a id="1637" href="../../Notation/Decimal/#1609" class="Function">Decimal-ℕ-to-ℕ</a> <a id="1652" class="Symbol">=</a> <a id="1654" href="../../Notation/Decimal/#1069" class="Function">make-decimal-with-no-constraint</a> <a id="1686" class="Symbol">(λ</a> <a id="1689" href="../../Notation/Decimal/#1689" class="Bound">n</a> <a id="1691" class="Symbol">→</a> <a id="1693" href="../../Notation/Decimal/#1689" class="Bound">n</a><a id="1694" class="Symbol">)</a></code>
-</pre>
+ <a id="1637" href="../../Notation/Decimal/#1609" class="Function">Decimal-ℕ-to-ℕ</a> <a id="1652" class="Symbol">=</a> <a id="1654" href="../../Notation/Decimal/#1069" class="Function">make-decimal-with-no-constraint</a> <a id="1686" class="Symbol">(λ</a> <a id="1689" href="../../Notation/Decimal/#1689" class="Bound">n</a> <a id="1691" class="Symbol">→</a> <a id="1693" href="../../Notation/Decimal/#1689" class="Bound">n</a><a id="1694" class="Symbol">)</a>
+
+</code></pre>
 
 
 

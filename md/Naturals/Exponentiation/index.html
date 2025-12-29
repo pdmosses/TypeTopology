@@ -63313,7 +63313,8 @@
 
 
 <h1 id="naturalsexponentiation">Naturals.Exponentiation</h1>
-<pre class="Agda"><code class="Agda"><a id="15" class="Symbol">{-#</a> <a id="19" class="Keyword">OPTIONS</a> <a id="27" class="Pragma">--safe</a> <a id="34" class="Pragma">--without-K</a>  <a id="47" class="Symbol">#-}</a>
+<pre class="Agda"><code class="Agda">
+<a id="15" class="Symbol">{-#</a> <a id="19" class="Keyword">OPTIONS</a> <a id="27" class="Pragma">--safe</a> <a id="34" class="Pragma">--without-K</a>  <a id="47" class="Symbol">#-}</a>
 
 <a id="52" class="Keyword">open</a> <a id="57" class="Keyword">import</a> <a id="64" href="../../MLTT/Spartan/" class="Module">MLTT.Spartan</a> <a id="77" class="Keyword">renaming</a> <a id="86" class="Symbol">(</a><a id="87" href="../../MLTT/Plus-Type/#120" class="Datatype Operator">_+_</a> <a id="91" class="Symbol">to</a> <a id="94" class="Datatype Operator">_∔_</a><a id="97" class="Symbol">)</a>
 <a id="99" class="Keyword">open</a> <a id="104" class="Keyword">import</a> <a id="111" href="../../Naturals/Addition/" class="Module">Naturals.Addition</a>
@@ -63368,8 +63369,9 @@
 <a id="1631" href="../../Naturals/Exponentiation/#1533" class="Function">exponents-not-zero</a> <a id="1650" class="Symbol">(</a><a id="1651" href="../../MLTT/Natural-Numbers-Type/#123" class="InductiveConstructor">succ</a> <a id="1656" href="../../Naturals/Exponentiation/#1656" class="Bound">n</a><a id="1657" class="Symbol">)</a> <a id="1659" href="../../Naturals/Exponentiation/#1659" class="Bound">e</a> <a id="1661" class="Symbol">=</a> <a id="1663" href="../../Naturals/Exponentiation/#1533" class="Function">exponents-not-zero</a> <a id="1682" href="../../Naturals/Exponentiation/#1656" class="Bound">n</a> <a id="1684" href="../../Naturals/Exponentiation/#1695" class="Function">I</a>
  <a id="1687" class="Keyword">where</a>
   <a id="1695" href="../../Naturals/Exponentiation/#1695" class="Function">I</a> <a id="1697" class="Symbol">:</a> <a id="1699" href="../../Naturals/Exponentiation/#294" class="Function">2^</a> <a id="1702" href="../../Naturals/Exponentiation/#1656" class="Bound">n</a> <a id="1704" href="../../MLTT/Id/#193" class="Datatype Operator">＝</a> <a id="1706" class="Number">0</a>
-  <a id="1710" href="../../Naturals/Exponentiation/#1695" class="Function">I</a> <a id="1712" class="Symbol">=</a> <a id="1714" href="../../Naturals/Multiplication/#7776" class="Function">mult-left-cancellable</a> <a id="1736" class="Symbol">(</a><a id="1737" href="../../Naturals/Exponentiation/#294" class="Function">2^</a> <a id="1740" href="../../Naturals/Exponentiation/#1656" class="Bound">n</a><a id="1741" class="Symbol">)</a> <a id="1743" class="Number">0</a> <a id="1745" class="Number">1</a> <a id="1747" href="../../Naturals/Exponentiation/#1659" class="Bound">e</a></code>
-</pre>
+  <a id="1710" href="../../Naturals/Exponentiation/#1695" class="Function">I</a> <a id="1712" class="Symbol">=</a> <a id="1714" href="../../Naturals/Multiplication/#7776" class="Function">mult-left-cancellable</a> <a id="1736" class="Symbol">(</a><a id="1737" href="../../Naturals/Exponentiation/#294" class="Function">2^</a> <a id="1740" href="../../Naturals/Exponentiation/#1656" class="Bound">n</a><a id="1741" class="Symbol">)</a> <a id="1743" class="Number">0</a> <a id="1745" class="Number">1</a> <a id="1747" href="../../Naturals/Exponentiation/#1659" class="Bound">e</a>
+
+</code></pre>
 
 
 

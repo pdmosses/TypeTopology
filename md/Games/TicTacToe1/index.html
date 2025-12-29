@@ -63320,7 +63320,8 @@ in other files.
 
 TODO. Organaze this module better, following the organization of TicTacToe0.
 
-<code class="Agda"><a id="224" class="Symbol">{-#</a> <a id="228" class="Keyword">OPTIONS</a> <a id="236" class="Pragma">--safe</a> <a id="243" class="Pragma">--without-K</a> <a id="255" class="Symbol">#-}</a> <a id="259" class="Comment">--</a>
+<code class="Agda">
+<a id="224" class="Symbol">{-#</a> <a id="228" class="Keyword">OPTIONS</a> <a id="236" class="Pragma">--safe</a> <a id="243" class="Pragma">--without-K</a> <a id="255" class="Symbol">#-}</a> <a id="259" class="Comment">--</a>
 
 
 
@@ -63362,11 +63363,13 @@ TODO. Organaze this module better, following the organization of TicTacToe0.
 
   <a id="1004" href="../../Games/TicTacToe1/#1004" class="Function">Grid</a>   <a id="1011" class="Symbol">=</a> <a id="1013" href="../../Games/TicTacToe1/#563" class="Function">𝟛</a> <a id="1015" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="1017" href="../../Games/TicTacToe1/#563" class="Function">𝟛</a>
   <a id="1021" href="../../Games/TicTacToe1/#1021" class="Function">Matrix</a> <a id="1028" class="Symbol">=</a> <a id="1030" href="../../Games/TicTacToe1/#1004" class="Function">Grid</a> <a id="1035" class="Symbol">→</a> <a id="1037" href="../../MLTT/Maybe/#110" class="Datatype">Maybe</a> <a id="1043" href="../../Games/TicTacToe1/#777" class="Datatype">Player</a>
-  <a id="1052" href="../../Games/TicTacToe1/#1052" class="Function">Board</a>  <a id="1059" class="Symbol">=</a> <a id="1061" href="../../Games/TicTacToe1/#777" class="Datatype">Player</a> <a id="1068" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="1070" href="../../Games/TicTacToe1/#1021" class="Function">Matrix</a></code>
+  <a id="1052" href="../../Games/TicTacToe1/#1052" class="Function">Board</a>  <a id="1059" class="Symbol">=</a> <a id="1061" href="../../Games/TicTacToe1/#777" class="Datatype">Player</a> <a id="1068" href="../../MLTT/Sigma/#558" class="Function Operator">×</a> <a id="1070" href="../../Games/TicTacToe1/#1021" class="Function">Matrix</a>
 
+</code>
 Convention: in a board (p , A), p is the opponent of the the current player.
 
-<code class="Agda"><a id="1184" href="../../Games/TicTacToe1/#1184" class="Function">wins</a> <a id="1189" class="Symbol">:</a> <a id="1191" href="../../Games/TicTacToe1/#777" class="Datatype">Player</a> <a id="1198" class="Symbol">→</a> <a id="1200" href="../../Games/TicTacToe1/#1021" class="Function">Matrix</a> <a id="1207" class="Symbol">→</a> <a id="1209" href="../../MLTT/Bool/#109" class="Datatype">Bool</a>
+<code class="Agda">
+  <a id="1184" href="../../Games/TicTacToe1/#1184" class="Function">wins</a> <a id="1189" class="Symbol">:</a> <a id="1191" href="../../Games/TicTacToe1/#777" class="Datatype">Player</a> <a id="1198" class="Symbol">→</a> <a id="1200" href="../../Games/TicTacToe1/#1021" class="Function">Matrix</a> <a id="1207" class="Symbol">→</a> <a id="1209" href="../../MLTT/Bool/#109" class="Datatype">Bool</a>
   <a id="1216" href="../../Games/TicTacToe1/#1184" class="Function">wins</a> <a id="1221" href="../../Games/TicTacToe1/#1221" class="Bound">p</a> <a id="1223" href="../../Games/TicTacToe1/#1223" class="Bound">A</a> <a id="1225" class="Symbol">=</a> <a id="1227" href="../../Games/TicTacToe1/#1926" class="Function">line</a> <a id="1232" href="../../MLTT/Bool/#740" class="Function Operator">||</a> <a id="1235" href="../../Games/TicTacToe1/#1952" class="Function">col</a> <a id="1239" href="../../MLTT/Bool/#740" class="Function Operator">||</a> <a id="1242" href="../../Games/TicTacToe1/#1978" class="Function">diag</a>
    <a id="1250" class="Keyword">where</a>
     <a id="1260" href="../../Games/TicTacToe1/#1260" class="Function Operator">_is_</a> <a id="1265" class="Symbol">:</a> <a id="1267" href="../../MLTT/Maybe/#110" class="Datatype">Maybe</a> <a id="1273" href="../../Games/TicTacToe1/#777" class="Datatype">Player</a> <a id="1280" class="Symbol">→</a> <a id="1282" href="../../Games/TicTacToe1/#777" class="Datatype">Player</a> <a id="1289" class="Symbol">→</a> <a id="1291" href="../../MLTT/Bool/#109" class="Datatype">Bool</a>
@@ -63450,8 +63453,9 @@ Convention: in a board (p , A), p is the opponent of the the current player.
                              <a id="3851" class="Symbol">→</a> <a id="3853" href="../../MLTT/Plus-Type/#169" class="InductiveConstructor">inl</a> <a id="3857" href="../../Games/TicTacToe1/#909" class="InductiveConstructor">draw</a><a id="3861" class="Symbol">)</a>
 
 <a id="t₁"></a><a id="3864" href="../../Games/TicTacToe1/#3864" class="Function">t₁</a> <a id="3867" class="Symbol">:</a> <a id="3869" href="../../Games/TicTacToe1/#563" class="Function">𝟛</a>
-<a id="3871" href="../../Games/TicTacToe1/#3864" class="Function">t₁</a> <a id="3874" class="Symbol">=</a> <a id="3876" href="../../Games/FiniteHistoryDependent/#3536" class="Function">optimal-outcome</a> <a id="3892" href="../../Games/TicTacToe1/#686" class="Function">tic-tac-toe₁</a></code>
+<a id="3871" href="../../Games/TicTacToe1/#3864" class="Function">t₁</a> <a id="3874" class="Symbol">=</a> <a id="3876" href="../../Games/FiniteHistoryDependent/#3536" class="Function">optimal-outcome</a> <a id="3892" href="../../Games/TicTacToe1/#686" class="Function">tic-tac-toe₁</a>
 
+</code>
 The above computation takes too long, due to the use of brute-force
 search. A more efficient one is in another file.
 </pre>
