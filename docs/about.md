@@ -1,5 +1,9 @@
 # About this website
 
+!!! info
+
+    This website was deployed from the `gen-website` branch of the repository.
+
 Agda-Material supports **generation of websites** with
 **highlighted, hyperlinked listings** of (plain or literate) Agda source code.
 
@@ -25,20 +29,6 @@ make web
 make serve
 ```
 
-The approximate times taken by the above commands were:[^1]
-
-- `make check`: 35 seconds
-- `make web`: 75 seconds
-- `make serve`: 70 seconds
-
-Note: The 850+ Agda modules in the repository fork had previously been checked.
-
-[^1]:
-    All `make` commands in the current `Makefile` call `agda --html` to
-    determine the list of all imported modules – even `make help` takes 20
-    seconds! If this overhead can be avoided, the times for `make check` and
-    `make serve` would be reduced accodingly.
-
 The following command was used to deploy the generated website to GitHub Pages:
 
 ```sh
@@ -46,6 +36,17 @@ make deploy
 ```
 
 (Further commands can be used to deploy a versioned website.)
+
+The approximate times taken by the above commands were:
+
+- `make check`: 12 seconds
+- `make web`: 70 seconds
+- `make serve`: 65 seconds
+- `make deploy`: 70 seconds
+
+!!! note
+
+    The 850+ Agda modules in the repository fork had previously been checked.
 
 ## Background
 
@@ -55,12 +56,16 @@ left to the user to incorporate the generated pages in a website, and to
 publish the website.
 
 Agda-Material automates the steps that Agda leaves to the user. After creating
-a GitHub repository from the [Agda-Material] template and adding Agda code, 
+a GitHub repository from the Agda-Material template and adding Agda code, 
 some simple commands generate a website with highlighted, hyperlinked listings
 of the root module and all its imported modules, and publish the website on
 GitHub Pages -- optionally with multiple versions.
 
 ## Main features
+
+After adjusting the parameter settings in the `Makefile` to specify the root
+module and the source directory, you can run the following commands to
+generate, browse, and deploy a website.
 
 - **Automatic regeneration**:
   `make web` generates or updates a website.
@@ -72,6 +77,8 @@ GitHub Pages -- optionally with multiple versions.
   `make deploy` publishes the website on GitHub Pages.
 
 ### Generated websites
+
+The websites have the following features.
 
 - **Navigation menu**:
   a generated hierarchical menu with links to all imported Agda modules.
@@ -106,7 +113,7 @@ GitHub Pages -- optionally with multiple versions.
     Search works best for websites where each page is divided into small
     sections. It is currently of limited use for websites generated from
     large Agda modules. Moreover, it appears that some ASCII characters
-    do not produce the expected results (even when escaped by `\`).
+    do not produce the expected results (evn when escaped by `\`).
 
 [User Guide]: user-guide.md
 [Agda-Material]: https://github.com/pdmosses/agda-material/
