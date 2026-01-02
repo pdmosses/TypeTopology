@@ -63398,6 +63398,10 @@
 
 
 <h1 id="about-this-website">About this website</h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This website was deployed from the <code>gen-website</code> branch of the repository.</p>
+</div>
 <p>Agda-Material supports <strong>generation of websites</strong> with
 <strong>highlighted, hyperlinked listings</strong> of (plain or literate) Agda source code.</p>
 <p>See the <strong><a href="../user-guide/">User Guide</a></strong> for a summary of how to generate websites with
@@ -63417,28 +63421,34 @@ website, were:</p>
 make<span class="w"> </span>web
 make<span class="w"> </span>serve
 </code></pre></div>
-<p>The approximate times taken by the above commands were:<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<ul>
-<li><code>make check</code>: 35 seconds</li>
-<li><code>make web</code>: 75 seconds</li>
-<li><code>make serve</code>: 70 seconds</li>
-</ul>
-<p>Note: The 850+ Agda modules in the repository fork had previously been checked.</p>
 <p>The following command was used to deploy the generated website to GitHub Pages:</p>
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>deploy
 </code></pre></div>
 <p>(Further commands can be used to deploy a versioned website.)</p>
+<p>The approximate times taken by the above commands were:</p>
+<ul>
+<li><code>make check</code>: 12 seconds</li>
+<li><code>make web</code>: 70 seconds</li>
+<li><code>make serve</code>: 65 seconds</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The 850+ Agda modules in the repository fork had previously been checked.</p>
+</div>
 <h2 id="background">Background</h2>
 <p>Agda can generate highlighted, hyperlinked web pages from a root module,
 automatically generating a separate page for each imported module. But it is
 left to the user to incorporate the generated pages in a website, and to
 publish the website.</p>
 <p>Agda-Material automates the steps that Agda leaves to the user. After creating
-a GitHub repository from the <a href="https://github.com/pdmosses/agda-material/">Agda-Material</a> template and adding Agda code, 
+a GitHub repository from the Agda-Material template and adding Agda code, 
 some simple commands generate a website with highlighted, hyperlinked listings
 of the root module and all its imported modules, and publish the website on
 GitHub Pages -- optionally with multiple versions.</p>
 <h2 id="main-features">Main features</h2>
+<p>After adjusting the parameter settings in the <code>Makefile</code> to specify the root
+module and the source directory, you can run the following commands to
+generate, browse, and deploy a website.</p>
 <ul>
 <li>
 <p><strong>Automatic regeneration</strong>:
@@ -63454,6 +63464,7 @@ GitHub Pages -- optionally with multiple versions.</p>
 </li>
 </ul>
 <h3 id="generated-websites">Generated websites</h3>
+<p>The websites have the following features.</p>
 <ul>
 <li>
 <p><strong>Navigation menu</strong>:
@@ -63490,7 +63501,7 @@ GitHub Pages -- optionally with multiple versions.</p>
 <li>
 <p><strong>Search</strong>:
   the browser displays all files that contain occurrences of any of the words
-  specified in the search field.<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+  specified in the search field.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 </li>
 </ul>
 <div class="footnote">
@@ -63500,7 +63511,7 @@ GitHub Pages -- optionally with multiple versions.</p>
 <p>Search works best for websites where each page is divided into small
 sections. It is currently of limited use for websites generated from
 large Agda modules. Moreover, it appears that some ASCII characters
-do not produce the expected results (even when escaped by <code>\</code>).&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+do not produce the expected results (evn when escaped by <code>\</code>).&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
