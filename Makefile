@@ -20,7 +20,7 @@ https://pdmosses.github.io/agda-material/
 # make serve                          63 seconds
 
 # DEPLOY A GENERATED WEBSITE:
-# make deploy                         70 seconds
+# make deploy                        100 seconds
 # make deploy  VERSION=...
 
 # MANAGE VERSIONS:
@@ -73,8 +73,9 @@ ROOT    := AllModulesIndex
 # Both DIR and ROOT may be comma-separated lists.
 # The top level of the ROOT module(s) should be in DIR.
 
-HTML    := docs/html
-MD      := docs/md
+HTML    := docs
+# WARNING: DO NOT DELETE THE HTML DIRECTORY!!!
+MD      := docs/nav
 SITE    := site
 TEMP    := temp
 
@@ -190,7 +191,10 @@ gen-html:
 	    $(AGDA-QUIET) --html --highlight-occurrences \
 	        --html-dir=$(HTML) $$r; \
 	done
+# 
+#	TypeTopology only:
 	@cp assets/Agda.css $(HTML)
+	@cd docs && ./updatehtml $(HTML) html
 
 # To ensure that the generated website does not include outdated HTML pages
 # for modules that were previously (but are no longer) imported by ROOT,
@@ -252,6 +256,10 @@ gen-md:
 	        --html-dir=$(TEMP) $$r; \
 	  done	      
 	@rm -f $(TEMP)/*.css $(TEMP)/*.js
+#
+#	TypeTopology only:
+	@cd docs && ./updatehtml $(TEMP) tex
+#
 #	Transform each file in TEMP to a hierarchical index.md file.
 #	Assumption: For all m, module m and module m.index do not both exist.
 #	When f = $(TEMP)/A.B.x or $(MD)/A.B.index.x: m is set to A.B,
@@ -405,7 +413,7 @@ list-all-deployed:
 .PHONY: clean-all
 clean-all:
 	@rm -rf $(TEMP)
-	@if [ $(HTML) != docs ]; then rm -rf $(HTML); fi
+	@if [ $(HTML) != docs ]; then rm -rf $(HTML); else rm $(HTML)/*.html; fi
 	@if [ $(MD) != docs ]; then rm -rf $(MD); fi
 	@rm -rf $(SITE)
 

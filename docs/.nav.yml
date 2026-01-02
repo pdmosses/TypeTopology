@@ -1,14 +1,14 @@
 nav:
-  - index.md
+  - nav.md
   - About: 
     - about.md
     - user-guide.md
   - AllModulesIndex:
-    - md/AllModulesIndex/index.md
+    - nav/AllModulesIndex/index.md
   - Library:
-    - md/index/index.md
-    - md/*
-  - HTML: html/AllModulesIndex.html
+    - nav/index/index.md
+    - nav/*
+  - HTML: AllModulesIndex.html
 
 preserve_directory_names: true
 

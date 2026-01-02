@@ -46,6 +46,6 @@ updating, removing, and browsing deployed versions.
 [docs/.nav.yml]: https://github.com/pdmosses/TypeTopology/blob/gen-website/docs/.nav.yml
 [About]: about.md
 [User Guide]: user-guide.md
-[AllModulesIndex]: md/AllModulesIndex/index.md
-[Library]: md/index/index.md
-[HTML]: html/AllModulesIndex.html
+[AllModulesIndex]: nav/AllModulesIndex/index.md
+[Library]: nav/index/index.md
+[HTML]: AllModulesIndex.html
