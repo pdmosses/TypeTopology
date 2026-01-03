@@ -1,13 +1,19 @@
 // Copyright 2023, Andreas Abel.
 // Falls under the Agda license at https://github.com/agda/agda/blob/master/LICENSE
 
+// Edited by @pdmosses for use with Material for MkDocs, see 
+// https://squidfunk.github.io/mkdocs-material/customization/?h=javascript#additional-javascript
+
 // When we hover over an Agda identifier, we highlight all occurrences of this identifier on the page.
 // To this end, we create a map from identifier to all of its occurrences in the beginning.
 
 // A dictionary from hrefs to 'a'-elements that have this href.
 const dict = new Map();
 
-window.onload = function () {
+// Replaced:
+// window.onload = function () {
+// by:
+onload = function () {
 
   // Get all 'a' tags with an 'href' attribute.
   // We call those "objects".
@@ -33,3 +39,6 @@ window.onload = function () {
     }
   }
 };
+
+// Added:
+document$.subscribe(onload);
