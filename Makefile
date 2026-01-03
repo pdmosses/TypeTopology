@@ -6,6 +6,19 @@ https://pdmosses.github.io/agda-material/
 
 # Peter Mosses (@pdmosses)
 
+# This Makefile, mkdocs.yml, and docs/{javascripts,stylesheets} were copied
+# from v0.1.0 of the Agda-Material repo.
+
+# MAIN CHANGES
+# The Makefile has been edited as follows to generate a TypeTopology website.
+# - variables DIR, ROOT, HTML, MD: custom values
+# - targets gen-html, gen-md, clean-all: automatic removal of outdated files
+
+# REQUIREMENTS
+# The following files and directories are generated, and can be deleted:
+# - docs/*.html
+# - subdirectories of docs that contain index.md files
+
 ##############################################################################
 # MAIN TARGETS                        TIME TAKEN FOR TYPETOPOLOGY LIBRARY
 
@@ -74,8 +87,7 @@ ROOT    := AllModulesIndex
 # The top level of the ROOT module(s) should be in DIR.
 
 HTML    := docs
-# WARNING: DO NOT DELETE THE HTML DIRECTORY!!!
-MD      := docs/nav
+MD      := docs
 SITE    := site
 TEMP    := temp
 
@@ -185,8 +197,7 @@ web: gen-html gen-md
 # Generate HTML files in the HTML directory:
 
 .PHONY: gen-html
-gen-html:
-	@if [ $(HTML) != docs ]; then rm -rf $(HTML); fi
+gen-html: clean-html
 	@for r in $(ROOT-FILES); do \
 	    $(AGDA-QUIET) --html --highlight-occurrences \
 	        --html-dir=$(HTML) $$r; \
@@ -248,9 +259,8 @@ gen-html:
 # All URLs that do not include a colon are assumed to be links to modules, and
 # get replaced by directory URLs (also in the prose parts).
 
-gen-md:
+gen-md: clean-md
 	@rm -rf $(TEMP)
-	@if [ $(MD) != docs ]; then rm -rf $(MD); fi
 	@for r in $(ROOT-FILES); do \
 	  $(AGDA-QUIET) --html --html-highlight=code --highlight-occurrences \
 	        --html-dir=$(TEMP) $$r; \
@@ -411,11 +421,29 @@ list-all-deployed:
 # `make clean-all` removes all generated files.
 
 .PHONY: clean-all
-clean-all:
+clean-all: clean-html clean-md
 	@rm -rf $(TEMP)
-	@if [ $(HTML) != docs ]; then rm -rf $(HTML); else rm $(HTML)/*.html; fi
-	@if [ $(MD) != docs ]; then rm -rf $(MD); fi
 	@rm -rf $(SITE)
+
+# `make clean-html` and `make clean-md` never remove the docs directory.
+
+.PHONY: clean-html
+clean-html:
+ifeq ($(HTML),docs)
+	@rm -f docs/*.{html,css,js}
+else
+	@rm -rf $(HTML)
+endif
+
+.PHONY: clean-md
+clean-md:
+ifeq ($(MD),docs)
+	@rm -rf $(shell \
+		    find docs/* -name index.md | \
+		    sd '(docs/[^/]*)/.*index\.md' '$$1' | sort -u)
+else
+	@rm -rf $(MD)
+endif
 
 ##############################################################################
 # HELPFUL TEXTS

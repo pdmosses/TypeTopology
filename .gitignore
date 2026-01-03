@@ -26,10 +26,8 @@ html/*
 source/html/*
 *.DS_Store
 #*
-docs/html/*
-docs/md/*
 docs/*.html
 docs/*.css
 docs/*.js
-docs/nav/*
+docs/**/index.md
 site/*

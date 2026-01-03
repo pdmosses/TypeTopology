@@ -37,6 +37,7 @@ theme:
     - navigation.instant
     - navigation.instant.progress
     - navigation.path
+    # - navigation.prune # works, but causes 1000s of false positives in linkcheck!
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
