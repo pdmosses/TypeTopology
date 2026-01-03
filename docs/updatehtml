@@ -24,7 +24,6 @@
 
 # cd ~/martinescardo.github.io/agda
 
-echo "Copying $1/*.$2 files"
 cd ../$1
 
 cp -a Higgs.index.$2 UF.HiggsInvolutionTheorem.$2
