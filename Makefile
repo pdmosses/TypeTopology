@@ -73,7 +73,7 @@ https://pdmosses.github.io/agda-material/
 # N.B. The variables HTML and MD affect the URLs of the generated pages.
 # With the above defaults, the URLs of pages in the HTML section of a
 # generated website are prefixed by `html/`, and the URLS of the other
-# generated pages are prefixed by `md/`. It is *possible* to eliminate those
+# generated pages are prefixed by `md/`. It is possible to eliminate those
 # prefixes by setting both variables to `docs`. However, the generation of
 # pages directly in `docs` may then overwrite non-generated files (depending
 # on the names of the Agda modules loaded by ROOT).
@@ -204,16 +204,9 @@ gen-html: clean-html
 	done
 # 
 #	TypeTopology only:
+#	Copy non-standard CSS file to HTML, and call updatehtml:
 	@cp assets/Agda.css $(HTML)
 	@cd docs && ./updatehtml $(HTML) html
-
-# To ensure that the generated website does not include outdated HTML pages
-# for modules that were previously (but are no longer) imported by ROOT,
-# the corresponding `*.html` files in HTML should be removed. If HTML=docs,
-# it is difficult to distinguish such files from non-generated HTML files.
-# To avoid the danger of removing files created by the user, it is left to
-# the user to identify and delete outdated `*.html` files manually when
-# HTML=docs.
 
 # Generate Markdown files in the MD directory:
 
@@ -425,7 +418,16 @@ clean-all: clean-html clean-md
 	@rm -rf $(TEMP)
 	@rm -rf $(SITE)
 
-# `make clean-html` and `make clean-md` never remove the docs directory.
+# To ensure that the generated website does not include outdated HTML pages
+# for modules that were previously (but are no longer) imported by ROOT,
+# the corresponding `*.html` files in HTML should be removed. If HTML=docs,
+# it is difficult to distinguish such files from non-generated HTML files.
+# To avoid the danger of removing files created by the user, it is left to
+# the user to identify and delete outdated `*.html` files manually when
+# HTML=docs. Similarly for the generated directories in MD when MD=docs.
+
+# TypeTopology only:
+# The files docs/*.{html,css,js} are all generated.
 
 .PHONY: clean-html
 clean-html:
@@ -434,6 +436,9 @@ ifeq ($(HTML),docs)
 else
 	@rm -rf $(HTML)
 endif
+
+# TypeTopology only:
+# The subdirectories of docs that include index.md are all generated.
 
 .PHONY: clean-md
 clean-md:
