@@ -260,9 +260,6 @@ gen-md: clean-md
 	  done	      
 	@rm -f $(TEMP)/*.css $(TEMP)/*.js
 #
-#	TypeTopology only:
-	@cd docs && ./updatehtml $(TEMP) tex
-#
 #	Transform each file in TEMP to a hierarchical index.md file.
 #	Assumption: For all m, module m and module m.index do not both exist.
 #	When f = $(TEMP)/A.B.x or $(MD)/A.B.index.x: m is set to A.B,
