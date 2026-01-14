@@ -1,8 +1,5 @@
 nav:
   - About: nav.md
-  - AllModulesIndex:
-    - AllModulesIndex/index.md
-    - HTML: AllModulesIndex.html
   - Modules:
     - index/index.md
     - '*'
