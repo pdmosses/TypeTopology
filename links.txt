@@ -1,0 +1,9 @@
+Crawling...
+
+Stats:
+ 2915519 links
+    1734 destination URLs
+      17 URLs ignored
+       0 warnings
+       0 errors
+

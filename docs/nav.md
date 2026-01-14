@@ -68,7 +68,7 @@ The approximate times taken by the above commands were:
 
     The 850+ Agda modules in the repository fork had previously been checked.
 
-According to [linkcheck], the website has 1793 pages with 3187981 links
+According to [linkcheck], the website has 1735 pages with 2915519 links
 (ignoring links to (S)CSS files).
 
 ## Agda-Material
