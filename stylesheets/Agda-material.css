@@ -18,6 +18,10 @@ code.Agda {
   background-color: var(--md-code-bg-color);
   font-size: 1em;
 }
+.Agda a.Module.Definition {
+  text-decoration: underline;
+  font-weight: bold;
+}
 
 /* Search */
 
