@@ -1,30 +1,39 @@
 <!DOCTYPE HTML>
-<html><head><meta charset="utf-8"><title>InfinitePigeon.PigeonProgram</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Comment">-- Martin Escardo and Paulo Oliva 2011</a>
+<html><head><meta charset="utf-8"><title>InfinitePigeon.PigeonProgram</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background">Martin Escardo and Paulo Oliva 2011
 
-<a id="41" class="Symbol">{-#</a> <a id="45" class="Keyword">OPTIONS</a> <a id="53" class="Pragma">--without-K</a> <a id="65" class="Symbol">#-}</a>
+</a><a id="38" class="Markup">\begin{code}</a>
 
-<a id="70" class="Keyword">module</a> <a id="" href="InfinitePigeon/PigeonProgram/" class="Module Definition">InfinitePigeon.PigeonProgram</a> <a id="106" class="Keyword">where</a>
+<a id="52" class="Symbol">{-#</a> <a id="56" class="Keyword">OPTIONS</a> <a id="64" class="Pragma">--without-K</a> <a id="76" class="Symbol">#-}</a>
 
-<a id="113" class="Keyword">open</a> <a id="118" class="Keyword">import</a> <a id="125" href="InfinitePigeon.Cantor.html" class="Module">InfinitePigeon.Cantor</a>
-<a id="147" class="Keyword">open</a> <a id="152" class="Keyword">import</a> <a id="159" href="InfinitePigeon.DataStructures.html" class="Module">InfinitePigeon.DataStructures</a>
-<a id="189" class="Keyword">open</a> <a id="194" class="Keyword">import</a> <a id="201" href="InfinitePigeon.FinitePigeon.html" class="Module">InfinitePigeon.FinitePigeon</a>
-<a id="229" class="Keyword">open</a> <a id="234" class="Keyword">import</a> <a id="241" href="InfinitePigeon.Logic.html" class="Module">InfinitePigeon.Logic</a>
-<a id="262" class="Keyword">open</a> <a id="267" class="Keyword">import</a> <a id="274" href="InfinitePigeon.Naturals.html" class="Module">InfinitePigeon.Naturals</a>
-<a id="298" class="Keyword">open</a> <a id="303" class="Keyword">import</a> <a id="310" href="InfinitePigeon.Two.html" class="Module">InfinitePigeon.Two</a>
+<a id="81" class="Keyword">module</a> <a id="" href="InfinitePigeon/PigeonProgram/" class="Module Definition">InfinitePigeon.PigeonProgram</a> <a id="117" class="Keyword">where</a>
 
-<a id="330" class="Comment">-- Given an infinite boolean sequence α and a natural number m, find a</a>
-<a id="401" class="Comment">-- boolean b and a finite list of length n with the indices of a</a>
-<a id="466" class="Comment">-- finite constant subsequence of α with value b at all</a>
-<a id="522" class="Comment">-- positions.</a>
-<a id="536" class="Comment">--</a>
-<a id="539" class="Comment">-- This is usually how such programs are specified in functional</a>
-<a id="604" class="Comment">-- programming (if they are at all). Here Theorem (defined in the</a>
-<a id="670" class="Comment">-- module FinitePigeon) is the program with the formal specification,</a>
-<a id="740" class="Comment">-- also formally checked. Once this is done we can erase the</a>
-<a id="801" class="Comment">-- specification.</a>
+<a id="124" class="Keyword">open</a> <a id="129" class="Keyword">import</a> <a id="136" href="InfinitePigeon.Cantor.html" class="Module">InfinitePigeon.Cantor</a>
+<a id="158" class="Keyword">open</a> <a id="163" class="Keyword">import</a> <a id="170" href="InfinitePigeon.DataStructures.html" class="Module">InfinitePigeon.DataStructures</a>
+<a id="200" class="Keyword">open</a> <a id="205" class="Keyword">import</a> <a id="212" href="InfinitePigeon.FinitePigeon.html" class="Module">InfinitePigeon.FinitePigeon</a>
+<a id="240" class="Keyword">open</a> <a id="245" class="Keyword">import</a> <a id="252" href="InfinitePigeon.Logic.html" class="Module">InfinitePigeon.Logic</a>
+<a id="273" class="Keyword">open</a> <a id="278" class="Keyword">import</a> <a id="285" href="InfinitePigeon.Naturals.html" class="Module">InfinitePigeon.Naturals</a>
+<a id="309" class="Keyword">open</a> <a id="314" class="Keyword">import</a> <a id="321" href="InfinitePigeon.Two.html" class="Module">InfinitePigeon.Two</a>
 
-<a id="pigeon-program"></a><a id="820" href="InfinitePigeon.PigeonProgram.html#820" class="Function">pigeon-program</a> <a id="835" class="Symbol">:</a> <a id="837" href="InfinitePigeon.Cantor.html#181" class="Function">₂ℕ</a> <a id="840" class="Symbol">→</a>  <a id="843" href="MLTT.Natural-Numbers-Type.html#96" class="Datatype">ℕ</a>  <a id="846" class="Symbol">→</a>  <a id="849" href="InfinitePigeon.Two.html#115" class="Datatype">₂</a>  <a id="852" href="InfinitePigeon.DataStructures.html#660" class="Datatype Operator">×</a>  <a id="855" href="InfinitePigeon.DataStructures.html#350" class="Datatype">List</a> <a id="860" href="MLTT.Natural-Numbers-Type.html#96" class="Datatype">ℕ</a>
-<a id="862" href="InfinitePigeon.PigeonProgram.html#820" class="Function">pigeon-program</a> <a id="877" href="InfinitePigeon.PigeonProgram.html#877" class="Bound">α</a> <a id="879" href="InfinitePigeon.PigeonProgram.html#879" class="Bound">m</a> <a id="881" class="Symbol">=</a> <a id="883" href="InfinitePigeon.PigeonProgram.html#905" class="Function">f</a><a id="884" class="Symbol">(</a><a id="885" href="InfinitePigeon.FinitePigeon.html#2785" class="Function">Theorem</a> <a id="893" href="InfinitePigeon.PigeonProgram.html#877" class="Bound">α</a> <a id="895" href="InfinitePigeon.PigeonProgram.html#879" class="Bound">m</a><a id="896" class="Symbol">)</a>
- <a id="899" class="Keyword">where</a> <a id="905" href="InfinitePigeon.PigeonProgram.html#905" class="Function">f</a> <a id="907" class="Symbol">:</a> <a id="909" href="InfinitePigeon.FinitePigeon.html#653" class="Function">Finite-Pigeonhole</a> <a id="927" href="InfinitePigeon.PigeonProgram.html#877" class="Bound">α</a> <a id="929" href="InfinitePigeon.PigeonProgram.html#879" class="Bound">m</a> <a id="931" class="Symbol">→</a> <a id="933" href="InfinitePigeon.Two.html#115" class="Datatype">₂</a> <a id="935" href="InfinitePigeon.DataStructures.html#660" class="Datatype Operator">×</a> <a id="937" href="InfinitePigeon.DataStructures.html#350" class="Datatype">List</a> <a id="942" href="MLTT.Natural-Numbers-Type.html#96" class="Datatype">ℕ</a>
-       <a id="951" href="InfinitePigeon.PigeonProgram.html#905" class="Function">f</a><a id="952" class="Symbol">(</a><a id="953" href="InfinitePigeon.Logic.html#1187" class="InductiveConstructor">∃-intro</a> <a id="961" href="InfinitePigeon.PigeonProgram.html#961" class="Bound">b</a> <a id="963" class="Symbol">(</a><a id="964" href="InfinitePigeon.Logic.html#1187" class="InductiveConstructor">∃-intro</a> <a id="972" href="InfinitePigeon.PigeonProgram.html#972" class="Bound">s</a> <a id="974" href="InfinitePigeon.PigeonProgram.html#974" class="Bound">proof</a><a id="979" class="Symbol">))</a> <a id="982" class="Symbol">=</a> <a id="984" class="Symbol">(</a><a id="985" href="InfinitePigeon.PigeonProgram.html#961" class="Bound">b</a> <a id="987" href="InfinitePigeon.DataStructures.html#689" class="InductiveConstructor Operator">,</a> <a id="989" href="InfinitePigeon.DataStructures.html#514" class="Function">list</a> <a id="994" href="InfinitePigeon.PigeonProgram.html#972" class="Bound">s</a><a id="995" class="Symbol">)</a>
-</pre></body></html>
+<a id="341" class="Markup">\end{code}</a><a id="351" class="Background">
+
+Given an infinite boolean sequence α and a natural number m, find a
+boolean b and a finite list of length n with the indices of a
+finite constant subsequence of α with value b at all
+positions.
+
+This is usually how such programs are specified in functional
+programming (if they are at all). Here Theorem (defined in the
+module FinitePigeon) is the program with the formal specification,
+also formally checked. Once this is done we can erase the
+specification.
+
+</a><a id="814" class="Markup">\begin{code}</a>
+
+<a id="pigeon-program"></a><a id="828" href="InfinitePigeon.PigeonProgram.html#828" class="Function">pigeon-program</a> <a id="843" class="Symbol">:</a> <a id="845" href="InfinitePigeon.Cantor.html#192" class="Function">₂ℕ</a> <a id="848" class="Symbol">→</a>  <a id="851" href="MLTT.Natural-Numbers-Type.html#96" class="Datatype">ℕ</a>  <a id="854" class="Symbol">→</a>  <a id="857" href="InfinitePigeon.Two.html#126" class="Datatype">₂</a>  <a id="860" href="InfinitePigeon.DataStructures.html#731" class="Datatype Operator">×</a>  <a id="863" href="InfinitePigeon.DataStructures.html#380" class="Datatype">List</a> <a id="868" href="MLTT.Natural-Numbers-Type.html#96" class="Datatype">ℕ</a>
+<a id="870" href="InfinitePigeon.PigeonProgram.html#828" class="Function">pigeon-program</a> <a id="885" href="InfinitePigeon.PigeonProgram.html#885" class="Bound">α</a> <a id="887" href="InfinitePigeon.PigeonProgram.html#887" class="Bound">m</a> <a id="889" class="Symbol">=</a> <a id="891" href="InfinitePigeon.PigeonProgram.html#915" class="Function">f</a><a id="892" class="Symbol">(</a><a id="893" href="InfinitePigeon.FinitePigeon.html#2843" class="Function">Theorem</a> <a id="901" href="InfinitePigeon.PigeonProgram.html#885" class="Bound">α</a> <a id="903" href="InfinitePigeon.PigeonProgram.html#887" class="Bound">m</a><a id="904" class="Symbol">)</a>
+ <a id="907" class="Keyword">where</a>
+  <a id="915" href="InfinitePigeon.PigeonProgram.html#915" class="Function">f</a> <a id="917" class="Symbol">:</a> <a id="919" href="InfinitePigeon.FinitePigeon.html#683" class="Function">Finite-Pigeonhole</a> <a id="937" href="InfinitePigeon.PigeonProgram.html#885" class="Bound">α</a> <a id="939" href="InfinitePigeon.PigeonProgram.html#887" class="Bound">m</a> <a id="941" class="Symbol">→</a> <a id="943" href="InfinitePigeon.Two.html#126" class="Datatype">₂</a> <a id="945" href="InfinitePigeon.DataStructures.html#731" class="Datatype Operator">×</a> <a id="947" href="InfinitePigeon.DataStructures.html#380" class="Datatype">List</a> <a id="952" href="MLTT.Natural-Numbers-Type.html#96" class="Datatype">ℕ</a>
+  <a id="956" href="InfinitePigeon.PigeonProgram.html#915" class="Function">f</a> <a id="958" class="Symbol">(</a><a id="959" href="InfinitePigeon.Logic.html#1206" class="InductiveConstructor">∃-intro</a> <a id="967" href="InfinitePigeon.PigeonProgram.html#967" class="Bound">b</a> <a id="969" class="Symbol">(</a><a id="970" href="InfinitePigeon.Logic.html#1206" class="InductiveConstructor">∃-intro</a> <a id="978" href="InfinitePigeon.PigeonProgram.html#978" class="Bound">s</a> <a id="980" href="InfinitePigeon.PigeonProgram.html#980" class="Bound">proof</a><a id="985" class="Symbol">))</a> <a id="988" class="Symbol">=</a> <a id="990" class="Symbol">(</a><a id="991" href="InfinitePigeon.PigeonProgram.html#967" class="Bound">b</a> <a id="993" href="InfinitePigeon.DataStructures.html#760" class="InductiveConstructor Operator">,</a> <a id="995" href="InfinitePigeon.DataStructures.html#563" class="Function">list</a> <a id="1000" href="InfinitePigeon.PigeonProgram.html#978" class="Bound">s</a><a id="1001" class="Symbol">)</a>
+
+<a id="1004" class="Markup">\end{code}</a><a id="1014" class="Background">
+</a></pre></body></html>
