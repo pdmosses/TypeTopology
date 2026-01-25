@@ -1,7 +1,10 @@
-Martin Escardo and Paulo Oliva, 2-27 July 2021, with more additions later.
+Martin Escardo and Paulo Oliva, 2-27 July 2021,
 
-Refactored and slightly improved October 2022, and then again in April
-2023 with many additions.
+Same as Games but with more general universes (MGU).
+
+The main novelty here, for now, is FiniteHistoryDependentRelativeMonadic, which works with relative
+monads on structured types, so that e.g. we can work with the affine
+monad of non-empty lists without repetitions for some applications.
 
 \begin{code}
 
@@ -9,23 +12,19 @@ Refactored and slightly improved October 2022, and then again in April
 
 module Games.index where
 
-import Games.Alternative             -- Alternative definition of games.
 import Games.Constructor             -- For simplifying the construction of games.
 import Games.Examples                -- Miscelaneous small examples.
 import Games.FiniteHistoryDependent  -- Theory of finite history dependent games.
 import Games.FiniteHistoryDependentMonadic
-                                     -- With additional monad for irrational players.
+                                        -- With additional monad for irrational players.
+import Games.FiniteHistoryDependentRelativeMonadic
+                                        -- Same but with relative monad.
 import Games.TicTacToe0
 import Games.TicTacToe1              -- Like TicTacToe0 but using Games.Constructor.
 import Games.TicTacToe2              -- More efficient and less elegant version.
 import Games.TypeTrees               -- Dependent type trees.
 import Games.alpha-beta              -- Many new things for efficiency.
+import Games.alpha-beta-examples
 import Games.Discussion
-import Games.OptimalPlays            -- Computes the list of all optimal plays of a game.
-
--- import Games.Main                 -- To be able to compile for efficieny.
-                                     -- Can't be imported here as it's not --safe.
-                                     -- This is for Agda compilation to Haskell of
-                                     -- examples to be able to run them more efficiently.
 
 \end{code}

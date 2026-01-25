@@ -63,8 +63,8 @@
      control safety and, to the extent this is currently possible, to
      control which type theory is used.
 
-   * In our last count, on 2025-12-13, this development has 869 Agda
-     files with 262K lines of code, including comments and blank
+   * In our last count, on 2026-01-23, this development has 874 Agda
+     files with 264K lines of code, including comments and blank
      lines.
 
 Philosophy of the repository
@@ -165,6 +165,7 @@ import Factorial.index
 import Field.index
 import Fin.index
 import Games.index
+import GamesLSU.index         -- Will be eventually deleted.
 import Groups.index
 import Higgs.index
 import InjectiveTypes.index
@@ -177,6 +178,7 @@ import MLTT.index
 import MetricSpaces.index
 import Modal.index
 import MonadOnTypes.index
+import MonadOnTypesLSU.index  -- Will be eventually deleted.
 import Naturals.index
 import Notation.index
 import NotionsOfDecidability.index
@@ -187,6 +189,7 @@ import PathSequences.index
 import Quotient.index
 import Rationals.index
 import Relations.index
+import RelativeMonadOnStructuredTypes.index
 import Slice.index
 import SyntheticHomotopyTheory.index
 import TWA.index

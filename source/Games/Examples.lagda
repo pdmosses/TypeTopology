@@ -18,11 +18,11 @@ open import MonadOnTypes.K
 module permutations where
 
 
- no-repetitions : ℕ → Type → 𝑻
+ no-repetitions : ℕ → 𝓤 ̇ → 𝑻 {𝓤}
  no-repetitions 0        X = []
  no-repetitions (succ n) X = X ∷ λ (x : X) → no-repetitions n (Σ y ꞉ X , y ≠ x)
 
- Permutations : ℕ → Type
+ Permutations : ℕ → 𝓤₀ ̇
  Permutations n = Path (no-repetitions n (Fin n))
 
  example-permutation2 : Permutations 2
@@ -40,7 +40,7 @@ open import UF.FunExt
 module search (fe : Fun-Ext) where
 
  open import MLTT.Athenian
- open import Games.FiniteHistoryDependent Bool
+ open import Games.FiniteHistoryDependent {𝓤₀} {𝓤₀} Bool
 
  open J-definitions Bool
 
@@ -69,14 +69,14 @@ module search (fe : Fun-Ext) where
 
 \begin{code}
 
-module another-game-representation (R : Type) where
+module another-game-representation {𝓤 𝓦₀ : Universe} (R : 𝓦₀ ̇ ) where
 
 
  open K-definitions R
 
- data GameK : Type₁ where
-  leaf   : R → GameK
-  branch : (X : Type) (Xf : X → GameK) (ϕ : K X) → GameK
+ data GameK {𝓤 : Universe} : 𝓤 ⁺ ⊔ 𝓦₀ ̇ where
+  leaf   : R → GameK {𝓤}
+  branch : (X : 𝓤 ̇ ) (Xf : X → GameK {𝓤}) (ϕ : K X) → GameK
 
 \end{code}
 
@@ -86,17 +86,17 @@ TODO. Define game isomorphism (and possibly homomorphism more generally).
 
 \begin{code}
 
- data 𝑻' (X : Type) : Type₁ where
+ data 𝑻' (X : 𝓤 ̇ ) : 𝓤 ⁺ ̇ where
   []  : 𝑻' X
-  _∷_ : (A : X → Type) (Xf : (x : X) → A x → 𝑻' X) → 𝑻' X
+  _∷_ : (A : X → 𝓤 ̇ ) (Xf : (x : X) → A x → 𝑻' X) → 𝑻' X
 
- record Game⁻ : Type₁ where
+ record Game⁻ {𝓤 : Universe} : 𝓤 ⁺ ⊔ 𝓦₀ ̇ where
   constructor game⁻
   field
-   Xt  : 𝑻
+   Xt  : 𝑻 {𝓤}
    q   : Path Xt → R
 
 \end{code}
 
-TODO. Game⁻ ≃ (Σ R : Type, 𝑻' R). In Game⁻, we know how to play the
+TODO. Game⁻ ≃ (Σ R : ? ̇ , 𝑻' R). In Game⁻, we know how to play the
 game, but we don't know what the objective of the game is.
