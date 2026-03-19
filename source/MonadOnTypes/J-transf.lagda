@@ -1,6 +1,6 @@
 Martin Escardo, Paulo Oliva, 2023
 
-A J monad transformer that give a monad T and a type R produces a new
+A J monad transformer that given a monad T and a type R produces a new
 monad JT X := (X → T R) → T X.
 
 \begin{code}
@@ -12,11 +12,7 @@ open import MLTT.Spartan hiding (J)
 module MonadOnTypes.J-transf where
 
 open import UF.FunExt
-open import MonadOnTypes.Construction
-
-private
- variable
-  𝓦₀ : Universe
+open import MonadOnTypes.Definition
 
 𝕁-transf : Fun-Ext
          → {ℓ : Universe → Universe}
@@ -28,7 +24,7 @@ private
   open T-definitions 𝕋
 
   JT : {𝓤 : Universe} → 𝓤 ̇ →  ℓ 𝓦₀ ⊔ ℓ 𝓤 ⊔ 𝓤 ̇
-  JT {𝓤} X = (X → T R) → T X
+  JT X = (X → T R) → T X
 
   ηᴶᵀ : {X : 𝓤 ̇ } → X → JT X
   ηᴶᵀ x p = ηᵀ x

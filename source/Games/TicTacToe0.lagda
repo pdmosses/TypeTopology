@@ -9,10 +9,10 @@ history dependent game.
 
 module Games.TicTacToe0 where
 
-open import Fin.ArgMinMax
 open import Fin.Topology
 open import Fin.Type
 open import Games.TypeTrees
+open import Games.ArgMinMax
 open import MLTT.Athenian
 open import MLTT.Spartan hiding (J)
 open import MonadOnTypes.J
@@ -31,7 +31,7 @@ R : 𝓤₀ ̇
 R = Fin 3
 
 open import Games.FiniteHistoryDependent {𝓤₀} {𝓤₀} R
-open import MonadOnTypes.JK
+open import MonadOnTypes.JK R
 
 \end{code}
 
@@ -195,6 +195,7 @@ Selection functions for players, namely argmin for X and argmax for O:
 \begin{code}
 
 open J-definitions R
+open ArgMinMax-Compact-Fin
 
 selection : (p : Player) {M : 𝓤 ̇ } → M → is-Compact M {𝓤₀} → J M
 selection X m κ p = pr₁ (compact-argmin p κ m)
@@ -207,7 +208,6 @@ And their derived quantifiers:
 \begin{code}
 
 open K-definitions R
-open JK R
 
 quantifier : Player → {M : 𝓤 ̇ } → is-Compact M → is-decidable M → K M
 quantifier p κ (inl m) = overline (selection p m κ)
@@ -255,7 +255,7 @@ selections b@(p , A) (succ k) with wins (opponent p) A | Move-decidable b
 ... | false | inr _  = ⟨⟩
 
 
-p : Path (Xt tic-tac-toe)
-p = sequenceᴶ (selections board₀ 9) (q tic-tac-toe)
+p : Path (game-tree tic-tac-toe)
+p = sequenceᴶ (selections board₀ 9) (payoff-function tic-tac-toe)
 
 \end{code}

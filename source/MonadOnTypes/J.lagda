@@ -10,11 +10,7 @@ open import MLTT.Spartan hiding (J)
 module MonadOnTypes.J where
 
 open import UF.FunExt
-open import MonadOnTypes.Construction
-
-private
- variable
-  𝓦₀ : Universe
+open import MonadOnTypes.Definition
 
 𝕁 : 𝓦₀ ̇ → Monad {λ 𝓤 → 𝓦₀ ⊔ 𝓤}
 𝕁 {𝓦₀} R = record {

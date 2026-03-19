@@ -20,7 +20,7 @@ module Games.TypeTrees
         {𝓤 : Universe}
        where
 
-open import MonadOnTypes.Construction
+open import MonadOnTypes.Definition hiding (map)
 open import UF.FunExt
 open import UF.Subsingletons
 open import UF.Subsingletons-FunExt
@@ -201,5 +201,72 @@ private
  structure'-∷ : (S : 𝓤 ̇ → 𝓥 ̇ ) (X : 𝓤 ̇ ) (Xf : X → 𝑻)
               → structure' S (X ∷ Xf) ＝ S X × ((x : X) → structure' S (Xf x))
  structure'-∷ S X Xf = refl
+
+\end{code}
+
+Moved here 22 Oct 2025 from code from 8th October 2025 in the file
+OptimalPlays, with a simplification on 29th October.
+
+\begin{code}
+
+open import MLTT.List
+
+private
+ ν : {X : 𝓤 ̇ }
+     {Xf : X → 𝑻}
+   → ((x : X) → List (Path (Xf x)))
+   → (X → List (Path (X ∷ Xf)))
+ ν f x = map (x ::_) (f x)
+
+\end{code}
+
+Notice that the above function ν transforms a dependent function into
+a non-dependent one.
+
+\begin{code}
+
+list-of-all-paths : (Xt : 𝑻)
+                    (lt : structure listed Xt)
+                  → List (Path Xt)
+list-of-all-paths [] ⟨⟩ = [ ⟨⟩ ]
+list-of-all-paths (X ∷ Xf) ((xs , m) , lf) = List-ext (ν f) xs
+ where
+  f : (x : X) → List (Path (Xf x))
+  f x = list-of-all-paths (Xf x) (lf x)
+
+path-is-member-of-list-of-all-paths : (Xt : 𝑻)
+                                      (lt : structure listed Xt)
+                                      (xs : Path Xt)
+                                    → member xs (list-of-all-paths Xt lt)
+path-is-member-of-list-of-all-paths [] ⟨⟩ ⟨⟩ = in-head
+path-is-member-of-list-of-all-paths (X ∷ Xf) ((ys , m) , lf) (x :: xs) = III
+ where
+  f : (x : X) → List (Path (Xf x))
+  f x = list-of-all-paths (Xf x) (lf x)
+
+  IH : member xs (f x)
+  IH = path-is-member-of-list-of-all-paths (Xf x) (lf x) xs
+
+  I : member  (x :: xs) (ν f x)
+  I = member-of-map→ (x ::_) (f x) xs IH
+
+  II : member (ν f x) (map (ν f) ys)
+  II = member-of-map→ (ν f) ys x (m x)
+
+  III : member (x :: xs) (List-ext (ν f) ys)
+  III = member-of-concat→ (x :: xs) (map (ν f) ys) (ν f x) II I
+
+\end{code}
+
+We are not currently using pmap, but we keep it for the record:
+
+\begin{code}
+
+pmap  : {X : 𝓤 ̇ }
+        {Xf : X → 𝑻}
+      → ((x : X) → Path (Xf x))
+      → List X
+      → List (Path (X ∷ Xf))
+pmap = dmap
 
 \end{code}

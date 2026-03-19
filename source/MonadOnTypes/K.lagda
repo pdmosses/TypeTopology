@@ -9,11 +9,7 @@ open import MLTT.Spartan hiding (J)
 
 module MonadOnTypes.K where
 
-open import MonadOnTypes.Construction
-
-private
- variable
-  𝓦₀ : Universe
+open import MonadOnTypes.Definition
 
 𝕂 : 𝓦₀ ̇ → Monad {λ 𝓤 → 𝓦₀ ⊔ 𝓤}
 𝕂 {𝓦₀} R = record {

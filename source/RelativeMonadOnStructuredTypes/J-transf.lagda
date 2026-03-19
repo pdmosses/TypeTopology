@@ -16,11 +16,7 @@ module RelativeMonadOnStructuredTypes.J-transf
 open 𝟙-Σ-structure ρ
 
 open import UF.FunExt
-open import RelativeMonadOnStructuredTypes.Construction
-
-private
- variable
-  𝓦₀ : Universe
+open import RelativeMonadOnStructuredTypes.Definition
 
 𝕁-transf : Fun-Ext
          → {ℓ : Universe → Universe}

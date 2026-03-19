@@ -1,6 +1,8 @@
-# Various new theorems in constructive univalent mathematics written in Agda
+# TypeTopology
 
-This development was started by Martin Escardo in 2010 as an `svn` project, and
+## Various new theorems in constructive univalent mathematics written in Agda
+
+This development was started by Martin Escardo at around 2010 as an `svn` project, and
 transferred to `github` Monday 5th February 2018.
 
 If you contribute, please add your full (legal or adopted) name and date
@@ -10,6 +12,19 @@ An [html rendering of the Agda
 code](http://www.cs.bham.ac.uk/~mhe/TypeTopology/index.html) is hosted at
 [Martin Escardo](https://www.cs.bham.ac.uk/~mhe/index.html)'s institutional web
 page.
+
+## Table of contents
+
+ 1. [How to cite this repository](https://github.com/martinescardo/TypeTopology/blob/master/README.md#how-to-cite)
+ 1. [Root Agda files](https://github.com/martinescardo/TypeTopology/blob/master/README.md#root-agda-files)
+ 1. [Current contributors](https://github.com/martinescardo/TypeTopology/blob/master/README.md#current-contributors-in-alphabetical-order-of-first-name)
+ 1. [Academic publications resulting from TypeTopology](https://github.com/martinescardo/TypeTopology/blob/master/README.md#publications-resulting-from-typetopology)
+ 1. [Statement of inclusion](https://github.com/martinescardo/TypeTopology/blob/master/STATEMENT-OF-INCLUSION.md)
+ 1. [Code of conduct](https://github.com/martinescardo/TypeTopology/blob/master/CODE-OF-CONDUCT.md)
+ 1. [Contributing](https://github.com/martinescardo/TypeTopology/blob/master/CONTRIBUTING.md)
+
+    (These guidelines need reworking. But, generally, see how we write things in TypeTopology, and try to immitate our style, although departures from our style may some times be acceptable, if they are implicitly or explicitly justified.)
+
 
 ## How to cite
 
@@ -27,7 +42,7 @@ You can use the following BibTeX entry to cite `TypeTopology`:
 If you are citing only your own files, then create a different bibtex file with
 only your name as author.
 
-## Root of the development
+## Root Agda files
 
  * [source/index.lagda](source/index.lagda) (only `--safe` modules).
  * [source/AllModulesIndex.lagda](source/AllModulesIndex.lagda) (including
@@ -36,11 +51,12 @@ only your name as author.
 
 ## Current contributors in alphabetical order of first name
 
-Please add yourself the first time you contribute.
+Please add yourself the first time you contribute. Use your adopted name, and not necessarily your given name, at your discretion.
 
 * Alice Laroche
 * Andrew Sneap
 * Andrew Swan
+* Anna Williams
 * Ayberk Tosun
 * Brendan Hart
 * Bruno Paiva
@@ -54,6 +70,7 @@ Please add yourself the first time you contribute.
 * Ian Ray
 * Igor Arrieta (ii)
 * J. A. Carr
+* Jakub Opršal
 * Jon Sterling
 * Kelton OBrien
 * Keri D'Angelo
@@ -117,6 +134,13 @@ Tosun.
    Calculi and Applications (TLCA 2015)](https://drops.dagstuhl.de/opus/portals/lipics/index.php?semnr=15006).
 
    https://doi.org/10.4230/LIPIcs.TLCA.2015.153
+
+
+1. Chuangjie Xu. *A Continuous Computational Interpretation of Type Theories*.
+   PhD thesis, School of Computer Science, University of
+   Birmingham, UK, 2015.
+
+   https://cj-xu.github.io/ContinuityType/xu-thesis.pdf
 
 1. Martín H. Escardó and T. Streicher. *The intrinsic topology of
    Martin-Löf universes.* [Annals of Pure and Applied
@@ -272,6 +296,14 @@ Tosun.
    types*. January 2026.
 
    https://doi.org/10.48550/arxiv.2601.12536
+
+1. Ayberk Tosun. *Constructive and Predicative Locale Theory in Univalent
+   Foundations*. PhD thesis. School of Computer Science, University of
+   Birmingham, UK. Submitted: 30 November 2024; accepted: 3 June 2025.
+
+   https://etheses.bham.ac.uk/id/eprint/16416/
+   Updated versions: \
+   https://arxiv.org/abs/2603.01308
 
 [CSL21]:  https://csl2021.fmf.uni-lj.si/
 [FSCD21]: https://fscd2021.dc.uba.ar/

@@ -4,7 +4,7 @@
    -------------------------------------------------------------
 
    Martin Escardo and collaborators,
-   2010--2025--∞, continuously evolving.
+   2010--2026--∞, continuously evolving.
 
    https://www.cs.bham.ac.uk/~mhe/
    https://www.cs.bham.ac.uk/~mhe/TypeTopology/
@@ -63,8 +63,8 @@
      control safety and, to the extent this is currently possible, to
      control which type theory is used.
 
-   * In our last count, on 2026-01-23, this development has 874 Agda
-     files with 264K lines of code, including comments and blank
+   * In our last count, on 2026-03-19, this development has 921 Agda
+     files with 271K lines of code, including comments and blank
      lines.
 
 Philosophy of the repository
@@ -153,6 +153,7 @@ import CoNaturals.index
 import ContinuityAxiom.index
 import Coslice.index
 import CrossedModules.index
+import C-Spaces.index
 import DedekindReals.index
 import DiscreteGraphicMonoids.index
 import DomainTheory.index
@@ -165,7 +166,6 @@ import Factorial.index
 import Field.index
 import Fin.index
 import Games.index
-import GamesLSU.index         -- Will be eventually deleted.
 import Groups.index
 import Higgs.index
 import InjectiveTypes.index
@@ -178,7 +178,6 @@ import MLTT.index
 import MetricSpaces.index
 import Modal.index
 import MonadOnTypes.index
-import MonadOnTypesLSU.index  -- Will be eventually deleted.
 import Naturals.index
 import Notation.index
 import NotionsOfDecidability.index
@@ -188,6 +187,7 @@ import PCF.index
 import PathSequences.index
 import Quotient.index
 import Rationals.index
+import ReflexiveGraphs.index
 import Relations.index
 import RelativeMonadOnStructuredTypes.index
 import Slice.index
