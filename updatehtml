@@ -42,7 +42,7 @@ cp -a InjectiveTypes.index.$2 InjectiveTypes.$2
 cp -a Locales.AdjointFunctorTheoremForFrames.$2 AdjointFunctorTheoremForFrames.$2
 cp -a Locales.CompactRegular.$2 CompactRegular.$2
 cp -a Locales.Frame.$2 Frame.$2
-cp -a Locales.GaloisConnection.$2 GaloisConnection.$2
+cp -a Locales.PosetalAdjunction.$2 GaloisConnection.$2
 cp -a Locales.HeytingImplication.$2 HeytingImplication.$2
 cp -a NotionsOfDecidability.SemiDecidable.$2 SemiDecidable.$2
 cp -a Ordinals.AdditionProperties.$2 OrdinalArithmetic-Properties.$2

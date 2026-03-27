@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html><head><meta charset="utf-8"><title>Iterative.index</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background">Martin Escardo &amp; Tom de Jong, June 2023.
 
-Iterative multisets, iterative sets, and iterative ordinals.
+Iterative multisets, iterative sets, and ordinals.
 
 For a blog-post style exposition of what is done here, see this post:
 https://mathstodon.xyz/@MartinEscardo/110753930251021051
@@ -13,23 +13,23 @@ Feel free to ask questions or make remarks there.
 
 Notice also that the files here also include comments.
 
-</a><a id="423" class="Markup">\begin{code}</a>
+</a><a id="413" class="Markup">\begin{code}</a>
 
-<a id="437" class="Symbol">{-#</a> <a id="441" class="Keyword">OPTIONS</a> <a id="449" class="Pragma">--safe</a> <a id="456" class="Pragma">--without-K</a> <a id="468" class="Symbol">#-}</a>
+<a id="427" class="Symbol">{-#</a> <a id="431" class="Keyword">OPTIONS</a> <a id="439" class="Pragma">--safe</a> <a id="446" class="Pragma">--without-K</a> <a id="458" class="Symbol">#-}</a>
 
-<a id="473" class="Keyword">module</a> <a id="" href="Iterative/" class="Module Definition">Iterative.index</a> <a id="496" class="Keyword">where</a>
+<a id="463" class="Keyword">module</a> <a id="" href="Iterative/" class="Module Definition">Iterative.index</a> <a id="486" class="Keyword">where</a>
 
-<a id="503" class="Keyword">import</a> <a id="510" href="Iterative.Multisets.html" class="Module">Iterative.Multisets</a>
-<a id="530" class="Keyword">import</a> <a id="537" href="Iterative.Sets.html" class="Module">Iterative.Sets</a>
-<a id="552" class="Keyword">import</a> <a id="559" href="Iterative.Ordinals.html" class="Module">Iterative.Ordinals</a>
-<a id="578" class="Keyword">import</a> <a id="585" href="Iterative.Multisets-Addendum.html" class="Module">Iterative.Multisets-Addendum</a>
-<a id="614" class="Keyword">import</a> <a id="621" href="Iterative.Multisets-HFLO.html" class="Module">Iterative.Multisets-HFLO</a>
-<a id="646" class="Keyword">import</a> <a id="653" href="Iterative.Sets-Addendum.html" class="Module">Iterative.Sets-Addendum</a>
-<a id="677" class="Keyword">import</a> <a id="684" href="Iterative.Ordinals-Addendum.html" class="Module">Iterative.Ordinals-Addendum</a>
-<a id="712" class="Keyword">import</a> <a id="719" href="Iterative.Multisets-IdentificationExample.html" class="Module">Iterative.Multisets-IdentificationExample</a> <a id="761" class="Comment">-- by Alice Laroche</a>
-<a id="781" class="Keyword">import</a> <a id="788" href="Iterative.Finite.html" class="Module">Iterative.Finite</a> <a id="805" class="Comment">-- by Alice Laroche</a>
+<a id="493" class="Keyword">import</a> <a id="500" href="Iterative.Multisets.html" class="Module">Iterative.Multisets</a>
+<a id="520" class="Keyword">import</a> <a id="527" href="Iterative.Sets.html" class="Module">Iterative.Sets</a>
+<a id="542" class="Keyword">import</a> <a id="549" href="Iterative.Ordinals.html" class="Module">Iterative.Ordinals</a>
+<a id="568" class="Keyword">import</a> <a id="575" href="Iterative.Multisets-Addendum.html" class="Module">Iterative.Multisets-Addendum</a>
+<a id="604" class="Keyword">import</a> <a id="611" href="Iterative.Multisets-HFLO.html" class="Module">Iterative.Multisets-HFLO</a>
+<a id="636" class="Keyword">import</a> <a id="643" href="Iterative.Sets-Addendum.html" class="Module">Iterative.Sets-Addendum</a>
+<a id="667" class="Keyword">import</a> <a id="674" href="Iterative.Ordinals-Addendum.html" class="Module">Iterative.Ordinals-Addendum</a>
+<a id="702" class="Keyword">import</a> <a id="709" href="Iterative.Multisets-IdentificationExample.html" class="Module">Iterative.Multisets-IdentificationExample</a> <a id="751" class="Comment">-- by Alice Laroche</a>
+<a id="771" class="Keyword">import</a> <a id="778" href="Iterative.Finite.html" class="Module">Iterative.Finite</a> <a id="795" class="Comment">-- by Alice Laroche</a>
 
-<a id="826" class="Markup">\end{code}</a><a id="836" class="Background">
+<a id="816" class="Markup">\end{code}</a><a id="826" class="Background">
 
 Abstract. Some of the development of &quot;Set-Theoretic and Type-Theoretic
 Ordinals Coincide&quot; is carried out but using Gylterud&#39;s construction of

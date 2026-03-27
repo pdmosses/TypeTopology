@@ -3,10 +3,12 @@
 
 Following Lawvere [1], we show that lists without repetitions over a
 discrete type form the free discrete graphic monoid, where a monoid is
-called graphic if it satisfies the identity xyx=xy.
+called *graphic* if it satisfies the identity xyx=xy.
 
 From this we conclude, in a standard way, that lists without
-repetitions form a monad.
+repetitions form a monad. Moreover, this monad is affine, which is the
+whole point of this exercise, for applications to game theory, in
+another folder.
 
 We thank Jonas Frey for giving us this reference:
 
@@ -17,42 +19,42 @@ We thank Jonas Frey for giving us this reference:
     pp. 51-74.
     https://github.com/mattearnshaw/lawvere/blob/master/pdfs/1989-display-of-graphics-and-their-applications-exemplifed-by-2-categories-and-the-hegelian-taco.pdf
 
-</a><a id="835" class="Markup">\begin{code}</a>
+</a><a id="964" class="Markup">\begin{code}</a>
 
-<a id="849" class="Symbol">{-#</a> <a id="853" class="Keyword">OPTIONS</a> <a id="861" class="Pragma">--safe</a> <a id="868" class="Pragma">--without-K</a> <a id="880" class="Symbol">#-}</a>
+<a id="978" class="Symbol">{-#</a> <a id="982" class="Keyword">OPTIONS</a> <a id="990" class="Pragma">--safe</a> <a id="997" class="Pragma">--without-K</a> <a id="1009" class="Symbol">#-}</a>
 
-<a id="885" class="Keyword">module</a> <a id="" href="DiscreteGraphicMonoids/" class="Module Definition">DiscreteGraphicMonoids.index</a> <a id="921" class="Keyword">where</a>
+<a id="1014" class="Keyword">module</a> <a id="" href="DiscreteGraphicMonoids/" class="Module Definition">DiscreteGraphicMonoids.index</a> <a id="1050" class="Keyword">where</a>
 
-<a id="928" class="Keyword">import</a> <a id="935" href="DiscreteGraphicMonoids.Type.html" class="Module">DiscreteGraphicMonoids.Type</a>
-<a id="963" class="Keyword">import</a> <a id="970" href="DiscreteGraphicMonoids.ListsWithoutRepetitions.html" class="Module">DiscreteGraphicMonoids.ListsWithoutRepetitions</a>
-<a id="1017" class="Keyword">import</a> <a id="1024" href="DiscreteGraphicMonoids.LWRDGM.html" class="Module">DiscreteGraphicMonoids.LWRDGM</a>
-<a id="1054" class="Keyword">import</a> <a id="1061" href="DiscreteGraphicMonoids.Free.html" class="Module">DiscreteGraphicMonoids.Free</a>
-<a id="1089" class="Keyword">import</a> <a id="1096" href="DiscreteGraphicMonoids.Monad.html" class="Module">DiscreteGraphicMonoids.Monad</a>
-<a id="1125" class="Keyword">import</a> <a id="1132" href="DiscreteGraphicMonoids.AffineMonad.html" class="Module">DiscreteGraphicMonoids.AffineMonad</a>
-<a id="1167" class="Keyword">import</a> <a id="1174" href="DiscreteGraphicMonoids.ListsWithoutRepetitionsMore.html" class="Module">DiscreteGraphicMonoids.ListsWithoutRepetitionsMore</a>
+<a id="1057" class="Keyword">import</a> <a id="1064" href="DiscreteGraphicMonoids.Type.html" class="Module">DiscreteGraphicMonoids.Type</a>                         <a id="1116" class="Comment">-- (1)</a>
+<a id="1123" class="Keyword">import</a> <a id="1130" href="DiscreteGraphicMonoids.ListsWithoutRepetitions.html" class="Module">DiscreteGraphicMonoids.ListsWithoutRepetitions</a>      <a id="1182" class="Comment">-- (2)</a>
+<a id="1189" class="Keyword">import</a> <a id="1196" href="DiscreteGraphicMonoids.LWRDGM.html" class="Module">DiscreteGraphicMonoids.LWRDGM</a>                       <a id="1248" class="Comment">-- (3)</a>
+<a id="1255" class="Keyword">import</a> <a id="1262" href="DiscreteGraphicMonoids.Free.html" class="Module">DiscreteGraphicMonoids.Free</a>                         <a id="1314" class="Comment">-- (4)</a>
+<a id="1321" class="Keyword">import</a> <a id="1328" href="DiscreteGraphicMonoids.Monad.html" class="Module">DiscreteGraphicMonoids.Monad</a>                        <a id="1380" class="Comment">-- (5)</a>
+<a id="1387" class="Keyword">import</a> <a id="1394" href="DiscreteGraphicMonoids.AffineMonad.html" class="Module">DiscreteGraphicMonoids.AffineMonad</a>                  <a id="1446" class="Comment">-- (6)</a>
+<a id="1453" class="Keyword">import</a> <a id="1460" href="DiscreteGraphicMonoids.ListsWithoutRepetitionsMore.html" class="Module">DiscreteGraphicMonoids.ListsWithoutRepetitionsMore</a>  <a id="1512" class="Comment">-- (7)</a>
 
-<a id="1226" class="Markup">\end{code}</a><a id="1236" class="Background">
+<a id="1520" class="Markup">\end{code}</a><a id="1530" class="Background">
 
-1. The module Type defines the type of discrete graphic monoids.
+1. The module `Type` defines the type of discrete graphic monoids.
 
-2. The module ListsWithoutRepetitions investigates lists without
+2. The module `ListsWithoutRepetitions` investigates lists without
    repetitions over discrete types.
 
-3. The module LWRDGM shows that lists without repetitions over a
+3. The module `LWRDGM` shows that lists without repetitions over a
    discrete type form a discrete graphic monoid.
 
-4. The module Free shows that lists without repetitions over a discrete
-   type form the free discrete graphic monoid.
+4. The module `Free` shows that lists without repetitions over a
+   discrete type form the free discrete graphic monoid.
 
-5. The module Monad uses this, in a standard way, to show that lists
+5. The module `Monad` uses this, in a standard way, to show that lists
    without repetitions form a monad. (TODO. The algebras of the monad
    are, up to equivalence, the graphic monoids, again in a standard
    way.)
 
-6. The module AffineMonad shows that non-empty lists without
+6. The module `AffineMonad` shows that non-empty lists without
    repetitions form an affine submonad of the above.
 
-7. The module ListsWithoutRepetitionsMore includes additional facts
-   about lists without repetitions that are not needed for our main
-   results.
+7. The module `ListsWithoutRepetitionsMore` includes additional facts
+   about lists without repetitions that ended up not being needed for
+   our main results, but may aid understanding.
 </a></pre></body></html>

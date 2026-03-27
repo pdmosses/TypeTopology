@@ -1,19 +1,79 @@
 <!DOCTYPE HTML>
-<html><head><meta charset="utf-8"><title>Categories.index</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background">Jon Sterling, 16 Dec 2022
+<html><head><meta charset="utf-8"><title>Categories.index</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background">Anna Williams, 17 October 2025
 
-This is a nascent development of some basic 1-category theory from the univalent
-point of view.
+Formalisation of some 1-category theory with univalent foundations.
+Included are definitions of wild categories, precategories,
+(univalent) categories, functors and natural transformations.
 
-</a><a id="125" class="Markup">\begin{code}</a>
+</a><a id="224" class="Markup">\begin{code}</a>
 
-<a id="139" class="Symbol">{-#</a> <a id="143" class="Keyword">OPTIONS</a> <a id="151" class="Pragma">--safe</a> <a id="158" class="Pragma">--without-K</a> <a id="170" class="Symbol">#-}</a>
+<a id="238" class="Symbol">{-#</a> <a id="242" class="Keyword">OPTIONS</a> <a id="250" class="Pragma">--safe</a> <a id="257" class="Pragma">--without-K</a> <a id="269" class="Symbol">#-}</a>
 
-<a id="175" class="Keyword">module</a> <a id="" href="Categories/" class="Module Definition">Categories.index</a> <a id="199" class="Keyword">where</a>
+<a id="274" class="Keyword">module</a> <a id="" href="Categories/" class="Module Definition">Categories.index</a> <a id="298" class="Keyword">where</a>
 
-<a id="206" class="Keyword">import</a> <a id="213" href="Categories.Category.html" class="Module">Categories.Category</a>
-<a id="233" class="Keyword">import</a> <a id="240" href="Categories.Functor.html" class="Module">Categories.Functor</a>
-<a id="259" class="Keyword">import</a> <a id="266" href="Categories.NaturalTransformation.html" class="Module">Categories.NaturalTransformation</a>
-<a id="299" class="Keyword">import</a> <a id="306" href="Categories.Adjunction.html" class="Module">Categories.Adjunction</a>
+<a id="305" class="Markup">\end{code}</a><a id="315" class="Background">
 
-<a id="329" class="Markup">\end{code}</a><a id="339" class="Background">
+We follow the naming conventions of the HoTT Book [1] and [2]. The properties of
+the different types of category are given in the table below.
+
+                ┌──────┬──────┬────────────┐
+                │ obj  │ hom  │ univalence │
+┌───────────────┼──────┼──────┼────────────┤
+│ wild-category │ type │ type │ no         │
+├───────────────┼──────┼──────┼────────────┤
+│ pre-category  │ type │ set  │ no         │
+├───────────────┼──────┼──────┼────────────┤
+│ category      │ type │ set  │ yes        │
+└───────────────┴──────┴──────┴────────────┘
+
+[1] The Univalent Foundations Program (2013), Homotopy Type Theory: Univalent
+Foundations of Mathematics. Institute for Advanced Study:
+https://homotopytypetheory.org/book.
+
+[2] Capriotti, Paolo and Nicolai Kraus (2017). Univalent Higher Categories via
+Complete Semi-Segal Type. https://arxiv.org/abs/1707.03693.
+
+</a><a id="1181" class="Markup">\begin{code}</a>
+
+<a id="1195" class="Keyword">import</a> <a id="1202" href="Categories.Wild.html" class="Module">Categories.Wild</a>
+<a id="1218" class="Keyword">import</a> <a id="1225" href="Categories.Pre.html" class="Module">Categories.Pre</a>
+<a id="1240" class="Keyword">import</a> <a id="1247" href="Categories.Univalent.html" class="Module">Categories.Univalent</a>
+
+<a id="1269" class="Keyword">import</a> <a id="1276" href="Categories.Functor.html" class="Module">Categories.Functor</a>
+<a id="1295" class="Keyword">import</a> <a id="1302" href="Categories.Functor-Composition.html" class="Module">Categories.Functor-Composition</a>
+<a id="1333" class="Keyword">import</a> <a id="1340" href="Categories.NaturalTransformation.html" class="Module">Categories.NaturalTransformation</a>
+<a id="1373" class="Keyword">import</a> <a id="1380" href="Categories.Adjoint.html" class="Module">Categories.Adjoint</a>
+
+<a id="1400" class="Keyword">import</a> <a id="1407" href="Categories.Notation.index.html" class="Module">Categories.Notation.index</a>
+<a id="1433" class="Keyword">import</a> <a id="1440" href="Categories.Examples.index.html" class="Module">Categories.Examples.index</a>
+
+<a id="1467" class="Markup">\end{code}</a><a id="1477" class="Background">
+
+The above defines notation for working with categories, we use this so that
+we can write the following and have the category fields be public.
+
+`open WildCategoryNotation C`
+`open PrecategoryNotation C`
+`open CategoryNotation C`
+`open FunctorNotation F renaming (functor-map to F&#39;)`
+`open NaturalTNotation N`
+
+We use this notation throughout the definitions, so for more concrete examples
+please look there.
+
+Displayed Categories.
+
+</a><a id="1911" class="Markup">\begin{code}</a>
+
+<a id="1925" class="Keyword">import</a> <a id="1932" href="Categories.Displayed.index.html" class="Module">Categories.Displayed.index</a>
+
+<a id="1960" class="Markup">\end{code}</a><a id="1970" class="Background">
+
+A listing relating to the masters project of Anna Williams
+
+</a><a id="2032" class="Markup">\begin{code}</a>
+
+<a id="2046" class="Keyword">import</a> <a id="2053" href="Categories.AW-MSciProject.html" class="Module">Categories.AW-MSciProject</a>
+
+<a id="2080" class="Markup">\end{code}</a><a id="2090" class="Background">
 </a></pre></body></html>

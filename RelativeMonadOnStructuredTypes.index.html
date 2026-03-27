@@ -13,42 +13,41 @@ non-empty lists without repetitions, we do get an affine monad.
 
 However, to work with a monad of lists without repetitions we need
 decidable equality on the types under consideration. This leads us to
-consider relative monads on strutured types, where in this example the
-structure is actually property, namely decidability of equality. In
-this example, we need decidable equality on X to be able to form T X,
-but we don&#39;t need to consider decidable equality on T X, so our monads
-don&#39;t need to be endofunctors, in the sense of [1].
+consider relative monads on strutured types, where, in this example,
+the structure is actually property, namely decidability of
+equality. In this example, we need decidable equality on X to be able
+to form T X, but we don&#39;t need to consider decidable equality on T X,
+so our monads don&#39;t need to be endofunctors, in the sense of [1].
 
 [1] Thorsten Altenkirch, James Chapman, Tarmo Uustalu, Monads need not
     be endofunctors, Logical Methods in Computer Science 11 1:3 (2015)
     1–40 [arXiv:1412.7148, doi:10.2168/LMCS-11(1:3)2015]
 
-</a><a id="985" class="Markup">\begin{code}</a>
+</a><a id="987" class="Markup">\begin{code}</a>
 
-<a id="999" class="Symbol">{-#</a> <a id="1003" class="Keyword">OPTIONS</a> <a id="1011" class="Pragma">--safe</a> <a id="1018" class="Pragma">--without-K</a> <a id="1030" class="Symbol">#-}</a>
+<a id="1001" class="Symbol">{-#</a> <a id="1005" class="Keyword">OPTIONS</a> <a id="1013" class="Pragma">--safe</a> <a id="1020" class="Pragma">--without-K</a> <a id="1032" class="Symbol">#-}</a>
 
-<a id="1035" class="Keyword">module</a> <a id="" href="RelativeMonadOnStructuredTypes/" class="Module Definition">RelativeMonadOnStructuredTypes.index</a> <a id="1079" class="Keyword">where</a>
+<a id="1037" class="Keyword">module</a> <a id="" href="RelativeMonadOnStructuredTypes/" class="Module Definition">RelativeMonadOnStructuredTypes.index</a> <a id="1081" class="Keyword">where</a>
 
-<a id="1086" class="Keyword">import</a> <a id="1093" href="RelativeMonadOnStructuredTypes.OneSigmaStructure.html" class="Module">RelativeMonadOnStructuredTypes.OneSigmaStructure</a> <a id="1142" class="Comment">-- (1)</a>
-<a id="1149" class="Keyword">import</a> <a id="1156" href="RelativeMonadOnStructuredTypes.Construction.html" class="Module">RelativeMonadOnStructuredTypes.Construction</a>      <a id="1205" class="Comment">-- (2)</a>
-<a id="1212" class="Keyword">import</a> <a id="1219" href="RelativeMonadOnStructuredTypes.NELWR.html" class="Module">RelativeMonadOnStructuredTypes.NELWR</a>             <a id="1268" class="Comment">-- (3)</a>
-<a id="1275" class="Keyword">import</a> <a id="1282" href="RelativeMonadOnStructuredTypes.J-transf.html" class="Module">RelativeMonadOnStructuredTypes.J-transf</a>          <a id="1331" class="Comment">-- (4)</a>
+<a id="1088" class="Keyword">import</a> <a id="1095" href="RelativeMonadOnStructuredTypes.OneSigmaStructure.html" class="Module">RelativeMonadOnStructuredTypes.OneSigmaStructure</a> <a id="1144" class="Comment">-- (1)</a>
+<a id="1151" class="Keyword">import</a> <a id="1158" href="RelativeMonadOnStructuredTypes.Definition.html" class="Module">RelativeMonadOnStructuredTypes.Definition</a>        <a id="1207" class="Comment">-- (2)</a>
+<a id="1214" class="Keyword">import</a> <a id="1221" href="RelativeMonadOnStructuredTypes.NELWR.html" class="Module">RelativeMonadOnStructuredTypes.NELWR</a>             <a id="1270" class="Comment">-- (3)</a>
+<a id="1277" class="Keyword">import</a> <a id="1284" href="RelativeMonadOnStructuredTypes.J-transf.html" class="Module">RelativeMonadOnStructuredTypes.J-transf</a>          <a id="1333" class="Comment">-- (4)</a>
 
-<a id="1339" class="Markup">\end{code}</a><a id="1349" class="Background">
+<a id="1341" class="Markup">\end{code}</a><a id="1351" class="Background">
 
  1. This defines the notion of structure we consider, which is
     required to be closed under 𝟙 and Σ.
 
  2. This defines relative monads on types equipped with the structure
-    defined in (1).  Because we also want to eventually consider
+    defined in (1) above. Because we also want to eventually consider
     relative monads such as e.g. non-empty powersets over types with
     some structure, which changes universe level, our monads are
-    parametrized by a function ℓ : Universe → Universe (this requires
-    using the Agda flag no-level-universe). For example, for lists
-    without repetitions, we have ℓ 𝓤 = 𝓤, but for powersets we have
-    ℓ 𝓤 = 𝓤⁺.
+    parametrized by a function ℓ : Universe → Universe. For example,
+    for lists without repetitions, we have ℓ 𝓤 = 𝓤, but for powersets
+    we have ℓ 𝓤 = 𝓤⁺.
 
- 3. This defines an affine relative monad of non-empty lists without
+ 3. This defines the affine, relative monad of non-empty lists without
     repetitions on types with decidable equality. This crucially
     relies on a file that considers discrete graphic monoids in the
     sense of Lawvere.

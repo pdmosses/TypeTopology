@@ -32,25 +32,25 @@ main : IO ⊤
 main = putStrLn (showℕ (Fin-to-ℕ r))
 -}</a>
 
-<a id="518" class="Keyword">open</a> <a id="523" class="Keyword">import</a> <a id="530" href="GamesLSU.alpha-beta.html" class="Module">GamesLSU.alpha-beta</a>
+<a id="518" class="Keyword">open</a> <a id="523" class="Keyword">import</a> <a id="530" href="Games.alpha-beta.html" class="Module">Games.alpha-beta</a>
 
-<a id="main₀"></a><a id="551" href="Games.Main.html#551" class="Function">main₀</a> <a id="557" class="Symbol">:</a> <a id="559" href="Unsafe.Haskell.html#1219" class="Postulate">IO</a> <a id="562" href="Unsafe.Haskell.html#1383" class="Record">Unit</a>
-<a id="567" href="Games.Main.html#551" class="Function">main₀</a> <a id="573" class="Symbol">=</a> <a id="575" href="Unsafe.Haskell.html#1506" class="Postulate">putStrLn</a> <a id="584" class="Symbol">(</a><a id="585" href="Unsafe.Haskell.html#1838" class="Function">showListℕ</a> <a id="595" href="GamesLSU.alpha-beta.html#24765" class="Function">test⋆</a><a id="600" class="Symbol">)</a>
+<a id="main₀"></a><a id="548" href="Games.Main.html#548" class="Function">main₀</a> <a id="554" class="Symbol">:</a> <a id="556" href="Unsafe.Haskell.html#1219" class="Postulate">IO</a> <a id="559" href="Unsafe.Haskell.html#1383" class="Record">Unit</a>
+<a id="564" href="Games.Main.html#548" class="Function">main₀</a> <a id="570" class="Symbol">=</a> <a id="572" href="Unsafe.Haskell.html#1506" class="Postulate">putStrLn</a> <a id="581" class="Symbol">(</a><a id="582" href="Unsafe.Haskell.html#1838" class="Function">showListℕ</a> <a id="592" href="Games.alpha-beta.html#25417" class="Function">test⋆</a><a id="597" class="Symbol">)</a>
 
 
-<a id="main₁"></a><a id="604" href="Games.Main.html#604" class="Function">main₁</a> <a id="610" class="Symbol">:</a> <a id="612" href="Unsafe.Haskell.html#1219" class="Postulate">IO</a> <a id="615" href="Unsafe.Haskell.html#1383" class="Record">Unit</a>
-<a id="620" href="Games.Main.html#604" class="Function">main₁</a> <a id="626" class="Symbol">=</a> <a id="628" href="Unsafe.Haskell.html#1506" class="Postulate">putStrLn</a> <a id="637" class="Symbol">(</a><a id="638" href="Unsafe.Haskell.html#1838" class="Function">showListℕ</a> <a id="648" class="Symbol">(</a><a id="649" href="GamesLSU.alpha-beta.html#23820" class="Function">test†</a> <a id="655" href="Games.Main.html#703" class="Postulate">fe</a><a id="657" class="Symbol">))</a>
- <a id="661" class="Keyword">where</a>
-  <a id="669" class="Keyword">open</a> <a id="674" class="Keyword">import</a> <a id="681" href="UF.FunExt.html" class="Module">UF.FunExt</a>
-  <a id="693" class="Keyword">postulate</a> <a id="703" href="Games.Main.html#703" class="Postulate">fe</a> <a id="706" class="Symbol">:</a> <a id="708" href="UF.FunExt.html#1047" class="Function">Fun-Ext</a>
+<a id="main₁"></a><a id="601" href="Games.Main.html#601" class="Function">main₁</a> <a id="607" class="Symbol">:</a> <a id="609" href="Unsafe.Haskell.html#1219" class="Postulate">IO</a> <a id="612" href="Unsafe.Haskell.html#1383" class="Record">Unit</a>
+<a id="617" href="Games.Main.html#601" class="Function">main₁</a> <a id="623" class="Symbol">=</a> <a id="625" href="Unsafe.Haskell.html#1506" class="Postulate">putStrLn</a> <a id="634" class="Symbol">(</a><a id="635" href="Unsafe.Haskell.html#1838" class="Function">showListℕ</a> <a id="645" class="Symbol">(</a><a id="646" href="Games.alpha-beta.html#24479" class="Function">test†</a> <a id="652" href="Games.Main.html#700" class="Postulate">fe</a><a id="654" class="Symbol">))</a>
+ <a id="658" class="Keyword">where</a>
+  <a id="666" class="Keyword">open</a> <a id="671" class="Keyword">import</a> <a id="678" href="UF.FunExt.html" class="Module">UF.FunExt</a>
+  <a id="690" class="Keyword">postulate</a> <a id="700" href="Games.Main.html#700" class="Postulate">fe</a> <a id="703" class="Symbol">:</a> <a id="705" href="UF.FunExt.html#1047" class="Function">Fun-Ext</a>
 
-<a id="main₂"></a><a id="717" href="Games.Main.html#717" class="Function">main₂</a> <a id="723" class="Symbol">:</a> <a id="725" href="Unsafe.Haskell.html#1219" class="Postulate">IO</a> <a id="728" href="Unsafe.Haskell.html#1383" class="Record">Unit</a>
-<a id="733" href="Games.Main.html#717" class="Function">main₂</a> <a id="739" class="Symbol">=</a> <a id="741" href="Unsafe.Haskell.html#1506" class="Postulate">putStrLn</a> <a id="750" class="Symbol">(</a><a id="751" href="Unsafe.Haskell.html#1838" class="Function">showListℕ</a> <a id="761" href="GamesLSU.alpha-beta.html#23462" class="Function">testo</a><a id="766" class="Symbol">)</a>
+<a id="main₂"></a><a id="714" href="Games.Main.html#714" class="Function">main₂</a> <a id="720" class="Symbol">:</a> <a id="722" href="Unsafe.Haskell.html#1219" class="Postulate">IO</a> <a id="725" href="Unsafe.Haskell.html#1383" class="Record">Unit</a>
+<a id="730" href="Games.Main.html#714" class="Function">main₂</a> <a id="736" class="Symbol">=</a> <a id="738" href="Unsafe.Haskell.html#1506" class="Postulate">putStrLn</a> <a id="747" class="Symbol">(</a><a id="748" href="Unsafe.Haskell.html#1838" class="Function">showListℕ</a> <a id="758" href="Games.alpha-beta.html#24120" class="Function">testo</a><a id="763" class="Symbol">)</a>
 
-<a id="main₃"></a><a id="769" href="Games.Main.html#769" class="Function">main₃</a> <a id="775" class="Symbol">:</a> <a id="777" href="Unsafe.Haskell.html#1219" class="Postulate">IO</a> <a id="780" href="Unsafe.Haskell.html#1383" class="Record">Unit</a>
-<a id="785" href="Games.Main.html#769" class="Function">main₃</a> <a id="791" class="Symbol">=</a> <a id="793" href="Unsafe.Haskell.html#1506" class="Postulate">putStrLn</a> <a id="802" class="Symbol">(</a><a id="803" href="Unsafe.Haskell.html#1723" class="Function">showℕ</a> <a id="809" href="GamesLSU.alpha-beta.html#22992" class="Function">test</a><a id="813" class="Symbol">)</a>
+<a id="main₃"></a><a id="766" href="Games.Main.html#766" class="Function">main₃</a> <a id="772" class="Symbol">:</a> <a id="774" href="Unsafe.Haskell.html#1219" class="Postulate">IO</a> <a id="777" href="Unsafe.Haskell.html#1383" class="Record">Unit</a>
+<a id="782" href="Games.Main.html#766" class="Function">main₃</a> <a id="788" class="Symbol">=</a> <a id="790" href="Unsafe.Haskell.html#1506" class="Postulate">putStrLn</a> <a id="799" class="Symbol">(</a><a id="800" href="Unsafe.Haskell.html#1723" class="Function">showℕ</a> <a id="806" href="Games.alpha-beta.html#23658" class="Function">test</a><a id="810" class="Symbol">)</a>
 
-<a id="main"></a><a id="816" href="Games.Main.html#816" class="Function">main</a> <a id="821" class="Symbol">=</a> <a id="823" href="Games.Main.html#604" class="Function">main₁</a>
+<a id="main"></a><a id="813" href="Games.Main.html#813" class="Function">main</a> <a id="818" class="Symbol">=</a> <a id="820" href="Games.Main.html#601" class="Function">main₁</a>
 
-<a id="830" class="Markup">\end{code}</a><a id="840" class="Background">
+<a id="827" class="Markup">\end{code}</a><a id="837" class="Background">
 </a></pre></body></html>
