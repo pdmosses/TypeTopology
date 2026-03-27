@@ -14,6 +14,7 @@ use_directory_urls: true
 
 theme:
   name: material
+  font: false # use system fonts instead of Roboto
   palette: 
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -37,7 +38,6 @@ theme:
     - navigation.instant
     - navigation.instant.progress
     - navigation.path
-    # - navigation.prune # works, but causes 1000s of false positives in linkcheck!
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
@@ -46,18 +46,20 @@ theme:
     - search.suggest
 
 extra_css:
+# KaTeX:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+# Agda:
   - stylesheets/Agda-material.css
   - stylesheets/Agda-md.css
   - stylesheets/Agda-md-dark.css
-# KaTeX:
-  - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
-  - javascripts/highlight-hover.js
 # KaTeX:
   - javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+# Agda:
+  - javascripts/highlight-hover.js
 
 markdown_extensions:
   - admonition
