@@ -68,7 +68,7 @@ The approximate times taken by the above commands were:
 Running [linkcheck]:
 
 ```sh
-linkcheck/linkcheck -e localhost:8010 --skip-file skip.txt
+TypeTopology: linkcheck/linkcheck -e localhost:8010 --skip-file skip.txt
 Perfect. Checked 3105604 links, 1867 destination URLs (1 ignored).
 ```
 
