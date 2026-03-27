@@ -1,5 +1,5 @@
 nav:
-  - About: nav.md
+  - index.md
   - Modules:
     - index/index.md
     - '*'
