@@ -1,98 +1,226 @@
-# A TypeTopology Website
+---
+title: index
+hide: toc
+---
 
-This website was generated from the Agda source files in a ***[FORK]*** of the
-[TypeTopology repository] using a *[Makefile]* (copied from the
-[Agda-Material template], with minor adjustments).
+# 
 
-!!! warning
+<pre class="Agda">   TypeTopology
 
-    The current **definitive [TypeTopology website]** is generated directly
-    from the Agda files in the [TypeTopology repository]. Some of the Agda
-    files in the fork from which the present website was generated may be
-    outdated.
+   Various new theorems in univalent mathematics written in Agda
+   -------------------------------------------------------------
 
-The theme *[Material for MkDocs]* with the *[Awesome-Nav]* plugin generates the
-hierarchical navigation menus from the directory structure of the repository
-and the `nav` specification in the file *[docs/.nav.yml]*. 
+   Martin Escardo and collaborators,
+   2010--2026--∞, continuously evolving.
 
-The *[Modules]* section lists an `index` module that imports the `index` for
-for each part of the TypeTopology library. The section also includes
-[AllModulesIndex], which is the main index, in the sense of being the only one
-which imports everything else recursively, while [index] is the index of
-`--safe` things which strictly use the philosophy of TypeTopology.
+   https://www.cs.bham.ac.uk/~mhe/
+   https://www.cs.bham.ac.uk/~mhe/TypeTopology/
+   https://github.com/martinescardo/TypeTopology
 
-!!! info
+   Tested with Agda 2.8.0
+   (it will probably work with Agda 2.7.0.1, and it may still work with Agda 2.6.4.3).
 
-    This website was deployed from the `gen-website` branch of the repository.
+   * Our main use of this development is as a personal blackboard or
+     notepad for our research and that of collaborators. In
+     particular, some modules have better and better results or
+     approaches, as time progresses, with the significant steps kept,
+     and with failed ideas and calculations eventually erased.
 
-This website was generated from a [fork] of the TypeTopology repository
-after copying the following files from the [Agda-Material template]:
+   * We offer this page as a preliminary announcement of results to be
+     submitted for publication, of the kind we would get when we visit
+     a mathematician's office.
 
-- `Makefile`
-- `mkdocs.yml`
-- `docs/*`
+   * We have also used this development for learning other people's
+     results, and so some previously known constructions and theorems
+     are included (sometimes with embellishments).
 
-`Makefile`, `mkdocs.yml`, and `docs/.nav.yml` required minor editing.
-The `docs/*.md` files were replaced by the `docs/index.md` file containing the
-source for the current page. The shell script `docs/updatehtml` was copied
-from `admin-utilities/updatehtml`.
+   * The required material on HoTT/UF has been developed on demand
+     over the years to fulfill the needs of the above as they arise,
+     and hence is somewhat chaotic. It will continue to expand as the
+     need arises. Its form is the result of evolution rather than
+     intelligent design (paraphrasing Linus Torvalds).
 
-The shell commands used to check the Agda sources, then generate and browse
-this website, were:
+     Our lecture notes develop HoTT/UF in Agda in a more principled
+     way, and offers better approaches to some constructions and
+     simpler proofs of some (previously) difficult theorems.
+     (https://www.cs.bham.ac.uk/~mhe/HoTT-UF-in-Agda-Lecture-Notes/)
 
-```sh
-make check
-make web
-make serve
-```
+     Our philosophy, here and in the lecture notes, is to work with a
+     minimal Martin-Löf type theory, and use principles from HoTT/UF
+     (existence of propositional truncations, function extensionality,
+     propositional extensionality, univalence, propositional resizing,
+     etc.)  and classical mathematics (excluded middle, choice, LPO,
+     WLPO) as explicit assumptions for the theorems, or for the
+     modules, that require them. As a consequence, we are able to tell
+     very precisely which assumptions of HoTT/UF and classical
+     mathematics, if any, we have used for each construction, theorem
+     or set of results. We also work, deliberately, with a minimal
+     subset of Agda. See below for more about the philosophy.
 
-The following command was used to deploy the generated website to GitHub Pages:
+   * There is also a module that links some "unsafe" modules that use
+     type theory beyond MLTT and HoTT/UF, which cannot be included in
+     this safe-modules index: The system with type-in-type is
+     inconsistent (as is well known), countable Tychonoff, and
+     compactness of the Cantor type using countable Tychonoff, and
+     more.
 
-```sh
-make deploy
-```
+     https://www.cs.bham.ac.uk/~mhe/TypeTopology/AllModulesIndex.html
 
-(Further commands can be used to deploy a versioned website.)
+     This file also explains which options are used in TypeTopology to
+     control safety and, to the extent this is currently possible, to
+     control which type theory is used.
 
-The approximate times taken by the above commands were:
+   * In our last count, on 2026-03-27, this development has 925 Agda
+     files with 272K lines of code, including comments and blank
+     lines.
 
-- `make check`: 15 seconds
-- `make web`: 100 seconds
-- `make serve`: 75 seconds
-- `make deploy`: 100 seconds
+Philosophy of the repository
+----------------------------
 
-!!! note
+   * We adopt the univalent point of view, even in modules which don't
+     assume the univalence axiom. In particular, we take seriously the
+     distinction between types that are singletons (contractible),
+     propositions, sets, 1-groupoids etc., even when the univalence
+     axiom, or its typical consequences such as function
+     extensionality and propositional extensionality, are not needed
+     to reason about them.
 
-    The 850+ Agda modules in the repository fork had previously been checked.
+   * We work in a minimal version of intensional Martin-Löf Type
+     Theory, with very few exceptions, which we refer to as Spartan
+     MLTT. This is compatible with the UniMath approach.
 
-Running [linkcheck]:
+   * We adopt the Agda flag exact-split, so that Agda definitions by
+     pattern matching are definitional equalities, to stay as close as
+     Agda can check to the above MLTT.
 
-```sh
-TypeTopology: linkcheck/linkcheck -e localhost:8010 --skip-file skip.txt
-Perfect. Checked 3105604 links, 1867 destination URLs (1 ignored).
-```
+   * We work in a minimal subset of Agda to implement Spartan MLTT and
+     work with it. In particular, we restrict ourselves to safe
+     features (with the flags --safe --no-sized-types --no-guardedness
+     and more).
 
-## Agda-Material
+   * Most of the time we prefer to use Σ types rather than records,
+     although records are not forbidden, as they are equivalent to
+     iterated Σ types. The reason for this is that UF has a number of
+     constructions and theorems for Σ types that we often need to
+     apply.
 
-The [Agda-Material template] supports **generation of websites** with
-**highlighted, hyperlinked listings** of (plain or literate) Agda source code.
-See the [Agda-Material] website for how to install and use the template, and
-for some test modules.
+   * Some functions, theorems, and definitions need HoTT/UF
+     axioms. They are always given explicitly as assumptions.
+     Postulates are not allowed in this development.
 
-[Agda-Material]: https://pdmosses.github.io/agda-material/
-[Agda-Material template]: https://github.com/pdmosses/agda-material/
-[Material for MkDocs]: https://squidfunk.github.io/mkdocs-material/
-[Awesome-Nav]: https://lukasgeiter.github.io/mkdocs-awesome-nav/
-[mike]: https://github.com/jimporter/mike/
-[linkcheck]: https://github.com/filiph/linkcheck/
+   * The development is mostly constructive.
 
-[TypeTopology repository]: https://github.com/martinescardo/TypeTopology/
-[TypeTopology website]: https://martinescardo.github.io/TypeTopology/
+     A few theorems have non-constructive, explicit assumptions, such
+     as excluded middle, or choice or global choice. One example is
+     Cantor-Schröder-Bernstein for arbitrary (homotopy) types, which
+     was published in the Journal of Homotopy and Related Structures
+     (written in mathematical vernacular as advanced in the HoTT book
+     and originally proposed by Peter Aczel). We also have Zorn's
+     Lemma, the Well-Ordering Principle and more.
 
-[FORK]: https://github.com/pdmosses/TypeTopology/tree/gen-website
-[Makefile]: https://github.com/pdmosses/TypeTopology/blob/gen-website/Makefile
-[docs/.nav.yml]: https://github.com/pdmosses/TypeTopology/blob/gen-website/docs/.nav.yml
-[index]: index/index.md
-[Modules]: index/index.md
-[AllModulesIndex]: AllModulesIndex/index.md
-[HTML]: AllModulesIndex.html
+   * We don't assume propositional resizing as Voevodsky and UniMath do.
+
+     But there are some theorems whose hypotheses or conclusions
+     involve propositional resizing.
+
+   * The general idea is that any theorem here should be valid in any
+     ∞-topos, but some theorems will be valid only in special ∞-toposes,
+     such as boolean toposes or other kinds of toposes.
+
+   * In particular, we don't use Cubical Agda features, deliberately,
+     because at present it is not known whether (some) cubical type
+     theory has an interpretation in any ∞-topos.
+
+     However, by fulfilling the HoTT hypotheses with Cubical-Agda
+     implementations, we should be able to run the constructions and
+     proofs given here, so that we get constructivity in the
+     computational sense, as opposed to constructivity just in the
+     sense of validity in any (∞-)topos.
+
+   * Although our philosophy is based on HoTT/UF and ∞-toposes, it
+     should be emphasized that much of what we do here also holds in
+     the setoid model. In particular, this model validates function
+     extensionality, the existence of propositional truncations and
+     the existence of quotients, and some higher inductive types.
+
+Click at the imported module names below to navigate to them:
+
+<code class="Agda">
+<a id="6590" class="Symbol">{-#</a> <a id="6594" class="Keyword">OPTIONS</a> <a id="6602" class="Pragma">--safe</a> <a id="6609" class="Pragma">--without-K</a> <a id="6621" class="Symbol">#-}</a>
+
+<a id="6626" class="Keyword">module</a> <a id="" href="index_.html" class="Module Definition">index</a> <a id="6639" class="Keyword">where</a>
+
+<a id="6646" class="Keyword">import</a> <a id="6653" href="Apartness/" class="Module">Apartness.index</a>
+<a id="6669" class="Keyword">import</a> <a id="6676" href="BinarySystems/" class="Module">BinarySystems.index</a>
+<a id="6696" class="Keyword">import</a> <a id="6703" href="CantorSchroederBernstein/" class="Module">CantorSchroederBernstein.index</a>
+<a id="6734" class="Keyword">import</a> <a id="6741" href="Cardinals/" class="Module">Cardinals.index</a>
+<a id="6757" class="Keyword">import</a> <a id="6764" href="Categories/" class="Module">Categories.index</a>
+<a id="6781" class="Keyword">import</a> <a id="6788" href="CoNaturals/" class="Module">CoNaturals.index</a>
+<a id="6805" class="Keyword">import</a> <a id="6812" href="ContinuityAxiom/" class="Module">ContinuityAxiom.index</a>
+<a id="6834" class="Keyword">import</a> <a id="6841" href="Coslice/" class="Module">Coslice.index</a>
+<a id="6855" class="Keyword">import</a> <a id="6862" href="CrossedModules/" class="Module">CrossedModules.index</a>
+<a id="6883" class="Keyword">import</a> <a id="6890" href="C-Spaces/" class="Module">C-Spaces.index</a>
+<a id="6905" class="Keyword">import</a> <a id="6912" href="DedekindReals/" class="Module">DedekindReals.index</a>
+<a id="6932" class="Keyword">import</a> <a id="6939" href="DiscreteGraphicMonoids/" class="Module">DiscreteGraphicMonoids.index</a>
+<a id="6968" class="Keyword">import</a> <a id="6975" href="DomainTheory/" class="Module">DomainTheory.index</a>
+<a id="6994" class="Keyword">import</a> <a id="7001" href="Dominance/" class="Module">Dominance.index</a>
+<a id="7017" class="Keyword">import</a> <a id="7024" href="Duploids/" class="Module">Duploids.index</a>
+<a id="7039" class="Keyword">import</a> <a id="7046" href="Dyadics/" class="Module">Dyadics.index</a>
+<a id="7060" class="Keyword">import</a> <a id="7067" href="DyadicsInductive/" class="Module">DyadicsInductive.index</a>
+<a id="7090" class="Keyword">import</a> <a id="7097" href="EffectfulForcing/" class="Module">EffectfulForcing.index</a>
+<a id="7120" class="Keyword">import</a> <a id="7127" href="Factorial/" class="Module">Factorial.index</a>
+<a id="7143" class="Keyword">import</a> <a id="7150" href="Field/" class="Module">Field.index</a>
+<a id="7162" class="Keyword">import</a> <a id="7169" href="Fin/" class="Module">Fin.index</a>
+<a id="7179" class="Keyword">import</a> <a id="7186" href="Games/" class="Module">Games.index</a>
+<a id="7198" class="Keyword">import</a> <a id="7205" href="Groups/" class="Module">Groups.index</a>
+<a id="7218" class="Keyword">import</a> <a id="7225" href="Higgs/" class="Module">Higgs.index</a>
+<a id="7237" class="Keyword">import</a> <a id="7244" href="InjectiveTypes/" class="Module">InjectiveTypes.index</a>
+<a id="7265" class="Keyword">import</a> <a id="7272" href="Integers/" class="Module">Integers.index</a>
+<a id="7287" class="Keyword">import</a> <a id="7294" href="Iterative/" class="Module">Iterative.index</a>
+<a id="7310" class="Keyword">import</a> <a id="7317" href="Lifting/" class="Module">Lifting.index</a>
+<a id="7331" class="Keyword">import</a> <a id="7338" href="Locales/" class="Module">Locales.index</a>
+<a id="7352" class="Keyword">import</a> <a id="7359" href="MGS/" class="Module">MGS.index</a>
+<a id="7369" class="Keyword">import</a> <a id="7376" href="MLTT/" class="Module">MLTT.index</a>
+<a id="7387" class="Keyword">import</a> <a id="7394" href="MetricSpaces/" class="Module">MetricSpaces.index</a>
+<a id="7413" class="Keyword">import</a> <a id="7420" href="Modal/" class="Module">Modal.index</a>
+<a id="7432" class="Keyword">import</a> <a id="7439" href="MonadOnTypes/" class="Module">MonadOnTypes.index</a>
+<a id="7458" class="Keyword">import</a> <a id="7465" href="Naturals/" class="Module">Naturals.index</a>
+<a id="7480" class="Keyword">import</a> <a id="7487" href="Notation/" class="Module">Notation.index</a>
+<a id="7502" class="Keyword">import</a> <a id="7509" href="NotionsOfDecidability/" class="Module">NotionsOfDecidability.index</a>
+<a id="7537" class="Keyword">import</a> <a id="7544" href="OrderedTypes/" class="Module">OrderedTypes.index</a>
+<a id="7563" class="Keyword">import</a> <a id="7570" href="Ordinals/" class="Module">Ordinals.index</a>
+<a id="7585" class="Keyword">import</a> <a id="7592" href="PCF/" class="Module">PCF.index</a>
+<a id="7602" class="Keyword">import</a> <a id="7609" href="PathSequences/" class="Module">PathSequences.index</a>
+<a id="7629" class="Keyword">import</a> <a id="7636" href="Quotient/" class="Module">Quotient.index</a>
+<a id="7651" class="Keyword">import</a> <a id="7658" href="Rationals/" class="Module">Rationals.index</a>
+<a id="7674" class="Keyword">import</a> <a id="7681" href="ReflexiveGraphs/" class="Module">ReflexiveGraphs.index</a>
+<a id="7703" class="Keyword">import</a> <a id="7710" href="Relations/" class="Module">Relations.index</a>
+<a id="7726" class="Keyword">import</a> <a id="7733" href="RelativeMonadOnStructuredTypes/" class="Module">RelativeMonadOnStructuredTypes.index</a>
+<a id="7770" class="Keyword">import</a> <a id="7777" href="Slice/" class="Module">Slice.index</a>
+<a id="7789" class="Keyword">import</a> <a id="7796" href="SyntheticHomotopyTheory/" class="Module">SyntheticHomotopyTheory.index</a>
+<a id="7826" class="Keyword">import</a> <a id="7833" href="TWA/" class="Module">TWA.index</a>
+<a id="7843" class="Keyword">import</a> <a id="7850" href="Taboos/" class="Module">Taboos.index</a>
+<a id="7863" class="Keyword">import</a> <a id="7870" href="TypeTopology/" class="Module">TypeTopology.index</a>
+<a id="7889" class="Keyword">import</a> <a id="7896" href="UF/" class="Module">UF.index</a>
+<a id="7905" class="Keyword">import</a> <a id="7912" href="Various/" class="Module">Various.index</a>
+<a id="7926" class="Keyword">import</a> <a id="7933" href="W/" class="Module">W.index</a>
+<a id="7941" class="Keyword">import</a> <a id="7948" href="WildCategories/" class="Module">WildCategories.index</a>
+<a id="7969" class="Keyword">import</a> <a id="7976" href="deprecated/" class="Module">deprecated.index</a>
+<a id="7993" class="Keyword">import</a> <a id="8000" href="gist/" class="Module">gist.index</a>
+
+</code>
+TODO. Explain what each of the above does here. This is long overdue.
+
+The above includes only the --safe modules. A list of all modules is here:
+
+https://www.cs.bham.ac.uk/~mhe/TypeTopology/AllModulesIndex.html
+
+NB. This file is accessible from both
+
+(1) https://www.cs.bham.ac.uk/~mhe/TypeTopology/index.html
+(2) https://martinescardo.github.io/TypeTopology/index.html
+
+We have that currently (1) redirects to (2), but in the future we may
+choose a different redirection to (1), so please use (1) when citing
+the html rendering of this repository.
+</pre>

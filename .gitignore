@@ -30,5 +30,6 @@ source/html/*
 docs/*.html
 docs/*.css
 docs/*.js
-docs/*/**/index.md
+docs/**/*.md
+!docs/about.md
 site/*

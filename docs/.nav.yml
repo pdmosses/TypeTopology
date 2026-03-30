@@ -1,7 +1,7 @@
 nav:
-  - index.md
+  - about.md
   - Modules:
-    - index/index.md
+    - index.md
     - '*'
 
 preserve_directory_names: true
