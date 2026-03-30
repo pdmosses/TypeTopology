@@ -284,9 +284,12 @@ ifneq ($(filter docs docs/%,$(HTML)),)
 	for f in $(HTML)/*.html; do \
 	    p=$${f#$(HTML)/}; \
 	    m=$${p%.*}; \
-	    if [[ "$$m" == *\.index ]]; \
-	        then m=$${m%.index}; i="\.index"; \
-	        else i=""; \
+	    if [[ "$$m" == index ]]; then \
+		m=""; i="index"; \
+	    elif [[ "$$m" == *\.index ]]; then \
+		m=$${m%.index}; i=".index"; \
+	    else \
+		i=""; \
 	    fi; \
 	    u=$(patsubst docs/%,%,$(MD)/)$${m//\./\/}/; \
 	    sd "<a id=\"([^\"]+)\" href=\"$$m$$i.html\" class=\"Module\">" \
@@ -357,25 +360,34 @@ gen-md: clean-md
 	  done	      
 	@rm -f $(TEMP)/*.css $(TEMP)/*.js
 #
-#	Transform each file in TEMP to a hierarchical index.md file.
+#	Transform each file in TEMP to a hierarchical *.md file.
 #	Assumption: For all m, module m and module m.index do not both exist.
-#	When f = $(TEMP)/A.B.x or $(TEMP)/A.B.index.x: set m to A.B,
-#	t to $(MD)/A/B/index.md, and d to the relative path ../../ of $(MD).
+#	When f = $(TEMP)/A.B.x: set m to A.B,
+#	t to $(MD)/A/B.md, and d to the relative path ../../ of $(MD).
 #	Also set u to the URL of the MD page, and h to HTML without the docs/.
 #	When HTML is a sub-directory of docs, link the module name definition
 #	in MD to the HTML page.
 #
-	@r=$$(echo $(patsubst docs/%,%,$(MD)/) | sd '[^/]*/' '../'); \
+	@h=$(patsubst docs/%,%,$(HTML)/); \
+	r=$$(echo $(patsubst docs/%,%,$(MD)/) | sd '[^/]*/' '../'); \
+	\
 	for f in $(TEMP)/*; do \
 	  p=$${f#$(TEMP)/}; \
 	  m=$${p%.*}; \
-	  if [[ "$$m" == *\.index ]]; \
-	    then m=$${m%.index}; i=".index"; \
-	    else i=""; \
-	  fi; \
-	  t=$(MD)/$${m//\./\/}/index.md; \
-	  d=$$(echo $$m | sd '[^.]*.' '../'); \
+	  q=$${m##*.}; \
+	  t=$(MD)/$${m//\./\/}.md; \
 	  mkdir -p $$(dirname $$t) && mv -f $$f $$t;  \
+	  \
+	  if [[ "$$m" == index ]]; then \
+	    m=""; i="index"; \
+	  elif [[ "$$m" == *\.index ]]; then \
+	    m=$${m%.index}; i=".index"; \
+	  else \
+	    i=""; \
+	  fi; \
+	  u=$${m//\./\/}/; \
+	  d=$$(echo $$m | sd '[^.]*.' '../'); \
+	  \
 	  case $$f in \
 	    *.html) \
 		sd '\A' '<pre class="Agda"><code class="Agda">' $$t; \
@@ -401,9 +413,9 @@ gen-md: clean-md
 	  esac; \
 	  \
 	  if grep -q '^# '  $$t; then \
-	    sd -- '\A' "---\ntitle: $$m\nhide: toc\n---\n\n" $$t; \
+	    sd -- '\A' "---\ntitle: $$q\nhide: toc\n---\n\n" $$t; \
 	  else \
-	    sd -- '\A' "---\ntitle: $$m\nhide: toc\n---\n\n# $$m\n\n" $$t; \
+	    sd -- '\A' "---\ntitle: $$q\nhide: toc\n---\n\n# $$m\n\n" $$t; \
 	  fi; \
 	  \
 	  sd '(href="[^:"]+)\.html' '$$1/' $$t; \
@@ -411,13 +423,11 @@ gen-md: clean-md
 	  while grep -q 'href="[^:".][^:".]*\.' $$t; do \
 	    sd '(href="[^:".][^:".]*)\.' '$$1/' $$t; \
 	  done; \
-	  sd '(href="[^:"][^:"]*/)index/' '$$1' $$t; \
+	  sd '(href="[^:"]*)index/' '$$1' $$t; \
 	  sd "href=\"([^:\"][^:\"]*)\"" "href=\"$$d\$$1\"" $$t; \
 	  \
-	  u=$${m//\./\/}/; \
-	  h=$(patsubst docs/%,%,$(HTML)/); \
 	  if [ -z "$$h" ] || [ "$$h" != $(HTML)/ ]; then \
-	    if [ "$$m$$i" == index ]; then m=$(INDEX); fi; \
+	    if [ "$$m$$i" == index ]; then i=$(INDEX); u=""; fi; \
 	    sd "<a id=\"([^\"]+)\" href=\"$$d$$u\" class=\"Module\">" \
 	       "<a id=\"$$1\" href=\"$$d$$r$$h$$m$$i.html\" class=\"Module Definition\">" \
 	       $$t; \
@@ -456,7 +466,7 @@ serve:
 ifndef VERSION
 deploy:
 	@if [[ -z "$$(mike list)" ]]; then \
-	    mkdocs gh-deploy --force --ignore-version; \
+	    NO_MKDOCS_2_WARNING=1 mkdocs gh-deploy --force --ignore-version; \
 	else \
 	    echo "Error: unversioned deployment blocked by deployed version(s)."; \
 	    echo "To deploy an update to version ..., use 'make deploy VERSION=...'."; \
@@ -504,8 +514,7 @@ endif
 .PHONY: clean-md
 clean-md:
 ifeq ($(MD),docs)
-	@find docs/*/* -name index.md \
-	    ! -path docs/Library/* ! -path docs/Test/* -delete
+	@find docs/* -name "*.md" ! -path docs/about.md -delete
 	@find docs/* -empty -type d -delete
 else
 	@rm -rf $(MD)
