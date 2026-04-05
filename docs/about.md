@@ -55,7 +55,7 @@ make deploy
 The approximate times taken by the above commands were:
 
 - `make check`: 15 seconds
-- `make web`: 100 seconds
+- `make web`: 120 seconds
 - `make serve`: 75 seconds
 - `make deploy`: 100 seconds
 
@@ -65,8 +65,8 @@ The approximate times taken by the above commands were:
 Running [linkcheck]:
 
 ```sh
-TypeTopology: ~/Applications/linkcheck/linkcheck -e localhost:8010 --skip-file skip.txt
-Perfect. Checked 3104882 links, 1868 destination URLs (1 ignored).
+TypeTopology: ~/Applications/linkcheck/linkcheck -e :8010 --skip-file skip.txt
+Perfect. Checked 3102967 links, 1867 destination URLs (1 ignored).
 ```
 
 ## Agda-Material
