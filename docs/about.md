@@ -5,7 +5,7 @@ This website was generated from the Agda source files in a ***[FORK]*** of the
 [Agda-Material template], with minor adjustments).
 
 !!! info
-    This website was deployed from the `gen-website-indexes` branch of the fork.
+    This website was deployed from the `gen-website` branch of the fork.
 
 !!! warning
     The current *definitive* **[TypeTopology website]** is generated directly
@@ -55,9 +55,9 @@ make deploy
 The approximate times taken by the above commands were:
 
 - `make check`: 15 seconds
-- `make web`: 100 seconds
-- `make serve`: 75 seconds
-- `make deploy`: 100 seconds
+- `make web`: 90 seconds
+- `make serve`: 55 seconds
+- `make deploy`: 75 seconds
 
 !!! note
     The 900+ Agda modules in the repository fork had previously been checked.
@@ -65,8 +65,8 @@ The approximate times taken by the above commands were:
 Running [linkcheck]:
 
 ```sh
-TypeTopology: ~/Applications/linkcheck/linkcheck -e localhost:8010 --skip-file skip.txt
-Perfect. Checked 3104882 links, 1868 destination URLs (1 ignored).
+TypeTopology: ~/Applications/linkcheck/linkcheck -e :8010 --skip-file skip.txt
+Perfect. Checked 3102967 links, 1867 destination URLs (1 ignored).
 ```
 
 ## Agda-Material
