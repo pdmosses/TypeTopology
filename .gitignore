@@ -27,9 +27,4 @@ html/*
 source/html/*
 *.DS_Store
 #*
-docs/*.html
-docs/*.css
-docs/*.js
-docs/**/*.md
-!docs/about.md
-site/*
+.grepai/

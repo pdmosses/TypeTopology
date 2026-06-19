@@ -18,7 +18,7 @@ open import MLTT.Spartan hiding (J)
 open import MonadOnTypes.J
 open import MonadOnTypes.K
 open import TypeTopology.CompactTypes
-open import TypeTopology.SigmaDiscreteAndTotallySeparated
+open import TypeTopology.SigmaDiscrete
 open import UF.DiscreteAndSeparated
 
 \end{code}
@@ -194,7 +194,7 @@ Selection functions for players, namely argmin for X and argmax for O:
 
 \begin{code}
 
-open J-definitions R
+open J-definitions {𝓤₀} {R}
 open ArgMinMax-Compact-Fin
 
 selection : (p : Player) {M : 𝓤 ̇ } → M → is-Compact M {𝓤₀} → J M
@@ -207,7 +207,7 @@ And their derived quantifiers:
 
 \begin{code}
 
-open K-definitions R
+open K-definitions {𝓤₀} {R}
 
 quantifier : Player → {M : 𝓤 ̇ } → is-Compact M → is-decidable M → K M
 quantifier p κ (inl m) = overline (selection p m κ)

@@ -1,4 +1,4 @@
-Martin Escardo
+Martin Escardo, with additions by others, indicated below.
 
 \begin{code}
 
@@ -10,18 +10,24 @@ import Ordinals.AdditionProperties
 import Ordinals.Arithmetic
 import Ordinals.ArithmeticReflection          -- by [2]
 import Ordinals.BoundedOperations             -- by [2]
-import Ordinals.Brouwer
+import Ordinals.BrouwerCodes
+import Ordinals.BrouwerCodesInterpretations
+import Ordinals.BrouwerCodesVariationInterpretations
 import Ordinals.BuraliForti                   -- by [1]
+import Ordinals.ChurchEncoding
 import Ordinals.Closure
-import Ordinals.Codes
+import Ordinals.CompactnessOfSuprema
 import Ordinals.ConvergentSequence
 import Ordinals.CumulativeHierarchy           -- by [2]
 import Ordinals.CumulativeHierarchy-Addendum  -- by [2]
 import Ordinals.Equivalence
 import Ordinals.Exponentiation.index          -- by [2]
+import Ordinals.FailureOfTotalSeparatedness
+import Ordinals.FailureOfTrichotomy
 import Ordinals.Fin                           -- by [5] with additions by [2]
-import Ordinals.Indecomposable
 import Ordinals.IdentifyingEquivalentOrdinals -- by [3]
+import Ordinals.Indecomposable
+import Ordinals.InductiveRecursiveCodesInterpretations
 import Ordinals.InfProperty
 import Ordinals.Injectivity
 import Ordinals.LexicographicCompactness
@@ -30,9 +36,6 @@ import Ordinals.Limit
 import Ordinals.Maps
 import Ordinals.MultiplicationProperties      -- by [2]
 import Ordinals.NotationInterpretation
-import Ordinals.NotationInterpretation0
-import Ordinals.NotationInterpretation1
-import Ordinals.NotationInterpretation2
 import Ordinals.Notions
 import Ordinals.Omega                        -- by [2]
 import Ordinals.OrdinalOfOrdinals
@@ -44,11 +47,14 @@ import Ordinals.SupSum
 import Ordinals.Taboos                       -- by [3]
 import Ordinals.ToppedArithmetic
 import Ordinals.ToppedType
+import Ordinals.TotallySeparated
 import Ordinals.TrichotomousArithmetic
 import Ordinals.TrichotomousType
+import Ordinals.Two
 import Ordinals.Type
 import Ordinals.Underlying
 import Ordinals.WellOrderArithmetic
+import Ordinals.WellOrderExtension
 import Ordinals.WellOrderTransport
 import Ordinals.WellOrderingPrinciple
 import Ordinals.WellOrderingTaboo            -- by [4]

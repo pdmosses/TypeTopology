@@ -26,7 +26,9 @@ open import TypeTopology.CompactTypes
 open import TypeTopology.Density
 open import TypeTopology.ExtendedSumCompact fe
 open import TypeTopology.GenericConvergentSequenceCompactness fe₀
-open import TypeTopology.SigmaDiscreteAndTotallySeparated
+open import TypeTopology.SigmaDiscrete
+open import TypeTopology.ExtensionTotallySeparated
+open import TypeTopology.SigmaTotallySeparated
 open import UF.Base
 open import UF.DiscreteAndSeparated
 open import UF.Embeddings
@@ -54,8 +56,12 @@ X n is compact then so is its squashed sum Σ¹ X.
 
 \begin{code}
 
-Σ¹ :(ℕ → 𝓤 ̇ ) → 𝓤 ̇
+Σ¹ : (ℕ → 𝓤 ̇ ) → 𝓤 ̇
 Σ¹ X = Σ (X / ι)
+
+Σ₁-explicitly : (X : ℕ → 𝓤 ̇ )
+              → Σ¹ X ＝ (Σ u ꞉ ℕ∞ , ((φ : is-finite u) → X (size φ)))
+Σ₁-explicitly X = refl
 
 Σ¹-compact∙ : (X : ℕ → 𝓤 ̇ )
             → ((n : ℕ) → is-compact∙(X n))

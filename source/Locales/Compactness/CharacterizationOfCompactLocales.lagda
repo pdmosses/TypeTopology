@@ -10,15 +10,10 @@ date-completed: 2024-04-29
 {-# OPTIONS --safe --without-K --lossy-unification #-}
 
 open import MLTT.Spartan hiding (J)
-open import UF.Base
-open import UF.Classifiers
 open import UF.FunExt
 open import UF.PropTrunc
-open import UF.Sets
 open import UF.Size
 open import UF.Subsingletons
-open import UF.Subsingletons-FunExt
-open import UF.Subsingletons-Properties
 open import UF.SubtypeClassifier
 
 module Locales.Compactness.CharacterizationOfCompactLocales
@@ -39,13 +34,11 @@ open import Locales.Compactness.Definition pt fe
 open import Locales.ContinuousMap.Definition pt fe
 open import Locales.ContinuousMap.FrameHomomorphism-Definition pt fe
 open import Locales.Frame pt fe renaming (⟨_⟩ to ⟨_⟩∙) hiding (∅)
-open import Locales.PosetalAdjunction pt fe
 open import Locales.InitialFrame pt fe
 open import Locales.PerfectMaps pt fe
 open import Locales.Spectrality.SpectralityOfOmega pt fe sr
 open import Locales.TerminalLocale.Properties pt fe sr
 open import Notation.UnderlyingType
-open import Slice.Family
 open import UF.Logic
 
 open AllCombinators pt fe
@@ -62,7 +55,7 @@ instance
 
 \section{Preliminaries}
 
-The universal property of the inital frame gives that there is a unique frame
+The universal property of the initial frame gives that there is a unique frame
 homomorphism `Ω → 𝒪(X)`, for every locale `X`. We denote this by `!`. We also
 define the shorthand notation `!꙳` for the underlying function of the frame
 homomorphism in consideration.

@@ -2,7 +2,7 @@ Ian Ray. 28th August 2025.
 
 Minor changes and merged into TypeToplogy in March 2026.
 
-We provide some basic contructions on (displayed) reflexive graphs (see index
+We provide some basic constructions on (displayed) reflexive graphs (see index
 for references to Sterling, Buchholtz, etc.)
 
 \begin{code}
@@ -13,7 +13,6 @@ module ReflexiveGraphs.Constructions where
 
 open import MLTT.Spartan
 open import UF.Powerset-MultiUniverse
-open import UF.Size
 open import UF.UniverseEmbedding
 open import ReflexiveGraphs.Displayed
 open import ReflexiveGraphs.Type
@@ -134,7 +133,7 @@ syntax refl-graph-Σ A (λ x → 𝓑) = ∐ x ˸ A , 𝓑
 \end{code}
 
 The tensor and cotensor of reflexive graphs can be defined in terms of product
-and coproduct. 
+and coproduct.
 
 \begin{code}
 
@@ -143,7 +142,7 @@ cotensor-refl-graph : 𝓤' ̇
                     → Refl-Graph (𝓤' ⊔ 𝓤) (𝓤' ⊔ 𝓥)
 cotensor-refl-graph A 𝓑 = ∏ _ ˸ A , 𝓑
 
-syntax cotensor-refl-graph A 𝓑 = A ➙ 𝓑  
+syntax cotensor-refl-graph A 𝓑 = A ➙ 𝓑
 
 tensor-refl-graph : 𝓤' ̇
                   → Refl-Graph 𝓤 𝓥
@@ -186,7 +185,7 @@ syntax constant-displayed-reflexive-graph 𝓐 𝓑 = 𝓐 * 𝓑
 private
  observation₁ : (𝓐 : Refl-Graph 𝓤 𝓥) (𝓑 : Refl-Graph 𝓤' 𝓥')
               → (x : ⟨ 𝓐 ⟩)
-              → [ 𝓐 * 𝓑 ] x ＝ 𝓑 
+              → [ 𝓐 * 𝓑 ] x ＝ 𝓑
  observation₁ 𝓐 𝓑 x = refl
 
  observation₂ : (𝓐 : Refl-Graph 𝓤 𝓥) (𝓑 : Refl-Graph 𝓤' 𝓥')
@@ -200,7 +199,7 @@ reflexive graph.
 
 \begin{code}
 
-refl-graph-⊆ : (𝓐 : Refl-Graph 𝓤 𝓥) 
+refl-graph-⊆ : (𝓐 : Refl-Graph 𝓤 𝓥)
              → 𝓟 {𝓣} ⟨ 𝓐 ⟩
              → Refl-Graph (𝓤 ⊔ 𝓣) 𝓥
 refl-graph-⊆ {𝓤} {𝓥} {𝓣} 𝓐 S = (𝕋 S , I , II)
@@ -272,6 +271,6 @@ restriction-iterated-displayed-refl-graph {𝓤} {𝓥} {𝓣} {𝓦} {𝓐} �
       → c ≈⟨ 𝓒 ⸴ (≈-refl 𝓐 x , ≈-disp-refl 𝓑 u) ⟩ c
   III c = ≈-disp-refl 𝓒 c
 
-syntax restriction-iterated-displayed-refl-graph 𝓑 𝓒 x = 𝓒 ∣ 𝓑 , x 
+syntax restriction-iterated-displayed-refl-graph 𝓑 𝓒 x = 𝓒 ∣ 𝓑 , x
 
 \end{code}

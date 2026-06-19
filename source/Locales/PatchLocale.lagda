@@ -7,7 +7,6 @@ Based on `ayberkt/formal-topology-in-UF`.
 {-# OPTIONS --safe --without-K --lossy-unification #-}
 
 open import MLTT.List hiding ([_])
-open import MLTT.Pi
 open import MLTT.Spartan
 open import Slice.Family
 open import UF.Base
@@ -16,8 +15,6 @@ open import UF.FunExt
 open import UF.PropTrunc
 open import UF.Size
 open import UF.SubtypeClassifier
-open import UF.UA-FunExt
-open import UF.Univalence
 
 \end{code}
 
@@ -363,7 +360,7 @@ the composition of all `fᵢₙ ∘ ⋯ ∘ fᵢ₀`:
 
 \end{code}
 
-Using `sequence`, we define the following functio that will help us “directify”
+Using `sequence`, we define the following function that will help us “directify”
 a given family:
 
 \begin{code}

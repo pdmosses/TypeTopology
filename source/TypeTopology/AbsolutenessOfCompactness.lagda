@@ -1,7 +1,7 @@
 Andrew Swan, February 7th 2024
 
 This is a generalisation of some of the results by Martín Escardó in
-TypeTopology.PropTychonoff, based on the observation that for
+TypeTopology.MicroTychonoff, based on the observation that for
 propositions P, the functor sending A to P → A is a
 modality. Modalities of this form are an important special case and
 they have a name; they are *open modalities* (Example 1.7 in
@@ -87,6 +87,7 @@ https://doi.org/10.23638/LMCS-16(1:2)2020
 \begin{code}
 
 {-# OPTIONS --safe --without-K #-}
+
 open import MLTT.Spartan
 open import MLTT.Two-Properties
 
@@ -132,7 +133,7 @@ compactness for the reflective subuniverse.
 
 is-internal-compact∙ : 𝓤 ̇ → 𝓤 ̇
 is-internal-compact∙ A =
- (F : A → ○ (Lift _ 𝟚))
+   (F : A → ○ (Lift _ 𝟚))
  → Σ a₀ ꞉ A , (F a₀ ＝ η _ (lift 𝓤 ₁)
  → (a : A)
  → F a ＝ η _ (lift 𝓤 ₁))
@@ -146,7 +147,7 @@ have the converse direction. However, we will be able to show that
 compact implies weak internal compact.
 
 This weaker notion will also be useful for making the connection with
-the results of TypeTopology.PropTychonoff clear. To do this, we will
+the results of TypeTopology.MicroTychonoff clear. To do this, we will
 also look at the type obtained by simply applying the modality to the
 statement that A is compact. We will be able to show ○ (is-compact∙ A)
 → is-weak-internal-compact∙, but not the same implication for just
@@ -204,7 +205,7 @@ We can now prove the main theorem: whenever a modal type is weak
 internal compact, it is (externally) compact.
 
 Although it looks a bit different, this is the argument that most
-closely follows the original theorem prop-tychonoff.
+closely follows the original theorem micro-tychonoff.
 
 \begin{code}
 
@@ -238,7 +239,7 @@ already done. The tricky case, which we deal with in the lemma below
 is getting a proof F a = 1 out of a proof of F a = 0. We would like to
 argue by contradiction from the fact that F a₀ = 1, but F a =
 0. However, all that weak internal compactness tells us is that η(F a)
-= η(1) as elements of ○ 𝟚.  This is actually consistant with F a = 0:
+= η(1) as elements of ○ 𝟚.  This is actually consistent with F a = 0:
 consider the open modality on the empty type.
 
 The idea of the lemma is as follows: given η(F a) = η(1), we can
@@ -434,11 +435,11 @@ putting it inside the modality.
 \end{code}
 
 Finally, we can use the lemmas together with the main theorem to get a
-result which is closer to the statement of prop-tychonoff. This says ○
+result which is closer to the statement of micro-tychonoff. This says ○
 "preserves compactness" in the sense that if ○ (A is compact), then
 (○ A) is compact.
 
-In order to derive prop-tychonoff from this statement we will need a
+In order to derive micro-tychonoff from this statement we will need a
 few extra arguments. This will be covered in a separate module,
 AbsolutenessOfCompactnessExample, which works specifically with open
 modalities, as opposed to this module that applies to modalities in

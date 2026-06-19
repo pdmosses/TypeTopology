@@ -49,7 +49,6 @@ open import UF.Base hiding (_≈_)
 open import UF.Equiv
 open import UF.FunExt
 open import UF.PropTrunc
-open import UF.Sets
 open import UF.Size
 open import UF.SubtypeClassifier
 open import UF.Subsingletons
@@ -1207,12 +1206,16 @@ developed in February 2024 in collaboration with Nicolai Kraus and Chuangjie Xu.
 
  is-continuous : (Ordinal 𝓤 → Ordinal 𝓤) → 𝓤 ⁺ ̇
  is-continuous {𝓤} F =
-    {I : 𝓤 ̇  } → ∥ I ∥ → (γ : I → Ordinal 𝓤)
+    {I : 𝓤 ̇  }
+  → ∥ I ∥
+  → (γ : I → Ordinal 𝓤)
   → F (sup γ) ＝ sup (F ∘ γ)
 
  is-continuous-generalized : (Ordinal 𝓤 → Ordinal (𝓤 ⊔ 𝓥)) → (𝓤 ⊔ 𝓥) ⁺ ̇
  is-continuous-generalized {𝓤} {𝓥} F =
-    {I : 𝓤 ̇  } → ∥ I ∥ → (γ : I → Ordinal 𝓤)
+    {I : 𝓤 ̇  }
+  → ∥ I ∥
+  → (γ : I → Ordinal 𝓤)
   → F (sup γ) ＝ sup (λ (i : Lift 𝓥 I) → F (γ (lower i)))
   where
    open import UF.UniverseEmbedding

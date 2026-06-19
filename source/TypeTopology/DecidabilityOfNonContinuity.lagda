@@ -48,7 +48,7 @@ open import UF.Subsingletons-FunExt
 \end{code}
 
 For convenience, we first recall the version of Theorem 8.2 of [1],
-which is used a number of times in this file, in a slighly
+which is used a number of times in this file, in a slightly
 reformulated way which is convenient for our purposes.
 
 [2] Martin Escardo. Infinite sets that satisfy the principle of
@@ -372,8 +372,8 @@ MP-and-¬WLPO-give-that-all-functions-are-continuous mp nwlpo f
 End of 7th September 2024 addition.
 
 In the following fact we can replace Σ by ∃ because WLPO is a
-proposition. Hence WLPO is the propositional truncation of the type Σ
-f ꞉ (ℕ∞ → ℕ) , ¬ continuous f.
+proposition. Hence WLPO is the propositional truncation of the type
+Σ f ꞉ (ℕ∞ → ℕ) , ¬ continuous f.
 
 TODO. Add code for this observation.
 
@@ -1186,7 +1186,7 @@ evc-extension-restriction f
 \end{code}
 
 Conversely, a modulus of continuity of an extension is a modulus of
-constancy of the orginal function.
+constancy of the original function.
 
 \begin{code}
 

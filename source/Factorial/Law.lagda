@@ -22,7 +22,7 @@ and our
 
  https://www.cs.bham.ac.uk/~mhe/TypeTopology/PlusOneLC.html
 
-More generally, for an arbitraty type X, we prove that
+More generally, for an arbitrary type X, we prove that
 
   co-derived-set (X + 𝟙) × Aut X ≃ Aut (X + 𝟙),
 
@@ -69,6 +69,7 @@ open import UF.Equiv-FunExt
 open import UF.EquivalenceExamples
 open import UF.Retracts
 open import UF.Subsingletons
+open import UF.Sets
 
 \end{code}
 
@@ -87,30 +88,50 @@ co-derived-set X = Σ x ꞉ X , is-isolated x
 cods-embedding : (X : 𝓤 ̇ ) → co-derived-set X → X
 cods-embedding X = pr₁
 
-cods-embedding-is-embedding : (X : 𝓤 ̇ ) → is-embedding (cods-embedding X)
+cods-embedding-is-embedding : (X : 𝓤 ̇ )
+                            → is-embedding (cods-embedding X)
 cods-embedding-is-embedding X = pr₁-is-embedding (being-isolated-is-prop fe)
 
-cods-embedding-is-equiv : (X : 𝓤 ̇ ) → is-discrete X → is-equiv (cods-embedding X)
+cods-embedding-is-equiv : (X : 𝓤 ̇ )
+                        → is-discrete X
+                        → is-equiv (cods-embedding X)
 cods-embedding-is-equiv X d = pr₁-is-equiv X is-isolated
                                (λ x → pointed-props-are-singletons (d x)
                                        (being-isolated-is-prop fe x))
 
-≃-cods : (X : 𝓤 ̇ ) → is-discrete X → co-derived-set X ≃ X
+≃-cods : (X : 𝓤 ̇ )
+       → is-discrete X
+       → co-derived-set X ≃ X
 ≃-cods X d = cods-embedding X , cods-embedding-is-equiv X d
 
 \end{code}
 
-Exercise. Prove that the co derived set is a set in the sense of
-univalent mathematics.
+The co derived set of any type is indeed a set.
+
+\begin{code}
+
+cods-is-set : (X : 𝓤 ̇ ) → is-set (co-derived-set X)
+cods-is-set X {x , i} = isolated-points-are-h-isolated
+                         (x , i)
+                         (embeddings-reflect-isolatedness
+                           (cods-embedding X)
+                           (cods-embedding-is-embedding X)
+                           (x , i)
+                           i)
+\end{code}
 
 Recall that a type is perfect if it has no isolated points.
 
 \begin{code}
 
-perfect-coderived-empty : (X : 𝓤 ̇ ) → is-perfect X → is-empty (co-derived-set X)
+perfect-coderived-empty : (X : 𝓤 ̇ )
+                        → is-perfect X
+                        → is-empty (co-derived-set X)
 perfect-coderived-empty X i (x , j) = i (x , j)
 
-perfect-coderived-singleton : (X : 𝓤 ̇ ) → is-perfect X → is-singleton (co-derived-set (X + 𝟙 {𝓥}))
+perfect-coderived-singleton : (X : 𝓤 ̇ )
+                            → is-perfect X
+                            → is-singleton (co-derived-set (X + 𝟙 {𝓥}))
 perfect-coderived-singleton X i = (inr ⋆ , new-point-is-isolated) , γ
  where
   γ : (c : co-derived-set (X + 𝟙)) → inr ⋆ , new-point-is-isolated ＝ c
@@ -139,25 +160,22 @@ The claim is that the above map is an equivalence.
 We construct/prove this in four steps:
 
 (1)  (X ≃ Y)
-    ≃ Σ f ꞉ X + 𝟙 ≃ Y + 𝟙 , f (inr ⋆) ＝ inr ⋆
+    ≃ Σ f ꞉ X+𝟙 ≃ Y+𝟙 , f (inr ⋆) ＝ inr ⋆
 
 Hence
 
-(2) (Y + 𝟙)' × (X ≃ Y)
-  ≃ (Y + 𝟙)' × Σ f ꞉ X + 𝟙 ≃ Y + 𝟙 , f (inr ⋆) ＝ inr ⋆
+(2) (Y+𝟙)' × (X ≃ Y)
+  ≃ (Y+𝟙)' × Σ f ꞉ X+𝟙 ≃ Y+𝟙 , f (inr ⋆) ＝ inr ⋆
 
 Also
 
-(3) (Y + 𝟙)' × (Σ f ꞉ X + 𝟙 ≃ Y + 𝟙 , f (inr ⋆) ＝ inr ⋆)
-  ≃ (X + 𝟙 ≃ Y + 𝟙)
+(3) (Y+𝟙)' × (Σ f ꞉ X+𝟙 ≃ Y+𝟙 , f (inr ⋆) ＝ inr ⋆)
+  ≃ (X+𝟙 ≃ Y+𝟙)
 
 And therefore
 
-(4) (Y + 𝟙)' × (X ≃ Y)
-  ≃ (X + 𝟙 ≃ Y + 𝟙)
-
-\end{code}
-
+(4) (Y+𝟙)' × (X ≃ Y)
+  ≃ (X+𝟙 ≃ Y+𝟙)
 
 \begin{code}
 
@@ -179,11 +197,11 @@ function, f : X+𝟙 → Y+𝟙, then f (inl x) is of the form inl y
 
 \begin{code}
 
- lemma : (f : X+𝟙 → Y+𝟙)
+ step₀ : (f : X+𝟙 → Y+𝟙)
        → f (inr ⋆) ＝ inr ⋆
        → is-equiv f
        → Σ f' ꞉ (X → Y), is-equiv f' × (f ∼ +functor f' unique-to-𝟙)
- lemma f p i = γ (equivs-are-qinvs f i)
+ step₀ f p i = γ (equivs-are-qinvs f i)
   where
    γ : qinv f → Σ f' ꞉ (X → Y), is-equiv f' × (f ∼ +functor f' unique-to-𝟙)
    γ (g , η , ε) = f' , qinvs-are-equivs f' (g' , η' , ε') , h
@@ -241,7 +259,7 @@ function, f : X+𝟙 → Y+𝟙, then f (inl x) is of the form inl y
    φ (g , i) = (+functor g unique-to-𝟙 , d g (equivs-are-qinvs g i)) , refl
 
    γ : (Σ e ꞉ X+𝟙 ≃ Y+𝟙 , ⌜ e ⌝ (inr ⋆) ＝ inr ⋆) → (X ≃ Y)
-   γ ((f , i) , p) = pr₁ (lemma f p i) , pr₁ (pr₂ (lemma f p i))
+   γ ((f , i) , p) = pr₁ (step₀ f p i) , pr₁ (pr₂ (step₀ f p i))
 
    η : γ ∘ φ ∼ id
    η (g , i) = to-Σ-＝ (refl , being-equiv-is-prop fe g _ i)
@@ -250,20 +268,19 @@ function, f : X+𝟙 → Y+𝟙, then f (inl x) is of the form inl y
    ε ((f , i) , p) = to-Σ-＝
                       (to-subtype-＝ (being-equiv-is-prop fe) r ,
                       isolated-points-are-h-isolated (f (inr ⋆))
-                       (equivs-preserve-isolatedness f i (inr ⋆) new-point-is-isolated) _ p)
+                       (equivs-preserve-isolatedness f i (inr ⋆)
+                         new-point-is-isolated) _ p)
     where
      s : f ∼ pr₁ (pr₁ ((φ ∘ γ) ((f , i) , p)))
-     s (inl x) = pr₂ (pr₂ (lemma f p i)) (inl x)
+     s (inl x) = pr₂ (pr₂ (step₀ f p i)) (inl x)
      s (inr ⋆) = p
 
      r : pr₁ (pr₁ ((φ ∘ γ) ((f , i) , p))) ＝ f
      r = dfunext (fe _ _) (λ z → (s z)⁻¹)
 
-
  step₂ : co-derived-set (Y+𝟙) × (X ≃ Y)
        ≃ co-derived-set (Y+𝟙) × (Σ e ꞉ X+𝟙 ≃ Y+𝟙 , ⌜ e ⌝ (inr ⋆) ＝ inr ⋆)
  step₂ = ×-cong (≃-refl (co-derived-set (Y+𝟙))) step₁
-
 
  step₃ : (co-derived-set (Y+𝟙) × (Σ e ꞉ X+𝟙 ≃ Y+𝟙 , ⌜ e ⌝ (inr ⋆) ＝ inr ⋆))
        ≃ (X+𝟙 ≃ Y+𝟙)
@@ -329,16 +346,17 @@ function, f : X+𝟙 → Y+𝟙, then f (inl x) is of the form inl y
      f' = swap t' (inr ⋆) i' new-point-is-isolated ∘ g
 
      j' : is-equiv f'
-     j' = ∘-is-equiv-abstract k (swap-is-equiv t' (inr ⋆) i' new-point-is-isolated)
+     j' = ∘-is-equiv-abstract
+           k
+           (swap-is-equiv t' (inr ⋆) i' new-point-is-isolated)
 
      h : f' ∼ f
      h z = swap t' (inr ⋆) i' new-point-is-isolated
-            (swap t (inr ⋆) i new-point-is-isolated (f z))    ＝⟨ a ⟩
-
+            (swap t (inr ⋆) i new-point-is-isolated (f z))  ＝⟨ a ⟩
            swap t (inr ⋆) i new-point-is-isolated
-            (swap t (inr ⋆) i new-point-is-isolated (f z))    ＝⟨ b ⟩
+            (swap t (inr ⋆) i new-point-is-isolated (f z))  ＝⟨ b ⟩
 
-           f z                                                ∎
+           f z                                              ∎
       where
        ψ : co-derived-set (Y+𝟙) → Y+𝟙
        ψ (t' , i') = swap t' (inr ⋆) i' new-point-is-isolated
@@ -381,7 +399,6 @@ function, f : X+𝟙 → Y+𝟙, then f (inl x) is of the form inl y
      r : φ (γ (g , k)) ＝ (g , k)
      r = to-Σ-＝ (dfunext (fe _ _) h , being-equiv-is-prop fe g _ k)
 
-
  step₄ : co-derived-set (Y+𝟙) × (X ≃ Y) ≃ (X+𝟙 ≃ Y+𝟙)
  step₄ = step₂ ● step₃
 
@@ -391,7 +408,8 @@ This is the end of the submodule, which has the following corollaries:
 
 \begin{code}
 
-general-factorial : (X : 𝓤 ̇ ) → co-derived-set (X + 𝟙) × Aut X ≃ Aut (X + 𝟙)
+general-factorial : (X : 𝓤 ̇ )
+                  → co-derived-set (X + 𝟙) × Aut X ≃ Aut (X + 𝟙)
 general-factorial {𝓤} X = factorial-steps.step₄ 𝓤 𝓤 X X
 
 discrete-factorial : (X : 𝓤 ̇ )
@@ -399,7 +417,9 @@ discrete-factorial : (X : 𝓤 ̇ )
                    → (X + 𝟙) × Aut X ≃ Aut (X + 𝟙)
 discrete-factorial X d = γ
  where
- i = ×-cong (≃-sym (≃-cods (X + 𝟙) ( +-is-discrete d 𝟙-is-discrete))) (≃-refl (Aut X))
+ i = ×-cong
+      (≃-sym (≃-cods (X + 𝟙)
+      ( +-is-discrete d 𝟙-is-discrete))) (≃-refl (Aut X))
 
  γ = (X + 𝟙) × Aut X                ≃⟨ i ⟩
      co-derived-set (X + 𝟙) × Aut X ≃⟨ general-factorial X ⟩
@@ -438,7 +458,9 @@ factorial-base = f , ((g , η) , (g , ε))
   g = unique-to-𝟙
 
   η : (e : Aut 𝟘) → f (g e) ＝ e
-  η _ = to-subtype-＝ (being-equiv-is-prop fe) (dfunext (fe _ _) (λ y → 𝟘-elim y))
+  η _ = to-subtype-＝
+         (being-equiv-is-prop fe)
+         (dfunext (fe _ _) (λ y → 𝟘-elim y))
 
   ε : (x : 𝟙) → g (f x) ＝ x
   ε ⋆ = refl

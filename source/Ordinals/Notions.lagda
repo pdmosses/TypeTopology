@@ -813,7 +813,7 @@ not-<-gives-≼ fe em wo@(p , w , e , t) x y = γ (trichotomy fe em wo x y)
 \end{code}
 
 Because we assume function extensionality and excluded middle in this
-annonymous submodule, propositional truncations are available, and it
+anonymous submodule, propositional truncations are available, and it
 amounts to double negation.
 
 \begin{code}
@@ -981,10 +981,10 @@ being-well-order₂-is-prop fe isp = ×₄-is-prop
                                      (transitivity-is-prop fe isp)
 \end{code}
 
-Experimental ideas. We don't truncate the Σ, at least not for the
-moment, so x <₂ y won't be a proposition (i.e. subsingleton) in
-general. However, given 𝟚-order-separation, this is logically
-equivalent to a proposition (has split support).
+We don't truncate the Σ, at least not for the moment, so x <₂ y won't
+be a proposition (i.e. subsingleton) in general. However, given
+𝟚-order-separation, this is logically equivalent to a proposition (has
+split support).
 
 \begin{code}
 

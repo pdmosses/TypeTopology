@@ -17,7 +17,7 @@ open import Fin.Type
 open import MLTT.Athenian
 open import MLTT.Spartan hiding (J)
 open import TypeTopology.CompactTypes
-open import TypeTopology.SigmaDiscreteAndTotallySeparated
+open import TypeTopology.SigmaDiscrete
 open import UF.DiscreteAndSeparated
 
 𝟛 : 𝓤₀ ̇
@@ -105,7 +105,7 @@ Convention: in a board (p , A), p is the opponent of the the current player.
                           (λ g → Nothing-is-isolated' (A g))
                           (λ g → Nothing-is-h-isolated' (A g))
 
-  open J-definitions 𝟛
+  open J-definitions {𝓤₀} {𝟛}
   open ArgMinMax-Compact-Fin
 
   selection : (b : Board) → Move b → J (Move b)

@@ -1,5 +1,5 @@
 Jon Sterling, started 27th Sep 2022
-Andrew Swan, 7th Februrary 2024, definition of Σ-closed subuniverse added
+Andrew Swan, 7th February 2024, definition of Σ-closed subuniverse added
 
 \begin{code}
 
@@ -87,9 +87,10 @@ subuniverse-is-sigma-closed
  : (P : subuniverse 𝓤 𝓥)
  → 𝓤 ⁺ ⊔ 𝓥 ̇
 subuniverse-is-sigma-closed P =
- (A : _) →
- (B : A → _) →
- pr₁ P A →
- ((a : A) → pr₁ P (B a)) →
- pr₁ P (Σ B)
+   (A : _)
+ → (B : A → _)
+ → pr₁ P A
+ → ((a : A) → pr₁ P (B a))
+ → pr₁ P (Σ B)
+
 \end{code}

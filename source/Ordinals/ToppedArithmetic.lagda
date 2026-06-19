@@ -39,6 +39,9 @@ open import Ordinals.ToppedType fe
 open import Ordinals.Injectivity
 open import Ordinals.Underlying
 
+private
+ fe₀ = fe 𝓤₀ 𝓤₀
+
 Ordᵀ = Ordinalᵀ 𝓤₀
 
 succₒ : Ordinal 𝓤 → Ordinalᵀ 𝓤
@@ -68,9 +71,9 @@ Sum of an ordinal-indexed family of ordinals:
 
 ∑ : (τ : Ordinalᵀ 𝓤) → (⟨ τ ⟩ → Ordinalᵀ 𝓤) → Ordinalᵀ 𝓤
 ∑ {𝓤} ((X , _<_ , o) , t) υ = ((Σ x ꞉ X , ⟨ υ x ⟩) ,
-                              Sum.order ,
-                              Sum.well-order o (λ x → tis-well-ordered (υ x))) ,
-                          Sum.top-preservation t
+                               Sum.order ,
+                               Sum.well-order o (λ x → tis-well-ordered (υ x))) ,
+                              Sum.top-preservation t
  where
   _≺_ : {x : X} → ⟨ υ x ⟩ → ⟨ υ x ⟩ → 𝓤 ̇
   y ≺ z = y ≺⟨ υ _ ⟩ z
@@ -125,7 +128,7 @@ ordinals defined above.
 open topped-ordinals-injectivity fe
 
 ∑¹ : (ℕ → Ordᵀ) → Ordᵀ
-∑¹ τ = ∑ ℕ∞ᵒ (τ ↗ embedding-ℕ-to-ℕ∞ (fe 𝓤₀ 𝓤₀))
+∑¹ τ = ∑ ℕ∞ᵒ (τ ↗ embedding-ℕ-to-ℕ∞ fe₀)
 
 \end{code}
 

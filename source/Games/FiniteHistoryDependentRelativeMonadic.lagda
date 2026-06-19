@@ -1,7 +1,7 @@
 Martin Escardo, Paulo Oliva, mid 2024.
 
 Remark added 11th June 2025. This file is experimental. In particular,
-we are not sure our use of the algebra is modelling the intented
+we are not sure our use of the algebra is modelling the intended
 notions. It may be that different players need different algebras. For
 example, if we are working with the powerset monad, whose algebras are
 the sup-lattices, and some players play argmax and some players play
@@ -40,14 +40,10 @@ pruning in the file GamesExperimental2.alpha-beta).
 
 {-# OPTIONS --safe --without-K #-}
 
-open import MonadOnTypes.J
 open import MonadOnTypes.K
-open import MonadOnTypes.Definition hiding (ext-const)
 open import RelativeMonadOnStructuredTypes.OneSigmaStructure
 open import RelativeMonadOnStructuredTypes.Definition
 open import MLTT.Spartan hiding (J)
-open import UF.Base
-open import UF.Equiv
 open import UF.FunExt
 
 \end{code}
@@ -87,7 +83,7 @@ open import Games.FiniteHistoryDependent {𝓤} {𝓦₀} R
 open Game
 
 open import RelativeMonadOnStructuredTypes.J-transf
-open K-definitions R
+open K-definitions {𝓦₀} {R}
 open relative-T-definitions 𝕋
 open relative-α-definitions 𝕋 𝓡 𝓐
 open relative-JT-definitions 𝕋 𝓡 𝓐 fe

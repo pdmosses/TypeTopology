@@ -32,13 +32,13 @@ univalent notion of ordinal (as introduced in the HoTT Book).
 open import MLTT.Spartan
 open import UF.FunExt
 
-module Ordinals.NotationInterpretation1 (fe : FunExt) where
+module Ordinals.BrouwerCodesVariationInterpretations (fe : FunExt) where
 
 \end{code}
 
 We work with ordinal encodings, or ordinal expressions, that are
 slightly different from the traditional Brouwer ordinal trees, which
-we also consider in the file NotationInterpretation0.
+we also consider in the file BrouwerCodesInterpretations.
 
 \begin{code}
 
@@ -61,7 +61,7 @@ constructive mathematics, are not in general successor
 ordinals). Technically, the top element allows us to prove the closure
 of ordinals under ordinal-indexed sums, playing a crucial role in the
 proof of extensionality of the sum. But the top element is equally
-crucial for compactness purposes, as dicussed below.
+crucial for compactness purposes, as discussed below.
 
   * The ordinals in the image of Δ are discrete (have decidable
     equality) and have countable underlying sets, which are in fact
@@ -118,15 +118,16 @@ the theorems and constructions to be performed here:
 \begin{code}
 
 open import Ordinals.Arithmetic fe
+open import Ordinals.BrouwerCodes
 open import Ordinals.Closure fe
-open import Ordinals.Codes
+open import Ordinals.ChurchEncoding
 open import Ordinals.ToppedArithmetic fe
 open import Ordinals.ToppedType fe
 open import Ordinals.Type
 open import Ordinals.Underlying
 open import TypeTopology.CompactTypes
 open import TypeTopology.Density
-open import TypeTopology.SigmaDiscreteAndTotallySeparated
+open import TypeTopology.SigmaDiscrete
 open import TypeTopology.SquashedCantor fe hiding (Κ)
 open import TypeTopology.SquashedSum fe
 open import TypeTopology.TotallySeparated
@@ -230,8 +231,8 @@ And hence they are totally separated:
 \begin{code}
 
 Κ-is-totally-separated ν = retract-of-totally-separated
-                             (Κ-Cantor-retract ν)
-                             (Cantor-is-totally-separated fe₀)
+                            (Κ-Cantor-retract ν)
+                            (Cantor-is-totally-separated fe₀)
 \end{code}
 
 Without total separatedness (enough functions into the type 𝟚 of
@@ -453,7 +454,7 @@ open import UF.Size
 
 open import CoNaturals.Type
 open import TypeTopology.GenericConvergentSequenceCompactness
-open import TypeTopology.PropTychonoff
+open import TypeTopology.MicroTychonoff
 
 module _ (pt : propositional-truncations-exist)
          (ua : Univalence)
@@ -495,7 +496,7 @@ module _ (pt : propositional-truncations-exist)
                           (sum-to-sup-is-surjection (extension (𝓢 ∘ ν)))
                           (Σ-is-compact∙
                             (ℕ∞-compact∙ fe₀)
-                            (λ u → prop-tychonoff (fe 𝓤₀ 𝓤₀)
+                            (λ u → micro-tychonoff (fe 𝓤₀ 𝓤₀)
                                     (ℕ-to-ℕ∞-is-embedding fe₀ u)
                                     (λ (i , _) → 𝓢-compact∙ (ν i))))
 
@@ -511,4 +512,4 @@ module _ (pt : propositional-truncations-exist)
 
 \end{code}
 
-More can be said about this, which we do in NotationInterpretation2.
+More can be said about this, which we do in InductiveRecursiveCodesInterpretations.

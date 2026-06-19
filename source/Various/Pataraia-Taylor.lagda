@@ -16,7 +16,7 @@ result. An earlier, less general, theorem was proved by Coquand [6]
 for *bounded complete* dcpos, with an easier proof.
 
 See the module Various.Pataraia for an implementation of the
-impredicative proof given [2].
+impredicative proof given in [2].
 
 Pataraia's proof has two steps, the first of which is directly
 predicative and coded in the module lemma₂·₁ in the file
@@ -108,8 +108,6 @@ open PropositionalTruncation pt
 
 open import DomainTheory.Basics.Dcpo pt fe 𝓤
 open import DomainTheory.Basics.Miscelanea pt fe 𝓤
-open import UF.Sets
-open import UF.Sets-Properties
 open import UF.Subsingletons
 open import UF.Subsingletons-FunExt
 open import Various.Pataraia pt fe 𝓤

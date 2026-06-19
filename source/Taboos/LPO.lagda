@@ -56,9 +56,12 @@ we had equivalently defined
 because we have
 
   fiber ι x = Σ n ꞉ ℕ , ι n ＝ x
+            = is-finite x
 
 by definition and ι is an embedding, so that e.g. the following
 wouldn't require a proof given our definition of embedding.
+
+See 14 June 2026 addition below.
 
 End of addition.
 
@@ -85,81 +88,81 @@ formulation.
 
 LPO-gives-compact-ℕ : funext₀ → LPO → is-compact ℕ
 LPO-gives-compact-ℕ fe ℓ β = γ
-  where
-    A = (Σ n ꞉ ℕ , β n ＝ ₀) + (Π n ꞉ ℕ , β n ＝ ₁)
+ where
+  A = (Σ n ꞉ ℕ , β n ＝ ₀) + (Π n ꞉ ℕ , β n ＝ ₁)
 
-    α : ℕ → 𝟚
-    α = force-decreasing β
+  α : ℕ → 𝟚
+  α = force-decreasing β
 
-    x : ℕ∞
-    x = (α , force-decreasing-is-decreasing β)
+  x : ℕ∞
+  x = (α , force-decreasing-is-decreasing β)
 
-    d : is-decidable (Σ n ꞉ ℕ , x ＝ ι n)
-    d = ℓ x
+  d : is-decidable (Σ n ꞉ ℕ , x ＝ ι n)
+  d = ℓ x
 
-    a : (Σ n ꞉ ℕ , x ＝ ι n) → A
-    a (n , p) = inl (force-decreasing-is-not-much-smaller β n c)
-      where
-        c : α n ＝ ₀
-        c = α n       ＝⟨ ap (λ - → ι - n) p ⟩
-            ι (ι n) n ＝⟨ ℕ-to-ℕ∞-diagonal₀ n ⟩
-            ₀         ∎
+  a : (Σ n ꞉ ℕ , x ＝ ι n) → A
+  a (n , p) = inl (force-decreasing-is-not-much-smaller β n c)
+   where
+    c : α n ＝ ₀
+    c = α n       ＝⟨ ap (λ - → ι - n) p ⟩
+        ι (ι n) n ＝⟨ ℕ-to-ℕ∞-diagonal₀ n ⟩
+        ₀         ∎
 
-    b : ¬ (Σ n ꞉ ℕ , x ＝ ι n) → A
-    b u = inr g
-      where
-        v : (n : ℕ) → x ＝ ι n → 𝟘
-        v = curry u
+  b : ¬ (Σ n ꞉ ℕ , x ＝ ι n) → A
+  b u = inr g
+   where
+    v : (n : ℕ) → x ＝ ι n → 𝟘
+    v = curry u
 
-        g : (n : ℕ) → β n ＝ ₁
-        g n = ≤₂-criterion-converse (force-decreasing-is-smaller β n) e
-          where
-            c : x ＝ ι n → 𝟘
-            c = v n
+    g : (n : ℕ) → β n ＝ ₁
+    g n = ≤₂-criterion-converse (force-decreasing-is-smaller β n) e
+     where
+      c : x ＝ ι n → 𝟘
+      c = v n
 
-            l : x ＝ ∞
-            l = not-finite-is-∞ fe v
+      l : x ＝ ∞
+      l = not-finite-is-∞ fe v
 
-            e : α n ＝ ₁
-            e = ap (λ - → ι - n) l
+      e : α n ＝ ₁
+      e = ap (λ - → ι - n) l
 
-    γ : A
-    γ = cases a b d
+  γ : A
+  γ = cases a b d
 
 compact-ℕ-gives-LPO : funext₀ → is-compact ℕ → LPO
 compact-ℕ-gives-LPO fe κ x = γ
-  where
-    A = is-decidable (Σ n ꞉ ℕ , x ＝ ι n)
+ where
+  A = is-decidable (Σ n ꞉ ℕ , x ＝ ι n)
 
-    β : ℕ → 𝟚
-    β = ι x
+  β : ℕ → 𝟚
+  β = ι x
 
-    d : (Σ n ꞉ ℕ , β n ＝ ₀) + (Π n ꞉ ℕ , β n ＝ ₁)
-    d = κ β
+  d : (Σ n ꞉ ℕ , β n ＝ ₀) + (Π n ꞉ ℕ , β n ＝ ₁)
+  d = κ β
 
-    a : (Σ n ꞉ ℕ , β n ＝ ₀) → A
-    a (n , p) = inl (pr₁ g , pr₂(pr₂ g))
-      where
-        g : Σ m ꞉ ℕ , (m ≤ n) × (x ＝ ι m)
-        g = ℕ-to-ℕ∞-lemma fe x n p
+  a : (Σ n ꞉ ℕ , β n ＝ ₀) → A
+  a (n , p) = inl (pr₁ g , pr₂(pr₂ g))
+   where
+    g : Σ m ꞉ ℕ , (m ≤ n) × (x ＝ ι m)
+    g = ℕ-to-ℕ∞-lemma fe x n p
 
-    b : (Π n ꞉ ℕ , β n ＝ ₁) → A
-    b φ = inr g
-      where
-        ψ : ¬ (Σ n ꞉ ℕ , β n ＝ ₀)
-        ψ = uncurry (λ n → equal-₁-different-from-₀(φ n))
+  b : (Π n ꞉ ℕ , β n ＝ ₁) → A
+  b φ = inr g
+   where
+    ψ : ¬ (Σ n ꞉ ℕ , β n ＝ ₀)
+    ψ = uncurry (λ n → equal-₁-different-from-₀(φ n))
 
-        f : (Σ n ꞉ ℕ , x ＝ ι n) → Σ n ꞉ ℕ , β n ＝ ₀
-        f (n , p) = (n , (ap (λ - → ι - n) p ∙ ℕ-to-ℕ∞-diagonal₀ n))
-          where
-           l : ι x n ＝ ι (ι n) n
-           l = ap (λ - → ι - n) p
+    f : (Σ n ꞉ ℕ , x ＝ ι n) → Σ n ꞉ ℕ , β n ＝ ₀
+    f (n , p) = (n , (ap (λ - → ι - n) p ∙ ℕ-to-ℕ∞-diagonal₀ n))
+     where
+      l : ι x n ＝ ι (ι n) n
+      l = ap (λ - → ι - n) p
 
-        g : ¬ (Σ n ꞉ ℕ , x ＝ ι n)
-        g = contrapositive f ψ
+    g : ¬ (Σ n ꞉ ℕ , x ＝ ι n)
+    g = contrapositive f ψ
 
-    γ : is-decidable (Σ n ꞉ ℕ , x ＝ ι n)
-    γ = cases a b d
+  γ : is-decidable (Σ n ꞉ ℕ , x ＝ ι n)
+  γ = cases a b d
 
 \end{code}
 
@@ -178,10 +181,10 @@ knowing whether LPO holds or not!
 
 \begin{code}
 
-open import TypeTopology.PropTychonoff
+open import TypeTopology.MicroTychonoff
 
 [LPO→ℕ]-is-compact∙ : funext₀ → is-compact∙ (LPO → ℕ)
-[LPO→ℕ]-is-compact∙ fe = prop-tychonoff-corollary' fe (LPO-is-prop fe) f
+[LPO→ℕ]-is-compact∙ fe = micro-tychonoff-corollary' fe (LPO-is-prop fe) f
  where
    f : LPO → is-compact∙ ℕ
    f lpo = compact-pointed-types-are-compact∙ (LPO-gives-compact-ℕ fe lpo) 0
@@ -311,7 +314,7 @@ LPO-implies-LPO-variation fe lpo α = I (LPO-gives-compact-ℕ fe lpo α)
 
 \end{code}
 
-Added 3rd December by Martin Escardo.
+Added 3rd December by Martin Escardo 2025.
 
 \begin{code}
 
@@ -319,31 +322,31 @@ Added 3rd December by Martin Escardo.
                     → ((x : ℕ∞) → is-decidable (Σ n ꞉ ℕ , x ⊑ n))
                     → is-compact ℕ
 ℕ-compact-criterion fe ℓ β = γ
-  where
-    A = (Σ n ꞉ ℕ , β n ＝ ₀) + (Π n ꞉ ℕ , β n ＝ ₁)
+ where
+  A = (Σ n ꞉ ℕ , β n ＝ ₀) + (Π n ꞉ ℕ , β n ＝ ₁)
 
-    α : ℕ → 𝟚
-    α = force-decreasing β
+  α : ℕ → 𝟚
+  α = force-decreasing β
 
-    x : ℕ∞
-    x = (α , force-decreasing-is-decreasing β)
+  x : ℕ∞
+  x = (α , force-decreasing-is-decreasing β)
 
-    d : is-decidable (Σ n ꞉ ℕ , x ⊑ n)
-    d = ℓ x
+  d : is-decidable (Σ n ꞉ ℕ , x ⊑ n)
+  d = ℓ x
 
-    a : (Σ n ꞉ ℕ , x ⊑ n) → A
-    a (n , p) = inl (force-decreasing-is-not-much-smaller β n p)
+  a : (Σ n ꞉ ℕ , x ⊑ n) → A
+  a (n , p) = inl (force-decreasing-is-not-much-smaller β n p)
 
-    b : ¬ (Σ n ꞉ ℕ , ι x n ＝ ₀) → A
-    b ν = inr f
-      where
-       f : (n : ℕ) → β n ＝ ₁
-       f n = different-from-₀-equal-₁
-              (λ (e : β n ＝ ₀)
-                    → ν (n , ₀-smallest (force-decreasing-is-smaller β n) e))
+  b : ¬ (Σ n ꞉ ℕ , ι x n ＝ ₀) → A
+  b ν = inr f
+   where
+    f : (n : ℕ) → β n ＝ ₁
+    f n = different-from-₀-equal-₁
+           (λ (e : β n ＝ ₀)
+                 → ν (n , ₀-smallest (force-decreasing-is-smaller β n) e))
 
-    γ : A
-    γ = cases a b d
+  γ : A
+  γ = cases a b d
 
 LPO-criterion : funext₀
               → ((x : ℕ∞) → is-decidable (Σ n ꞉ ℕ , x ⊑ n))
@@ -353,3 +356,24 @@ LPO-criterion fe ℓ = compact-ℕ-gives-LPO fe (ℕ-compact-criterion fe ℓ)
 \end{code}
 
 TODO. Add the converse of LPO-criterion.
+
+Added 14 June 2026 by Martin Escardo. See 10th September 2024 addition
+above.
+
+\begin{code}
+
+open import NotionsOfDecidability.Decidable
+
+LPO' : 𝓤₀ ̇
+LPO' = (x : ℕ∞) → is-decidable (is-finite x)
+
+LPO'-lemma : {x : ℕ∞} → (Σ n ꞉ ℕ , x ＝ ι n) ↔ is-finite x
+LPO'-lemma = (λ (n , e) → n , (e ⁻¹)) , (λ (n , e) → n , (e ⁻¹))
+
+LPO-gives-LPO' : LPO → LPO'
+LPO-gives-LPO' lpo x = decidable-↔ LPO'-lemma (lpo x)
+
+LPO'-gives-LPO : LPO' → LPO
+LPO'-gives-LPO lpo' x = decidable-↔ (↔-sym LPO'-lemma) (lpo' x)
+
+\end{code}

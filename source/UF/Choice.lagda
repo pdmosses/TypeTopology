@@ -24,7 +24,7 @@ Notice that, as shown in the HoTT book, the statement
 
 is in contradiction with the univalence axiom (we cannot reveal
 secrets in general). However, univalent choice is consistent with the
-univalent axiom, and, moreover, gives that
+univalence axiom, and, moreover, gives that
 
    ∥(B : 𝓤 ̇ ) → ∥ ∥ B ∥ → B ∥
 
@@ -171,7 +171,7 @@ module TChoice
 January 2018.
 
 We now implement the examples discussed above, which give
-characterizations choice as in the HoTT book, which we refer to as
+characterizations of choice as in the HoTT book, which we refer to as
 Univalent Choice.
 
 \begin{code}
@@ -453,7 +453,7 @@ quantified) principle of excluded middle.
         A
         (Ω-is-set (fe _ _) pe)
         (λ (P , i) → decidability-of-prop-is-prop (fe _ _) i)
-        (λ _ → fake-¬¬-EM)
+        (λ _ → double-negation-of-decision)
 
  ¬¬EM-gives-DNS₋₁ : ¬¬ EM 𝓤 → DNS₋₁ {𝓤} {𝓤}
  ¬¬EM-gives-DNS₋₁ {𝓤} nnem X A X-is-set A-is-prop-valued f = ¬¬-functor g nnem

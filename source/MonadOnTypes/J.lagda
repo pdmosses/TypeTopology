@@ -9,7 +9,6 @@ open import MLTT.Spartan hiding (J)
 
 module MonadOnTypes.J where
 
-open import UF.FunExt
 open import MonadOnTypes.Definition
 
 𝕁 : 𝓦₀ ̇ → Monad {λ 𝓤 → 𝓦₀ ⊔ 𝓤}
@@ -22,7 +21,7 @@ open import MonadOnTypes.Definition
  assoc   = λ g f x → refl
  }
 
-module J-definitions (R : 𝓦₀ ̇ ) where
+module J-definitions {R : 𝓦₀ ̇ } where
 
  J : 𝓤 ̇ → 𝓦₀ ⊔ 𝓤 ̇
  J = functor (𝕁 R)
@@ -50,5 +49,32 @@ module J-definitions (R : 𝓦₀ ̇ ) where
 
  mapᴶ : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } → (X → Y) → J X → J Y
  mapᴶ = map (𝕁 R)
+
+\end{code}
+
+The following is the letter O for the contravariant outcome functor.
+
+\begin{code}
+
+module contravariant-functoriality-on-outcome-type
+        (X : 𝓤 ̇ )
+       where
+
+ O : 𝓥 ̇ → 𝓤 ⊔ 𝓥 ̇
+ O R = functor (𝕁 R) X
+
+ O-functor : {R : 𝓥 ̇ } {S : 𝓦 ̇ }
+           → (S → R) → (O R → O S)
+ O-functor f ε p = ε (f ∘ p)
+
+ O-functor-id : {R : 𝓥 ̇ }
+              → O-functor (𝑖𝑑 R) ＝ (𝑖𝑑 (O R))
+ O-functor-id = refl
+
+ O-functor-∘
+  : {R : 𝓥 ̇ } {S : 𝓦 ̇ } {T : 𝓣 ̇ }
+    (f : R → S) (g : S → T)
+  → O-functor (g ∘ f) ＝ O-functor f ∘ O-functor g
+ O-functor-∘ f g = refl
 
 \end{code}

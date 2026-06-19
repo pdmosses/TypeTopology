@@ -6,7 +6,7 @@ Produced in the Birmingham Agda Club. We benefited from the company
 and discussions with the other members, Todd Ambridge, Tom De Jong,
 George Kaye, Owen Milner and Ayberk Tosun.
 
-See the file https://www.cs.bham.ac.uk/~mhe/TypeTopology/InitialBinarySystem2.html
+See the file https://www.cs.bham.ac.uk/~mhe/TypeTopology/InitialBinarySystem.html
 for background.
 
 The initial binary system gives the closed interval of dyadic
@@ -543,7 +543,7 @@ module _ {ℓ    : Level}
          (f    : (b : 𝔹) → P b → P (l b))
          (g    : (b : 𝔹) → P b → P (r b))
          (eqf  : subst P eqL x       ＝ f L x) -- HoTT/UF style
-         (eqfg : subst P eqM (f R y) ＝ g L x) -- fomulation.
+         (eqfg : subst P eqM (f R y) ＝ g L x) -- formulation.
          (eqg  : subst P eqR y       ＝ g R y) --
        where
 

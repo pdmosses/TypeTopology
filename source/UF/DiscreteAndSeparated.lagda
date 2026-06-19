@@ -388,26 +388,6 @@ binary-sum-is-¬¬-separated {𝓤} {𝓥} {X} {Y} s t (inr y) (inr y') =
   lemma : ¬¬ (inr y ＝ inr y') → inr y ＝ inr y'
   lemma = ap inr ∘ t y y' ∘ ¬¬-functor claim
 
-⊥-⊤-density' : funext 𝓤 𝓤
-             → propext 𝓤
-             → ∀ {𝓥} {X : 𝓥 ̇ }
-             → is-¬¬-separated X
-             → (f : Ω 𝓤 → X) → f ⊥ ＝ f ⊤
-             → wconstant f
-⊥-⊤-density' fe pe s f r p q = g p ∙ (g q)⁻¹
-  where
-    a : ∀ p → ¬¬ (f p ＝ f ⊤)
-    a p t = no-truth-values-other-than-⊥-or-⊤ fe pe (p , (b , c))
-      where
-        b : p ≠ ⊥
-        b u = t (ap f u ∙ r)
-
-        c : p ≠ ⊤
-        c u = t (ap f u)
-
-    g : ∀ p → f p ＝ f ⊤
-    g p = s (f p) (f ⊤) (a p)
-
 \end{code}
 
 Added 19th March 2021.
@@ -454,6 +434,33 @@ equality-of-¬¬stable-propositions fe pe p q f g a = γ
   γ : p ＝ q
   γ = to-subtype-＝ (λ _ → being-prop-is-prop fe) δ
 
+\end{code}
+
+TODO. Find a better home for the following.
+
+\begin{code}
+
+⊥-⊤-density' : funext 𝓤 𝓤
+             → propext 𝓤
+             → ∀ {𝓥} {X : 𝓥 ̇ }
+             → is-¬¬-separated X
+             → (f : Ω 𝓤 → X)
+             → f ⊥ ＝ f ⊤
+             → wconstant f
+⊥-⊤-density' fe pe s f r p q = g p ∙ (g q)⁻¹
+  where
+    a : ∀ p → ¬¬ (f p ＝ f ⊤)
+    a p t = no-truth-values-other-than-⊥-or-⊤ fe pe (p , (b , c))
+      where
+        b : p ≠ ⊥
+        b u = t (ap f u ∙ r)
+
+        c : p ≠ ⊤
+        c u = t (ap f u)
+
+    g : ∀ p → f p ＝ f ⊤
+    g p = s (f p) (f ⊤) (a p)
+
 ⊥-⊤-Density : funext 𝓤 𝓤
             → propext 𝓤
             → {X : 𝓥 ̇ }
@@ -461,16 +468,7 @@ equality-of-¬¬stable-propositions fe pe p q f g a = γ
             → is-¬¬-separated X
             → f ⊥ ＝ f ⊤
             → (p : Ω 𝓤) → f p ＝ f ⊤
-⊥-⊤-Density fe pe f s r p = s (f p) (f ⊤) a
- where
-  a : ¬¬ (f p ＝ f ⊤)
-  a u = no-truth-values-other-than-⊥-or-⊤ fe pe (p , b , c)
-   where
-    b : p ≠ ⊥
-    b v = u (ap f v ∙ r)
-
-    c : p ≠ ⊤
-    c w = u (ap f w)
+⊥-⊤-Density fe pe f s r p = ⊥-⊤-density' fe pe s f r p ⊤
 
 ⊥-⊤-density : funext 𝓤 𝓤
             → propext 𝓤
@@ -678,7 +676,9 @@ isolated-Id-is-prop x i =
 
 lc-maps-reflect-isolatedness : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } (f : X → Y)
                              → left-cancellable f
-                             → (x : X) → is-isolated (f x) → is-isolated x
+                             → (x : X)
+                             → is-isolated (f x)
+                             → is-isolated x
 lc-maps-reflect-isolatedness f l x i y = γ (i (f y))
  where
   γ : (f x ＝ f y) + ¬ (f x ＝ f y) → (x ＝ y) + ¬ (x ＝ y)
@@ -694,14 +694,16 @@ lc-maps-reflect-discreteness f l d x =
 
 embeddings-reflect-isolatedness : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } (f : X → Y)
                                 → is-embedding f
-                                → (x : X) → is-isolated (f x)
+                                → (x : X)
+                                → is-isolated (f x)
                                 → is-isolated x
 embeddings-reflect-isolatedness f e x i y = lc-maps-reflect-isolatedness f
                                               (embeddings-are-lc f e) x i y
 
 equivs-reflect-isolatedness : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } (f : X → Y)
                             → is-equiv f
-                            → (x : X) → is-isolated (f x)
+                            → (x : X)
+                            → is-isolated (f x)
                             → is-isolated x
 equivs-reflect-isolatedness f e = embeddings-reflect-isolatedness f
                                    (equivs-are-embeddings f e)
@@ -710,7 +712,9 @@ embeddings-reflect-discreteness : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } (f : X → Y)
                                 → is-embedding f
                                 → is-discrete Y
                                 → is-discrete X
-embeddings-reflect-discreteness f e = lc-maps-reflect-discreteness f (embeddings-are-lc f e)
+embeddings-reflect-discreteness f e = lc-maps-reflect-discreteness
+                                       f
+                                       (embeddings-are-lc f e)
 
 equivs-preserve-discreteness : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } (f : X → Y)
                              → is-equiv f
