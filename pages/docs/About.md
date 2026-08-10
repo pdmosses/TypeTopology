@@ -69,6 +69,13 @@ make web
 make serve
 ```
 
+While serving the website at `localhost:8010`, running the [linkcheck] application
+reported:
+
+```sh
+Perfect. Checked 2180364 links, 1015 destination URLs (1 ignored).
+```
+
 The generated website was deployed at <https://pdmosses.github.io/TypeTopology/> by:
 
 ```shell
