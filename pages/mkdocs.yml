@@ -1,0 +1,32 @@
+INHERIT: agda-pages/agda-pages.yml
+
+site_name: TypeTopology Pages
+site_url:  https://pdmosses.github.io/TypeTopology/
+repo_name: TypeTopology@add-pages
+repo_url:  https://github.com/pdmosses/TypeTopology/tree/add-pages
+
+# TypeTopology Pages overrides the Agda-Pages default list of theme features
+# by dropping navigation.indexes. When included, this feature combines links
+# to index module pages with section expanders, which is undesirable when the
+# index pages include informative prose (rather than merely importing modules).
+
+theme:
+  features:
+    - content.code.copy
+    # - navigation.expand     # unsuitable for large sites
+    # - navigation.footer     # unsuitable for large sites
+    # - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    # - navigation.prune    # suppresses effect of navigation.expand
+    # - navigation.sections # incompatible with navigation.expand
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate       # incompatible with navigation.indexes

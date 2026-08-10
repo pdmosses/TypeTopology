@@ -1,0 +1,10 @@
+nav:
+  - About: About.md
+  - Modules:
+    - index.md
+    - '*'
+
+preserve_directory_names: true
+
+sort:
+  sections: mixed
