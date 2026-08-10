@@ -87,12 +87,12 @@ make deploy
 [AllModulesIndex]:       AllModulesIndex.md
 
 [fork]:                  https://github.com/pdmosses/TypeTopology
-[pages directory]:       https://github.com/pdmosses/TypeTopology/tree/add-pages/pages
 [add-pages branch]:      https://github.com/pdmosses/TypeTopology/tree/add-pages
-[Makefile]:              https://github.com/pdmosses/TypeTopology/blob/add-pages/Makefile
-[mkdocs.yml]:            https://github.com/pdmosses/TypeTopology/blob/add-pages/Makefile
-[docs/.nav.yml]:         https://github.com/pdmosses/TypeTopology/blob/add-pages/docs/.nav.yml
-[docs/About.md]:         https://github.com/pdmosses/TypeTopology/blob/add-pages/docs/About.md
+[pages directory]:       https://github.com/pdmosses/TypeTopology/tree/add-pages/pages
+[docs/.nav.yml]:         https://github.com/pdmosses/TypeTopology/blob/add-pages/pages/docs/.nav.yml
+[docs/About.md]:         https://github.com/pdmosses/TypeTopology/blob/add-pages/pages/docs/About.md
+[Makefile]:              https://github.com/pdmosses/TypeTopology/blob/add-pages/pages/Makefile
+[mkdocs.yml]:            https://github.com/pdmosses/TypeTopology/blob/add-pages/pages/mkdocs.yml
 
 [TypeTopology repository]: https://github.com/martinescardo/TypeTopology/
 [TypeTopology website]:    https://martinescardo.github.io/TypeTopology/
