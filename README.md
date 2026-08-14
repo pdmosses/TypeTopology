@@ -11,6 +11,7 @@ at the place of contribution.
  * [html rendering of the Agda code](http://www.cs.bham.ac.uk/~mhe/TypeTopology/index.html).
  * [search](https://www.cs.bham.ac.uk/~mhe/TypeTopologySearch.html) for a name, a fragment of one, a concept, a definition, or a contributor, including wildcards.
  * [emacs search command](https://github.com/martinescardo/TypeTopologySearch/blob/main/README.md) for TypeTopology.
+ * [brief module descriptions](https://github.com/martinescardo/TypeTopologyModuleDescriptions).
 
 ## Table of contents
 
@@ -310,6 +311,7 @@ only your name as author.
 
 Please add yourself the first time you contribute. Use your adopted name, and not necessarily your given name, at your discretion.
 
+* Alex Rice
 * Alice Laroche
 * Andrew Sneap
 * Andrew Swan
@@ -334,6 +336,7 @@ Please add yourself the first time you contribute. Use your adopted name, and no
 * Lane Biocini
 * Marc Bezem
 * Martin Escardo
+* Mike Shulman
 * Nicolai Kraus
 * Ohad Kammar
 * Paul Levy (i)
@@ -343,6 +346,7 @@ Please add yourself the first time you contribute. Use your adopted name, and no
 * Thierry Coquand
 * Todd Waugh Ambridge
 * Tom de Jong
+* Ulrik Buchholtz
 * Vincent Rahli
 
 (i) These authors didn't write any single line of Agda code here, but

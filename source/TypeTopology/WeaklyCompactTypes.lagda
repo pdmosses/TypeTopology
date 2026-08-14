@@ -1,7 +1,7 @@
 Martin Escardo, January 2018
 
 Two weak notions of compactness: ∃-compactness and Π-compactness. See
-the module CompactTypes for the strong notion.
+the module TypeTopology.CompactTypes for the strong notion.
 
 \begin{code}
 
@@ -477,7 +477,7 @@ tscd₁ {𝓤} {𝓥} {X} {Y} r c = f
 In topological models, Π-compactness is the same as topological
 compactness in the presence of total separatedness, at least for some
 spaces, including the Kleene-Kreisel spaces, which model the simple
-types (see the module SimpleTypes). Hence, for example, the
+types (see the module TypeTopology.SimpleTypes). Hence, for example, the
 topological space (ℕ∞→𝟚) is not Π-compact because it is countably
 discrete, as it is a theorem of topology that discrete to the power
 compact is again discrete, which is compact iff it is finite. This
@@ -757,7 +757,7 @@ complemented-subtype-is-Π-compact {𝓤} {X} A c q = g (c p)
 20 Jan 2018.
 
 We now consider a truncated version of pointed compactness (see the
-module CompactTypes).
+module TypeTopology.CompactTypes).
 
 \begin{code}
 
@@ -1244,8 +1244,8 @@ through the embedding 𝟚 of into the type of truth values, we say that
 it has decidable truth-values, which is equivalent. Such an asymmetry
 is already present in our formulation of the notion of compactness.
 
-We have defined image with lower case in the module UF. We now need
-Images with upper case:
+We have defined image with lower case in the module
+UF.ImageAndSurjection. We now need Images with upper case:
 
 \begin{code}
 

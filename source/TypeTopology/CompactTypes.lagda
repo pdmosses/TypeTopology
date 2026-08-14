@@ -3,10 +3,10 @@ Martin Escardo 2011, reorganized and expanded 2018,2019.
 Compact types. We shall call a type compact if it is exhaustibly
 searchable. But there are many closely related, but different, notions
 of searchability, and we investigate this phenomenon in this module
-and the module WeaklyCompactTypes.
+and the module TypeTopology.WeaklyCompactTypes.
 
 Perhaps surprisingly, there are infinite searchable sets, such as ℕ∞
-(see the module GenericConvergentSequenceCompactness).
+(see the module TypeTopology.GenericConvergentSequenceCompactness).
 
 It is in general not possible to decide constructively the statement
 
@@ -110,7 +110,7 @@ is-compact  = is-Σ-compact
 Notice that compactness in this sense is not in general a univalent
 proposition (subsingleton). Weaker notions, ∃-compactness and
 Π-compactness, that are always propositions are defined and studied in
-the module WeaklyCompactTypes.
+the module TypeTopology.WeaklyCompactTypes.
 
 The following notion is logically equivalent to the conjunction of
 compactness and pointedness, and hence the notation "compact∙":
@@ -314,8 +314,8 @@ compatible constructive mathematics, like Bishop's methamatics and
 Martin-Löf type theory (in its various flavours) - even the principle
 of excluded middle is independent.
 
-We'll see that the infinite set ℕ∞ defined in the module
-ConvergentSequenceCompact is compact.
+We'll see in TypeTopology.GenericConvergentSequenceCompactness that
+the infinite set ℕ∞ is compact.
 
 If a set X is compact∙ and a set Y has decidable equality, then the
 function space (X → Y) has decidable equality, if we assume function
@@ -892,9 +892,10 @@ module CompactTypesPT (pt : propositional-truncations-exist) where
 
 \end{code}
 
-In `TypeTopology.DenseMapsProperties` a generalization of the above result is
-given that applies to all dense maps, and does not use the function
-extensionality axiom or existence of propositional truncations.
+In TypeTopology.DenseMapsProperties a generalization of the above
+result is given that applies to all dense maps, and does not use the
+function extensionality axiom or existence of propositional
+truncations.
 
 \begin{code}
 
@@ -1032,7 +1033,7 @@ Compact∙-gives-pointed ε = pr₁ (ε (λ x → 𝟘) (λ x → 𝟘-is-decida
 
 \end{code}
 
-Based on what was done in the module WeaklyCompactTypes before:
+Based on what was done in the module TypeTopology.WeaklyCompactTypes before:
 
 \begin{code}
 
@@ -1317,7 +1318,7 @@ Added March 2022 by Martin Escardo.
 
 \end{code}
 
-Is the compactness assumption needed? Are there better assumptions
+TODO. Is the compactness assumption needed? Are there better assumptions?
 
 \begin{code}
 
