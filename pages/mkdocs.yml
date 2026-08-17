@@ -1,11 +1,11 @@
 INHERIT: agda-pages/agda-pages.yml
 
-site_name: TypeTopology Pages
+site_name: TypeTopologyPages
 site_url:  https://pdmosses.github.io/TypeTopology/
 repo_name: TypeTopology@add-pages
 repo_url:  https://github.com/pdmosses/TypeTopology/tree/add-pages
 
-# TypeTopology Pages overrides the Agda-Pages default list of theme features
+# TypeTopologyPages overrides the Agda-Pages default list of theme features
 # by dropping navigation.indexes. When included, this feature combines links
 # to index module pages with section expanders, which is undesirable when the
 # index pages include informative prose (rather than merely importing modules).
