@@ -35,7 +35,6 @@ and for a list of its main software dependencies.
 The following files were added to the fork of the TypeTopology repository
 to support website generation using Agda-Pages:
 
-
 ```
 .
 ├─  ...
@@ -46,7 +45,7 @@ to support website generation using Agda-Pages:
     │   ├─ About.md
     │   └─ .nav.yml
     ├─  Makefile
-    └─  mkdocs.yml
+    └─  properdocs.yml
 ```
 
 The [pages directory] includes all the required files:
@@ -57,11 +56,11 @@ The [pages directory] includes all the required files:
 -   [docs/.nav.yml] configures the main navigation of the website.
 -   [Makefile] configures the location of the Agda source files and
     a non-generated Markdown file.
--   [mkdocs.yml] configures the name and location of the website and the
+-   [properdocs.yml] configures the name and location of the website and the
     repository.
 
-Running the following shell commands in the [pages directory] then generated
-the present website:
+Running the following shell commands in the [pages directory] generates the
+present website:
 
 ```shell
 make check
@@ -69,14 +68,15 @@ make web
 make serve
 ```
 
-While serving the website at `localhost:8010`, running the [linkcheck] application
-reported:
+While serving the website, running the [linkcheck] application reports:
 
 ```sh
-Perfect. Checked 2180357 links, 1016 destination URLs (1 ignored).
+TypeTopology: .../linkcheck/linkcheck -e :8010 --skip-file pages/agda-pages/skip.txt
+
+Perfect. Checked 2180685 links, 1016 destination URLs (1 ignored).
 ```
 
-The generated website was deployed at <https://pdmosses.github.io/TypeTopology/> by:
+The generated website is deployed at <https://pdmosses.github.io/TypeTopology/> by:
 
 ```shell
 make deploy
@@ -99,7 +99,7 @@ make deploy
 [docs/.nav.yml]:         https://github.com/pdmosses/TypeTopology/blob/add-pages/pages/docs/.nav.yml
 [docs/About.md]:         https://github.com/pdmosses/TypeTopology/blob/add-pages/pages/docs/About.md
 [Makefile]:              https://github.com/pdmosses/TypeTopology/blob/add-pages/pages/Makefile
-[mkdocs.yml]:            https://github.com/pdmosses/TypeTopology/blob/add-pages/pages/mkdocs.yml
+[properdocs.yml]:        https://github.com/pdmosses/TypeTopology/blob/add-pages/pages/properdocs.yml
 
 [TypeTopology repository]: https://github.com/martinescardo/TypeTopology/
 [TypeTopology website]:    https://martinescardo.github.io/TypeTopology/
