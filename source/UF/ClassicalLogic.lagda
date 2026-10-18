@@ -18,13 +18,17 @@ module UF.ClassicalLogic where
 open import MLTT.Spartan
 
 open import UF.Base
+open import UF.DiscreteAndSeparated
 open import UF.Equiv
 open import UF.FunExt
 open import UF.PropTrunc
+open import UF.Sets
 open import UF.Subsingletons
 open import UF.Subsingletons-FunExt
 open import UF.SubtypeClassifier
+open import UF.Univalence
 open import UF.UniverseEmbedding
+open import UF.Universes
 
 \end{code}
 
@@ -245,12 +249,12 @@ End of addition/modification.
 Is the above untruncated De Morgan Law a proposition? Not in
 general. If it doesn't hold, it is vacuously a proposition. But if it
 does hold, it is not a proposition. We prove this by modifying any
-given δ : De-Mordan 𝓤 to a different δ' : untruncated-De-Morgan
-𝓤. Then we also consider a truncated version of untruncated-De-Morgan
-that is a proposition and is logically equivalent to
-untruncated-De-Morgan. So untruncated-De-Morgan 𝓤 is not necessarily a
-proposition, but it always has split support (it has a proposition as
-a retract).
+given δ : untruncated-typal-De-Morgan 𝓤 to a different δ' of the same
+type. Then we also consider a truncated version of
+untruncated-De-Morgan that is a proposition and is logically
+equivalent to untruncated-De-Morgan. So untruncated-De-Morgan 𝓤 is not
+necessarily a proposition, but it always has split support (it has a
+proposition as a retract).
 
 \begin{code}
 
@@ -694,5 +698,22 @@ Global-Choice'-gives-Global-Choice gc X = gc (X + ¬ X)
                                              (λ u → u (inr (λ p → u (inl p))))
 \end{code}
 
-TODO. Global choice contradicts univalence. This is already present in
-the directory MGS.
+Global choice makes every type discrete, and hence a set, which
+contradicts univalence, as the universes are not sets. This is already
+present, in a different formulation, in the directory MGS.Choice.
+
+\begin{code}
+
+Global-Choice-gives-discreteness : Global-Choice 𝓤 → (X : 𝓤 ̇ ) → is-discrete X
+Global-Choice-gives-discreteness gc X x y = gc (x ＝ y)
+
+Global-Choice-gives-sethood : Global-Choice 𝓤 → (X : 𝓤 ̇ ) → is-set X
+Global-Choice-gives-sethood gc X =
+ discrete-types-are-sets (Global-Choice-gives-discreteness gc X)
+
+Global-Choice-is-inconsistent-with-univalence
+ : Global-Choice (𝓤 ⁺) → is-univalent 𝓤 → 𝟘
+Global-Choice-is-inconsistent-with-univalence {𝓤} gc ua =
+ universes-are-not-sets ua (Global-Choice-gives-sethood gc (𝓤 ̇ ))
+
+\end{code}

@@ -624,7 +624,7 @@ instance
 ∞-largest u = λ n _ → refl
 
 Zero-smallest : (u : ℕ∞) → Zero ≼ u
-Zero-smallest u n = λ (p : ₀ ＝ ₁) → 𝟘-elim (zero-is-not-one p)
+Zero-smallest u n = λ (p : ₀ ＝ ₁) → zero-is-one-elim p
 
 Succ-not-≼-Zero : (u : ℕ∞) → ¬ (Succ u ≼ Zero)
 Succ-not-≼-Zero u l = zero-is-not-one (l zero refl)
@@ -805,10 +805,17 @@ finite-≺-Succ a (n , p) = transport (_≺ Succ a) p
 <-gives-⊏ (succ m) (succ n) l = <-gives-⊏ m n l
 
 ⊏-gives-< : (m n : ℕ) →  m ⊏ ι n → m < n
-⊏-gives-< 0        0        l = 𝟘-elim (zero-is-not-one l)
+⊏-gives-< 0        0        l = zero-is-one-elim l
 ⊏-gives-< 0        (succ n) l = zero-least n
-⊏-gives-< (succ m) 0        l = 𝟘-elim (zero-is-not-one l)
+⊏-gives-< (succ m) 0        l = zero-is-one-elim l
 ⊏-gives-< (succ m) (succ n) l = ⊏-gives-< m n l
+
+nothing-is-below-0 : (u : ℕ∞) → ¬ (u ≺ ι 0)
+nothing-is-below-0 u (n , _ , l) = ⊏-gives-< n 0 l
+
+anything-below-1-is-0 : (u : ℕ∞) → u ≺ ι 1 → u ＝ ι 0
+anything-below-1-is-0 u (0      , r , l) = r
+anything-below-1-is-0 u (succ n , _ , l) = 𝟘-elim (⊏-gives-< (succ n) 1 l)
 
 ⊏-back : (u : ℕ∞) (n : ℕ) → succ n ⊏ u → n ⊏ u
 ⊏-back u n = ≤₂-criterion-converse (pr₂ u n)

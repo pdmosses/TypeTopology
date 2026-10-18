@@ -14,11 +14,9 @@ trichotomous least element.
 {-# OPTIONS --safe --without-K --lossy-unification #-}
 
 open import UF.Univalence
-open import UF.PropTrunc
 
 module Ordinals.Exponentiation.TrichotomousLeastElement
        (ua : Univalence)
-       (pt : propositional-truncations-exist)
        where
 
 open import UF.Base
@@ -29,6 +27,7 @@ open import UF.Sets
 open import UF.Subsingletons
 open import UF.Subsingletons-FunExt
 open import UF.UA-FunExt
+open import UF.PropTrunc
 
 private
  fe : FunExt
@@ -52,8 +51,6 @@ open import Ordinals.OrdinalOfOrdinals ua
 open import Ordinals.Propositions ua
 open import Ordinals.Type
 open import Ordinals.Underlying
-
-open PropositionalTruncation pt
 
 \end{code}
 
@@ -262,7 +259,15 @@ trichotomy-to-decomposed-at {𝓤} α x tri = β , γ , p , p-spec
     g-order-preserving (inl (a , l))       (inr (inl ⋆))       _ = l
     g-order-preserving (inl (a , l))       (inr (inr (b , u))) _ =
      Transitivity α a x b l u
+    g-order-preserving (inr (inl _))       (inl (b , _))       v =
+     𝟘-elim v
+    g-order-preserving (inr (inl _))       (inr (inl _))       v =
+     𝟘-elim v
     g-order-preserving (inr (inl _))       (inr (inr (b , u))) _ = u
+    g-order-preserving (inr (inr (a , _))) (inl (b , _))       v =
+     𝟘-elim v
+    g-order-preserving (inr (inr (a , _))) (inr (inl _))       v =
+     𝟘-elim v
     g-order-preserving (inr (inr (a , _))) (inr (inr (b , _))) v = v
 
     η : (a : ⟨ α ⟩) → g (f a) ＝ a
@@ -568,13 +573,15 @@ Has-trichotomous-least-element-or-is-zero {𝓤} =
  (α : Ordinal 𝓤) → has-trichotomous-least-element-or-is-zero α
 
 EM-gives-Has-trichotomous-least-element-or-is-zero
- : EM 𝓤
+ : propositional-truncations-exist
+ → EM 𝓤
  → Has-trichotomous-least-element-or-is-zero {𝓤}
-EM-gives-Has-trichotomous-least-element-or-is-zero em α =
+EM-gives-Has-trichotomous-least-element-or-is-zero pt em α =
  II (em ∥ ⟨ α ⟩ ∥ ∥∥-is-prop)
   where
    open import Ordinals.WellOrderingTaboo fe' pe
    open ClassicalWellOrder pt
+   open PropositionalTruncation pt
 
    has-minimal = Σ x₀ ꞉ ⟨ α ⟩ , ((x : ⟨ α ⟩) → ¬ (x ≺⟨ α ⟩ x₀))
 

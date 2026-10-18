@@ -11,7 +11,9 @@ open import MLTT.Spartan
 
 open import CoNaturals.Type
 open import MLTT.Two-Properties
+open import Naturals.ExitTruncation
 open import Notation.Order
+open import Taboos.LPO
 open import Taboos.WLPO
 open import TypeTopology.CompactTypes
 open import TypeTopology.DisconnectedTypes
@@ -36,6 +38,7 @@ private
  fe' {𝓤} {𝓥} = fe 𝓤 𝓥
 
 open PropositionalTruncation pt
+open exit-truncations pt
 open import NotionsOfDecidability.Complemented
 
 is-∃-compact : 𝓤 ̇ → 𝓤 ̇
@@ -90,6 +93,16 @@ empty-types-are-Π-compact u p = inl (λ x → 𝟘-elim (u x))
 
 \end{code}
 
+Π-compactness for propositions is investigated in the module
+Taboos.P2, where a type X is said to be thinly inhabited if the map
+𝟚 → (X → 𝟚) that sends a boolean to the constant function with that
+value is an equivalence. For a proposition, thin inhabitedness amounts
+to Π-compactness together with nonemptiness. The principle that all
+irrefutable propositions are Π-compact is weak excluded middle, and the
+principle that all Π-compact propositions are decidable gives that weak
+excluded middle implies excluded middle, which may be regarded as a
+taboo.
+
 The ∃-compactness, and hence Π-compactness, of compact sets (and hence
 of ℕ∞, for example):
 
@@ -113,6 +126,34 @@ compact-types-are-∃-compact {𝓤} {X} φ p = g (φ p)
 
 But notice that the Π-compactness of ℕ is WLPO and its ∃-compactness
 amounts to LPO.
+
+\begin{code}
+
+Π-compact-ℕ-gives-WLPO : is-Π-compact ℕ → WLPO
+Π-compact-ℕ-gives-WLPO = WLPO-traditional-gives-WLPO (fe 𝓤₀ 𝓤₀)
+
+WLPO-gives-Π-compact-ℕ : WLPO → is-Π-compact ℕ
+WLPO-gives-Π-compact-ℕ = WLPO-gives-WLPO-traditional (fe 𝓤₀ 𝓤₀)
+
+∃-compact-ℕ-gives-LPO : is-∃-compact ℕ → LPO
+∃-compact-ℕ-gives-LPO c = LPO-variation-implies-LPO (fe 𝓤₀ 𝓤₀) I
+ where
+  I : LPO-variation
+  I α = II (c α)
+   where
+    II : is-decidable (∃ n ꞉ ℕ , α n ＝ ₀)
+       → is-decidable (Σ n ꞉ ℕ , α n ＝ ₀)
+    II (inl s) = inl (exit-truncation
+                       (λ n → α n ＝ ₀)
+                       (λ n → 𝟚-is-discrete (α n) ₀)
+                       s)
+    II (inr ν) = inr (λ σ → ν ∣ σ ∣)
+
+LPO-gives-∃-compact-ℕ : LPO → is-∃-compact ℕ
+LPO-gives-∃-compact-ℕ lpo = compact-types-are-∃-compact
+                             (LPO-gives-compact-ℕ (fe 𝓤₀ 𝓤₀) lpo)
+
+\end{code}
 
 The Π-compactness of X is equivalent to the isolatedness of the boolean
 predicate λ x → ₁:
@@ -209,7 +250,7 @@ discrete-power-of-disconnected-gives-compact-exponent : {X : 𝓤 ̇ } {Y : 𝓥
 discrete-power-of-disconnected-gives-compact-exponent {𝓤} {𝓥} {X} {Y} ρ d = γ
  where
   a : retract (X → 𝟚) of (X → Y)
-  a = retract-contravariance fe' ρ
+  a = retract-covariance fe' ρ
 
   b : is-discrete (X → 𝟚)
   b = retract-is-discrete a d
@@ -260,7 +301,9 @@ codomain-of-surjection-is-∃-compact {𝓤} {𝓥} {X} {Y} f su c q = g (c (q �
 image-is-∃-compact : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } (f : X → Y)
                    → is-∃-compact X
                    → is-∃-compact (image f)
-image-is-∃-compact f = codomain-of-surjection-is-∃-compact (corestriction f) (corestrictions-are-surjections f)
+image-is-∃-compact f = codomain-of-surjection-is-∃-compact
+                        (corestriction f)
+                        (corestrictions-are-surjections f)
 
 codomain-of-surjection-is-Π-compact : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } (f : X → Y)
                                     → is-surjection f
@@ -315,7 +358,8 @@ retract-is-Π-compact' t c = ∥∥-rec
  → is-Π-compact (X → Y)
  → is-Π-compact Y
 Π-compact-exponential-with-pointed-domain-has-Π-compact-codomain x
- = retract-is-Π-compact (codomain-is-retract-of-function-space-with-pointed-domain x)
+ = retract-is-Π-compact
+    (codomain-is-retract-of-function-space-with-pointed-domain x)
 
 \end{code}
 
@@ -444,7 +488,7 @@ tscd₀ : {X : 𝓤 ̇ } {Y : 𝓥 ̇ }
       → is-Π-compact (X → Y)
       → is-discrete X
 tscd₀ {𝓤} {𝓥} {X} {Y} ts r c =
- tscd ts (retract-is-Π-compact (retract-contravariance fe' r) c)
+ tscd ts (retract-is-Π-compact (retract-covariance fe' r) c)
 
 open totally-separated-reflection fe pt
 
@@ -455,7 +499,7 @@ tscd₁ : {X : 𝓤 ̇ } {Y : 𝓥 ̇ }
 tscd₁ {𝓤} {𝓥} {X} {Y} r c = f
  where
   z : retract (X → 𝟚) of (X → Y)
-  z = retract-contravariance fe' r
+  z = retract-covariance fe' r
 
   a : (𝕋 X → 𝟚) ≃ (X → 𝟚)
   a = totally-separated-reflection'' 𝟚-is-totally-separated
@@ -616,7 +660,7 @@ negations-of-types-whose-decidability-is-Π-compact-are-decidable X c
   a = c p
 
   l : ((z : X + ¬ X) → p z ＝ ₁) → ¬ X + ¬¬ X
-  l α = inl (λ x → 𝟘-elim (zero-is-not-one (α (inl x))))
+  l α = inl (λ x → zero-is-one-elim (α (inl x)))
 
   α : (u : X → 𝟘) (z : X + ¬ X) → p z ＝ ₁
   α u (inl x) = 𝟘-elim (u x)
@@ -651,7 +695,7 @@ detachable-subset-retract {𝓤} {X} {A} (x₀ , e₀) = r , pr₁ , rs
                            (λ (_ : b ＝ ₀) → (x , e))
                            (λ (_ : b ＝ ₁) → (x₀ , e₀)) ＝ (x , e)
     s ₀ refl = refl
-    s ₁ r = 𝟘-elim (one-is-not-zero r)
+    s ₁ r = one-is-zero-elim r
 
     t : 𝟚-equality-cases
          (λ (_ : A x ＝ ₀) → x , e)
@@ -715,7 +759,7 @@ complemented-subtype-is-Π-compact {𝓤} {X} A c q = g (c p)
     s : (b : 𝟚) → b ＝ ₀ → (f₁ : b ＝ ₁ → 𝟚)
       → 𝟚-equality-cases (λ (_ : b ＝ ₀) → ₁) f₁ ＝ ₁
     s ₀ refl = λ f₁ → refl
-    s ₁ r = 𝟘-elim (one-is-not-zero r)
+    s ₁ r = one-is-zero-elim r
 
   p-spec₁ : (x : X) (e : A x ＝ ₁) → p x ＝ q (x , e)
   p-spec₁ x e = u ∙ t
@@ -732,7 +776,7 @@ complemented-subtype-is-Π-compact {𝓤} {X} A c q = g (c p)
          (λ (_ : b ＝ ₀) → ₁)
          (λ (_ : b ＝ ₁) → q (x , e))
       ＝ q (x , e)
-    s ₀ r = 𝟘-elim (zero-is-not-one r)
+    s ₀ r = zero-is-one-elim r
     s ₁ refl = refl
 
     t : 𝟚-equality-cases (p₀ x) y ＝ q (x , e)
@@ -810,11 +854,11 @@ inhabited-and-compact-types-are-∃-compact∙ {𝓤} {X} (t , c) p = γ
     g : is-decidable (p x₀ ＝ ₀)
       → is-decidable (∃ x ꞉ X , p x ＝ ₀)
       → ∃ x₀ ꞉ X , (p x₀ ＝ ₁ → (x : X) → p x ＝ ₁)
-    g (inl r) _       = ∣ x₀ , (λ s _ → 𝟘-elim (zero-is-not-one (r ⁻¹ ∙ s))) ∣
+    g (inl r) _       = ∣ x₀ , (λ s _ → zero-is-one-elim (r ⁻¹ ∙ s)) ∣
     g (inr _) (inl t) = ∥∥-functor h t
      where
       h : (Σ x ꞉ X , p x ＝ ₀) → Σ x₀ ꞉ X , (p x₀ ＝ ₁ → (x : X) → p x ＝ ₁)
-      h (x , r) = x , λ s _ → 𝟘-elim (zero-is-not-one (r ⁻¹ ∙ s))
+      h (x , r) = x , λ s _ → zero-is-one-elim (r ⁻¹ ∙ s)
     g (inr _) (inr v) = ∣ x₀ , (λ _ → not-exists₀-implies-forall₁ p v) ∣
 
   γ : ∃ x₀ ꞉ X , (p x₀ ＝ ₁ → (x : X) → p x ＝ ₁)
@@ -876,7 +920,8 @@ having-inf-is-prop {𝓤} {X} p n (f , g) (f' , g') = to-×-＝ r s
   s = dfunext fe' (λ m → dfunext fe' (λ ϕ → ≤₂-is-prop-valued (g m ϕ) (g' m ϕ)))
 
 at-most-one-inf : {X : 𝓤 ̇ } (p : X → 𝟚) → is-prop (Σ n ꞉ 𝟚 , p has-inf n)
-at-most-one-inf p (n , f , g) (n' , f' , g') = to-Σ-＝ (≤₂-anti (g' n f) (g n' f') , having-inf-is-prop p n' _ _)
+at-most-one-inf p (n , f , g) (n' , f' , g') =
+ to-Σ-＝ (≤₂-anti (g' n f) (g n' f') , having-inf-is-prop p n' _ _)
 
 has-infs : 𝓤 ̇ → 𝓤 ̇
 has-infs X = ∀ (p : X → 𝟚) → Σ n ꞉ 𝟚 , p has-inf n
@@ -888,7 +933,9 @@ having-infs-is-prop {𝓤} {X} = Π-is-prop fe' at-most-one-inf
 Π-compact-has-infs c p = g (c p)
  where
   g : is-decidable (∀ x → p x ＝ ₁) → Σ n ꞉ 𝟚 , p has-inf n
-  g (inl α) = ₁ , (λ x → transport⁻¹ (₁ ≤₂_) (α x) (≤₂-refl {₀})) , λ m ϕ → ₁-top
+  g (inl α) = ₁ ,
+              (λ x → transport⁻¹ (₁ ≤₂_) (α x) (≤₂-refl {₀})) ,
+              λ m ϕ → ₁-top
   g (inr u) = ₀ , (λ _ → ₀-bottom {₀}) , h
    where
     h : (m : 𝟚) → (∀ x → m ≤ p x) → m ≤ ₀
@@ -925,7 +972,8 @@ Implicit application of type-theoretical choice:
 inf : {X : 𝓤 ̇ } → is-Π-compact X → (X → 𝟚) → 𝟚
 inf c p = pr₁ (Π-compact-has-infs c p)
 
-inf-property : {X : 𝓤 ̇ } → (c : is-Π-compact X) (p : X → 𝟚) → p has-inf (inf c p)
+inf-property : {X : 𝓤 ̇ } (c : is-Π-compact X) (p : X → 𝟚)
+             → p has-inf (inf c p)
 inf-property c p = pr₂ (Π-compact-has-infs c p)
 
 inf₁ : {X : 𝓤 ̇ } (c : is-Π-compact X) {p : X → 𝟚}
@@ -1053,10 +1101,11 @@ the dominance 𝟚.
 \begin{code}
 
 Π-compact-iff-Κ-has-right-adjoint : {X : 𝓤 ̇ }
-                                  → is-Π-compact X ↔ (Σ A ꞉ ((X → 𝟚) → 𝟚), Κ⊣ A)
+                                  → is-Π-compact X
+                                  ↔ (Σ A ꞉ ((X → 𝟚) → 𝟚) , Κ⊣ A)
 Π-compact-iff-Κ-has-right-adjoint {𝓤} {X} = (f , g)
  where
-  f : is-Π-compact X → Σ A ꞉ ((X → 𝟚) → 𝟚), Κ⊣ A
+  f : is-Π-compact X → Σ A ꞉ ((X → 𝟚) → 𝟚) , Κ⊣ A
   f c = (A , pr₂ (Κ⊣-charac A) l₁)
    where
     c' : (p : X → 𝟚) → is-decidable (p ＝ (λ x → ₁))
@@ -1065,7 +1114,7 @@ the dominance 𝟚.
     l₀ : (p : X → 𝟚)
        → is-decidable (p ＝ (λ x → ₁)) → Σ n ꞉ 𝟚 , (n ＝ ₁ ↔ p ＝ (λ x → ₁))
     l₀ p (inl r) = (₁ , ((λ _ → r) , λ _ → refl))
-    l₀ p (inr u) = (₀ , ((λ s → 𝟘-elim (zero-is-not-one s)) , λ r → 𝟘-elim (u r)))
+    l₀ p (inr u) = (₀ , (zero-is-one-elim , λ r → 𝟘-elim (u r)))
 
     A : (X → 𝟚) → 𝟚
     A p = pr₁ (l₀ p (c' p))
@@ -1073,7 +1122,7 @@ the dominance 𝟚.
     l₁ : (p : X → 𝟚) → A p ＝ ₁ ↔ p ＝ (λ x → ₁)
     l₁ p = pr₂ (l₀ p (c' p))
 
-  g : ((Σ A ꞉ ((X → 𝟚) → 𝟚), Κ⊣ A)) → is-Π-compact X
+  g : ((Σ A ꞉ ((X → 𝟚) → 𝟚) , Κ⊣ A)) → is-Π-compact X
   g (A , φ) = Π-compact'-types-are-Π-compact c'
    where
     l₁ : (p : X → 𝟚) → A p ＝ ₁ ↔ p ＝ (λ x → ₁)
@@ -1190,13 +1239,14 @@ We have the following corollaries:
 \begin{code}
 
 Π-compact-iff-𝟚-overt : {X : 𝓤 ̇ }
-                      → (Σ A ꞉ ((X → 𝟚) → 𝟚), Κ⊣ A) ↔ (Σ E ꞉ ((X → 𝟚) → 𝟚), E ⊣Κ)
+                      → (Σ A ꞉ ((X → 𝟚) → 𝟚) , Κ⊣ A)
+                      ↔ (Σ E ꞉ ((X → 𝟚) → 𝟚) , E ⊣Κ)
 Π-compact-iff-𝟚-overt {𝓤} {X} = (f , g)
  where
-  f : (Σ A ꞉ ((X → 𝟚) → 𝟚), Κ⊣ A) → (Σ E ꞉ ((X → 𝟚) → 𝟚), E ⊣Κ)
+  f : (Σ A ꞉ ((X → 𝟚) → 𝟚) , Κ⊣ A) → (Σ E ꞉ ((X → 𝟚) → 𝟚) , E ⊣Κ)
   f (A , φ) = (𝟚-DeMorgan-dual A , Π-compact-is-𝟚-overt A φ)
 
-  g : (Σ E ꞉ ((X → 𝟚) → 𝟚), E ⊣Κ) → (Σ A ꞉ ((X → 𝟚) → 𝟚), Κ⊣ A)
+  g : (Σ E ꞉ ((X → 𝟚) → 𝟚) , E ⊣Κ) → (Σ A ꞉ ((X → 𝟚) → 𝟚) , Κ⊣ A)
   g (E , γ) = (𝟚-DeMorgan-dual E , 𝟚-overt-is-Π-compact E γ)
 
 \end{code}
@@ -1207,13 +1257,13 @@ is 𝟚-overt:
 \begin{code}
 
 Π-compact-iff-Κ-has-left-adjoint : {X : 𝓤 ̇ }
-                                 → is-Π-compact X ↔ (Σ E ꞉ ((X → 𝟚) → 𝟚), E ⊣Κ)
+                                 → is-Π-compact X ↔ (Σ E ꞉ ((X → 𝟚) → 𝟚) , E ⊣Κ)
 Π-compact-iff-Κ-has-left-adjoint {𝓤} {X} = (f , g)
  where
-  f : is-Π-compact X → (Σ E ꞉ ((X → 𝟚) → 𝟚), E ⊣Κ)
+  f : is-Π-compact X → (Σ E ꞉ ((X → 𝟚) → 𝟚) , E ⊣Κ)
   f c = pr₁ Π-compact-iff-𝟚-overt (pr₁ Π-compact-iff-Κ-has-right-adjoint c)
 
-  g : (Σ E ꞉ ((X → 𝟚) → 𝟚), E ⊣Κ) → is-Π-compact X
+  g : (Σ E ꞉ ((X → 𝟚) → 𝟚) , E ⊣Κ) → is-Π-compact X
   g o = pr₂ Π-compact-iff-Κ-has-right-adjoint (pr₂ Π-compact-iff-𝟚-overt o)
 
 \end{code}

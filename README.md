@@ -19,7 +19,7 @@ at the place of contribution.
  1. [How to cite this repository](https://github.com/martinescardo/TypeTopology/blob/master/README.md#how-to-cite)
  1. [Root Agda files](https://github.com/martinescardo/TypeTopology/blob/master/README.md#root-agda-files)
  1. [Academic publications and preprints resulting from TypeTopology](https://github.com/martinescardo/TypeTopology#academic-publications-and-preprints-resulting-from-typetopology)
- 1. [Current contributors](https://github.com/martinescardo/TypeTopology/blob/master/README.md#current-contributors-in-alphabetical-order-of-first-name)
+ 1. [Current contributors](https://github.com/martinescardo/TypeTopology/blob/master/README.md#current-typetopology-contributors-in-alphabetical-order-of-first-name)
  1. [Statement of inclusion](https://github.com/martinescardo/TypeTopology/blob/master/STATEMENT-OF-INCLUSION.md)
  1. [Code of conduct](https://github.com/martinescardo/TypeTopology/blob/master/CODE-OF-CONDUCT.md)
  1. [Contributing](https://github.com/martinescardo/TypeTopology/blob/master/CONTRIBUTING.md)
@@ -285,15 +285,32 @@ only your name as author.
 
    https://doi.org/10.1016/j.jpaa.2025.108072
 
-1. Tom de Jong and Martín H. Escardó. *Examples and counterexamples of injective
-   types*. January 2026.
+1. Tom de Jong and Martín H. Escardó. *Examples and counterexamples of
+   injective types*. January 2026, accepted for publication in
+   Ann. Pure Appl. Logic 30th August 2026.
 
    https://doi.org/10.48550/arxiv.2601.12536
+   https://doi.org/10.1016/j.apal.2026.103829
 
 1. Anna Williams. *Formalising Displayed Categories with Univalent Foundations*.
    MSci project, School of Computer Science, University of Birmingham, UK, 2026.
 
    https://anna-maths.xyz/assets/papers/disp-categories.pdf
+
+1. Martín H. Escardó. *Compact totally separated types*, preprint, 9th September 2026.
+
+   https://arxiv.org/abs/2609.10447
+
+   Agda companion.
+   https://www.cs.bham.ac.uk/~mhe/TypeTopology/TypeTopology.CompactTotallySeparatedTypesArticle.html
+
+1. Tom de Jong, Nicolai Kraus, Fredrik Nordvall Forsberg and Chuangjie
+   Xu. *Construtive Ordinal Exponentiation*. September 2025, accepted for
+   publication in the [Journal of the ACM][JACM] 2nd October 2026. \
+   This is an invited, expanded journal version of the LICS paper *Ordinal
+   Exponentiation in Homotopy Type Theory*.
+
+   https://arxiv.org/abs/2501.14542v6
 
 [CSL21]:  https://csl2021.fmf.uni-lj.si/
 [FSCD21]: https://fscd2021.dc.uba.ar/
@@ -305,6 +322,7 @@ only your name as author.
 [MSCS]: https://www.cambridge.org/core/journals/mathematical-structures-in-computer-science
 [LIPICS]: https://www.dagstuhl.de/en/publishing/series/details/LIPIcs
 [JPAA]: https://www.sciencedirect.com/journal/journal-of-pure-and-applied-algebra
+[JACM]: https://dl.acm.org/journal/jacm/
 
 ## Current TypeTopology contributors in alphabetical order of first name
 
@@ -327,6 +345,7 @@ Please add yourself the first time you contribute. Use your adopted name, and no
 * Fredrik Nordvall Forsberg
 * Ian Ray
 * Igor Arrieta (ii)
+* Ingo Blechschmidt
 * J. A. Carr
 * Jakub Opršal
 * Jon Sterling

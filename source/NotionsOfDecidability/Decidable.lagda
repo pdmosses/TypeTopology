@@ -174,9 +174,9 @@ which-of : {A : 𝓤 ̇ } {B : 𝓥 ̇ }
                    × (b ＝ ₁ → B)
 which-of (inl a) = ₀ ,
                    (λ (r : ₀ ＝ ₀) → a) ,
-                   (λ (p : ₀ ＝ ₁) → 𝟘-elim (zero-is-not-one p))
+                   (λ (p : ₀ ＝ ₁) → zero-is-one-elim p)
 which-of (inr b) = ₁ ,
-                   (λ (p : ₁ ＝ ₀) → 𝟘-elim (zero-is-not-one (p ⁻¹))) ,
+                   (λ (p : ₁ ＝ ₀) → zero-is-one-elim (p ⁻¹)) ,
                    (λ (r : ₁ ＝ ₁) → b)
 
 \end{code}
@@ -230,10 +230,10 @@ module _ {X : 𝓤 ̇ } (A : X → 𝓥 ̇ )
 
   f₀ : (x : X) (d : is-decidable (A x)) → f x d ＝ ₀ → A x
   f₀ x (inl a) e = a
-  f₀ x (inr ν) e = 𝟘-elim (one-is-not-zero e)
+  f₀ x (inr ν) e = one-is-zero-elim e
 
   f₁ : (x : X) (d : is-decidable (A x)) → f x d ＝ ₁ → ¬ A x
-  f₁ x (inl a) e = 𝟘-elim (zero-is-not-one e)
+  f₁ x (inl a) e = zero-is-one-elim e
   f₁ x (inr ν) e = ν
 
   f₀-back : (x : X) (d : is-decidable (A x)) → A x → f x d ＝ ₀
@@ -380,9 +380,6 @@ But the induction equation does.
                      → ∣ ∣∣⟨ δ ⟩-exit s ∣⟨ δ ⟩ ＝ s
 ∣∣⟨ inl x ⟩-exit-is-section ⋆ = refl
 ∣∣⟨ inr ν ⟩-exit-is-section s = 𝟘-elim s
-
-infix 0 ∥_∥⟨_⟩
-infix 0 ∣_∣⟨_⟩
 
 module propositional-truncation-of-decidable-type
         (pt : propositional-truncations-exist)

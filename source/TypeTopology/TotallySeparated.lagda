@@ -238,6 +238,14 @@ equiv-to-totally-separated : {X : 𝓤 ̇ } {Y : 𝓥 ̇ }
                            → is-totally-separated Y
 equiv-to-totally-separated 𝕗 = retract-of-totally-separated (≃-gives-▷ 𝕗)
 
+embedding-into-totally-separated-gives-totally-separated :
+   {X : 𝓤 ̇ } {Y : 𝓥 ̇ } (f : X → Y)
+ → is-embedding f
+ → is-totally-separated Y
+ → is-totally-separated X
+embedding-into-totally-separated-gives-totally-separated f e τ α
+ = embeddings-are-lc f e (τ (λ q → α (q ∘ f)))
+
 \end{code}
 
 Recall that a type is called ¬¬-separated if the doubly negated equality
@@ -425,9 +433,9 @@ by the type 𝟚):
 +-totally-separated X Y t u {inl x} {inl x'} φ =
     ap inl (t (λ p → φ (cases p (λ (_ : Y) → ₀))))
 +-totally-separated X Y t u {inl x} {inr y} φ =
-    𝟘-elim (zero-is-not-one (φ (cases (λ _ → ₀) (λ _ → ₁))))
+    zero-is-one-elim (φ (cases (λ _ → ₀) (λ _ → ₁)))
 +-totally-separated X Y t u {inr y} {inl x} φ =
-    𝟘-elim (zero-is-not-one (φ (cases (λ _ → ₁) (λ _ → ₀))))
+    zero-is-one-elim (φ (cases (λ _ → ₁) (λ _ → ₀)))
 +-totally-separated X Y t u {inr y} {inr y'} φ =
     ap inr (u (λ p → φ (cases (λ (_ : X) → ₀) p)))
 

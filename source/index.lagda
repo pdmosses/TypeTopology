@@ -1,17 +1,14 @@
-   TypeTopology
+   [T y p e T o p o l o g y](https://github.com/martinescardo/TypeTopology)
+
+   2010--2026--∞, continuously evolving.
 
    Various new theorems in univalent mathematics written in Agda
    -------------------------------------------------------------
 
-   Martin Escardo and collaborators,
-   2010--2026--∞, continuously evolving.
-   https://www.cs.bham.ac.uk/~mhe/
-
-   This repository is searchable:
-   https://www.cs.bham.ac.uk/~mhe/TypeTopologySearch.html
-   https://github.com/martinescardo/TypeTopologyModuleDescriptions/
+   [Martin Escardo](https://www.cs.bham.ac.uk/~mhe/) and [collaborators](https://github.com/martinescardo/TypeTopology#current-typetopology-contributors-in-alphabetical-order-of-first-name).
 
    Tested with Agda 2.8.0 and 2.9.0 (unreleased development version).
+   This HTML rendering was automatically generated from commit to-be-filled-automatically.
 
    * Our main use of this development is as a personal blackboard or
      notepad for our research and that of collaborators. In
@@ -20,7 +17,7 @@
      and with failed ideas and calculations eventually erased.
 
    * We offer this page as a preliminary announcement of results to be
-     submitted for publication, of the kind we would get when we visit
+     [submitted for publication](https://github.com/martinescardo/TypeTopology#academic-publications-and-preprints-resulting-from-typetopology), of the kind we would get when we visit
      a mathematician's office.
 
    * We have also used this development for learning other people's
@@ -33,10 +30,10 @@
      need arises. Its form is the result of evolution rather than
      intelligent design (paraphrasing Linus Torvalds).
 
-     Our lecture notes develop HoTT/UF in Agda in a more principled
-     way, and offers better approaches to some constructions and
-     simpler proofs of some (previously) difficult theorems.
-     (https://www.cs.bham.ac.uk/~mhe/HoTT-UF-in-Agda-Lecture-Notes/)
+     Our [MGS lecture notes](https://www.cs.bham.ac.uk/~mhe/HoTT-UF-in-Agda-Lecture-Notes/) develop HoTT/UF in Agda in a more
+     principled way, and offers better approaches to some
+     constructions and simpler proofs of some (previously) difficult
+     theorems.
 
      Our philosophy, here and in the lecture notes, is to work with a
      minimal Martin-Löf type theory, and use principles from HoTT/UF
@@ -50,21 +47,19 @@
      or set of results. We also work, deliberately, with a minimal
      subset of Agda. See below for more about the philosophy.
 
-   * There is also a module that links some "unsafe" modules that use
+   * There is also a [module that links some "unsafe" modules](https://www.cs.bham.ac.uk/~mhe/TypeTopology/AllModulesIndex.html) that use
      type theory beyond MLTT and HoTT/UF, which cannot be included in
      this safe-modules index: The system with type-in-type is
      inconsistent (as is well known), countable Tychonoff, and
      compactness of the Cantor type using countable Tychonoff, and
      more.
 
-     https://www.cs.bham.ac.uk/~mhe/TypeTopology/AllModulesIndex.html
-
-     This file also explains which options are used in TypeTopology to
+     This file also explains which [options are used in TypeTopology](https://github.com/martinescardo/TypeTopology/blob/master/typetopology.agda-lib) to
      control safety and, to the extent this is currently possible, to
-     control which type theory is used.
+     fix which type theory is used.
 
-   * In our last count, on 2026-08-18, this development has 990 Agda
-     files with 287K lines of code, including comments and blank
+   * In our last count, on 2026-10-18, this development has 1002 Agda
+     files with 298K lines of code, including comments and blank
      lines.
 
 Philosophy of the repository
@@ -89,8 +84,7 @@ Philosophy of the repository
    * We work in a minimal subset of Agda to implement Spartan MLTT and
      work with it. In particular, we restrict ourselves to safe
      features, with flags such as --safe --no-sized-types --no-guardedness
-     and more:
-     https://github.com/martinescardo/TypeTopology/blob/master/typetopology.agda-lib.
+     and [more](https://github.com/martinescardo/TypeTopology/blob/master/typetopology.agda-lib).
 
    * Most of the time we prefer to use Σ types rather than records,
      although records are not forbidden, as they are equivalent to
@@ -125,7 +119,7 @@ Philosophy of the repository
      because at present it is not known whether (some) cubical type
      theory has an interpretation in any ∞-topos.
 
-     However, by fulfilling the HoTT hypotheses with Cubical-Agda
+     However, by fulfilling the HoTT hypotheses with Cubical Agda
      implementations, we should be able to run the constructions and
      proofs given here, so that we get constructivity in the
      computational sense, as opposed to constructivity just in the
@@ -137,10 +131,8 @@ Philosophy of the repository
      extensionality, the existence of propositional truncations and
      the existence of quotients, and some higher inductive types.
 
-A short description of each of the following imported modules is available at
-https://github.com/martinescardo/TypeTopologyModuleDescriptions/
-
-Moreover, the files within these modules have extensive discussions in prose.
+   * The files within most of the modules have extensive discussions
+     in prose. See also [TypeTopology module descriptions](https://github.com/martinescardo/TypeTopologyModuleDescriptions/).
 
 \begin{code}
 
@@ -210,10 +202,10 @@ import gist.index
 
 \end{code}
 
-The above includes only the --safe modules. A list of all modules is here:
-https://www.cs.bham.ac.uk/~mhe/TypeTopology/AllModulesIndex.html
+The above import only the `--safe` modules. See [AllModulesIndex](https://www.cs.bham.ac.uk/~mhe/TypeTopology/AllModulesIndex.html)
+for the list of all modules.
 
-NB. This file is accessible from both
+This file is accessible from both
 
 (1) https://www.cs.bham.ac.uk/~mhe/TypeTopology
 (2) https://martinescardo.github.io/TypeTopology
